@@ -1,0 +1,30 @@
+{
+	"tabWidth": 2,
+	"trailingComma": "none",
+	"singleQuote": true,
+	"semi": true,
+	"printWidth": 100,
+	"htmlWhitespaceSensitivity": "css",
+	"endOfLine": "auto",
+	"jsxSingleQuote": false,
+	"useTabs": true,
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"embeddedLanguageFormatting": "auto",
+	"overrides": [
+		{
+			"files": [
+				"**/*.js",
+				"**/*.jsx",
+				"**/*.ts",
+				"**/*.tsx"
+			],
+			"options": {
+				"parser": "typescript"
+			}
+		}
+	],
+	"ignore": [
+		"**/node_modules/**"
+	]
+}
