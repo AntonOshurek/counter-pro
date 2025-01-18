@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	homeScreen: {
-		justifyContent: 'space-between',
-		height: '100%',
+	ScreenLayout: {
+		paddingInline: 20,
 		paddingBottom: 40,
 		paddingBlockStart: 10
 	}

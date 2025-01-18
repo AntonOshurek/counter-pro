@@ -12,7 +12,11 @@ const Navigation = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName={StackParams.HomeScreen}>
-				<Stack.Screen name={StackParams.HomeScreen} component={HomeScreen} />
+				<Stack.Screen
+					name={StackParams.HomeScreen}
+					component={HomeScreen}
+					options={{ title: 'Home' }}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
