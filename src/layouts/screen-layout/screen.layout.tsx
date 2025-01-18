@@ -1,5 +1,6 @@
 //NATIVE
 import { View } from 'react-native';
+//LIBS
 //TYPES
 import type { ScreenLayoutProps } from './model/screen-layout.model';
 //STYLES
