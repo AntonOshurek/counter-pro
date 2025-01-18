@@ -2,7 +2,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //SCREENS
-import { HomeScreen } from '../../screens';
+import { HomeScreen, NewCounterScreen } from '../../screens';
 //TYPES
 import { NavigationStackParams, StackParams } from './model/navigation.model';
 
@@ -16,6 +16,11 @@ const Navigation = () => {
 					name={StackParams.HomeScreen}
 					component={HomeScreen}
 					options={{ title: 'Home' }}
+				/>
+				<Stack.Screen
+					name={StackParams.NewCounterScreen}
+					component={NewCounterScreen}
+					options={{ title: 'new counter' }}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
