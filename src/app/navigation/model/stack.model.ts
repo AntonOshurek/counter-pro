@@ -2,7 +2,6 @@ import { ComponentType } from 'react';
 
 enum StackParams {
 	Drawer = 'Drawer',
-	HomeScreen = 'HomeScreen',
 	NewCounterScreen = 'NewCounterScreen'
 }
 

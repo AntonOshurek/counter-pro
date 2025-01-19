@@ -1,5 +1,8 @@
 //NATIVE
 import { Text, View } from 'react-native';
+// import { SafeAreaView } from 'react-native-safe-area-context';
+//ENTITIES
+import { Count } from '../../entities';
 //STYLES
 import style from './styles/style';
 
@@ -11,7 +14,7 @@ const NewCounterWidget = (): JSX.Element => {
 			</View>
 
 			<View>
-				<Text>counter</Text>
+				<Count count={0} />
 			</View>
 
 			<View>

@@ -20,7 +20,7 @@ const Stack = ({ DrawerNavigation }: StackProps): JSX.Element => {
 			<Stack.Screen
 				name={StackParams.NewCounterScreen}
 				component={NewCounterScreen}
-				options={{ title: 'new counter' }}
+				options={{ title: 'New counter' }}
 			/>
 		</Stack.Navigator>
 	);
