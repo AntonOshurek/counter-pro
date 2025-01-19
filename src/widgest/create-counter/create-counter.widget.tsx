@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
 	NavigationStackParams,
 	StackParams
-} from '../../app/navigation/model/navigation.model';
+} from '../../app/navigation/model/index.model';
 //UI
 import { CreateNewCounterButton } from '../../shaared/ui';
 //STYLES

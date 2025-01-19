@@ -1,3 +1,5 @@
+import { ComponentType } from 'react';
+
 enum StackParams {
 	Drawer = 'Drawer',
 	HomeScreen = 'HomeScreen',
@@ -6,8 +8,11 @@ enum StackParams {
 
 type NavigationStackParams = {
 	[StackParams.Drawer]: undefined;
-	// [StackParams.HomeScreen]: undefined;
 	[StackParams.NewCounterScreen]: undefined;
 };
 
-export { StackParams, NavigationStackParams };
+interface StackProps {
+	DrawerNavigation: ComponentType<any>;
+}
+
+export { StackParams, NavigationStackParams, StackProps };
