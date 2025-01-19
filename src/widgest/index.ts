@@ -1,3 +1,3 @@
-import CreateCounterWidget from './create-counter-widget/create-counter.widget';
+import CreateCounterWidget from './create-counter/create-counter.widget';
 
 export { CreateCounterWidget };

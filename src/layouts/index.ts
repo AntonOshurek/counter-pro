@@ -1,3 +1,3 @@
-import ScreenLayout from './screen-layout/screen.layout';
+import ScreenLayout from './screen/screen.layout';
 
 export { ScreenLayout };
