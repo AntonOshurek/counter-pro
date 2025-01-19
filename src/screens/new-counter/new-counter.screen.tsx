@@ -1,12 +1,14 @@
-//NATIVE
-import { Text } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
+//WIDGETS
+import { NewCounterWidget } from '../../widgest';
+//STYLES
+import style from './styles/style';
 
 const NewCounterScreen = (): JSX.Element => {
 	return (
-		<ScreenLayout>
-			<Text>new counter screen</Text>
+		<ScreenLayout additionalClass={style.newCounterScreen}>
+			<NewCounterWidget />
 		</ScreenLayout>
 	);
 };
