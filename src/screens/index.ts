@@ -1,4 +1,5 @@
-import HomeScreen from './home-screen/home-screen';
-import NewCounterScreen from './new-counter-screen/new-counter-screen';
+import HomeScreen from './home/home.screen';
+import NewCounterScreen from './new-counter/new-counter.screen';
+import SettingsScreen from './settings/settings.screen';
 
-export { HomeScreen, NewCounterScreen };
+export { HomeScreen, NewCounterScreen, SettingsScreen };

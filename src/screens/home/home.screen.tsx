@@ -5,7 +5,7 @@ import style from './styles/style';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
-import { CreateCounterWidget } from '../../widgest';
+import { HomeScreenControlsWidget } from '../../widgest';
 
 const HomeScreen = () => {
 	return (
@@ -14,7 +14,7 @@ const HomeScreen = () => {
 				<Text>List of last counters</Text>
 			</View>
 
-			<CreateCounterWidget />
+			<HomeScreenControlsWidget />
 		</ScreenLayout>
 	);
 };

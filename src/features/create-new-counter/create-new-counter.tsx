@@ -1,29 +1,21 @@
-//NATIVE
-import { View } from 'react-native';
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
 	NavigationStackParams,
 	StackParams
-} from '../../app/navigation/model/navigation.model';
+} from '../../app/navigation/model/index.model';
 //UI
 import { CreateNewCounterButton } from '../../shaared/ui';
-//STYLES
-import style from './style/style';
 
-const CreateCounterWidget = (): JSX.Element => {
+const CreateNewCounter = (): JSX.Element => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
 	const goToNewCounter = () => {
 		navigation.navigate(StackParams.NewCounterScreen);
 	};
 
-	return (
-		<View style={style.createCounterWidget}>
-			<CreateNewCounterButton onPress={goToNewCounter} />
-		</View>
-	);
+	return <CreateNewCounterButton onPress={goToNewCounter} />;
 };
 
-export default CreateCounterWidget;
+export default CreateNewCounter;
