@@ -4,11 +4,11 @@ import { Text, View } from 'react-native';
 //ENTITIES
 import { Count } from '../../entities';
 //STYLES
-import style from './styles/style';
+// import style from './styles/style';
 
 const NewCounterWidget = (): JSX.Element => {
 	return (
-		<View style={style.newCounterWidget}>
+		<>
 			<View>
 				<Text>header with settings for counter and info</Text>
 			</View>
@@ -20,7 +20,7 @@ const NewCounterWidget = (): JSX.Element => {
 			<View>
 				<Text>counter controls</Text>
 			</View>
-		</View>
+		</>
 	);
 };
 

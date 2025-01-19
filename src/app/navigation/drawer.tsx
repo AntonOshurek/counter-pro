@@ -1,7 +1,7 @@
 //NAVIGATION
 import { createDrawerNavigator } from '@react-navigation/drawer';
 //SCREENS
-import { HomeScreen, NewCounterScreen, SettingsScreen } from '../../screens';
+import { HomeScreen, SettingsScreen } from '../../screens';
 //TYPES
 import { DrawerParams, NavigationDrawerParams } from './model/drawer.model';
 
@@ -20,11 +20,11 @@ const Drawer = (): JSX.Element => {
 				name={DrawerParams.SettingsScreen}
 				options={{ title: 'Settings' }}
 			/>
-			<Drawer.Screen
+			{/* <Drawer.Screen
 				name={DrawerParams.NewCounterScreen}
 				component={NewCounterScreen}
 				options={{ title: 'New counter' }}
-			/>
+			/> */}
 		</Drawer.Navigator>
 	);
 };
