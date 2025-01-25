@@ -1,17 +1,17 @@
 import { ComponentType } from 'react';
 
 enum StackParams {
-	Drawer = 'Drawer',
+	BottomTabs = 'BottomTabs',
 	NewCounterScreen = 'NewCounterScreen'
 }
 
 type NavigationStackParams = {
-	[StackParams.Drawer]: undefined;
+	[StackParams.BottomTabs]: undefined;
 	[StackParams.NewCounterScreen]: undefined;
 };
 
 interface StackProps {
-	DrawerNavigation: ComponentType<any>;
+	BottomTabsNavigation: ComponentType<any>;
 }
 
 export { StackParams, NavigationStackParams, StackProps };

@@ -5,15 +5,16 @@ import { NewCounterScreen } from '../../screens';
 //TYPES
 import { StackProps, NavigationStackParams, StackParams } from './model/stack.model';
 
-const Stack = ({ DrawerNavigation }: StackProps): JSX.Element => {
+const Stack = ({ BottomTabsNavigation }: StackProps): JSX.Element => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();
 
 	return (
-		<Stack.Navigator initialRouteName={StackParams.Drawer} screenOptions={{}}>
+		<Stack.Navigator initialRouteName={StackParams.BottomTabs} screenOptions={{}}>
 			<Stack.Screen
-				name={StackParams.Drawer}
-				component={DrawerNavigation}
+				name={StackParams.BottomTabs}
+				component={BottomTabsNavigation}
 				options={{
+					title: 'Home',
 					headerShown: false
 				}}
 			/>

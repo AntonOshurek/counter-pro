@@ -1,12 +1,12 @@
 //NAVIGATION
 import { NavigationContainer } from '@react-navigation/native';
 import Stack from './stack';
-import Drawer from './drawer';
+import BottomTabs from './bottom-tabs';
 
 const Navigation = () => {
 	return (
 		<NavigationContainer>
-			<Stack DrawerNavigation={Drawer} />
+			<Stack BottomTabsNavigation={BottomTabs} />
 		</NavigationContainer>
 	);
 };
