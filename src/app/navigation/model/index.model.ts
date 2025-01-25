@@ -1,4 +1,9 @@
 import { StackParams, NavigationStackParams } from './stack.model';
-import { DrawerParams, NavigationDrawerParams } from './drawer.model';
+import { BottomTabsNavigationParams, BottomTabsParams } from './bottom-tabs.model';
 
-export { StackParams, NavigationStackParams, DrawerParams, NavigationDrawerParams };
+export {
+	StackParams,
+	NavigationStackParams,
+	BottomTabsNavigationParams,
+	BottomTabsParams
+};
