@@ -1,12 +1,13 @@
 //NAVIGATION
-import { createDrawerNavigator } from '@react-navigation/drawer';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
 import { HomeScreen, SettingsScreen } from '../../screens';
 //TYPES
 import { DrawerParams, NavigationDrawerParams } from './model/drawer.model';
 
 const Drawer = (): JSX.Element => {
-	const Drawer = createDrawerNavigator<NavigationDrawerParams>();
+	const Drawer = createBottomTabNavigator<NavigationDrawerParams>();
 
 	return (
 		<Drawer.Navigator initialRouteName={DrawerParams.HomeScreen}>
