@@ -14,6 +14,7 @@ const Stack = ({ BottomTabsNavigation }: StackProps): JSX.Element => {
 				name={StackParams.BottomTabs}
 				component={BottomTabsNavigation}
 				options={{
+					title: 'Home',
 					headerShown: false
 				}}
 			/>
