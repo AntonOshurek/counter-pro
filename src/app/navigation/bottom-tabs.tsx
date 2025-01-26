@@ -11,37 +11,42 @@ const BottomTabs = (): JSX.Element => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();
 
 	return (
-		<BottomTabs.Navigator initialRouteName={BottomTabsParams.HomeScreen}>
+		<BottomTabs.Navigator
+			initialRouteName={BottomTabsParams.HomeScreen}
+			screenOptions={{
+				tabBarShowLabel: false
+			}}
+		>
 			<BottomTabs.Screen
 				component={HomeScreen}
 				name={BottomTabsParams.HomeScreen}
 				options={{
-					title: '',
-					tabBarIcon: ({ color }) => <HomeIcon height={40} width={40} />
+					title: 'Home',
+					tabBarIcon: () => <HomeIcon height={40} width={40} />
 				}}
 			/>
 			<BottomTabs.Screen
 				component={GroupsScreen}
 				name={BottomTabsParams.Groups}
 				options={{
-					title: '',
-					tabBarIcon: ({ color }) => <ListIcon height={40} width={40} />
+					title: 'Groups',
+					tabBarIcon: () => <ListIcon height={40} width={40} />
 				}}
 			/>
 			<BottomTabs.Screen
 				component={SettingsScreen}
 				name={BottomTabsParams.SettingsScreen}
 				options={{
-					title: '',
-					tabBarIcon: ({ color }) => <SettingsIcon height={40} width={40} />
+					title: 'Settings',
+					tabBarIcon: () => <SettingsIcon height={40} width={40} />
 				}}
 			/>
 			<BottomTabs.Screen
 				component={InfoScreen}
 				name={BottomTabsParams.InfoScreen}
 				options={{
-					title: '',
-					tabBarIcon: ({ color }) => <InfoIcon height={40} width={40} />
+					title: 'Info',
+					tabBarIcon: () => <InfoIcon height={40} width={40} />
 				}}
 			/>
 		</BottomTabs.Navigator>
