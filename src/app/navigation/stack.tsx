@@ -1,5 +1,6 @@
 //NAVIGATION
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CounterTopTabs from './counter-top-tabs';
 //SCREENS
 import { NewCounterScreen } from '../../screens';
 //TYPES
@@ -20,7 +21,7 @@ const Stack = ({ BottomTabsNavigation }: StackProps): JSX.Element => {
 			/>
 			<Stack.Screen
 				name={StackParams.NewCounterScreen}
-				component={NewCounterScreen}
+				component={CounterTopTabs}
 				options={{ title: 'New counter' }}
 			/>
 		</Stack.Navigator>
