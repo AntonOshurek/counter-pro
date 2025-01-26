@@ -21,7 +21,7 @@ const Stack = (): JSX.Element => {
 			<Stack.Screen
 				name={StackParams.NewCounterScreen}
 				component={CounterTopTabs}
-				options={{ title: 'Counter' }}
+				options={{ title: 'Counter Name' }}
 			/>
 		</Stack.Navigator>
 	);

@@ -1,7 +1,7 @@
 //NAVIGATION
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
-import { NewCounterScreen, CounterSettingsScreen } from '../../screens';
+import { CounterScreen, CounterSettingsScreen } from '../../screens';
 //TYPES
 import {
 	CounterTopTabsNavigationParams,
@@ -13,7 +13,7 @@ const CounterTopTabs = (): JSX.Element => {
 
 	return (
 		<Tab.Navigator>
-			<Tab.Screen name={CounterTopTabsParams.Counter} component={NewCounterScreen} />
+			<Tab.Screen name={CounterTopTabsParams.Counter} component={CounterScreen} />
 			<Tab.Screen
 				name={CounterTopTabsParams.Settings}
 				component={CounterSettingsScreen}
