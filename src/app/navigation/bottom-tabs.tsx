@@ -1,7 +1,7 @@
 //NAVIGATION
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
-import { HomeScreen, InfoScreen, SettingsScreen } from '../../screens';
+import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
 //TYPES
 import { BottomTabsParams, BottomTabsNavigationParams } from './model/bottom-tabs.model';
 
@@ -14,6 +14,11 @@ const BottomTabs = (): JSX.Element => {
 				component={HomeScreen}
 				name={BottomTabsParams.HomeScreen}
 				options={{ title: 'Home' }}
+			/>
+			<BottomTabs.Screen
+				component={GroupsScreen}
+				name={BottomTabsParams.Groups}
+				options={{ title: 'Groups' }}
 			/>
 			<BottomTabs.Screen
 				component={SettingsScreen}
