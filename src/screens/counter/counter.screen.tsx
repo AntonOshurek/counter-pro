@@ -5,12 +5,12 @@ import { NewCounterWidget } from '../../widgest';
 //STYLES
 import style from './styles/style';
 
-const NewCounterScreen = (): JSX.Element => {
+const CounterScreen = (): JSX.Element => {
 	return (
-		<ScreenLayout additionalClass={style.newCounterScreen}>
+		<ScreenLayout additionalClass={style.CounterScreen}>
 			<NewCounterWidget />
 		</ScreenLayout>
 	);
 };
 
-export default NewCounterScreen;
+export default CounterScreen;

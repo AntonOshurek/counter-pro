@@ -1,9 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	newCounterScreen: {
-		justifyContent: 'space-between'
-	}
+	groupsScreen: {}
 });
 
 export default style;
