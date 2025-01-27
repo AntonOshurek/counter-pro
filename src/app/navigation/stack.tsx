@@ -2,6 +2,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CounterTopTabs from './counter-top-tabs';
 import BottomTabs from './bottom-tabs';
+import GroupTopTabs from './group-top-tabs';
 //TYPES
 import { NavigationStackParams, StackParams } from './model/stack.model';
 
@@ -22,6 +23,11 @@ const Stack = (): JSX.Element => {
 				name={StackParams.NewCounterScreen}
 				component={CounterTopTabs}
 				options={{ title: 'Counter Name' }}
+			/>
+			<Stack.Screen
+				name={StackParams.GroupScreen}
+				component={GroupTopTabs}
+				options={{ title: 'Group title' }}
 			/>
 		</Stack.Navigator>
 	);
