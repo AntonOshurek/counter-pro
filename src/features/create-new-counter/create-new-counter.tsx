@@ -6,7 +6,7 @@ import {
 	StackParams
 } from '../../app/navigation/model/index.model';
 //UI
-import { CreateNewCounterButton } from '../../shaared/ui';
+import { CreateButton } from '../../shaared/ui';
 
 const CreateNewCounter = (): JSX.Element => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
@@ -15,7 +15,7 @@ const CreateNewCounter = (): JSX.Element => {
 		navigation.navigate(StackParams.NewCounterScreen);
 	};
 
-	return <CreateNewCounterButton onPress={goToNewCounter} />;
+	return <CreateButton onPress={goToNewCounter} hiddenText='Create new counter' />;
 };
 
 export default CreateNewCounter;

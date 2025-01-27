@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	createNewCounterButton: {
+	createButton: {
 		borderColor: '#000',
 		borderWidth: 1,
 		borderRadius: 100,

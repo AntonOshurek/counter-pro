@@ -6,7 +6,7 @@ import {
 	StackParams
 } from '../../app/navigation/model/index.model';
 //UI
-import { CreateNewCounterButton } from '../../shaared/ui';
+import { CreateButton } from '../../shaared/ui';
 
 const CreateNewGroup = (): JSX.Element => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
@@ -15,7 +15,9 @@ const CreateNewGroup = (): JSX.Element => {
 		navigation.navigate(StackParams.GroupScreen);
 	};
 
-	return <CreateNewCounterButton onPress={goToNewGroup} />;
+	return (
+		<CreateButton onPress={goToNewGroup} hiddenText='Create new group of counters' />
+	);
 };
 
 export default CreateNewGroup;
