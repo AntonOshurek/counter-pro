@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	groupsScreen: {
-		justifyContent: 'space-between'
+	groupScreen: {
+		justifyContent: 'space-between',
+		height: '100%'
 	}
 });
 

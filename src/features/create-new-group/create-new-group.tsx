@@ -8,14 +8,16 @@ import {
 //UI
 import { CreateButton } from '../../shaared/ui';
 
-const CreateNewCounter = (): JSX.Element => {
+const CreateNewGroup = (): JSX.Element => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
-	const goToNewCounter = () => {
-		navigation.navigate(StackParams.NewCounterScreen);
+	const goToNewGroup = () => {
+		navigation.navigate(StackParams.GroupScreen);
 	};
 
-	return <CreateButton onPress={goToNewCounter} hiddenText='Create new counter' />;
+	return (
+		<CreateButton onPress={goToNewGroup} hiddenText='Create new group of counters' />
+	);
 };
 
-export default CreateNewCounter;
+export default CreateNewGroup;

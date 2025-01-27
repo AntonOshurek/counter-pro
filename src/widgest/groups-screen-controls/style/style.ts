@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	groupsScreen: {
-		justifyContent: 'space-between'
+	groupsScreenControlsWidget: {
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+		alignItems: 'center'
 	}
 });
 

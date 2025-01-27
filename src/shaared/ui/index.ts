@@ -1,3 +1,3 @@
-import CreateNewCounterButton from './create-new-counter-button/create-new-counter-button';
+import CreateButton from './create-button/create-button';
 
-export { CreateNewCounterButton };
+export { CreateButton };
