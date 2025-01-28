@@ -4,19 +4,21 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 class AsyncStorageService {
 	async getItem<T>(itemName: string): Promise<T | Error | null> {
 		try {
-			const jsonValue: string | null = await AsyncStorage.getItem(itemName);
+			const jsonValue = await AsyncStorage.getItem(itemName);
 
 			if (jsonValue) {
 				const parsedData: T = JSON.parse(jsonValue);
 				return parsedData;
-			} else {
-				return null;
 			}
+
+			return null;
 		} catch (error) {
 			if (error instanceof Error) {
-				return new Error(error.message);
+				throw new Error(error.message);
 			} else {
-				return new Error('Failed to get data from mobile storage.');
+				throw new Error(
+					'Failed to get data from mobile storage. Please restart Your aplicaaation and try again.'
+				);
 			}
 		}
 	}
@@ -27,9 +29,11 @@ class AsyncStorageService {
 			await AsyncStorage.setItem(itemName, jsonValue);
 		} catch (error) {
 			if (error instanceof Error) {
-				return new Error(error.message);
+				throw new Error(error.message);
 			} else {
-				return new Error('Failed to set data to mobile storage.');
+				throw new Error(
+					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
+				);
 			}
 		}
 	}
