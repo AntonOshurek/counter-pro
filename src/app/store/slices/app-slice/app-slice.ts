@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 //TYPES
 import type { Themes } from '../../../../global/types/app';
+import type { ISetNewThemeAction } from '../../model/actions.model';
 //VARIABLES
 import { themes } from '../../../../global/variables/constants';
 
@@ -18,12 +19,12 @@ export const appSlice = createSlice({
 	initialState: appInitialState,
 
 	reducers: {
-		chengeTheme: (state, action: PayloadAction<Themes>) => {
-			state.theme = action.payload;
+		chengeTheme: (state, action: PayloadAction<ISetNewThemeAction>) => {
+			state.theme = action.payload.newTheme;
 		}
 	}
 });
 
-export const { chengeTheme } = appSlice.actions;
+// export const { chengeTheme } = appSlice.actions;
 
 export default appSlice.reducer;

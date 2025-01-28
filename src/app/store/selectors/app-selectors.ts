@@ -1,6 +1,6 @@
 //types
-import { Themes } from '../../../global/types/app';
-import type { RootState } from '../../../global/types/store';
+import type { Themes } from '../../../global/types/app';
+import type { RootState } from '../model/store.model';
 
 const SelectorGetTheme =
 	() =>
