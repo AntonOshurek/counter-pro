@@ -1,6 +1,6 @@
 //TYPES
 import type { Themes } from '../../../global/types/app';
 
-export interface AppState {
+export interface IAppState {
 	theme: Themes;
 }

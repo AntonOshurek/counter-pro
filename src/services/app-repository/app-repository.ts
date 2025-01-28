@@ -1,22 +1,30 @@
 //STORE/STATE
 import { appInitialState } from '../../app/store/state';
 //TYPES
-import type { AppState } from '../../app/store/model/state.model';
+import type { IAppState } from '../../app/store/model/state.model';
 
 class AppRepository {
-	#defaultAppState: AppState;
+	#defaultAppState: IAppState;
 	#appStoreName: string;
 
-	constructor(defaultAppState: AppState, appStoreName: string) {
+	constructor(defaultAppState: IAppState, appStoreName: string) {
 		this.#defaultAppState = defaultAppState;
 		this.#appStoreName = appStoreName;
 	}
 
-	getState(): AppState {
+	#sendDataToStorage<T>(data: T) {}
+
+	#getDefaultData(): IAppState {
 		return this.#defaultAppState;
 	}
 
-	setState(newState: AppState) {}
+	getState(): IAppState {
+		return this.#getDefaultData();
+	}
+
+	setState(newState: IAppState) {
+		this.#sendDataToStorage<string>('test');
+	}
 }
 
 const appRepository = new AppRepository(appInitialState, 'app-store');

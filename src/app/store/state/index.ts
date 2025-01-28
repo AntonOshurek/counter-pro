@@ -1,8 +1,8 @@
 //VARIABLES
 import { themes } from '../../../global/variables/constants';
 //TYPES
-import type { AppState } from '../model/state.model';
+import type { IAppState } from '../model/state.model';
 
-export const appInitialState: AppState = {
+export const appInitialState: IAppState = {
 	theme: themes[2]
 };
