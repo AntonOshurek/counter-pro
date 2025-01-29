@@ -29,7 +29,7 @@ class AppRepository {
 	async getState(): Promise<IAppState | Error> {
 		try {
 			const state = await this.#getStateFromStorage();
-
+    console.log('await fetching state from async storage')
 			if (state === null) {
 				return this.#getDefaultState();
 			}
@@ -40,7 +40,7 @@ class AppRepository {
 				return new Error(error.message);
 			} else {
         return new Error(
-					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
+					'Failed to set data to mobile storage. Please restart Your application and try again.'
 				);
 			}
 		}
@@ -55,7 +55,7 @@ class AppRepository {
 				return new Error(error.message);
 			} else {
 				return new Error(
-					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
+					'Failed to set data to mobile storage. Please restart Your application and try again.'
 				);
 			}
 		}
