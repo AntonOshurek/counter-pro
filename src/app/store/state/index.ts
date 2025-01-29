@@ -4,5 +4,5 @@ import { themes } from '../../../global/variables/constants';
 import type { IAppState } from '../model/state.model';
 
 export const appInitialState: IAppState = {
-	theme: themes[2]
+  theme: themes[2]
 };

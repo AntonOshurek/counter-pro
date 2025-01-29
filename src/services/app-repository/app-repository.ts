@@ -1,7 +1,7 @@
-//STORE/STATE
-import { appInitialState } from '../../app/store/state';
 //SERVICES
 import asyncStorageService from '../async-store-service/async-store.service';
+//STATE
+import { appInitialState } from '../../app/store/state';
 //TYPES
 import type { IAppState } from '../../app/store/model/state.model';
 
@@ -9,19 +9,17 @@ class AppRepository {
 	#defaultAppState: IAppState;
 	#appStoreName: string;
 
-	constructor(defaultAppState: IAppState, appStoreName: string) {
-		this.#defaultAppState = defaultAppState;
+	constructor(appInitialState: IAppState, appStoreName: string) {
+		this.#defaultAppState = appInitialState;
 		this.#appStoreName = appStoreName;
 	}
 
 	async #getStateFromStorage() {
-		const state = await asyncStorageService.getItem<IAppState>(this.#appStoreName);
-		return state;
+		return await asyncStorageService.getItem<IAppState>(this.#appStoreName);
 	}
 
 	async #sendStateToStorage(data: IAppState) {
-		const result = await asyncStorageService.setItem<IAppState>(this.#appStoreName, data);
-		return result;
+		return await asyncStorageService.setItem<IAppState>(this.#appStoreName, data);
 	}
 
 	#getDefaultState(): IAppState {
@@ -41,7 +39,7 @@ class AppRepository {
 			if (error instanceof Error) {
 				return new Error(error.message);
 			} else {
-				return new Error(
+        return new Error(
 					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
 				);
 			}
