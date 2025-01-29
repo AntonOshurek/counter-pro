@@ -1,7 +1,7 @@
-//STORE/STATE
-import { appInitialState } from '../../app/store/state';
 //SERVICES
 import asyncStorageService from '../async-store-service/async-store.service';
+//STATE
+import { appInitialState } from '../../app/store/state';
 //TYPES
 import type { IAppState } from '../../app/store/model/state.model';
 
@@ -9,19 +9,17 @@ class AppRepository {
 	#defaultAppState: IAppState;
 	#appStoreName: string;
 
-	constructor(defaultAppState: IAppState, appStoreName: string) {
-		this.#defaultAppState = defaultAppState;
+	constructor(appInitialState: IAppState, appStoreName: string) {
+		this.#defaultAppState = appInitialState;
 		this.#appStoreName = appStoreName;
 	}
 
 	async #getStateFromStorage() {
-		const state = await asyncStorageService.getItem<IAppState>(this.#appStoreName);
-		return state;
+		return await asyncStorageService.getItem<IAppState>(this.#appStoreName);
 	}
 
 	async #sendStateToStorage(data: IAppState) {
-		const result = await asyncStorageService.setItem<IAppState>(this.#appStoreName, data);
-		return result;
+		return await asyncStorageService.setItem<IAppState>(this.#appStoreName, data);
 	}
 
 	#getDefaultState(): IAppState {
@@ -31,7 +29,7 @@ class AppRepository {
 	async getState(): Promise<IAppState | Error> {
 		try {
 			const state = await this.#getStateFromStorage();
-
+    console.log('await fetching state from async storage')
 			if (state === null) {
 				return this.#getDefaultState();
 			}
@@ -41,8 +39,8 @@ class AppRepository {
 			if (error instanceof Error) {
 				return new Error(error.message);
 			} else {
-				return new Error(
-					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
+        return new Error(
+					'Failed to set data to mobile storage. Please restart Your application and try again.'
 				);
 			}
 		}
@@ -57,7 +55,7 @@ class AppRepository {
 				return new Error(error.message);
 			} else {
 				return new Error(
-					'Failed to set data to mobile storage. Please restart Your aplicaaation and try again.'
+					'Failed to set data to mobile storage. Please restart Your application and try again.'
 				);
 			}
 		}

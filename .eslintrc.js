@@ -2,4 +2,7 @@
 module.exports = {
   extends: "expo",
   ignorePatterns: ["/dist/*"],
+  rules: {
+    "react/display-name": "off"
+  }
 };

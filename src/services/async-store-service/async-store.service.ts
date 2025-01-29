@@ -2,13 +2,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class AsyncStorageService {
-	async getItem<T>(itemName: string): Promise<T | Error | null> {
+	async getItem<T>(itemName: string): Promise<T | null> {
 		try {
 			const jsonValue = await AsyncStorage.getItem(itemName);
 
 			if (jsonValue) {
-				const parsedData: T = JSON.parse(jsonValue);
-				return parsedData;
+				return JSON.parse(jsonValue);
 			}
 
 			return null;
