@@ -10,7 +10,7 @@ export const appSlice = createSlice({
 	initialState: appInitialState,
 
 	reducers: {
-		chengeTheme: (state, action: PayloadAction<ISetNewThemeAction>) => {
+		changeTheme: (state, action: PayloadAction<ISetNewThemeAction>) => {
 			state.theme = action.payload.newTheme;
 		}
 	}
