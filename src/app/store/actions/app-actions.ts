@@ -4,7 +4,7 @@ import appRepository from '../../../services/app-repository/app-repository';
 import appSlice from '../slices/app-slice';
 //TYPES
 import type { IUpdateStateAction } from '../model/actions.model';
-import type { AppThunk } from '../model/store.model';
+import type { AppThunk } from '../../../shaared/store/models/store.model';
 
 const updateState =
 	(action: IUpdateStateAction): AppThunk =>

@@ -3,7 +3,7 @@ import appSlice from '../../../app/store/slices/app-slice';
 //REPOSITORY
 import appRepository from '../../../services/app-repository/app-repository';
 //TYPES
-import type { AppThunk } from '../../../app/store/model/store.model';
+import type { AppThunk } from '../../../shaared/store/models/store.model';
 import type { ISetNewThemeAction } from '../model/actions.model';
 
 const setNewThemeAction =

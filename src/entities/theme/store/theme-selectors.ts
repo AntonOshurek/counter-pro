@@ -1,5 +1,5 @@
 //types
-import type { RootState } from '../../../app/store/model/store.model';
+import type { RootState } from '../../../shaared/store/models/store.model';
 import type { Themes } from '../model/theme.model';
 
 const SelectorGetTheme =
