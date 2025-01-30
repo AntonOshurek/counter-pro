@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const globalStyle = StyleSheet.create({
+const semanticStyle = StyleSheet.create({
 	visuallyHidden: {
 		position: 'absolute',
 		top: -9999,
@@ -11,4 +11,4 @@ const globalStyle = StyleSheet.create({
 	}
 });
 
-export { globalStyle };
+export { semanticStyle };

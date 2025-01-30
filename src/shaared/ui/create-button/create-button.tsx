@@ -6,12 +6,12 @@ import type { CreateButtonProps } from './model/create-button.model';
 import { PlusIcon } from '../../icons';
 //STYLES
 import style from './style/style';
-import { globalStyle } from '../../../global/styles/style';
+import { semanticStyle } from '../../styles/semantic';
 
 const CreateButton = ({ onPress, hiddenText }: CreateButtonProps): JSX.Element => {
 	return (
 		<Pressable style={style.createButton} onPress={onPress}>
-			<Text style={globalStyle.visuallyHidden}>{hiddenText}</Text>
+			<Text style={semanticStyle.visuallyHidden}>{hiddenText}</Text>
 			<PlusIcon width={40} height={40} color='#000000' />
 		</Pressable>
 	);
