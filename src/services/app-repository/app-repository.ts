@@ -1,7 +1,7 @@
 //SERVICES
 import asyncStorageService from '../async-store-service/async-store.service';
 //STATE
-import { appInitialState } from '../../app/store/state';
+import { appInitialState } from '../../app/store/state/app-state';
 //TYPES
 import type { IAppState } from '../../app/store/model/state.model';
 
@@ -9,8 +9,8 @@ class AppRepository {
 	#defaultAppState: IAppState;
 	#appStoreName: string;
 
-	constructor(appInitialState: IAppState, appStoreName: string) {
-		this.#defaultAppState = appInitialState;
+	constructor(initialState: IAppState, appStoreName: string) {
+		this.#defaultAppState = initialState;
 		this.#appStoreName = appStoreName;
 	}
 
