@@ -1,12 +1,12 @@
 //REACT
 import { ComponentType, useEffect } from 'react';
 //STORE
-import { useAppDispatch } from '../hooks/hooks';
-import { updateState } from '../actions/app-actions';
+import { useAppDispatch } from '../store/hooks/hooks';
+import { updateState } from '../store/actions/app-actions';
 //REPOSITORY
-import appRepository from '../../../services/app-repository/app-repository';
+import appRepository from '../../services/app-repository/app-repository';
 
-const FetchDataHoc = <P extends object>(Component: ComponentType<P>) => {
+const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
@@ -32,4 +32,4 @@ const FetchDataHoc = <P extends object>(Component: ComponentType<P>) => {
 		return <Component {...props} />;
 	};
 };
-export default FetchDataHoc;
+export default FetchAppStoreHoc;
