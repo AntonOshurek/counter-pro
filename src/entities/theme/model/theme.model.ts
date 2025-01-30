@@ -1,4 +1,4 @@
 //CONSTANTS
-import { themes } from '../data/constants';
+import { themes } from '../../../shaared/constants/theme';
 
 export type Themes = (typeof themes)[number];

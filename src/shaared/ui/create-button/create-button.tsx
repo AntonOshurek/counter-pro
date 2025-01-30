@@ -6,7 +6,7 @@ import type { CreateButtonProps } from './model/create-button.model';
 import { PlusIcon } from '../../icons';
 //STYLES
 import style from './style/style';
-import { semanticStyle } from '../../styles/semantic';
+import { semanticStyle } from '../../styles/';
 
 const CreateButton = ({ onPress, hiddenText }: CreateButtonProps): JSX.Element => {
 	return (

@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -8,7 +9,7 @@ import {
 //UI
 import { CreateButton } from '../../shaared/ui';
 
-const CreateNewGroup = (): JSX.Element => {
+const CreateNewGroup = (): ReactElement => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
 	const goToNewGroup = () => {

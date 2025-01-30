@@ -11,4 +11,4 @@ const semanticStyle = StyleSheet.create({
 	}
 });
 
-export { semanticStyle };
+export default semanticStyle;

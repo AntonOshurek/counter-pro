@@ -1,7 +1,7 @@
 //NATIVE
 import { Text, View } from 'react-native';
 //ENTITIES
-import { Count } from '../../entities';
+import Count from '../../entities/count/count.entitiy';
 //STYLES
 // import style from './styles/style';
 
