@@ -1,7 +1,7 @@
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
-import { NewCounterWidget } from '../../widgest';
+import { NewCounterWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
