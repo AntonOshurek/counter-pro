@@ -3,27 +3,28 @@ import { useEffect, useState } from 'react';
 import { View, Text, Switch } from 'react-native';
 //STORE
 import { useAppSelector, useAppDispatch } from '../../shaared/store';
+//ENTITIES
 import { SelectorGetTheme } from '../../entities/theme';
 import { SetNewThemeAction } from '../../entities/theme';
 //CONSTANTS
 import { themes } from '../../shaared/constants/theme';
 //TYPES
-import { Themes } from '../../entities/theme';
+import type { Themes } from '../../entities/theme';
 
 const ThemeSwitcher = () => {
 	const [currentTheme, setCurrentTheme] = useState<Themes>(
 		useAppSelector(SelectorGetTheme())
 	);
 
-  const dispatch = useAppDispatch();
+	const dispatch = useAppDispatch();
 
 	const handleThemeChange = (newTheme: Themes): void => {
 		setCurrentTheme(newTheme);
 	};
 
-  useEffect(() => {
-    dispatch(SetNewThemeAction({newTheme: currentTheme}));
-  }, [dispatch, currentTheme]);
+	useEffect(() => {
+		dispatch(SetNewThemeAction({ newTheme: currentTheme }));
+	}, [dispatch, currentTheme]);
 
 	return (
 		<View>
@@ -37,7 +38,7 @@ const ThemeSwitcher = () => {
 						thumbColor={currentTheme === theme ? '#f5dd4b' : '#f4f3f4'}
 						ios_backgroundColor='#3e3e3e'
 						onValueChange={() => handleThemeChange(theme)}
-						// value={isEnabled}
+						value={currentTheme === theme}
 					/>
 				</View>
 			))}
