@@ -5,7 +5,7 @@ import style from './styles/style';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
-import { HomeScreenControlsWidget } from '../../widgest';
+import { HomeScreenControlsWidget } from '../../widgets';
 
 const HomeScreen = () => {
 	return (

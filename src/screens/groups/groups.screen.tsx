@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
-import { GroupsScreenControlsWidget } from '../../widgest';
+import { GroupsScreenControlsWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
