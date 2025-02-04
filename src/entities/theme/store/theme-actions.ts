@@ -16,12 +16,12 @@ const SetNewThemeAction =
         .then(res => {
           if (res !== true) {
             console.log(res);
-            //dispatch error if occur to redux and show this error in ui
+            //dispatch error if occur to redux and show this error in styles
           }
         })
         .catch(error => {
           console.log(error);
-          //dispatch error if occur to redux and show this error in ui
+          //dispatch error if occur to redux and show this error in styles
         });
     };
 
