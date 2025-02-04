@@ -1,8 +1,12 @@
 import { StyleSheet } from 'react-native';
+//TYPES
+import { ColorThemes } from '../../../../entities/theme/';
+//COLORS
+import { colors } from '../../../styles';
 
-const style = StyleSheet.create({
+const style = (theme: ColorThemes) => StyleSheet.create({
   switcher: {
-
+    backgroundColor: colors[theme].secondary,
   }
 });
 

@@ -1,4 +1,5 @@
 //CONSTANTS
-import { themes } from '../../../shaared/constants/theme';
+import { appThemes, colorThemes} from '../../../shaared/constants/theme';
 
-export type Themes = (typeof themes)[number];
+export type AppThemes = (typeof appThemes)[number];
+export type ColorThemes = (typeof colorThemes)[number];

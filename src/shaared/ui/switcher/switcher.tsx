@@ -9,9 +9,10 @@ import style from './styles/style';
 
 const Switcher = <T,>({ onChange, value, isChecked, placeholder }: ISwitcherProps<T>) => {
 	const theme = useThemeResolver();
+  const styles = style(theme);
 
 	return (
-		<View style={style.switcher}>
+		<View style={styles.switcher}>
 			<Text>
 				{placeholder} - current theme is {theme}
 			</Text>

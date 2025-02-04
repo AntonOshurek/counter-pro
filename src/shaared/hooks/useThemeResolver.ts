@@ -1,15 +1,20 @@
 import { useColorScheme } from 'react-native';
 //ENTITIES
-import { SelectorGetTheme, Themes } from '../../entities/theme';
+import { SelectorGetTheme } from '../../entities/theme';
 //STORE
 import { useAppSelector } from '../store';
+import { AppTheme } from '../constants/theme';
+import { ColorThemes } from '../../entities/theme/';
 
-const useThemeResolver = (): Omit<Themes, 'system'> => {
+const useThemeResolver = (): ColorThemes => {
 	const storeTheme = useAppSelector(SelectorGetTheme());
 	const systemTheme = useColorScheme();
 
-	if (storeTheme === 'system') {
-		return systemTheme === 'dark' ? 'dark' : 'light';
+  console.log(storeTheme)
+  console.log(systemTheme)
+
+	if (storeTheme === AppTheme.system) {
+		return systemTheme === AppTheme.dark ? AppTheme.dark : AppTheme.light;
 	}
 
 	return storeTheme;
