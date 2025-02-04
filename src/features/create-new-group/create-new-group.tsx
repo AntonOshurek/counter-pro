@@ -7,7 +7,7 @@ import {
 	StackParams
 } from '../../app/navigation/model/index.model';
 //UI
-import { CreateButton } from '../../shaared/ui';
+import CreateButton from '../../shaared/ui/create-button/create-button';
 
 const CreateNewGroup = (): ReactElement => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();

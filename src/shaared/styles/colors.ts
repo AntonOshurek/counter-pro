@@ -1,4 +1,14 @@
-const colors = {
+import { ColorThemes } from '../../entities/theme/';
+
+interface IColors {
+  primary: string;
+  secondary: string;
+  tertiary: string;
+  accent: string;
+  tint: string;
+}
+
+const colors: Record<ColorThemes, IColors> = {
 	light: {
 		primary: '#f3f4f6',
 		secondary: '#ffffff',

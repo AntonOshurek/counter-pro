@@ -1,24 +1,25 @@
 import { useEffect, useState } from 'react';
 //NATIVE
-import { View, Text, Switch } from 'react-native';
+import { View, Text } from 'react-native';
 //STORE
 import { useAppSelector, useAppDispatch } from '../../shaared/store';
 //ENTITIES
-import { SelectorGetTheme } from '../../entities/theme';
-import { SetNewThemeAction } from '../../entities/theme';
+import { SelectorGetTheme, SetNewThemeAction } from '../../entities/theme';
+//UI
+import Switcher from '../../shaared/ui/switcher/switcher';
 //CONSTANTS
-import { themes } from '../../shaared/constants/theme';
+import { appThemes } from '../../shaared/constants/theme';
 //TYPES
-import type { Themes } from '../../entities/theme';
+import type { AppThemes } from '../../entities/theme';
 
 const ThemeSwitcher = () => {
-	const [currentTheme, setCurrentTheme] = useState<Themes>(
+	const [currentTheme, setCurrentTheme] = useState<AppThemes>(
 		useAppSelector(SelectorGetTheme())
 	);
 
 	const dispatch = useAppDispatch();
 
-	const handleThemeChange = (newTheme: Themes): void => {
+	const handleThemeChange = (newTheme: AppThemes): void => {
 		setCurrentTheme(newTheme);
 	};
 
@@ -30,17 +31,14 @@ const ThemeSwitcher = () => {
 		<View>
 			<Text>theme switcher</Text>
 
-			{themes.map(theme => (
-				<View key={theme}>
-					<Text>{theme}</Text>
-					<Switch
-						trackColor={{ false: '#767577', true: '#81b0ff' }}
-						thumbColor={currentTheme === theme ? '#f5dd4b' : '#f4f3f4'}
-						ios_backgroundColor='#3e3e3e'
-						onValueChange={() => handleThemeChange(theme)}
-						value={currentTheme === theme}
-					/>
-				</View>
+			{appThemes.map(theme => (
+				<Switcher<AppThemes>
+					value={theme}
+					isChecked={currentTheme === theme}
+					onChange={handleThemeChange}
+					placeholder={theme}
+					key={theme}
+				/>
 			))}
 		</View>
 	);
