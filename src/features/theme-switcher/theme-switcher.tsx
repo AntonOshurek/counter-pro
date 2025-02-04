@@ -6,6 +6,8 @@ import { useAppSelector, useAppDispatch } from '../../shaared/store';
 //ENTITIES
 import { SelectorGetTheme } from '../../entities/theme';
 import { SetNewThemeAction } from '../../entities/theme';
+//UI
+import Switcher from '../../shaared/ui/switcher/switcher';
 //CONSTANTS
 import { themes } from '../../shaared/constants/theme';
 //TYPES
@@ -31,16 +33,13 @@ const ThemeSwitcher = () => {
 			<Text>theme switcher</Text>
 
 			{themes.map(theme => (
-				<View key={theme}>
-					<Text>{theme}</Text>
-					<Switch
-						trackColor={{ false: '#767577', true: '#81b0ff' }}
-						thumbColor={currentTheme === theme ? '#f5dd4b' : '#f4f3f4'}
-						ios_backgroundColor='#3e3e3e'
-						onValueChange={() => handleThemeChange(theme)}
-						value={currentTheme === theme}
-					/>
-				</View>
+				<Switcher<Themes>
+					value={theme}
+					isChecked={currentTheme === theme}
+					onChange={handleThemeChange}
+					placeholder={theme}
+					key={theme}
+				/>
 			))}
 		</View>
 	);
