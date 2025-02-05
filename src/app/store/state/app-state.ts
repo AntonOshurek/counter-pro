@@ -4,5 +4,5 @@ import { Themes } from '../../../shaared/constants';
 import type { IAppState } from '../model/state.model';
 
 export const appInitialState: IAppState = {
-  theme: Themes.light
+  theme: Themes.system
 };
