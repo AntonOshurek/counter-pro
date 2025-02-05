@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
 	settingsScreen: {
-		justifyContent: 'space-between'
+		justifyContent: 'flex-end',
+    gap: 40,
+    paddingBottom: 30
 	}
 });
 
