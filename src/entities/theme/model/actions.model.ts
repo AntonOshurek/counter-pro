@@ -1,5 +1,5 @@
-import type { Themes } from './theme.model';
+import { AppThemes } from './theme.model';
 
 export interface ISetNewThemeAction {
-  newTheme: Themes;
+  newTheme: AppThemes;
 }

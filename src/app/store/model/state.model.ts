@@ -1,6 +1,6 @@
 //TYPES
-import type { Themes } from '../../../entities/theme/';
+import type { AppThemes } from '../../../entities/theme/';
 
 export interface IAppState {
-	theme: Themes;
+	theme: AppThemes;
 }
