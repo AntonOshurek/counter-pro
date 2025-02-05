@@ -4,13 +4,11 @@ import { View, Text } from 'react-native';
 //STORE
 import { useAppSelector, useAppDispatch } from '../../shaared/store';
 //ENTITIES
-import { SelectorGetTheme, SetNewThemeAction } from '../../entities/theme';
+import { SelectorGetTheme, SetNewThemeAction, AppThemes } from '../../entities/theme';
 //UI
 import Switcher from '../../shaared/ui/switcher/switcher';
 //CONSTANTS
-import { appThemes } from '../../shaared/constants/theme';
-//TYPES
-import type { AppThemes } from '../../entities/theme';
+import { appThemes } from '../../shaared/constants';
 
 const ThemeSwitcher = () => {
 	const [currentTheme, setCurrentTheme] = useState<AppThemes>(
