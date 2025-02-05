@@ -6,19 +6,20 @@ import useThemeResolver from '../../hooks/useThemeResolver';
 import type { ISwitcherProps } from './model/switcher.model';
 //STYLES
 import style from './styles/style';
+import { colors } from '../../styles';
 
-const Switcher = <T,>({ onChange, value, isChecked, placeholder }: ISwitcherProps<T>) => {
+const Switcher = <T,>({ onChange, value, isChecked, label }: ISwitcherProps<T>) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
 
 	return (
 		<View style={s.switcher}>
-			<Text>
-				{placeholder} - current theme is {theme}
+			<Text style={s.label}>
+				{label}
 			</Text>
 			<Switch
-				trackColor={{ false: '#767577', true: '#81b0ff' }}
-				thumbColor={isChecked ? '#f5dd4b' : '#f4f3f4'}
+				trackColor={{ false: colors[theme].mainSurfacePrimary, true: colors[theme].basicGreen }}
+				thumbColor={isChecked ? colors[theme].alwaysWhite : colors[theme].alwaysWhite}
 				ios_backgroundColor='#3e3e3e'
 				onValueChange={() => onChange(value)}
 				value={isChecked}

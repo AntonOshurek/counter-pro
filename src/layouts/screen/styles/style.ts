@@ -1,15 +1,14 @@
 import { StyleSheet } from 'react-native';
+import { ColorThemes } from '../../../entities/theme';
+import { colors } from '../../../shaared/styles';
 
-const style = StyleSheet.create({
+const style = (theme: ColorThemes) => StyleSheet.create({
 	ScreenLayout: {
 		flex: 1,
 		paddingInline: 20,
 		paddingBottom: 20,
-		paddingBlockStart: 10
-		// borderWidth: 2,
-		// borderColor: 'tomato',
-		// borderRadius: 10, // Закруглённые углы
-		// backgroundColor: 'white' // Цвет фона внутри
+		paddingBlockStart: 10,
+    backgroundColor: colors[theme].mainSurfacePrimary,
 	}
 });
 

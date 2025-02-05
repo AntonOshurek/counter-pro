@@ -10,8 +10,6 @@ const useThemeResolver = (): ColorThemes => {
 	const storeTheme = useAppSelector(SelectorGetTheme());
 	const systemTheme = useColorScheme();
 
-  console.log('device theme is - ' + systemTheme);
-
 	if (storeTheme === Themes.system) {
 		return systemTheme === Themes.dark ? Themes.dark : Themes.light;
 	}

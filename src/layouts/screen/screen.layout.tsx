@@ -5,9 +5,13 @@ import { View } from 'react-native';
 import type { ScreenLayoutProps } from './model/screen-layout.model';
 //STYLES
 import style from './styles/style';
+import useThemeResolver from '../../shaared/hooks/useThemeResolver';
 
 const ScreenLayout = ({ children, additionalClass }: ScreenLayoutProps): JSX.Element => {
-	return <View style={[style.ScreenLayout, additionalClass]}>{children}</View>;
+  const theme = useThemeResolver();
+  const s = style(theme);
+
+	return <View style={[s.ScreenLayout, additionalClass]}>{children}</View>;
 };
 
 export default ScreenLayout;
