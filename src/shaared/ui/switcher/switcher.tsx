@@ -14,11 +14,9 @@ const Switcher = <T,>({ onChange, value, isChecked, label }: ISwitcherProps<T>) 
 
 	return (
 		<View style={s.switcher}>
-			<Text style={s.label}>
-				{label}
-			</Text>
+			<Text style={s.label}>{label}</Text>
 			<Switch
-				trackColor={{ false: colors[theme].mainSurfacePrimary, true: colors[theme].basicGreen }}
+				trackColor={{ false: colors[theme].switchBg, true: colors[theme].switchActive }}
 				thumbColor={isChecked ? colors[theme].alwaysWhite : colors[theme].alwaysWhite}
 				ios_backgroundColor='#3e3e3e'
 				onValueChange={() => onChange(value)}
