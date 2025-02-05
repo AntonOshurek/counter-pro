@@ -9,6 +9,8 @@ import { SelectorGetTheme, SetNewThemeAction, AppThemes } from '../../entities/t
 import useThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
 import Switcher from '../../shaared/ui/switcher/switcher';
+//LAYOUTS
+import { SettingsGroupLayout } from '../../layouts/';
 //CONSTANTS
 import { appThemes } from '../../shaared/constants';
 //STYLES
@@ -33,7 +35,7 @@ const ThemeSwitcher = () => {
 	}, [dispatch, currentTheme]);
 
 	return (
-		<View style={s.themeSwitcher}>
+		<SettingsGroupLayout additionalClass={s.themeSwitcher}>
 			<Text style={s.themeSwitcherTitle}>theme switcher</Text>
 
 			<View>
@@ -47,7 +49,7 @@ const ThemeSwitcher = () => {
 					/>
 				))}
 			</View>
-		</View>
+		</SettingsGroupLayout>
 	);
 };
 
