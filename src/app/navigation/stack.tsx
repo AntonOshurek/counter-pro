@@ -10,14 +10,14 @@ import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //STYLES
 import { colors } from '../../shaared/styles';
 
-const Stack = (): JSX.Element => {
+const Stack = () => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();
   const theme = UseThemeResolver();
 
 	return (
 		<Stack.Navigator initialRouteName={StackParams.BottomTabs} screenOptions={{
       headerStyle: {
-        backgroundColor: colors[theme].mainSurfacePrimary
+        backgroundColor: colors[theme].mainSurfaceTertiary
       },
       headerTintColor: colors[theme].textPrimary,
     }}>

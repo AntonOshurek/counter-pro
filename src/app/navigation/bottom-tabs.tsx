@@ -11,7 +11,7 @@ import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '../../shaared/icons/
 //STYLES
 import { colors } from '../../shaared/styles';
 
-const BottomTabs = (): JSX.Element => {
+const BottomTabs = () => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();
   const theme = UseThemeResolver();
 
@@ -21,11 +21,11 @@ const BottomTabs = (): JSX.Element => {
 			screenOptions={{
 				tabBarShowLabel: false,
         headerStyle: {
-          backgroundColor: colors[theme].mainSurfacePrimary
+          backgroundColor: colors[theme].mainSurfaceTertiary
         },
         headerTintColor: colors[theme].textPrimary,
         tabBarStyle: {
-          backgroundColor: colors[theme].mainSurfacePrimary,
+          backgroundColor: colors[theme].mainSurfaceTertiary,
           borderTopWidth: 0,
           paddingTop: 5,
           paddingBottom: 15,
