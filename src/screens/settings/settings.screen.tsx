@@ -1,5 +1,3 @@
-//NATIVE
-import { Text } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
