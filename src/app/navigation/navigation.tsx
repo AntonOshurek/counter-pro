@@ -5,7 +5,7 @@ import Stack from './stack';
 const Navigation = () => {
 	return (
 		<NavigationContainer>
-			<Stack/>
+			<Stack />
 		</NavigationContainer>
 	);
 };
