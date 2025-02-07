@@ -38,7 +38,7 @@ const ThemeSwitcher = () => {
 		<SettingsGroupLayout additionalClass={s.themeSwitcher}>
 			<Text style={s.themeSwitcherTitle}>theme switcher</Text>
 
-			<View>
+			<View style={s.themeSwitcherGroup}>
 				{appThemes.map(theme => (
 					<Switcher<AppThemes>
 						value={theme}
