@@ -5,18 +5,28 @@ import BottomTabs from './bottom-tabs';
 import GroupTopTabs from './group-top-tabs';
 //TYPES
 import { NavigationStackParams, StackParams } from './model/stack.model';
+//HOOKS
+import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//STYLES
+import { colors } from '../../shaared/styles';
 
 const Stack = (): JSX.Element => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();
+  const theme = UseThemeResolver();
 
 	return (
-		<Stack.Navigator initialRouteName={StackParams.BottomTabs} screenOptions={{}}>
+		<Stack.Navigator initialRouteName={StackParams.BottomTabs} screenOptions={{
+      headerStyle: {
+        backgroundColor: colors[theme].mainSurfacePrimary
+      },
+      headerTintColor: colors[theme].textPrimary,
+    }}>
 			<Stack.Screen
 				name={StackParams.BottomTabs}
 				component={BottomTabs}
 				options={{
 					title: 'Home',
-					headerShown: false
+					headerShown: false,
 				}}
 			/>
 			<Stack.Screen

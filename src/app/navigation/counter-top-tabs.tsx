@@ -2,6 +2,10 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
 import { CounterScreen, CounterSettingsScreen } from '../../screens';
+//HOOKS
+import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//STYLES
+import { colors } from '../../shaared/styles';
 //TYPES
 import {
 	CounterTopTabsNavigationParams,
@@ -10,6 +14,7 @@ import {
 
 const CounterTopTabs = (): JSX.Element => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();
+	const theme = UseThemeResolver();
 
 	return (
 		<Tab.Navigator>
