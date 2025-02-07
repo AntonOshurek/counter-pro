@@ -7,7 +7,7 @@ import { GroupsScreenControlsWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
-const GroupsScreen = (): JSX.Element => {
+const GroupsScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.groupsScreen}>
 			<View>

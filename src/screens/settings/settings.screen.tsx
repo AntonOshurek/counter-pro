@@ -5,7 +5,7 @@ import { UiSettingsWidget, SystemSettingsWidget } from '../../widgets/';
 //STYLES
 import style from './styles/style';
 
-const SettingsScreen = (): JSX.Element => {
+const SettingsScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.settingsScreen}>
 			<SystemSettingsWidget></SystemSettingsWidget>

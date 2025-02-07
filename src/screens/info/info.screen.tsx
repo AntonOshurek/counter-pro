@@ -5,7 +5,7 @@ import { ScreenLayout } from '../../layouts';
 //STYLES
 import style from './styles/style';
 
-const InfoScreen = (): JSX.Element => {
+const InfoScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.infoScreen}>
 			<View style={style.about}>

@@ -1,9 +1,9 @@
 //NATIVE
 import { View, Text } from 'react-native';
-//STYLES
-import style from './styles/style';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
+//STYLES
+import style from './styles/style';
 
 const GroupScreen = () => {
 	return (

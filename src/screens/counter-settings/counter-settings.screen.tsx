@@ -5,7 +5,7 @@ import { ScreenLayout } from '../../layouts';
 //STYLES
 import style from './styles/style';
 
-const CounterSettingsScreen = (): JSX.Element => {
+const CounterSettingsScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.counterSettingsScreen}>
 			<View>

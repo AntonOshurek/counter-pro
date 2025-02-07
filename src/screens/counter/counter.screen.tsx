@@ -5,7 +5,7 @@ import { NewCounterWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
-const CounterScreen = (): JSX.Element => {
+const CounterScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.CounterScreen}>
 			<NewCounterWidget />
