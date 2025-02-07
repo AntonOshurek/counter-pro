@@ -2,6 +2,8 @@
 import { Text, View } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
+//UI
+import { Paragraph } from '../../shaared/ui';
 //STYLES
 import style from './styles/style';
 
@@ -9,12 +11,12 @@ const InfoScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.infoScreen}>
 			<View style={style.about}>
-				<Text>This application created by AADev</Text>
+				<Paragraph size={'large'} contentType={'primary'}>This application created by AADev</Paragraph>
 			</View>
 
 			<View style={style.releaseInfo}>
-				<Text>App version - 0.0.1</Text>
-				<Text>Release date - 27.01.2025</Text>
+				<Paragraph size={'small'} contentType={'secondary'}>App version - 0.0.1</Paragraph>
+				<Paragraph size={'small'} contentType={'secondary'}>Release date - 27.01.2025</Paragraph>
 			</View>
 		</ScreenLayout>
 	);
