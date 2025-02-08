@@ -34,7 +34,7 @@ const GroupTopTabs = () => {
 				tabBarInactiveTintColor: colors[theme].textSecondary
 			}}
 		>
-			<Tab.Screen name={GroupTopTabsParams.Group} component={GroupScreen} />
+			<Tab.Screen name={GroupTopTabsParams.Group} component={GroupScreen} initialParams={{ groupId }} />
 			<Tab.Screen name={GroupTopTabsParams.Settings} component={GroupSettingsScreen} />
 		</Tab.Navigator>
 	);

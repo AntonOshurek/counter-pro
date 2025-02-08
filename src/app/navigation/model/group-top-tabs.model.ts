@@ -4,8 +4,8 @@ enum GroupTopTabsParams {
 }
 
 type GroupTopTabsNavigationParams = {
-	[GroupTopTabsParams.Group]: undefined;
-	[GroupTopTabsParams.Settings]: undefined;
+	[GroupTopTabsParams.Group]: {groupId?: string};
+	[GroupTopTabsParams.Settings]: {groupId?: string};
 };
 
 export { GroupTopTabsNavigationParams, GroupTopTabsParams };
