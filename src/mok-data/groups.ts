@@ -1,8 +1,5 @@
-export interface IGroup {
-  id: string;
-  name: string;
-  counters: string[];
-}
+//TYPES
+import { IGroup } from '../entities/group/';
 
 const groups: IGroup[] = [
 	{

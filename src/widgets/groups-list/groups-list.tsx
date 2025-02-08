@@ -3,7 +3,7 @@ import { FlatList, View } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
-import { Paragraph } from '../../shaared/ui';
+import { GroupListItem } from '../';
 //STYLES
 import style from './styles/style';
 
@@ -19,16 +19,7 @@ const GroupsList = () => {
 			style={s.groupsList}
 			data={groups}
 			keyExtractor={item => item.id}
-			renderItem={({ item }) => (
-				<View style={s.group}>
-					<Paragraph contentType={'primary'} size={'large'}>
-						{item.name}
-					</Paragraph>
-					<Paragraph contentType={'secondary'} size={'medium'}>
-						Counters: {item.counters.length}
-					</Paragraph>
-				</View>
-			)}
+			renderItem={({ item }) => <GroupListItem group={item} />}
 			contentContainerStyle={{ gap: 20, paddingBottom: 100 }}
 		/>
 	);
