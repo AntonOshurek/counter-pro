@@ -4,16 +4,14 @@ import { colors } from '../../../shaared/styles';
 
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({
-		ScreenLayout: {
-			flex: 1,
+		groupsList: {
 			paddingInline: 20,
-			paddingBottom: 20,
-			paddingBlockStart: 10,
-			backgroundColor: colors[theme].mainSurfacePrimary
+			paddingTop: 20
 		},
-		ScreenLayoutWithoutPadding: {
-			flex: 1,
-			backgroundColor: colors[theme].mainSurfacePrimary
+		group: {
+      borderRadius: 10,
+      padding: 10,
+			backgroundColor: colors[theme].mainSurfaceTertiary
 		}
 	});
 

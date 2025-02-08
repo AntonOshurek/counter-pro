@@ -1,19 +1,14 @@
-//NATIVE
-import { View, Text } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //WIDGETS
-import { GroupsScreenControlsWidget } from '../../widgets';
+import { GroupsScreenControlsWidget, GroupsList } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
 const GroupsScreen = () => {
 	return (
-		<ScreenLayout additionalClass={style.groupsScreen}>
-			<View>
-				<Text>List of groups</Text>
-			</View>
-
+		<ScreenLayout additionalClass={style.groupsScreen} withoutPaddings={true}>
+			<GroupsList />
 			<GroupsScreenControlsWidget />
 		</ScreenLayout>
 	);
