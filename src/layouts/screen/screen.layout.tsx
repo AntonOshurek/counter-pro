@@ -9,12 +9,12 @@ import type { ScreenLayoutProps } from './model/screen-layout.model';
 import style from './styles/style';
 import { colors } from '../../shaared/styles';
 
-const ScreenLayout = ({ children, additionalClass }: ScreenLayoutProps) => {
+const ScreenLayout = ({ children, additionalClass, withoutPaddings }: ScreenLayoutProps) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
 
 	return (
-		<View style={[s.ScreenLayout, additionalClass]}>
+		<View style={[withoutPaddings ? s.ScreenLayoutWithoutPadding : s.ScreenLayout, additionalClass]}>
 			<StatusBar
         style={theme === 'dark' ? 'light' : 'dark'}
 				backgroundColor={colors[theme].mainSurfaceTertiary}
