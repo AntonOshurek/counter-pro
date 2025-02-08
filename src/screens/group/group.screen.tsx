@@ -10,6 +10,7 @@ const GroupScreen = () => {
 		<ScreenLayout additionalClass={style.groupScreen}>
 			<View>
 				<Text>Group item screen</Text>
+
 			</View>
 		</ScreenLayout>
 	);

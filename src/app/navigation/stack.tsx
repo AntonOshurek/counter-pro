@@ -12,21 +12,24 @@ import { colors } from '../../shaared/styles';
 
 const Stack = () => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();
-  const theme = UseThemeResolver();
+	const theme = UseThemeResolver();
 
 	return (
-		<Stack.Navigator initialRouteName={StackParams.BottomTabs} screenOptions={{
-      headerStyle: {
-        backgroundColor: colors[theme].mainSurfaceTertiary
-      },
-      headerTintColor: colors[theme].textPrimary,
-    }}>
+		<Stack.Navigator
+			initialRouteName={StackParams.BottomTabs}
+			screenOptions={{
+				headerStyle: {
+					backgroundColor: colors[theme].mainSurfaceTertiary
+				},
+				headerTintColor: colors[theme].textPrimary
+			}}
+		>
 			<Stack.Screen
 				name={StackParams.BottomTabs}
 				component={BottomTabs}
 				options={{
 					title: 'Home',
-					headerShown: false,
+					headerShown: false
 				}}
 			/>
 			<Stack.Screen
