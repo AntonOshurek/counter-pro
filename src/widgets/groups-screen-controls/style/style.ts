@@ -4,7 +4,11 @@ const style = StyleSheet.create({
 	groupsScreenControlsWidget: {
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
-		alignItems: 'center'
+		alignItems: 'center',
+    position: 'absolute',
+    bottom: 10,
+    right: 20,
+    width: '100%',
 	}
 });
 

@@ -6,8 +6,7 @@ import { colors } from '../../../styles';
 
 const style = (theme: ColorThemes) => StyleSheet.create({
 	createButton: {
-		borderColor: colors[theme].textPrimary,
-		borderWidth: 1,
+    backgroundColor: colors[theme].mainSurfaceTertiary,
 		borderRadius: 100,
 		paddingVertical: 10,
 		paddingHorizontal: 10

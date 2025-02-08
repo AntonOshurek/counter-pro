@@ -2,6 +2,8 @@
 import { FlatList, Text, View } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//UI
+import { Paragraph } from '../../shaared/ui';
 //STYLES
 import style from './styles/style';
 
@@ -19,8 +21,8 @@ const GroupsList = () => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <View style={s.group}>
-          <Text>{item.name}</Text>
-          <Text>Counters: {item.counters.length}</Text>
+          <Paragraph contentType={'primary'} size={'large'} >{item.name}</Paragraph>
+          <Paragraph contentType={'secondary'} size={'medium'}>Counters: {item.counters.length}</Paragraph>
         </View>
       )}
       contentContainerStyle={{ gap: 100, paddingBottom: 50 }}
