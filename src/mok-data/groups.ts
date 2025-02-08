@@ -1,4 +1,10 @@
-const groups = [
+export interface IGroup {
+  id: string;
+  name: string;
+  counters: string[];
+}
+
+const groups: IGroup[] = [
 	{
 		id: 'g-1',
 		name: 'Group 1',
