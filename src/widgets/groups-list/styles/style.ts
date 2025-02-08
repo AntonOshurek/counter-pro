@@ -5,8 +5,6 @@ import { colors } from '../../../shaared/styles';
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({
 		groupsList: {
-			borderBottomWidth: 1,
-			borderColor: 'tomato',
 			paddingInline: 20,
 			paddingTop: 20
 		},
