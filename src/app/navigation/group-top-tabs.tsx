@@ -13,19 +13,35 @@ import {
 	GroupTopTabsParams
 } from './model/group-top-tabs.model';
 import type { NavigationStackParams, StackParams } from './model/index.model';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useLayoutEffect } from 'react';
 
 type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackParams.GroupScreen>;
+type GroupScreenNavigationProp = NativeStackNavigationProp<
+	NavigationStackParams,
+	StackParams.GroupScreen
+>;
 
-const GroupTopTabs = () => {
+interface IProps {
+	navigation: GroupScreenNavigationProp;
+}
+
+const GroupTopTabs = ({ navigation }: IProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
 	const theme = UseThemeResolver();
 
 	const route = useRoute<GroupScreenRouteProp>();
 	const { groupId } = route.params || {};
 
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			title: groupId ? groupId : 'New Group'
+		});
+	}, [navigation, groupId]);
+
 	return (
 		<Tab.Navigator
-      initialRouteName={groupId ? GroupTopTabsParams.Group : GroupTopTabsParams.Settings}
+			initialRouteName={groupId ? GroupTopTabsParams.Group : GroupTopTabsParams.Settings}
 			screenOptions={{
 				tabBarStyle: {
 					backgroundColor: colors[theme].mainSurfacePrimary
@@ -34,7 +50,11 @@ const GroupTopTabs = () => {
 				tabBarInactiveTintColor: colors[theme].textSecondary
 			}}
 		>
-			<Tab.Screen name={GroupTopTabsParams.Group} component={GroupScreen} initialParams={{ groupId }} />
+			<Tab.Screen
+				name={GroupTopTabsParams.Group}
+				component={GroupScreen}
+				initialParams={{ groupId }}
+			/>
 			<Tab.Screen name={GroupTopTabsParams.Settings} component={GroupSettingsScreen} />
 		</Tab.Navigator>
 	);
