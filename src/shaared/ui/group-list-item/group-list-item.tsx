@@ -26,14 +26,14 @@ const GroupListItem = ({ group }: GroupListItemProps) => {
 
 	return (
 		<View style={s.groupListItem}>
-			<Pressable onPress={openGroup}>
+			{/*<Pressable onPress={openGroup}>*/}
 				<Paragraph contentType={'primary'} size={'large'}>
 					{group.name}
 				</Paragraph>
 				<Paragraph contentType={'secondary'} size={'small'}>
 					Counters: {group.counters.length}
 				</Paragraph>
-			</Pressable>
+			{/*</Pressable>*/}
 		</View>
 	);
 };

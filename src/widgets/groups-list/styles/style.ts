@@ -14,7 +14,10 @@ const style = (theme: ColorThemes) =>
 			borderRadius: 10,
 			padding: 10,
 			backgroundColor: colors[theme].mainSurfaceTertiary
-		}
+		},
+    draggedGroup: {
+      opacity: 0.6
+    }
 	});
 
 export default style;
