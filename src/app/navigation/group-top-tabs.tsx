@@ -9,24 +9,14 @@ import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 import { colors } from '../../shaared/styles';
 //TYPES
 import {
+	GroupScreenRouteProp,
 	GroupTopTabsNavigationParams,
-	GroupTopTabsParams
+	GroupTopTabsParams,
+	GroupTopTabsProps
 } from './model/group-top-tabs.model';
-import type { NavigationStackParams, StackParams } from './model/index.model';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useLayoutEffect } from 'react';
 
-type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackParams.GroupScreen>;
-type GroupScreenNavigationProp = NativeStackNavigationProp<
-	NavigationStackParams,
-	StackParams.GroupScreen
->;
-
-interface IProps {
-	navigation: GroupScreenNavigationProp;
-}
-
-const GroupTopTabs = ({ navigation }: IProps) => {
+const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
 	const theme = UseThemeResolver();
 
