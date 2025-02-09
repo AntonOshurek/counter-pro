@@ -2,7 +2,8 @@ import { Themes, appThemes, colorThemes } from './theme';
 import {
 	BottomTabsScreens,
 	CounterTopTabsScreens,
-	GroupTopTabsScreens
+	GroupTopTabsScreens,
+	StackScreens
 } from './navigation-screens';
 
 export {
@@ -11,5 +12,6 @@ export {
 	colorThemes,
 	GroupTopTabsScreens,
 	CounterTopTabsScreens,
-	BottomTabsScreens
+	BottomTabsScreens,
+	StackScreens
 };

@@ -1,13 +1,10 @@
-enum StackParams {
-	BottomTabs = 'BottomTabs',
-	NewCounterScreen = 'NewCounterScreen',
-	GroupScreen = 'GroupScreen'
-}
+//CONSTANTS
+import { StackScreens } from '../../../shaared/constants';
 
 type NavigationStackParams = {
-	[StackParams.BottomTabs]: undefined;
-	[StackParams.NewCounterScreen]: undefined;
-	[StackParams.GroupScreen]: {groupId?: string};
+	[StackScreens.BottomTabs]: undefined;
+	[StackScreens.NewCounterScreen]: undefined;
+	[StackScreens.GroupScreen]: { groupId?: string };
 };
 
-export { StackParams, NavigationStackParams };
+export { NavigationStackParams };

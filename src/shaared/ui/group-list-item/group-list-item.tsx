@@ -3,12 +3,11 @@ import { Pressable, View } from 'react-native';
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import {
-	NavigationStackParams,
-	StackParams
-} from '../../../app/navigation/model/stack.model';
+import { NavigationStackParams } from '../../../app/navigation/model/stack.model';
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
+//CONSTANTS
+import { StackScreens } from '../../constants';
 //UI
 import Paragraph from '../paragraph/paragraph';
 //MODEL
@@ -22,7 +21,7 @@ const GroupListItem = ({ group }: GroupListItemProps) => {
 	const s = style(theme);
 
 	const openGroup = () => {
-		navigation.navigate(StackParams.GroupScreen, { groupId: group.id });
+		navigation.navigate(StackScreens.GroupScreen, { groupId: group.id });
 	};
 
 	return (

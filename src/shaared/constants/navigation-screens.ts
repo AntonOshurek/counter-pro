@@ -15,4 +15,10 @@ const enum BottomTabsScreens {
 	Groups = 'Groups'
 }
 
-export { GroupTopTabsScreens, CounterTopTabsScreens, BottomTabsScreens };
+const enum StackScreens {
+	BottomTabs = 'BottomTabs',
+	NewCounterScreen = 'NewCounterScreen',
+	GroupScreen = 'GroupScreen'
+}
+
+export { GroupTopTabsScreens, CounterTopTabsScreens, BottomTabsScreens, StackScreens };
