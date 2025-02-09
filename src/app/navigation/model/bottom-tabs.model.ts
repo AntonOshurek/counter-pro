@@ -1,15 +1,11 @@
-enum BottomTabsParams {
-	HomeScreen = 'HomeScreen',
-	SettingsScreen = 'SettingsScreen',
-	InfoScreen = 'InfoScreen',
-	Groups = 'Groups'
-}
+//CONSTANTS
+import { BottomTabsScreens } from '../../../shaared/constants';
 
 type BottomTabsNavigationParams = {
-	[BottomTabsParams.HomeScreen]: undefined;
-	[BottomTabsParams.SettingsScreen]: undefined;
-	[BottomTabsParams.InfoScreen]: undefined;
-	[BottomTabsParams.Groups]: undefined;
+	[BottomTabsScreens.HomeScreen]: undefined;
+	[BottomTabsScreens.SettingsScreen]: undefined;
+	[BottomTabsScreens.InfoScreen]: undefined;
+	[BottomTabsScreens.Groups]: undefined;
 };
 
-export { BottomTabsNavigationParams, BottomTabsParams };
+export { BottomTabsNavigationParams };
