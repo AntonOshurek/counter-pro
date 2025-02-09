@@ -1,25 +1,38 @@
 //NATIVE
 import { RouteProp } from '@react-navigation/native';
+//NAVIGATION
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-//MODEL
-import type { NavigationStackParams, StackParams } from './stack.model';
+//ENTITIES
+import type { CountersGroup } from '../../../entities/group';
 //CONSTANTS
-import { GroupTopTabsScreens } from '../../../shaared/constants';
+import { GroupTopTabsScreens, StackScreens } from '../../../shaared/constants';
+//MODEL
+import type { NavigationStackParams } from './stack.model';
+
+interface GroupScreenRouteProps {
+	group?: CountersGroup;
+}
 
 type GroupTopTabsNavigationParams = {
-	[GroupTopTabsScreens.Group]: {groupId?: string};
-	[GroupTopTabsScreens.Settings]: {groupId?: string};
+	[GroupTopTabsScreens.Group]: GroupScreenRouteProps;
+	[GroupTopTabsScreens.Settings]: GroupScreenRouteProps;
 };
 
-type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackParams.GroupScreen>;
+type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackScreens.GroupScreen>;
 
 type GroupScreenNavigationProp = NativeStackNavigationProp<
-  NavigationStackParams,
-  StackParams.GroupScreen
+	NavigationStackParams,
+	StackScreens.GroupScreen
 >;
 
 interface GroupTopTabsProps {
-  navigation: GroupScreenNavigationProp;
+	navigation: GroupScreenNavigationProp;
 }
 
-export { GroupTopTabsNavigationParams, GroupScreenRouteProp, GroupScreenNavigationProp, GroupTopTabsProps };
+export {
+	GroupTopTabsNavigationParams,
+	GroupScreenRouteProp,
+	GroupScreenNavigationProp,
+	GroupTopTabsProps,
+	GroupScreenRouteProps
+};

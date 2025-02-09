@@ -14,7 +14,7 @@ import {
 	GroupScreenRouteProp,
 	GroupTopTabsNavigationParams,
 	GroupTopTabsProps
-} from './model/group-top-tabs.model';
+} from './model/';
 import { useLayoutEffect } from 'react';
 
 const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
@@ -22,19 +22,17 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const theme = UseThemeResolver();
 
 	const route = useRoute<GroupScreenRouteProp>();
-	const { groupId } = route.params || {};
+	const { group } = route.params || {};
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: groupId ? groupId : 'New Group'
+			title: group ? group.name : 'New Group'
 		});
-	}, [navigation, groupId]);
+	}, [navigation, group]);
 
 	return (
 		<Tab.Navigator
-			initialRouteName={
-				groupId ? GroupTopTabsScreens.Group : GroupTopTabsScreens.Settings
-			}
+			initialRouteName={group ? GroupTopTabsScreens.Group : GroupTopTabsScreens.Settings}
 			screenOptions={{
 				tabBarStyle: {
 					backgroundColor: colors[theme].mainSurfacePrimary
@@ -46,7 +44,7 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 			<Tab.Screen
 				name={GroupTopTabsScreens.Group}
 				component={GroupScreen}
-				initialParams={{ groupId }}
+				initialParams={{ group }}
 			/>
 			<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} />
 		</Tab.Navigator>

@@ -4,7 +4,7 @@ import CounterTopTabs from './counter-top-tabs';
 import BottomTabs from './bottom-tabs';
 import GroupTopTabs from './group-top-tabs';
 //TYPES
-import { NavigationStackParams } from './model/stack.model';
+import { NavigationStackParams } from './model/';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //CONSTANTS
@@ -42,7 +42,6 @@ const Stack = () => {
 			<Stack.Screen
 				name={StackScreens.GroupScreen}
 				component={GroupTopTabs}
-				options={{ title: 'Group title' }}
 			/>
 		</Stack.Navigator>
 	);
