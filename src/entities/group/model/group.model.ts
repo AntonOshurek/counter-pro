@@ -1,7 +1,7 @@
-interface IGroup {
+interface CountersGroup {
 	id: string;
 	name: string;
 	counters: string[];
 }
 
-export { IGroup };
+export { CountersGroup };

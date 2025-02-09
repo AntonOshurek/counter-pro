@@ -1,3 +1,3 @@
-import { IGroup } from './model/group.model';
+import { CountersGroup } from './model/group.model';
 
-export { IGroup };
+export { CountersGroup };

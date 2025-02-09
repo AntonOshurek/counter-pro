@@ -1,8 +1,8 @@
 //TYPES
-import type { IGroup } from '../../../../entities/group';
+import type { CountersGroup } from '../../../../entities/group';
 
 interface GroupListItemProps {
-	group: IGroup;
+	group: CountersGroup;
 }
 
 export { GroupListItemProps };

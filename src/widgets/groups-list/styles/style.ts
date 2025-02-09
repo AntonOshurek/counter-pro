@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { ColorThemes } from '../../../entities/theme';
+//TYPES
+import type { ColorThemes } from '../../../entities/theme';
+//STYLES
 import { colors } from '../../../shaared/styles';
 
 const style = (theme: ColorThemes) =>
@@ -9,8 +11,8 @@ const style = (theme: ColorThemes) =>
 			paddingTop: 20
 		},
 		group: {
-      borderRadius: 10,
-      padding: 10,
+			borderRadius: 10,
+			padding: 10,
 			backgroundColor: colors[theme].mainSurfaceTertiary
 		}
 	});
