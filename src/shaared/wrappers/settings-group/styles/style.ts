@@ -10,6 +10,7 @@ const style = (theme: ColorThemes) =>
       backgroundColor: colors[theme].mainSurfaceTertiary,
       padding: 20,
       borderRadius: 20,
+      gap: 40
     }
   });
 
