@@ -1,17 +1,18 @@
 //NAVIGATION
-import { RouteProp, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
 import { GroupScreen, GroupSettingsScreen } from '../../screens';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//CONSTANTS
+import { GroupTopTabsScreens } from '../../shaared/constants';
 //STYLES
 import { colors } from '../../shaared/styles';
 //TYPES
 import {
 	GroupScreenRouteProp,
 	GroupTopTabsNavigationParams,
-	GroupTopTabsParams,
 	GroupTopTabsProps
 } from './model/group-top-tabs.model';
 import { useLayoutEffect } from 'react';
@@ -31,7 +32,9 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 
 	return (
 		<Tab.Navigator
-			initialRouteName={groupId ? GroupTopTabsParams.Group : GroupTopTabsParams.Settings}
+			initialRouteName={
+				groupId ? GroupTopTabsScreens.Group : GroupTopTabsScreens.Settings
+			}
 			screenOptions={{
 				tabBarStyle: {
 					backgroundColor: colors[theme].mainSurfacePrimary
@@ -41,11 +44,11 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 			}}
 		>
 			<Tab.Screen
-				name={GroupTopTabsParams.Group}
+				name={GroupTopTabsScreens.Group}
 				component={GroupScreen}
 				initialParams={{ groupId }}
 			/>
-			<Tab.Screen name={GroupTopTabsParams.Settings} component={GroupSettingsScreen} />
+			<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} />
 		</Tab.Navigator>
 	);
 };
