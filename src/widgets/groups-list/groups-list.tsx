@@ -1,9 +1,9 @@
 //NATIVE
-import { FlatList, View } from 'react-native';
+import { FlatList } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
-import { GroupListItem } from '../';
+import GroupListItem from '../../shaared/ui/group-list-item/group-list-item';
 //STYLES
 import style from './styles/style';
 

@@ -1,8 +1,8 @@
 //TYPES
 import type { IGroup } from '../../../../entities/group';
 
-interface IGroupListItemProps {
+interface GroupListItemProps {
 	group: IGroup;
 }
 
-export { IGroupListItemProps };
+export { GroupListItemProps };

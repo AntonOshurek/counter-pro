@@ -24,7 +24,16 @@ const style = (theme: ColorThemes) =>
 		},
 		tertiary: {
 			color: colors[theme].textTertiary
-		}
+		},
+    capitalize: {
+      textTransform: 'capitalize'
+    },
+    lowercase: {
+      textTransform: 'lowercase'
+    },
+    uppercase: {
+      textTransform: 'uppercase'
+    }
 	});
 
 export default style;

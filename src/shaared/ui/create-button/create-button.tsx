@@ -2,7 +2,7 @@
 import { Pressable, Text } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
-//TYPES
+//MODEL
 import type { CreateButtonProps } from './model/create-button.model';
 //ICONS
 import { PlusIcon } from '../../icons';

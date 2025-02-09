@@ -10,13 +10,13 @@ import {
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
 //UI
-import { Paragraph } from '../';
+import Paragraph from '../paragraph/paragraph';
 //MODEL
-import type { IGroupListItemProps } from './model/group-list-item.model';
+import type { GroupListItemProps } from './model/group-list-item.model';
 //STYLES
 import style from './styles/style';
 
-const GroupListItem = ({ group }: IGroupListItemProps) => {
+const GroupListItem = ({ group }: GroupListItemProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const theme = UseThemeResolver();
 	const s = style(theme);
@@ -31,7 +31,7 @@ const GroupListItem = ({ group }: IGroupListItemProps) => {
 				<Paragraph contentType={'primary'} size={'large'}>
 					{group.name}
 				</Paragraph>
-				<Paragraph contentType={'secondary'} size={'medium'}>
+				<Paragraph contentType={'secondary'} size={'small'}>
 					Counters: {group.counters.length}
 				</Paragraph>
 			</Pressable>

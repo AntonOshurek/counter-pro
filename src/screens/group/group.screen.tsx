@@ -6,7 +6,7 @@ import { ScreenLayout } from '../../layouts';
 import style from './styles/style';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import type { NavigationStackParams, StackParams } from '../../app/navigation/model/stack.model';
-import { Paragraph } from '../../shaared/ui';
+import Paragraph from '../../shaared/ui/paragraph/paragraph';
 import groups from '../../mok-data/groups';
 
 type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackParams.GroupScreen>;

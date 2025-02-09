@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
 
-interface IParagraphProps {
-  contentType: 'primary' | 'secondary' | 'tertiary',
-  size: 'large' | 'medium' | 'small';
-  children: ReactNode;
+interface ParagraphProps {
+	contentType: 'primary' | 'secondary' | 'tertiary';
+	size: 'large' | 'medium' | 'small';
+	children: ReactNode;
+  textTransform?: 'capitalize' | 'uppercase' | 'lowercase';
 }
 
-export {IParagraphProps};
+export { ParagraphProps };
