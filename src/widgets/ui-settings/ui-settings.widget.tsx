@@ -1,13 +1,13 @@
-//NATIVE
-import { View } from 'react-native';
 //FEATURES
 import { ThemeSwitcher } from '../../features';
+//WRAPPERS
+import { SettingsGroupWrapper } from '../../shaared/wrappers';
 
 const UiSettingsWidget = () => {
 	return (
-		<View>
+		<SettingsGroupWrapper>
 			<ThemeSwitcher />
-		</View>
+		</SettingsGroupWrapper>
 	);
 };
 

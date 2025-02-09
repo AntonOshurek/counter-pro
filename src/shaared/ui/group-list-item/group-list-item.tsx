@@ -3,38 +3,37 @@ import { Pressable, View } from 'react-native';
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import {
-	NavigationStackParams,
-	StackParams
-} from '../../../app/navigation/model/stack.model';
+import { NavigationStackParams } from '../../../app/navigation/model/';
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
+//CONSTANTS
+import { StackScreens } from '../../constants';
 //UI
-import { Paragraph } from '../';
+import Paragraph from '../paragraph/paragraph';
 //MODEL
-import type { IGroupListItemProps } from './model/group-list-item.model';
+import type { GroupListItemProps } from './model/group-list-item.model';
 //STYLES
 import style from './styles/style';
 
-const GroupListItem = ({ group }: IGroupListItemProps) => {
+const GroupListItem = ({ group }: GroupListItemProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const theme = UseThemeResolver();
 	const s = style(theme);
 
 	const openGroup = () => {
-		navigation.navigate(StackParams.GroupScreen, { groupId: group.id });
+		navigation.navigate(StackScreens.GroupScreen, { group: group });
 	};
 
 	return (
 		<View style={s.groupListItem}>
-			<Pressable onPress={openGroup}>
+			{/*<Pressable onPress={openGroup}>*/}
 				<Paragraph contentType={'primary'} size={'large'}>
 					{group.name}
 				</Paragraph>
-				<Paragraph contentType={'secondary'} size={'medium'}>
+				<Paragraph contentType={'secondary'} size={'small'}>
 					Counters: {group.counters.length}
 				</Paragraph>
-			</Pressable>
+			{/*</Pressable>*/}
 		</View>
 	);
 };

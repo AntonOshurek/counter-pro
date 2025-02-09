@@ -3,9 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
 import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
 //TYPES
-import { BottomTabsParams, BottomTabsNavigationParams } from './model/bottom-tabs.model';
+import { BottomTabsNavigationParams } from './model/bottom-tabs.model';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//CONSTANTS
+import { BottomTabsScreens } from '../../shaared/constants';
 //ICONS
 import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '../../shaared/icons/';
 //STYLES
@@ -13,55 +15,63 @@ import { colors } from '../../shaared/styles';
 
 const BottomTabs = () => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();
-  const theme = UseThemeResolver();
+	const theme = UseThemeResolver();
 
 	return (
 		<BottomTabs.Navigator
-			initialRouteName={BottomTabsParams.HomeScreen}
+			initialRouteName={BottomTabsScreens.HomeScreen}
 			screenOptions={{
 				tabBarShowLabel: false,
-        headerStyle: {
-          backgroundColor: colors[theme].mainSurfaceTertiary
-        },
-        headerTintColor: colors[theme].textPrimary,
-        tabBarStyle: {
-          backgroundColor: colors[theme].mainSurfaceTertiary,
-          borderTopWidth: 0,
-          paddingTop: 5,
-          paddingBottom: 15,
-        }
+				headerStyle: {
+					backgroundColor: colors[theme].mainSurfaceTertiary
+				},
+				headerTintColor: colors[theme].textPrimary,
+				tabBarStyle: {
+					backgroundColor: colors[theme].mainSurfaceTertiary,
+					borderTopWidth: 0,
+					paddingTop: 5,
+					paddingBottom: 15
+				}
 			}}
 		>
 			<BottomTabs.Screen
 				component={HomeScreen}
-				name={BottomTabsParams.HomeScreen}
+				name={BottomTabsScreens.HomeScreen}
 				options={{
 					title: 'Home',
-					tabBarIcon: () => <HomeIcon height={40} width={40} color={colors[theme].textPrimary}/>
+					tabBarIcon: () => (
+						<HomeIcon height={40} width={40} color={colors[theme].textPrimary} />
+					)
 				}}
 			/>
 			<BottomTabs.Screen
 				component={GroupsScreen}
-				name={BottomTabsParams.Groups}
+				name={BottomTabsScreens.Groups}
 				options={{
 					title: 'Groups',
-					tabBarIcon: () => <ListIcon height={40} width={40} color={colors[theme].textPrimary}/>
+					tabBarIcon: () => (
+						<ListIcon height={40} width={40} color={colors[theme].textPrimary} />
+					)
 				}}
 			/>
 			<BottomTabs.Screen
 				component={SettingsScreen}
-				name={BottomTabsParams.SettingsScreen}
+				name={BottomTabsScreens.SettingsScreen}
 				options={{
 					title: 'Settings',
-					tabBarIcon: () => <SettingsIcon height={40} width={40} color={colors[theme].textPrimary}/>
+					tabBarIcon: () => (
+						<SettingsIcon height={40} width={40} color={colors[theme].textPrimary} />
+					)
 				}}
 			/>
 			<BottomTabs.Screen
 				component={InfoScreen}
-				name={BottomTabsParams.InfoScreen}
+				name={BottomTabsScreens.InfoScreen}
 				options={{
 					title: 'Info',
-					tabBarIcon: () => <InfoIcon height={40} width={40} color={colors[theme].textPrimary}/>
+					tabBarIcon: () => (
+						<InfoIcon height={40} width={40} color={colors[theme].textPrimary} />
+					)
 				}}
 			/>
 		</BottomTabs.Navigator>

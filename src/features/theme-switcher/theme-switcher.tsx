@@ -1,25 +1,19 @@
 import { useEffect, useState } from 'react';
 //NATIVE
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 //STORE
 import { useAppSelector, useAppDispatch } from '../../shaared/store';
 //ENTITIES
 import { SelectorGetTheme, SetNewThemeAction, AppThemes } from '../../entities/theme';
-//HOOKS
-import useThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
 import Switcher from '../../shaared/ui/switcher/switcher';
-//LAYOUTS
-import { SettingsGroupLayout } from '../../layouts/';
+import Paragraph from '../../shaared/ui/paragraph/paragraph';
 //CONSTANTS
 import { appThemes } from '../../shaared/constants';
 //STYLES
 import style from './styles/style';
 
 const ThemeSwitcher = () => {
-	const theme = useThemeResolver();
-	const s = style(theme);
-
 	const [currentTheme, setCurrentTheme] = useState<AppThemes>(
 		useAppSelector(SelectorGetTheme())
 	);
@@ -35,10 +29,12 @@ const ThemeSwitcher = () => {
 	}, [dispatch, currentTheme]);
 
 	return (
-		<SettingsGroupLayout additionalClass={s.themeSwitcher}>
-			<Text style={s.themeSwitcherTitle}>theme switcher</Text>
+		<View style={style.themeSwitcher}>
+			<Paragraph size={'medium'} contentType={'secondary'} textTransform={'capitalize'}>
+				theme switcher
+			</Paragraph>
 
-			<View style={s.themeSwitcherGroup}>
+			<View style={style.themeSwitcherGroup}>
 				{appThemes.map(theme => (
 					<Switcher<AppThemes>
 						value={theme}
@@ -49,7 +45,7 @@ const ThemeSwitcher = () => {
 					/>
 				))}
 			</View>
-		</SettingsGroupLayout>
+		</View>
 	);
 };
 

@@ -1,14 +1,15 @@
-//NATIVE
-import { View, Text } from 'react-native';
-import { SettingsGroupLayout } from '../../layouts';
+//WRAPPERS
+import { SettingsGroupWrapper } from '../../shaared/wrappers';
+//UI
+import Paragraph from '../../shaared/ui/paragraph/paragraph';
 
 const SystemSettingsWidget = () => {
 	return (
-		<View>
-			<SettingsGroupLayout>
-				<Text>Settings</Text>
-			</SettingsGroupLayout>
-		</View>
+		<SettingsGroupWrapper>
+			<Paragraph contentType={'secondary'} size={'medium'} textTransform={'capitalize'}>
+				System Settings
+			</Paragraph>
+		</SettingsGroupWrapper>
 	);
 };
 

@@ -1,27 +1,25 @@
 //NATIVE
 import { View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+//NAVIGATION
+import { GroupScreenRouteProp } from '../../app/navigation/model';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //STYLES
 import style from './styles/style';
-import { RouteProp, useRoute } from '@react-navigation/native';
-import type { NavigationStackParams, StackParams } from '../../app/navigation/model/stack.model';
-import { Paragraph } from '../../shaared/ui';
-import groups from '../../mok-data/groups';
-
-type GroupScreenRouteProp = RouteProp<NavigationStackParams, StackParams.GroupScreen>;
+//UI
+import Paragraph from '../../shaared/ui/paragraph/paragraph';
 
 const GroupScreen = () => {
-
-  const route = useRoute<GroupScreenRouteProp>();
-  const { groupId } = route.params || {};
-
-  const group = groups.find((group) => group.id === groupId);
+	const route = useRoute<GroupScreenRouteProp>();
+	const { group } = route.params || {};
 
 	return (
 		<ScreenLayout additionalClass={style.groupScreen}>
 			<View>
-				<Paragraph size={'large'} contentType={'primary'}>Group item screen {group?.name}</Paragraph>
+				<Paragraph size={'large'} contentType={'primary'}>
+					Group item screen {group?.name}
+				</Paragraph>
 			</View>
 		</ScreenLayout>
 	);

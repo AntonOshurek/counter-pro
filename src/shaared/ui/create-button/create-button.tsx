@@ -2,7 +2,7 @@
 import { Pressable, Text } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
-//TYPES
+//MODEL
 import type { CreateButtonProps } from './model/create-button.model';
 //ICONS
 import { PlusIcon } from '../../icons';
@@ -12,9 +12,9 @@ import style from './style/style';
 
 const CreateButton = ({ onPress, hiddenText }: CreateButtonProps) => {
 	const theme = UseThemeResolver();
-  const s = style(theme);
+	const s = style(theme);
 
-  return (
+	return (
 		<Pressable style={s.createButton} onPress={onPress}>
 			<Text style={semanticStyle.visuallyHidden}>{hiddenText}</Text>
 			<PlusIcon width={40} height={40} color={colors[theme].textPrimary} />

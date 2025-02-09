@@ -4,9 +4,11 @@ import CounterTopTabs from './counter-top-tabs';
 import BottomTabs from './bottom-tabs';
 import GroupTopTabs from './group-top-tabs';
 //TYPES
-import { NavigationStackParams, StackParams } from './model/stack.model';
+import { NavigationStackParams } from './model/';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//CONSTANTS
+import { StackScreens } from '../../shaared/constants';
 //STYLES
 import { colors } from '../../shaared/styles';
 
@@ -16,7 +18,7 @@ const Stack = () => {
 
 	return (
 		<Stack.Navigator
-			initialRouteName={StackParams.BottomTabs}
+			initialRouteName={StackScreens.BottomTabs}
 			screenOptions={{
 				headerStyle: {
 					backgroundColor: colors[theme].mainSurfaceTertiary
@@ -25,7 +27,7 @@ const Stack = () => {
 			}}
 		>
 			<Stack.Screen
-				name={StackParams.BottomTabs}
+				name={StackScreens.BottomTabs}
 				component={BottomTabs}
 				options={{
 					title: 'Home',
@@ -33,14 +35,13 @@ const Stack = () => {
 				}}
 			/>
 			<Stack.Screen
-				name={StackParams.NewCounterScreen}
+				name={StackScreens.NewCounterScreen}
 				component={CounterTopTabs}
 				options={{ title: 'Counter Name' }}
 			/>
 			<Stack.Screen
-				name={StackParams.GroupScreen}
+				name={StackScreens.GroupScreen}
 				component={GroupTopTabs}
-				options={{ title: 'Group title' }}
 			/>
 		</Stack.Navigator>
 	);
