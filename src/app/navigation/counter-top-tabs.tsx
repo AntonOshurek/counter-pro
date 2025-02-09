@@ -4,12 +4,13 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { CounterScreen, CounterSettingsScreen } from '../../screens';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+//CONSTANTS
+import { CounterTopTabsScreens } from '../../shaared/constants';
 //STYLES
 import { colors } from '../../shaared/styles';
 //TYPES
 import {
-	CounterTopTabsNavigationParams,
-	CounterTopTabsParams
+	CounterTopTabsNavigationParams
 } from './model/counter-top-tabs.model';
 
 const CounterTopTabs = () => {
@@ -24,9 +25,9 @@ const CounterTopTabs = () => {
       tabBarActiveTintColor: colors[theme].textPrimary,
       tabBarInactiveTintColor: colors[theme].textSecondary,
     }}>
-			<Tab.Screen name={CounterTopTabsParams.Counter} component={CounterScreen} />
+			<Tab.Screen name={CounterTopTabsScreens.Counter} component={CounterScreen} />
 			<Tab.Screen
-				name={CounterTopTabsParams.Settings}
+				name={CounterTopTabsScreens.Settings}
 				component={CounterSettingsScreen}
 			/>
 		</Tab.Navigator>

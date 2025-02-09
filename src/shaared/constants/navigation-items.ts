@@ -3,4 +3,9 @@ const enum GroupTopTabsScreens {
 	Settings = 'Settings'
 }
 
-export { GroupTopTabsScreens };
+const enum CounterTopTabsScreens {
+  Counter = 'Counter',
+  Settings = 'Settings'
+}
+
+export { GroupTopTabsScreens, CounterTopTabsScreens };

@@ -1,11 +1,9 @@
-enum CounterTopTabsParams {
-	Counter = 'Counter',
-	Settings = 'Settings'
-}
+//CONSTANTS
+import { CounterTopTabsScreens } from '../../../shaared/constants';
 
 type CounterTopTabsNavigationParams = {
-	[CounterTopTabsParams.Counter]: undefined;
-	[CounterTopTabsParams.Settings]: undefined;
+	[CounterTopTabsScreens.Counter]: undefined;
+	[CounterTopTabsScreens.Settings]: undefined;
 };
 
-export { CounterTopTabsNavigationParams, CounterTopTabsParams };
+export { CounterTopTabsNavigationParams };

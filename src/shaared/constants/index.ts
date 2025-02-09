@@ -1,4 +1,4 @@
 import { Themes, appThemes, colorThemes } from './theme';
-import { GroupTopTabsScreens } from './navigation-items';
+import { CounterTopTabsScreens, GroupTopTabsScreens } from './navigation-items';
 
-export { Themes, appThemes, colorThemes, GroupTopTabsScreens };
+export { Themes, appThemes, colorThemes, GroupTopTabsScreens, CounterTopTabsScreens };
