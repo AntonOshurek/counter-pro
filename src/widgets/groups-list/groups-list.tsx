@@ -1,6 +1,4 @@
-import { useState } from 'react';
-//NATIVE
-import { TouchableOpacity } from 'react-native';
+import { useEffect, useState } from 'react';
 //LIBS
 import DraggableFlatList from 'react-native-draggable-flatlist';
 //HOOKS
@@ -14,32 +12,25 @@ import style from './styles/style';
 import groups from '../../mok-data/groups';
 
 const GroupsList = () => {
-	const theme = UseThemeResolver();
-	const s = style(theme);
+  const theme = UseThemeResolver();
+  const s = style(theme);
 
-	const [data, setData] = useState(groups);
+  const [data, setData] = useState(groups);
 
-	return (
-		<DraggableFlatList
-			style={s.groupsList}
-			data={data}
-			keyExtractor={item => item.id}
-			contentContainerStyle={{ gap: 20, paddingBottom: 100 }}
-			onDragEnd={({ data }) => {
-				setData(data);
-			}}
-			renderItem={({ item, drag, isActive }) => (
-				<TouchableOpacity
-					activeOpacity={0.6}
-					onLongPress={drag}
-					disabled={isActive}
-					key={item.id}
-				>
-					<GroupListItem group={item} />
-				</TouchableOpacity>
-			)}
-		/>
-	);
+  useEffect(() => {
+    console.log('change data');
+  }, [data]);
+
+  return (
+    <DraggableFlatList
+      style={s.groupsList}
+      contentContainerStyle={{ gap: 20, paddingBottom: 100 }}
+      data={data}
+      keyExtractor={item => item.id}
+      onDragEnd={({ data }) => setData(data)}
+      renderItem={GroupListItem}
+    />
+  );
 };
 
 export default GroupsList;
