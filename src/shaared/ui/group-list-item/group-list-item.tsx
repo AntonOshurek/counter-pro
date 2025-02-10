@@ -31,7 +31,7 @@ const GroupListItem = ({ item, drag, isActive }: GroupListItemProps) => {
 
 	return (
 		<ScaleDecorator>
-			<View style={s.groupListItem}>
+			<View style={[s.groupListItem, (isActive && s.draggable)]}>
 				<Pressable style={s.linkToGroup} onPress={openGroup}>
 					<Paragraph contentType={'primary'} size={'large'}>
 						{item.name}
