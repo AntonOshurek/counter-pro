@@ -10,7 +10,10 @@ const style = (theme: ColorThemes) =>
 		groupListItem: {
 			borderRadius: 10,
 			padding: 10,
-			backgroundColor: colors[theme].mainSurfaceTertiary
+			backgroundColor: colors[theme].mainSurfaceTertiary,
+			flexDirection: 'row',
+			alignItems: 'center',
+			justifyContent: 'space-between'
 		}
 	});
 

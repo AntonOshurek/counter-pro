@@ -12,10 +12,13 @@ import UseThemeResolver from '../../hooks/useThemeResolver';
 import { StackScreens } from '../../constants';
 //UI
 import Paragraph from '../paragraph/paragraph';
+//icons
+import { DragHandleIcon } from '../../icons';
 //MODEL
 import type { GroupListItemProps } from './model/group-list-item.model';
 //STYLES
 import style from './styles/style';
+import { colors } from '../../styles';
 
 const GroupListItem = ({ item, drag, isActive }: GroupListItemProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
@@ -37,10 +40,9 @@ const GroupListItem = ({ item, drag, isActive }: GroupListItemProps) => {
 						Counters: {item.counters.length}
 					</Paragraph>
 				</Pressable>
+
 				<Pressable onLongPress={drag} disabled={isActive}>
-					<Paragraph contentType={'secondary'} size={'small'}>
-						==
-					</Paragraph>
+					<DragHandleIcon height={40} width={40} color={colors[theme].textSecondary} />
 				</Pressable>
 			</View>
 		</ScaleDecorator>
