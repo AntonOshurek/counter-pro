@@ -5,7 +5,7 @@ import Count from '../../entities/count/count.entitiy';
 //STYLES
 // import style from './styles/style';
 
-const NewCounterWidget = (): JSX.Element => {
+const NewCounterWidget = () => {
 	return (
 		<>
 			<View>

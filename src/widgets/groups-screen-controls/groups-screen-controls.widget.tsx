@@ -5,7 +5,7 @@ import { CreateNewGroup } from '../../features';
 //STYLES
 import style from './style/style';
 
-const GroupsScreenControlsWidget = (): JSX.Element => {
+const GroupsScreenControlsWidget = () => {
 	return (
 		<View style={style.groupsScreenControlsWidget}>
 			<CreateNewGroup />

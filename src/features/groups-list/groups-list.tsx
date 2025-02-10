@@ -1,12 +1,10 @@
-import { useState } from 'react';
-//NATIVE
-import { TouchableOpacity } from 'react-native';
+import { useEffect, useState } from 'react';
 //LIBS
 import DraggableFlatList from 'react-native-draggable-flatlist';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
-import GroupListItem from '../../shaared/ui/group-list-item/group-list-item';
+import { GroupCard } from '../../entities/group';
 //STYLES
 import style from './styles/style';
 
@@ -19,24 +17,19 @@ const GroupsList = () => {
 
 	const [data, setData] = useState(groups);
 
+	useEffect(() => {
+		console.log('change groups items ordering');
+	}, [data]);
+
 	return (
 		<DraggableFlatList
 			style={s.groupsList}
+			contentContainerStyle={{ paddingBottom: 100 }}
 			data={data}
 			keyExtractor={item => item.id}
-			contentContainerStyle={{ gap: 20, paddingBottom: 100 }}
-			onDragEnd={({ data }) => {
-				setData(data);
-			}}
-			renderItem={({ item, drag, isActive }) => (
-				<TouchableOpacity
-					activeOpacity={0.6}
-					onLongPress={drag}
-					disabled={isActive}
-					key={item.id}
-				>
-					<GroupListItem group={item} />
-				</TouchableOpacity>
+			onDragEnd={({ data }) => setData(data)}
+			renderItem={({ item, drag, isActive, getIndex }) => (
+				<GroupCard item={item} drag={drag} isActive={isActive} getIndex={getIndex} />
 			)}
 		/>
 	);
