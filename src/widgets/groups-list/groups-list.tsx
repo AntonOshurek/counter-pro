@@ -24,11 +24,13 @@ const GroupsList = () => {
   return (
     <DraggableFlatList
       style={s.groupsList}
-      contentContainerStyle={{ gap: 20, paddingBottom: 100 }}
+      contentContainerStyle={{  paddingBottom: 100 }}
       data={data}
       keyExtractor={item => item.id}
       onDragEnd={({ data }) => setData(data)}
-      renderItem={GroupListItem}
+      renderItem={({ item, drag, isActive, getIndex }) => (
+        <GroupListItem item={item} drag={drag} isActive={isActive} getIndex={getIndex}/>
+      )}
     />
   );
 };

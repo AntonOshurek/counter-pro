@@ -10,11 +10,14 @@ const style = (theme: ColorThemes) =>
 		groupListItem: {
 			borderRadius: 10,
 			padding: 10,
-			backgroundColor: colors[theme].mainSurfaceTertiary,
+			backgroundColor: colors[theme].mainSurfacePrimary,
 			flexDirection: 'row',
 			alignItems: 'center',
-			justifyContent: 'space-between'
-		}
+			justifyContent: 'space-between',
+		},
+    linkToGroup: {
+      flex: 1,
+    }
 	});
 
 export default style;

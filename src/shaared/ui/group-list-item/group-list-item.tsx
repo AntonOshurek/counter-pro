@@ -32,17 +32,17 @@ const GroupListItem = ({ item, drag, isActive }: GroupListItemProps) => {
 	return (
 		<ScaleDecorator>
 			<View style={s.groupListItem}>
-				<Pressable onPress={openGroup}>
+				<Pressable style={s.linkToGroup} onPress={openGroup}>
 					<Paragraph contentType={'primary'} size={'large'}>
 						{item.name}
 					</Paragraph>
-					<Paragraph contentType={'secondary'} size={'small'}>
+					<Paragraph contentType={'tertiary'} size={'small'}>
 						Counters: {item.counters.length}
 					</Paragraph>
 				</Pressable>
 
 				<Pressable onLongPress={drag} disabled={isActive}>
-					<DragHandleIcon height={40} width={40} color={colors[theme].textSecondary} />
+					<DragHandleIcon height={40} width={40} color={isActive ? colors[theme].textPrimary : colors[theme].textTertiary} />
 				</Pressable>
 			</View>
 		</ScaleDecorator>
