@@ -5,7 +5,7 @@ import { CreateNewCounter } from '../../features';
 //STYLES
 import style from './style/style';
 
-const HomeScreenControlsWidget = (): JSX.Element => {
+const HomeScreenControlsWidget = () => {
 	return (
 		<View style={style.homeScreenControlsWidget}>
 			<CreateNewCounter />

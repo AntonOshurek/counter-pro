@@ -3,9 +3,9 @@ import type { RootState } from '../../../shaared/store/';
 import type { AppThemes } from '../model/theme.model';
 
 const SelectorGetTheme =
-  () =>
-    (state: RootState): AppThemes => {
-      return state.app.theme;
-    };
+	() =>
+	(state: RootState): AppThemes => {
+		return state.app.theme;
+	};
 
 export { SelectorGetTheme };

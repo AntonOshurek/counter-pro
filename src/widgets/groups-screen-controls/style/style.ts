@@ -5,10 +5,10 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
 		alignItems: 'center',
-    position: 'absolute',
-    bottom: 10,
-    right: 20,
-    width: '100%',
+		position: 'absolute',
+		bottom: 10,
+		right: 20,
+		width: '100%'
 	}
 });
 
