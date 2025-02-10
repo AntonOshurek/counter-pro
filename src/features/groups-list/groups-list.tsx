@@ -4,7 +4,7 @@ import DraggableFlatList from 'react-native-draggable-flatlist';
 //HOOKS
 import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
 //UI
-import { GroupCard } from '../../entities/group/';
+import { GroupCard } from '../../entities/group';
 //STYLES
 import style from './styles/style';
 

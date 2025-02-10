@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 //TYPES
-import type { ColorThemes } from '../../../entities/theme';
+import { ColorThemes } from '../../../entities/theme';
 //STYLES
 import { colors } from '../../../shaared/styles';
 
@@ -15,9 +15,9 @@ const style = (theme: ColorThemes) =>
 			padding: 10,
 			backgroundColor: colors[theme].mainSurfaceTertiary
 		},
-    draggedGroup: {
-      opacity: 0.6
-    }
+		draggedGroup: {
+			opacity: 0.6
+		}
 	});
 
 export default style;
