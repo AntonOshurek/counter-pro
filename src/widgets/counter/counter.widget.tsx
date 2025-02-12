@@ -1,8 +1,10 @@
 import { useState } from 'react';
 //NATIVE
 import { TouchableOpacity, View } from 'react-native';
+//ENTITIES
+import { CounterValueEntity } from '../../entities/counter/ui';
 //FEATURES
-import { DecrementButton } from '../../features/create-new-counter/counter-controls';
+import { DecrementButton } from '../../features/';
 //UI
 import Count from '../../shaared/ui/count/count';
 import { CounterControlsWrapper } from '../../shaared/wrappers';
@@ -27,7 +29,7 @@ const CounterWidget = () => {
 				style={style.touchable}
 				activeOpacity={1}
 			>
-				<Count count={count} />
+				<CounterValueEntity count={count} />
 			</TouchableOpacity>
 
 			<CounterControlsWrapper>

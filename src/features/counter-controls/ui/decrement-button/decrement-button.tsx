@@ -1,4 +1,4 @@
-import MinusButton from '../../../../../shaared/ui/minus-button/minus-button';
+import MinusButton from '../../../../shaared/ui/minus-button/minus-button';
 
 interface Props {
 	decrement: () => void;
