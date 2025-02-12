@@ -1,3 +1,4 @@
+//UI
 import MinusButton from '../../../../shaared/ui/minus-button/minus-button';
 
 interface Props {
@@ -5,9 +6,7 @@ interface Props {
 }
 
 const DecrementButton = ({ decrement }: Props) => {
-	return (
-    <MinusButton onPress={decrement} hiddenText={'Minus'}></MinusButton>
-	);
+	return <MinusButton onPress={decrement} hiddenText={'Minus'}></MinusButton>;
 };
 
 export default DecrementButton;

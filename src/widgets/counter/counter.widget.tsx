@@ -1,12 +1,11 @@
 import { useState } from 'react';
 //NATIVE
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 //ENTITIES
-import { CounterValueEntity } from '../../entities/counter/ui';
+import { CounterValueEntity } from '../../entities/counter/';
 //FEATURES
-import { DecrementButton } from '../../features/';
+import { DecrementButton, IncrementSurface } from '../../features/';
 //UI
-import Count from '../../shaared/ui/count/count';
 import { CounterControlsWrapper } from '../../shaared/wrappers';
 //STYLES
 import style from './styles/style';
@@ -24,13 +23,9 @@ const CounterWidget = () => {
 
 	return (
 		<View style={style.counterWidget}>
-			<TouchableOpacity
-				onPress={onCountIncrement}
-				style={style.touchable}
-				activeOpacity={1}
-			>
-				<CounterValueEntity count={count} />
-			</TouchableOpacity>
+      <IncrementSurface count={count} increment={onCountIncrement}>
+        <CounterValueEntity count={count} />
+      </IncrementSurface>
 
 			<CounterControlsWrapper>
 				<DecrementButton decrement={onDecrement} />
