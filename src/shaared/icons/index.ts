@@ -4,5 +4,14 @@ import SettingsIcon from './settings-icon';
 import InfoIcon from './info-icon';
 import ListIcon from './list-icon';
 import DragHandleIcon from './drag-handle-icon';
+import MinusIcon from './minus-icon';
 
-export { PlusIcon, HomeIcon, SettingsIcon, InfoIcon, ListIcon, DragHandleIcon };
+export {
+	PlusIcon,
+	HomeIcon,
+	SettingsIcon,
+	InfoIcon,
+	ListIcon,
+	DragHandleIcon,
+	MinusIcon
+};
