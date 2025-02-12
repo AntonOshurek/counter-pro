@@ -5,7 +5,7 @@ import Count from '../../entities/count/count.entitiy';
 //STYLES
 // import style from './styles/style';
 
-const NewCounterWidget = () => {
+const CounterWidget = () => {
 	return (
 		<>
 			<View>
@@ -23,4 +23,4 @@ const NewCounterWidget = () => {
 	);
 };
 
-export default NewCounterWidget;
+export default CounterWidget;
