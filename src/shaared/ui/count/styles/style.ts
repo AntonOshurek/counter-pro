@@ -9,11 +9,12 @@ const style = (theme: ColorThemes) =>
 		Count: {
 			justifyContent: 'center',
 			alignItems: 'center',
-      flex: 1,
+			flex: 1
 		},
 		countText: {
 			color: colors[theme].textPrimary,
-			fontSize: 180
+			fontSize: 180,
+      textAlign: 'center'
 		}
 	});
 

@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	newCounterWidget: {
-		justifyContent: 'space-between'
-	}
+	counterWidget: {
+    flex: 1,
+	},
+  touchable: {
+    flex: 1,
+  }
 });
 
 export default style;

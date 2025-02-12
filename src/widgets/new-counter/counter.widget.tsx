@@ -1,19 +1,28 @@
+import { useState } from 'react';
 //NATIVE
-import { Text, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 //UI
 import Count from '../../shaared/ui/count/count';
 //STYLES
-// import style from './styles/style';
+import style from './styles/style';
 
 const CounterWidget = () => {
-	return (
-		<>
-      <Count count={5}/>
+	const [count, setCount] = useState<number>(0);
 
-			{/*<View>*/}
-			{/*	<Text>counter controls</Text>*/}
-			{/*</View>*/}
-		</>
+	const onCountIncrement = () => {
+		setCount(prev => prev + 1);
+	};
+
+	return (
+		<View style={style.counterWidget}>
+			<TouchableOpacity onPress={onCountIncrement} style={style.touchable} activeOpacity={1}>
+				<Count count={count} />
+
+				{/*<View>*/}
+				{/*	<Text>counter controls</Text>*/}
+				{/*</View>*/}
+			</TouchableOpacity>
+		</View>
 	);
 };
 
