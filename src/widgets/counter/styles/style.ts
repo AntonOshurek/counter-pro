@@ -4,9 +4,6 @@ const style = StyleSheet.create({
 	counterWidget: {
 		flex: 1,
 		position: 'relative'
-	},
-	touchable: {
-		flex: 1
 	}
 });
 
