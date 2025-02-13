@@ -10,6 +10,8 @@ import style from './styles/style';
 
 //MOK DATA
 import groups from '../../mok-data/groups';
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native';
 
 const GroupsList = () => {
 	const theme = UseThemeResolver();
@@ -22,16 +24,23 @@ const GroupsList = () => {
 	}, [data]);
 
 	return (
-		<DraggableFlatList
-			style={s.groupsList}
-			contentContainerStyle={{ paddingBottom: 100 }}
+		<FlatList
 			data={data}
 			keyExtractor={item => item.id}
-			onDragEnd={({ data }) => setData(data)}
-			renderItem={({ item, drag, isActive, getIndex }) => (
-				<GroupCard item={item} drag={drag} isActive={isActive} getIndex={getIndex} />
-			)}
+		  renderItem={({ item }) => <GroupCard item={item} key={item.id} />}
 		/>
+		// <GestureHandlerRootView style={{ flex: 1 }}>
+		// 	<DraggableFlatList
+		// 		style={s.groupsList}
+		// 		contentContainerStyle={{ paddingBottom: 100 }}
+		// 		data={data}
+		// 		keyExtractor={item => item.id}
+		// 		onDragEnd={({ data }) => setData(data)}
+		// 		renderItem={({ item, drag, isActive, getIndex }) => (
+		// 			<GroupCard item={item} drag={drag} isActive={isActive} getIndex={getIndex} />
+		// 		)}
+		// 	/>
+		// </GestureHandlerRootView>
 	);
 };
 

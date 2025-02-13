@@ -2,10 +2,12 @@
 import { View } from 'react-native';
 //FEATURES
 import { GroupsList } from '../../features';
+//STYLES
+import style from './styles/style';
 
 const GroupsWidget = () => {
 	return (
-		<View>
+		<View style={style.groups}>
 			<GroupsList />
 		</View>
 	);
