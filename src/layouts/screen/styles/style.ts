@@ -1,13 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { ColorThemes } from '../../../entities/theme';
+//TYPES
+import type { ColorThemes } from '../../../entities/theme';
+//STYLES
 import { colors } from '../../../shaared/styles';
+import { paddings } from '../../../shaared/styles';
 
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({
 		ScreenLayout: {
 			flex: 1,
-			paddingInline: 20,
-			paddingBottom: 20,
+			paddingInline: paddings.standardSavePadding,
+			paddingBottom: paddings.standardSavePadding,
 			paddingBlockStart: 10,
 			backgroundColor: colors[theme].mainSurfacePrimary
 		},

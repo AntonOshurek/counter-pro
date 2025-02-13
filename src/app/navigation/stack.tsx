@@ -39,10 +39,7 @@ const Stack = () => {
 				component={CounterTopTabs}
 				options={{ title: 'Counter Name' }}
 			/>
-			<Stack.Screen
-				name={StackScreens.GroupScreen}
-				component={GroupTopTabs}
-			/>
+			<Stack.Screen name={StackScreens.GroupScreen} component={GroupTopTabs} />
 		</Stack.Navigator>
 	);
 };
