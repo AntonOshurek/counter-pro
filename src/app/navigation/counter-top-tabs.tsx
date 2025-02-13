@@ -17,6 +17,7 @@ const CounterTopTabs = () => {
 
 	return (
 		<Tab.Navigator
+      initialRouteName={CounterTopTabsScreens.Counter}
 			screenOptions={{
 				tabBarStyle: {
 					backgroundColor: colors[theme].mainSurfacePrimary

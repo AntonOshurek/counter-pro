@@ -1,8 +1,16 @@
+//NATIVE
+import { View } from 'react-native';
 //FEATURES
 import { GroupsList } from '../../features';
+//STYLES
+import style from './styles/style';
 
 const GroupsWidget = () => {
-	return <GroupsList />;
+	return (
+		<View style={style.groups}>
+			<GroupsList />
+		</View>
+	);
 };
 
 export default GroupsWidget;

@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	groupsScreen: {
-		justifyContent: 'space-between',
-    position: 'relative',
-	}
+	groups: {
+    flex: 1,
+  }
 });
 
 export default style;

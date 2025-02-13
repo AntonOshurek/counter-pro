@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+//STYLES
+import { paddings } from '../../../shaared/styles';
 
 const style = StyleSheet.create({
 	groupsScreenControlsWidget: {
@@ -6,8 +8,8 @@ const style = StyleSheet.create({
 		justifyContent: 'flex-end',
 		alignItems: 'center',
 		position: 'absolute',
-		bottom: 10,
-		right: 20,
+		bottom: paddings.standardSavePadding,
+		right: paddings.standardSavePadding,
 		width: '100%'
 	}
 });
