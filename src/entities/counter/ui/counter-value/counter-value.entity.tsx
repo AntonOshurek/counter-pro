@@ -1,4 +1,4 @@
-import Count from '../../../../shaared/ui/count/count';
+import Count from '../../../../shared/ui/count/count';
 
 interface Props {
 	count: number;

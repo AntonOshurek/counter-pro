@@ -1,7 +1,7 @@
 //FEATURES
 import { ThemeSwitcher } from '../../features';
 //WRAPPERS
-import { SettingsGroupWrapper } from '../../shaared/wrappers';
+import { SettingsGroupWrapper } from '../../shared/wrappers';
 
 const UiSettingsWidget = () => {
 	return (

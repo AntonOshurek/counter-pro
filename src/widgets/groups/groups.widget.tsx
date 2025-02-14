@@ -1,7 +1,6 @@
 //NATIVE
 import { FlatList, View } from 'react-native';
 //FEATURES
-
 import { GroupCard } from '../../entities/group';
 //STYLES
 import style from './styles/style';

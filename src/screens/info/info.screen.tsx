@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../../layouts';
 //UI
-import Paragraph from '../../shaared/ui/paragraph/paragraph';
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 //STYLES
 import style from './styles/style';
 

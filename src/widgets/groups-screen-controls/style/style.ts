@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 //STYLES
-import { paddings } from '../../../shaared/styles';
+import { paddings } from '../../../shared/styles';
 
 const style = StyleSheet.create({
 	groupsScreenControlsWidget: {

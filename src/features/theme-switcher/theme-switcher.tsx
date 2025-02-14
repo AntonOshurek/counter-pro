@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 //NATIVE
 import { View } from 'react-native';
 //STORE
-import { useAppSelector, useAppDispatch } from '../../shaared/store';
+import { useAppSelector, useAppDispatch } from '../../shared/store';
 //ENTITIES
 import { SelectorGetTheme, SetNewThemeAction, AppThemes } from '../../entities/theme';
 //UI
-import Switcher from '../../shaared/ui/switcher/switcher';
-import Paragraph from '../../shaared/ui/paragraph/paragraph';
+import Switcher from '../../shared/ui/switcher/switcher';
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 //CONSTANTS
-import { appThemes } from '../../shaared/constants';
+import { appThemes } from '../../shared/constants';
 //STYLES
 import style from './styles/style';
 

@@ -2,14 +2,14 @@
 import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 //HOOKS
-import useThemeResolver from '../../shaared/hooks/useThemeResolver';
+import useThemeResolver from '../../shared/hooks/useThemeResolver';
 //MODEL
 import type { ScreenLayoutProps } from './model/screen-layout.model';
 //CONSTANTS
-import { Themes } from '../../shaared/constants/';
+import { Themes } from '../../shared/constants/';
 //STYLES
 import style from './styles/style';
-import { colors } from '../../shaared/styles';
+import { colors } from '../../shared/styles';
 
 const ScreenLayout = ({
 	children,

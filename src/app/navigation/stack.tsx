@@ -6,11 +6,11 @@ import GroupTopTabs from './group-top-tabs';
 //TYPES
 import { NavigationStackParams } from './model/';
 //HOOKS
-import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { StackScreens } from '../../shaared/constants';
+import { StackScreens } from '../../shared/constants';
 //STYLES
-import { colors } from '../../shaared/styles';
+import { colors } from '../../shared/styles';
 
 const Stack = () => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();

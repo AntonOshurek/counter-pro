@@ -6,7 +6,7 @@ import { CounterValueEntity } from '../../entities/counter/';
 //FEATURES
 import { DecrementButton, IncrementSurface } from '../../features/';
 //UI
-import { CounterControlsWrapper } from '../../shaared/wrappers';
+import { CounterControlsWrapper } from '../../shared/wrappers';
 //STYLES
 import style from './styles/style';
 

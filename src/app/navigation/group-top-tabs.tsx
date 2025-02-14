@@ -4,11 +4,11 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 //SCREENS
 import { GroupScreen, GroupSettingsScreen } from '../../screens';
 //HOOKS
-import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { GroupTopTabsScreens } from '../../shaared/constants';
+import { GroupTopTabsScreens } from '../../shared/constants';
 //STYLES
-import { colors } from '../../shaared/styles';
+import { colors } from '../../shared/styles';
 //TYPES
 import {
 	GroupScreenRouteProp,

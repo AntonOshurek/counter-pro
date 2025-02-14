@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '../../../../app/navigation/model';
 //HOOKS
-import UseThemeResolver from '../../../../shaared/hooks/useThemeResolver';
+import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { StackScreens } from '../../../../shaared/constants';
+import { StackScreens } from '../../../../shared/constants';
 //UI
-import Paragraph from '../../../../shaared/ui/paragraph/paragraph';
+import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //MODEL
 import { GroupCardProps } from './group-card.model';
 //STYLES

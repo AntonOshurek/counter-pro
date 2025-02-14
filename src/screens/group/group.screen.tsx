@@ -8,7 +8,7 @@ import { ScreenLayout } from '../../layouts';
 //STYLES
 import style from './styles/style';
 //UI
-import Paragraph from '../../shaared/ui/paragraph/paragraph';
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const GroupScreen = () => {
 	const route = useRoute<GroupScreenRouteProp>();

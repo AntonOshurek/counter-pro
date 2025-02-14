@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 //TYPES
 import type { ColorThemes} from '../../../theme';
 //STYLES
-import { colors } from '../../../../shaared/styles';
+import { colors } from '../../../../shared/styles';
 
 const style = (theme: ColorThemes) =>
   StyleSheet.create({
