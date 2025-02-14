@@ -1,14 +1,14 @@
 //NATIVE
 import { View } from 'react-native';
 //FEATURES
-import { CreateNewGroup } from '../../features';
+import { CreateNewGroupButton } from '../../features/group';
 //STYLES
 import style from './style/style';
 
 const GroupsScreenControlsWidget = () => {
 	return (
 		<View style={style.groupsScreenControlsWidget}>
-			<CreateNewGroup />
+			<CreateNewGroupButton />
 		</View>
 	);
 };

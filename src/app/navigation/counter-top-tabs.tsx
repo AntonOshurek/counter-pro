@@ -3,11 +3,11 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 //SCREENS
 import { CounterScreen, CounterSettingsScreen } from '../../screens';
 //HOOKS
-import UseThemeResolver from '../../shaared/hooks/useThemeResolver';
+import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { CounterTopTabsScreens } from '../../shaared/constants';
+import { CounterTopTabsScreens } from '../../shared/constants';
 //STYLES
-import { colors } from '../../shaared/styles';
+import { colors } from '../../shared/styles';
 //TYPES
 import { CounterTopTabsNavigationParams } from './model/';
 

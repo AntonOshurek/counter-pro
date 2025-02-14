@@ -1,5 +1,5 @@
 //CONSTANTS
-import { Themes } from '../../../shaared/constants';
+import { Themes } from '../../../shared/constants';
 //TYPES
 import type { IAppState } from '../model/state.model';
 

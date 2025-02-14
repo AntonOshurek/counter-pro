@@ -5,7 +5,7 @@ import appRepository from '../../../services/app-repository/app-repository';
 //MODEL
 import type { ISetNewThemeAction } from '../model/actions.model';
 //TYPES
-import type { AppThunk } from '../../../shaared/store';
+import type { AppThunk } from '../../../shared/store';
 
 const SetNewThemeAction =
 	(action: ISetNewThemeAction): AppThunk =>

@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 //TYPES
 import type { ColorThemes } from '../../../entities/theme';
 //STYLES
-import { colors } from '../../../shaared/styles';
-import { paddings } from '../../../shaared/styles';
+import { colors } from '../../../shared/styles';
+import { paddings } from '../../../shared/styles';
 
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({

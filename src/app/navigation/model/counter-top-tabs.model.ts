@@ -1,5 +1,5 @@
 //CONSTANTS
-import { CounterTopTabsScreens } from '../../../shaared/constants';
+import { CounterTopTabsScreens } from '../../../shared/constants';
 
 type CounterTopTabsNavigationParams = {
 	[CounterTopTabsScreens.Counter]: undefined;

@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 //ENTITIES
 import type { CountersGroup } from '../../../entities/group';
 //CONSTANTS
-import { GroupTopTabsScreens, StackScreens } from '../../../shaared/constants';
+import { GroupTopTabsScreens, StackScreens } from '../../../shared/constants';
 //MODEL
 import type { NavigationStackParams } from './stack.model';
 

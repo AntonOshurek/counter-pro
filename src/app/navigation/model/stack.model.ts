@@ -1,5 +1,5 @@
 //CONSTANTS
-import { StackScreens } from '../../../shaared/constants';
+import { StackScreens } from '../../../shared/constants';
 //TYPES
 import type { GroupScreenRouteProps } from './group-top-tabs.model';
 
