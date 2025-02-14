@@ -1,5 +1,5 @@
 //MODEL
-import { CountersGroup } from '../../model/group.model';
+import { CountersGroup } from '../../';
 
 interface GroupCardProps {
 	item: CountersGroup;
