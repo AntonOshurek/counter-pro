@@ -1,4 +1,4 @@
 import ThemeSwitcher from './theme-switcher/theme-switcher';
-import { DecrementButton, IncrementSurface } from './counter-controls';
+import { IncrementSurface } from './counter-controls';
 
-export { ThemeSwitcher, DecrementButton, IncrementSurface };
+export { ThemeSwitcher, IncrementSurface };
