@@ -11,16 +11,6 @@ const style = (theme: ColorThemes) =>
       borderRadius: 10,
       padding: 10,
       backgroundColor: colors[theme].mainSurfacePrimary,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    draggable: {
-      shadowColor: colors[theme].alwaysBlack,
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.6,
-      shadowRadius: 6,
-      elevation: 6
     },
     linkToGroup: {
       flex: 1
