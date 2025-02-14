@@ -1,7 +1,7 @@
 //NATIVE
 import { TouchableOpacity } from 'react-native';
 //FEATURES
-import { useIncrement } from '../../../index';
+import useIncrement from '../../increment';
 //MODEL
 import type { IncrementSurfaceProps } from './increment-surface.model';
 //STYLES

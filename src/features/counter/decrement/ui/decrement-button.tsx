@@ -1,5 +1,5 @@
 //FEATURES
-import { useDecrement } from '../../';
+import useDecrement from '../decrement';
 //MODEL
 import type { DecrementButtonProps } from './decrement-button.model';
 //UI
