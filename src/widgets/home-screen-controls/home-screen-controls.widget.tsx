@@ -1,14 +1,14 @@
 //NATIVE
 import { View } from 'react-native';
 //FEATURES
-import { CreateNewCounter } from '../../features';
+import { CreateNewCounterButton } from '../../features/counter';
 //STYLES
 import style from './style/style';
 
 const HomeScreenControlsWidget = () => {
 	return (
 		<View style={style.homeScreenControlsWidget}>
-			<CreateNewCounter />
+			<CreateNewCounterButton />
 		</View>
 	);
 };
