@@ -11,5 +11,5 @@ export {
 	SystemSettingsWidget,
 	HomeScreenControlsWidget,
 	GroupsScreenControlsWidget,
-  GroupListWidget
+	GroupListWidget
 };
