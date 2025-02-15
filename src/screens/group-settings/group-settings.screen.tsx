@@ -1,7 +1,7 @@
 //NATIVE
 import { View, Text } from 'react-native';
 //LAYOUTS
-import { ScreenLayout } from '../../layouts';
+import { ScreenLayout } from '../layouts';
 //STYLES
 import style from './styles/style';
 

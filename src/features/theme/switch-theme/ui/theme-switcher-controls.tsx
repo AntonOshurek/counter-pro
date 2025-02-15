@@ -10,7 +10,11 @@ import { ThemeSwitcherProps } from './theme-switcher.model';
 //STYLES
 import style from './style';
 
-const ThemeSwitcherControls = ({ currentTheme, onThemeChange, themes }: ThemeSwitcherProps) => {
+const ThemeSwitcherControls = ({
+	currentTheme,
+	onThemeChange,
+	themes
+}: ThemeSwitcherProps) => {
 	return (
 		<View style={style.themeSwitcher}>
 			<Paragraph size='medium' contentType='secondary' textTransform='capitalize'>

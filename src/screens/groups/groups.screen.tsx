@@ -1,5 +1,5 @@
 //LAYOUTS
-import { ScreenLayout } from '../../layouts';
+import { ScreenLayout } from '../layouts';
 //WIDGETS
 import { GroupsScreenControlsWidget, GroupsWidget } from '../../widgets';
 //STYLES
