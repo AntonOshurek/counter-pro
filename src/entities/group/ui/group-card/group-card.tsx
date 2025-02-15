@@ -15,23 +15,23 @@ import { GroupCardProps } from './group-card.model';
 //STYLES
 import style from './style';
 
-const GroupCard = ({ item }: GroupCardProps) => {
+const GroupCard = ({ group }: GroupCardProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const theme = UseThemeResolver();
 	const s = style(theme);
 
 	const openGroup = () => {
-		navigation.navigate(StackScreens.GroupScreen, { group: item });
+		navigation.navigate(StackScreens.GroupScreen, { group });
 	};
 
 	return (
 		<View style={[s.groupCard]}>
 			<Pressable style={s.linkToGroup} onPress={openGroup}>
 				<Paragraph contentType={'primary'} size={'large'}>
-					{item.name}
+					{group.name}
 				</Paragraph>
 				<Paragraph contentType={'tertiary'} size={'small'}>
-					Counters: {item.counters.length}
+					Counters: {group.counters.length}
 				</Paragraph>
 			</Pressable>
 		</View>

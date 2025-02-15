@@ -11,12 +11,12 @@ import groups from '../../mok-data/groups';
 const GroupsWidget = () => {
 	return (
 		<View style={style.groups}>
-      <FlatList
-        style={style.groupsList}
-        data={groups}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => <GroupCard item={item} key={item.id} />}
-      />
+			<FlatList
+				style={style.groupsList}
+				data={groups}
+				keyExtractor={item => item.id}
+				renderItem={({ item }) => <GroupCard group={item} key={item.id} />}
+			/>
 		</View>
 	);
 };

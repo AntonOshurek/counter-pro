@@ -1,8 +1,8 @@
 //MODEL
-import { CountersGroup } from '../../';
+import { Group } from '../../';
 
 interface GroupCardProps {
-	item: CountersGroup;
+	group: Group;
 }
 
 export { GroupCardProps };
