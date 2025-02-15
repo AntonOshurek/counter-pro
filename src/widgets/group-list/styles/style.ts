@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
 	groups: {
-		flex: 1
+
 	},
-  groupsList: {
+  groupList: {
+    flex: 1,
     paddingInline: 20,
-    paddingTop: 20
+    paddingTop: 20,
   }
 });
 
