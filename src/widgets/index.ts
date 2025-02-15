@@ -4,6 +4,7 @@ import SystemSettingsWidget from './system-settings/system-settings.widget';
 import UiSettingsWidget from './ui-settings/ui-settings.widget';
 import GroupsScreenControlsWidget from './groups-screen-controls/groups-screen-controls.widget';
 import GroupListWidget from './group-list/group-list.widget';
+import CounterListWidget from './counter-list/counter-list.widget';
 
 export {
 	CounterWidget,
@@ -11,5 +12,6 @@ export {
 	SystemSettingsWidget,
 	HomeScreenControlsWidget,
 	GroupsScreenControlsWidget,
-	GroupListWidget
+	GroupListWidget,
+  CounterListWidget
 };

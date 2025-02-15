@@ -1,7 +1,7 @@
 //TYPES
-import { CountersGroup } from '../entities/group/';
+import { Group } from '../entities/group/';
 
-const groups: CountersGroup[] = [
+const groups: Group[] = [
 	{
 		id: 'g-1',
 		name: 'Group 1',
