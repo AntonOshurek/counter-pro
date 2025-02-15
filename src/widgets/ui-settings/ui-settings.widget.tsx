@@ -1,5 +1,4 @@
 //FEATURES
-// import { ThemeSwitcher } from '../../features';
 import ThemeSwitcher from '../../features/theme/switch-theme';
 //WRAPPERS
 import { SettingsGroupWrapper } from '../../shared/wrappers';

@@ -1,7 +1,7 @@
 //NATIVE
 import { View } from 'react-native';
 //MODEL
-import { CounterControlsProps } from './model/counter-controls.model';
+import type { CounterControlsProps } from './model/counter-controls.model';
 //STYLES
 import style from './styles/style';
 

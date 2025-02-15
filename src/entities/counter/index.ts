@@ -1,3 +1,5 @@
-import CounterValueEntity from './ui/counter-value/counter-value.entity';
+import CounterValue from './ui/counter-value/counter-value.entity';
+import { Counter } from './model/counter.model';
+import CounterCard from './ui/counter-card/counter-card';
 
-export { CounterValueEntity };
+export { CounterValue, Counter, CounterCard };

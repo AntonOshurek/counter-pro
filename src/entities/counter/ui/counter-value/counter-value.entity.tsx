@@ -1,11 +1,10 @@
+//MODEL
+import { CounterValueProps } from './counter-value.model';
+//UI
 import Count from '../../../../shared/ui/count/count';
 
-interface Props {
-	count: number;
-}
-
-const CounterValueEntity = ({ count }: Props) => {
-	return <Count count={count} />;
+const CounterValue = ({ counterId }: CounterValueProps) => {
+	return <Count count={1} />;
 };
 
-export default CounterValueEntity;
+export default CounterValue;

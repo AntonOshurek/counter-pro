@@ -1,18 +1,14 @@
-//NATIVE
-import { View, Text } from 'react-native';
+//LAYOUTS
+import { ScreenLayout } from '../layouts/';
+//WIDGETS
+import { HomeScreenControlsWidget, CounterListWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
-//LAYOUTS
-import { ScreenLayout } from '../../layouts';
-//WIDGETS
-import { HomeScreenControlsWidget } from '../../widgets';
 
 const HomeScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.homeScreen}>
-			<View>
-				<Text>List of last counters</Text>
-			</View>
+			<CounterListWidget />
 
 			<HomeScreenControlsWidget />
 		</ScreenLayout>

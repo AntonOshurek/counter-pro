@@ -1,14 +1,14 @@
 //LAYOUTS
-import { ScreenLayout } from '../../layouts';
+import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupsScreenControlsWidget, GroupsWidget } from '../../widgets';
+import { GroupsScreenControlsWidget, GroupListWidget } from '../../widgets';
 //STYLES
 import style from './styles/style';
 
 const GroupsScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.groupsScreen} withoutPaddings={true}>
-			<GroupsWidget />
+			<GroupListWidget />
 			<GroupsScreenControlsWidget />
 		</ScreenLayout>
 	);

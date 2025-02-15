@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native';
 //NAVIGATION
 import { GroupScreenRouteProp } from '../../app/navigation/model';
 //LAYOUTS
-import { ScreenLayout } from '../../layouts';
+import { ScreenLayout } from '../layouts';
 //STYLES
 import style from './styles/style';
 //UI
