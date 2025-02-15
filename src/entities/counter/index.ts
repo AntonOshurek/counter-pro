@@ -1,3 +1,3 @@
-import CounterValueEntity from './ui/counter-value/counter-value.entity';
+import CounterValue from './ui/counter-value/counter-value.entity';
 
-export { CounterValueEntity };
+export { CounterValue };
