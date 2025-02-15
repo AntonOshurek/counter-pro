@@ -13,6 +13,7 @@ const GroupListWidget = () => {
 		<FlatList
 			style={style.groupList}
 			data={groups}
+      contentContainerStyle={{rowGap: 20}}
 			keyExtractor={item => item.id}
 			renderItem={({ item }) => <GroupCard group={item} key={item.id} />}
 		/>

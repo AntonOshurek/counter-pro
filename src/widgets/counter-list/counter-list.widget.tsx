@@ -1,7 +1,7 @@
 //NATIVE
 import { FlatList } from 'react-native';
-//UI
-import Paragraph from '../../shared/ui/paragraph/paragraph';
+//ENTITIES
+import { CounterCard } from '../../entities/counter';
 //STYLES
 import style from './styles/style';
 
@@ -13,12 +13,9 @@ const CounterListWidget = () => {
 		<FlatList
 			style={style.counterList}
 			data={counters}
+      contentContainerStyle={{rowGap: 20}}
 			keyExtractor={item => item.id}
-			renderItem={({ item }) => (
-				<Paragraph size={'medium'} contentType={'primary'} key={item.id}>
-					{item.id}
-				</Paragraph>
-			)}
+			renderItem={({ item }) => <CounterCard counter={item} key={item.id} />}
 		/>
 	);
 };
