@@ -34,11 +34,7 @@ const Stack = () => {
 					headerShown: false
 				}}
 			/>
-			<Stack.Screen
-				name={StackScreens.NewCounterScreen}
-				component={CounterTopTabs}
-				options={{ title: 'Counter Name' }}
-			/>
+			<Stack.Screen name={StackScreens.CounterScreen} component={CounterTopTabs} />
 			<Stack.Screen name={StackScreens.GroupScreen} component={GroupTopTabs} />
 		</Stack.Navigator>
 	);

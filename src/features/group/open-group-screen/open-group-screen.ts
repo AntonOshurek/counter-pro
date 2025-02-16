@@ -1,0 +1,18 @@
+//NAVIGATION
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { NavigationStackParams } from '../../../app/navigation/model';
+//MODEL
+import type { openGroupScreenProps } from './model/open-group-screen.model';
+//CONSTANTS
+import { StackScreens } from '../../../shared/constants';
+
+const useOpenGroupScreen = ({ group }: openGroupScreenProps) => {
+	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
+
+	return () => {
+		navigation.navigate(StackScreens.GroupScreen, { group });
+	};
+};
+
+export default useOpenGroupScreen;

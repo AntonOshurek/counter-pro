@@ -3,7 +3,7 @@ import { View } from 'react-native';
 //ENTITIES
 import { CounterValue } from '../../entities/counter/';
 //FEATURES
-import { DecrementButton, IncrementSurface } from '../../features/counter';
+import { PrimaryDecrementButton, IncrementSurface } from '../../features/counter';
 //UI
 import { CounterControlsWrapper } from '../../shared/wrappers';
 //STYLES
@@ -17,7 +17,7 @@ const CounterWidget = () => {
 			</IncrementSurface>
 
 			<CounterControlsWrapper>
-				<DecrementButton counterId={'some-counter-id'} />
+				<PrimaryDecrementButton counterId={'some-counter-id'} />
 			</CounterControlsWrapper>
 		</View>
 	);

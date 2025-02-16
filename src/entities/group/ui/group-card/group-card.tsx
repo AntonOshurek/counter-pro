@@ -1,13 +1,7 @@
 //NATIVE
-import { Pressable, View } from 'react-native';
-//NAVIGATION
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { NavigationStackParams } from '../../../../app/navigation/model';
+import { View } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
-//CONSTANTS
-import { StackScreens } from '../../../../shared/constants';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //MODEL
@@ -15,25 +9,20 @@ import { GroupCardProps } from './group-card.model';
 //STYLES
 import style from './style';
 
-const GroupCard = ({ group }: GroupCardProps) => {
-	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
+const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 	const theme = UseThemeResolver();
 	const s = style(theme);
 
-	const openGroup = () => {
-		navigation.navigate(StackScreens.GroupScreen, { group });
-	};
-
 	return (
 		<View style={[s.groupCard]}>
-			<Pressable style={s.linkToGroup} onPress={openGroup}>
+			<OpenGroupScreenOpacity group={group}>
 				<Paragraph contentType={'primary'} size={'large'}>
 					{group.name}
 				</Paragraph>
 				<Paragraph contentType={'tertiary'} size={'small'}>
 					Counters: {group.counters.length}
 				</Paragraph>
-			</Pressable>
+			</OpenGroupScreenOpacity>
 		</View>
 	);
 };

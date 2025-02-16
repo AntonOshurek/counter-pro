@@ -9,7 +9,7 @@ const useCreateNewCounter = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
 	return () => {
-		navigation.navigate(StackScreens.NewCounterScreen);
+		navigation.navigate(StackScreens.CounterScreen);
 	};
 };
 

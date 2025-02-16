@@ -28,7 +28,7 @@ const colors: Record<ColorThemes, IColors> = {
 		basicGreen: '#419a82',
 		switchBg: '#cdcdcd',
 		switchActive: '#000000',
-		borderColor: 'rgba(0, 0, 0, 0.5)'
+		borderColor: 'rgba(0, 0, 0, 0.2)'
 	},
 	dark: {
 		alwaysWhite: '#ffffff',

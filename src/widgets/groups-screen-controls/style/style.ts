@@ -9,8 +9,7 @@ const style = StyleSheet.create({
 		alignItems: 'center',
 		position: 'absolute',
 		bottom: paddings.standardSavePadding,
-		right: paddings.standardSavePadding,
-		width: '100%'
+		right: paddings.standardSavePadding
 	}
 });
 

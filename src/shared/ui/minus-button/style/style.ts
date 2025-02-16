@@ -1,3 +1,4 @@
+//NATIVE
 import { StyleSheet } from 'react-native';
 //TYPES
 import type { ColorThemes } from '../../../../entities/theme';
