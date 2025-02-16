@@ -4,20 +4,23 @@ const style = StyleSheet.create({
 	counterCard: {
 		borderWidth: 2,
 		borderColor: 'tomato',
-    paddingInline: 10,
-    paddingVertical: 10
+		paddingInline: 10,
+		paddingVertical: 10
 	},
-  header: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  controls: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  }
+	header: {
+		width: '100%',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	controls: {
+		width: '100%',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center'
+	},
+	openCounter: {
+		flex: 1
+	}
 });
 
 export default style;

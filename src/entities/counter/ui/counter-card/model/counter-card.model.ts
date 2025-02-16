@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 //MODEL
 import type { Counter } from '../../../model/counter.model';
 //TYPES
@@ -9,6 +9,10 @@ interface CounterCardProps {
 	IncrementButton: React.ComponentType<{ counterId: string }>;
 	DecrementButton: React.ComponentType<{ counterId: string }>;
 	CounterValue: React.ComponentType<{ counterId: string; size?: Sizes }>;
+	OpenCounter: React.ComponentType<{
+		counter: Counter;
+		children: ReactNode;
+	}>;
 }
 
 export { CounterCardProps };

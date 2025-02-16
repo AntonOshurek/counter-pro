@@ -11,20 +11,27 @@ const CounterCard = ({
 	counter,
 	CounterValue,
 	IncrementButton,
-	DecrementButton
+	DecrementButton,
+	OpenCounter
 }: CounterCardProps) => {
 	return (
 		<View style={style.counterCard}>
 			<View style={style.header}>
-				<Paragraph contentType={'primary'} size={'medium'}>
-					{counter.name}
-				</Paragraph>
+				<OpenCounter counter={counter}>
+					<Paragraph contentType={'primary'} size={'medium'}>
+						{counter.name}
+					</Paragraph>
+				</OpenCounter>
 			</View>
 
 			<View style={style.controls}>
 				<DecrementButton counterId={counter.id} />
 
-				<CounterValue counterId={counter.id} size={'small'} />
+				<View style={style.openCounter}>
+					<OpenCounter counter={counter}>
+						<CounterValue counterId={counter.id} size={'small'} />
+					</OpenCounter>
+				</View>
 
 				<IncrementButton counterId={counter.id} />
 			</View>
