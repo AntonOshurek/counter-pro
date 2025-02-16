@@ -2,11 +2,12 @@
 import { View } from 'react-native';
 //MODEL
 import { CounterCardProps } from './model/counter-card.model';
+//UI
+import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //STYLES
 import style from './styles/style';
-import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 
-const CounterCard = ({ counter }: CounterCardProps) => {
+const CounterCard = ({ counter, IncrementButton, DecrementButton }: CounterCardProps) => {
 	return (
 		<View style={style.counterCard}>
 			<View style={style.header}>
@@ -16,15 +17,13 @@ const CounterCard = ({ counter }: CounterCardProps) => {
 			</View>
 
 			<View style={style.controls}>
+				<DecrementButton counterId={counter.id} />
+
 				<Paragraph contentType={'primary'} size={'large'}>
-					-1
+					{counter.count}
 				</Paragraph>
-				<Paragraph contentType={'primary'} size={'large'}>
-					{counter.id}
-				</Paragraph>
-				<Paragraph contentType={'primary'} size={'large'}>
-					+1
-				</Paragraph>
+
+				<IncrementButton counterId={counter.id} />
 			</View>
 		</View>
 	);

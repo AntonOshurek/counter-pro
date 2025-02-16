@@ -1,4 +1,4 @@
-// features/theme/switch-theme/counter.model.ts
+// features/theme/switch-theme/counter.mini-decrement-button.model.ts
 import { useAppSelector } from '../../../shared/store';
 //FEATURES
 import useSwitchTheme from './switch-theme';

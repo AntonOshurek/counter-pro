@@ -1,15 +1,19 @@
 import useCreateNewCounter from './create-new-counter/create-new-counter';
 import CreateNewCounterButton from './create-new-counter/ui/create-new-counter-button';
 import useDecrement from './decrement/decrement';
-import DecrementButton from './decrement/ui/decrement-button';
+import PrimaryDecrementButton from './decrement/ui/primary-decrement-button/primary-decrement-button';
 import IncrementSurface from './increment/ui/increment-surface/increment-surface';
 import useIncrement from './increment/increment';
+import MiniIncrementButton from './increment/ui/increment-button/increment-button';
+import MiniDecrementButton from './decrement/ui/mini-decrement-button/mini-decrement-button';
 
 export {
 	useCreateNewCounter,
 	CreateNewCounterButton,
 	useDecrement,
-	DecrementButton,
+	PrimaryDecrementButton,
 	useIncrement,
-	IncrementSurface
+	IncrementSurface,
+	MiniIncrementButton,
+	MiniDecrementButton
 };

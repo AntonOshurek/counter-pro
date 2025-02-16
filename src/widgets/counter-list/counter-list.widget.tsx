@@ -1,5 +1,7 @@
 //NATIVE
 import { FlatList } from 'react-native';
+//FEATURES
+import { MiniIncrementButton, MiniDecrementButton } from '../../features/counter';
 //ENTITIES
 import { CounterCard } from '../../entities/counter';
 //STYLES
@@ -13,9 +15,16 @@ const CounterListWidget = () => {
 		<FlatList
 			style={style.counterList}
 			data={counters}
-      contentContainerStyle={{rowGap: 20}}
+			contentContainerStyle={{ rowGap: 20 }}
 			keyExtractor={item => item.id}
-			renderItem={({ item }) => <CounterCard counter={item} key={item.id} />}
+			renderItem={({ item }) => (
+				<CounterCard
+					key={item.id}
+					counter={item}
+					DecrementButton={MiniDecrementButton}
+					IncrementButton={MiniIncrementButton}
+				/>
+			)}
 		/>
 	);
 };
