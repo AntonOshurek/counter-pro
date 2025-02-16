@@ -17,7 +17,7 @@ const enum BottomTabsScreens {
 
 const enum StackScreens {
 	BottomTabs = 'BottomTabs',
-	NewCounterScreen = 'NewCounterScreen',
+	CounterScreen = 'CounterScreen',
 	GroupScreen = 'GroupScreen'
 }
 

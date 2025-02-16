@@ -6,11 +6,11 @@ import { NavigationStackParams } from '../../../app/navigation/model';
 import { StackScreens } from '../../../shared/constants';
 
 const useOpenCounterScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
+	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
-  return () => {
-    navigation.navigate(StackScreens.NewCounterScreen);
-  };
+	return () => {
+		navigation.navigate(StackScreens.CounterScreen);
+	};
 };
 
 export default useOpenCounterScreen;

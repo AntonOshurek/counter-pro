@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
 import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
 //TYPES
-import { BottomTabsNavigationParams } from './model/bottom-tabs.model';
+import { BottomTabsNavigationParams } from './model/';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS

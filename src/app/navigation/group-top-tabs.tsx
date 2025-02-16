@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 //NAVIGATION
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -15,7 +16,6 @@ import {
 	GroupTopTabsNavigationParams,
 	GroupTopTabsProps
 } from './model/';
-import { useLayoutEffect } from 'react';
 
 const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
