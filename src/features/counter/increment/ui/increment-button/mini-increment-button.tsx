@@ -3,18 +3,16 @@ import { Pressable } from 'react-native';
 //FEATURES
 import useIncrement from '../../increment';
 //MODEL
-import { IncrementButtonProps } from './model';
+import { IncrementButtonProps } from './mini-increment-button.model';
 //UI
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import MiniIncBtn from '../../../../../shared/ui/mini-inc-btn/mini-inc-btn';
 
 const MiniIncrementButton = ({ counterId }: IncrementButtonProps) => {
 	const increment = useIncrement({ counterId });
 
 	return (
 		<Pressable onPress={increment}>
-			<Paragraph size={'large'} contentType={'primary'}>
-				Inc
-			</Paragraph>
+			<MiniIncBtn incAction={increment} />
 		</Pressable>
 	);
 };

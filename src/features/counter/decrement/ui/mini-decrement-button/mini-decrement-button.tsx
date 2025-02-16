@@ -5,16 +5,14 @@ import useIncrement from '../../decrement';
 //MODEL
 import { MiniIncrementButtonProps } from './mini-decrement-button.model';
 //UI
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import MiniDecBtn from '../../../../../shared/ui/mini-dec-btn/mini-dec-btn';
 
 const MiniIncrementButton = ({ counterId }: MiniIncrementButtonProps) => {
 	const increment = useIncrement({ counterId });
 
 	return (
 		<Pressable onPress={increment}>
-			<Paragraph size={'large'} contentType={'primary'}>
-				Dec
-			</Paragraph>
+			<MiniDecBtn incAction={increment} />
 		</Pressable>
 	);
 };

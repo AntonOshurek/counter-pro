@@ -4,7 +4,7 @@ import useDecrement from './decrement/decrement';
 import PrimaryDecrementButton from './decrement/ui/primary-decrement-button/primary-decrement-button';
 import IncrementSurface from './increment/ui/increment-surface/increment-surface';
 import useIncrement from './increment/increment';
-import MiniIncrementButton from './increment/ui/increment-button/increment-button';
+import MiniIncrementButton from './increment/ui/increment-button/mini-increment-button';
 import MiniDecrementButton from './decrement/ui/mini-decrement-button/mini-decrement-button';
 
 export {
