@@ -3,7 +3,7 @@ import { FlatList } from 'react-native';
 //FEATURES
 import { MiniIncrementButton, MiniDecrementButton } from '../../features/counter';
 //ENTITIES
-import { CounterCard } from '../../entities/counter';
+import { CounterCard, CounterValue } from '../../entities/counter';
 //STYLES
 import style from './styles/style';
 
@@ -23,6 +23,7 @@ const CounterListWidget = () => {
 					counter={item}
 					DecrementButton={MiniDecrementButton}
 					IncrementButton={MiniIncrementButton}
+					CounterValue={CounterValue}
 				/>
 			)}
 		/>

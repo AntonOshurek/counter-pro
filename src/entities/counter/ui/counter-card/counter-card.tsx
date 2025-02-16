@@ -7,7 +7,12 @@ import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //STYLES
 import style from './styles/style';
 
-const CounterCard = ({ counter, IncrementButton, DecrementButton }: CounterCardProps) => {
+const CounterCard = ({
+	counter,
+	CounterValue,
+	IncrementButton,
+	DecrementButton
+}: CounterCardProps) => {
 	return (
 		<View style={style.counterCard}>
 			<View style={style.header}>
@@ -19,9 +24,7 @@ const CounterCard = ({ counter, IncrementButton, DecrementButton }: CounterCardP
 			<View style={style.controls}>
 				<DecrementButton counterId={counter.id} />
 
-				<Paragraph contentType={'primary'} size={'large'}>
-					{counter.count}
-				</Paragraph>
+				<CounterValue counterId={counter.id} size={'small'} />
 
 				<IncrementButton counterId={counter.id} />
 			</View>

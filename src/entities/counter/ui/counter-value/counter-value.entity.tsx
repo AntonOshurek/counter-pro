@@ -1,10 +1,10 @@
 //MODEL
-import { CounterValueProps } from './counter-value.model';
+import { CounterValueProps } from './model/counter-value.model';
 //UI
 import Count from '../../../../shared/ui/count/count';
 
-const CounterValue = ({ counterId }: CounterValueProps) => {
-	return <Count count={1} />;
+const CounterValue = ({ counterId, size }: CounterValueProps) => {
+	return <Count count={1} size={size} />;
 };
 
 export default CounterValue;

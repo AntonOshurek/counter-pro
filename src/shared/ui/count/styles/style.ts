@@ -1,10 +1,18 @@
 import { StyleSheet } from 'react-native';
 //ENTITIES
 import { ColorThemes } from '../../../../entities/theme';
+//TYPES
+import type { Sizes } from '../../../types/styling';
 //STYLES
 import { colors } from '../../../styles';
 
-const style = (theme: ColorThemes) =>
+const counterSize = {
+	small: 30,
+	medium: 80,
+	large: 180
+};
+
+const style = (theme: ColorThemes, size?: Sizes) =>
 	StyleSheet.create({
 		Count: {
 			justifyContent: 'center',
@@ -13,8 +21,8 @@ const style = (theme: ColorThemes) =>
 		},
 		countText: {
 			color: colors[theme].textPrimary,
-			fontSize: 180,
-      textAlign: 'center'
+			fontSize: size ? counterSize[size] : 180,
+			textAlign: 'center'
 		}
 	});
 
