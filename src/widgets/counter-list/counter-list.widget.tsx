@@ -22,7 +22,7 @@ const CounterListWidget = () => {
 			contentContainerStyle={{ rowGap: 20 }}
 			keyExtractor={item => item.id}
 			renderItem={({ item }) => (
-				<OpenCounterScreenOpacity counterId={item.id}>
+				<OpenCounterScreenOpacity counter={item}>
 					<CounterCard
 						key={item.id}
 						counter={item}

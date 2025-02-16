@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
+//ENTITIES
+import { Counter } from '../../../../../entities/counter';
 
 interface OpenCounterScreenProps {
-	counterId: string;
+	counter: Counter;
 	children: ReactNode;
 }
 
