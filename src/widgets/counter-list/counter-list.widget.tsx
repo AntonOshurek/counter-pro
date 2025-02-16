@@ -19,7 +19,7 @@ const CounterListWidget = () => {
 		<FlatList
 			style={style.counterList}
 			data={counters}
-			contentContainerStyle={{ rowGap: 20 }}
+			contentContainerStyle={{ rowGap: 5, paddingBottom: 150 }}
 			keyExtractor={item => item.id}
 			renderItem={({ item }) => (
 				<CounterCard

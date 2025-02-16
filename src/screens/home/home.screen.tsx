@@ -7,9 +7,8 @@ import style from './styles/style';
 
 const HomeScreen = () => {
 	return (
-		<ScreenLayout additionalClass={style.homeScreen}>
+		<ScreenLayout additionalClass={style.homeScreen} withoutPaddings={true}>
 			<CounterListWidget />
-
 			<HomeScreenControlsWidget />
 		</ScreenLayout>
 	);
