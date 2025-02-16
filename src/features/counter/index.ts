@@ -6,6 +6,7 @@ import IncrementSurface from './increment/ui/increment-surface/increment-surface
 import useIncrement from './increment/increment';
 import MiniIncrementButton from './increment/ui/increment-button/mini-increment-button';
 import MiniDecrementButton from './decrement/ui/mini-decrement-button/mini-decrement-button';
+import OpenCounterScreenOpacity from './open-counter-screen/ui/open-counter-screen-opacity/open-counter-screen-opacity';
 
 export {
 	useCreateNewCounter,
@@ -15,5 +16,6 @@ export {
 	useIncrement,
 	IncrementSurface,
 	MiniIncrementButton,
-	MiniDecrementButton
+	MiniDecrementButton,
+	OpenCounterScreenOpacity
 };
