@@ -38,7 +38,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 
 	const heightInterpolation = animation.interpolate({
 		inputRange: [0, 1],
-		outputRange: [0, group.counters.length * 30] // Высота элемента * кол-во элементов
+		outputRange: [0, group.counters.length * 30] // element height * elements count
 	});
 
 	return (
@@ -47,7 +47,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 				<Paragraph contentType={'primary'} size={'large'}>
 					{group.name}
 				</Paragraph>
-				<Paragraph contentType={'tertiary'} size={'small'}>
+				<Paragraph contentType={'tertiary'} size={'xSmall'}>
 					Counters: {group.counters.length}
 				</Paragraph>
 			</OpenGroupScreenOpacity>
