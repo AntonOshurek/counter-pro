@@ -1,23 +1,16 @@
 //LIBS
 import Svg, { Path } from 'react-native-svg';
+//HOC
+import withIconWrapper from '../hooks/withIconsWrapper';
 //TYPES
 import type { IconProps } from './model/icon.model';
 
-const ListIcon = ({ width, height, color }: IconProps): JSX.Element => {
-	const computedWidth = width ? `${width}px` : '40px';
-	const computedHeight = height ? `${height}px` : '40px';
-	const computedColor = color ? color : '#000000';
-
+const ListIcon = (props: IconProps) => {
 	return (
-		<Svg
-			height={computedHeight}
-			viewBox='0 -960 960 960'
-			width={computedWidth}
-			fill={computedColor}
-		>
+		<Svg {...props} viewBox='0 -960 960 960'>
 			<Path d='M380.57-208.92v-50.26H820v50.26H380.57Zm0-245.95v-50.26H820v50.26H380.57Zm0-246.36v-50.26H820v50.26H380.57ZM201.28-173.87q-25.2 0-43.03-17.45-17.84-17.44-17.84-42.65 0-25.22 17.65-42.87t42.86-17.65q25.22 0 42.66 17.97 17.45 17.96 17.45 43.01 0 24.49-17.56 42.06-17.55 17.58-42.19 17.58Zm0-245.95q-25.2 0-43.03-17.77-17.84-17.77-17.84-42.41 0-24.64 17.89-42.41 17.89-17.77 43.01-17.77 24.57 0 42.14 17.77 17.58 17.77 17.58 42.41 0 24.64-17.56 42.41-17.55 17.77-42.19 17.77Zm-.69-246.36q-24.64 0-42.41-17.77-17.77-17.77-17.77-42.41 0-24.64 17.77-42.41 17.77-17.77 42.54-17.77t42.54 17.77q17.77 17.77 17.77 42.41 0 24.64-17.76 42.41-17.75 17.77-42.68 17.77Z' />
 		</Svg>
 	);
 };
 
-export default ListIcon;
+export default withIconWrapper(ListIcon);

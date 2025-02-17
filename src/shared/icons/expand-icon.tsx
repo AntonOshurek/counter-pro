@@ -5,7 +5,7 @@ import type { IconProps } from './model/icon.model';
 import useThemeResolver from '../hooks/useThemeResolver';
 import { colors } from '../styles';
 
-const ExpandIcon = ({ width, height, color }: IconProps): JSX.Element => {
+const ExpandIcon = ({ width, height, color }: IconProps) => {
 	const theme = useThemeResolver();
 
 	const computedWidth = width ? `${width}px` : '40px';
