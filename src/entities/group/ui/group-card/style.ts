@@ -9,10 +9,19 @@ const style = StyleSheet.create({
 		padding: paddings.cardSavePaddings,
 		backgroundColor: 'transparent'
 	},
-  cardHeader: {
-    gap: 5,
-    flex: 1,
-  }
+	cardHeader: {
+		flexDirection: 'row',
+		gap: 10,
+		justifyContent: 'space-between',
+		alignItems: 'center'
+	},
+	cardTitle: {
+		gap: 5,
+		flex: 1,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: 'tomato'
+	}
 });
 
 export default style;

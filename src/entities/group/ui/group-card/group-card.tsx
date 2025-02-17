@@ -22,16 +22,20 @@ const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 
 	return (
 		<View style={[style.groupCard]}>
-			<OpenGroupScreenOpacity group={group}>
-				<View style={style.cardHeader}>
+			<View style={style.cardHeader}>
+				<OpenGroupScreenOpacity group={group} additionalStyles={style.cardTitle}>
 					<Paragraph contentType={'primary'} size={'large'}>
 						{group.name}
 					</Paragraph>
 					<Paragraph contentType={'tertiary'} size={'xSmall'}>
 						Counters: {group.counters.length}
 					</Paragraph>
-				</View>
-			</OpenGroupScreenOpacity>
+				</OpenGroupScreenOpacity>
+
+				<Paragraph contentType={'secondary'} size={'large'}>
+					Pinned
+				</Paragraph>
+			</View>
 
 			<ExpandAnimatedView itemsCount={groupCounter.length}>
 				{groupCounter.map((counter: Counter) => (
