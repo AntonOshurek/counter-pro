@@ -5,6 +5,7 @@ import { Animated, TouchableOpacity, View } from 'react-native';
 import UseThemeResolver from '../../hooks/useThemeResolver';
 //UI
 import Paragraph from '../paragraph/paragraph';
+import { ExpandIcon, CollapseIcon } from '../../icons';
 //MODEL
 import { ExpandAnimatedViewProps } from './model/expand-animated-view.model';
 //STYLES
@@ -35,7 +36,7 @@ const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) =
 		<View style={s.expandAnimatedView}>
 			<TouchableOpacity style={s.dropDown} onPress={toggleExpand}>
 				<Paragraph contentType={'primary'} size={'medium'}>
-					{isExpanded ? 'Up' : 'Down'}
+					{isExpanded ?  <CollapseIcon /> : <ExpandIcon/>}
 				</Paragraph>
 			</TouchableOpacity>
 
