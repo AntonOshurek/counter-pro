@@ -12,6 +12,7 @@ import style from './style';
 
 //MOK DATA
 import counters from '../../../../mok-data/counters';
+import KeepIcon from '../../../../shared/icons/keep-icon';
 
 const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 	const groupCounter = counters.filter(counter => {
@@ -33,7 +34,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 				</OpenGroupScreenOpacity>
 
 				<Paragraph contentType={'secondary'} size={'large'}>
-					Pinned
+					<KeepIcon width={30} height={30} />
 				</Paragraph>
 			</View>
 

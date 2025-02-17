@@ -18,9 +18,6 @@ const style = StyleSheet.create({
 	cardTitle: {
 		gap: 5,
 		flex: 1,
-    width: '100%',
-    borderWidth: 1,
-    borderColor: 'tomato'
 	}
 });
 

@@ -7,6 +7,8 @@ import DragHandleIcon from './drag-handle-icon';
 import MinusIcon from './minus-icon';
 import ExpandIcon from './expand-icon';
 import CollapseIcon from './collapse-icon';
+import keepIcon from './keep-icon';
+import keepOffIcon from './keep-off-icon';
 
 export {
 	PlusIcon,
@@ -17,5 +19,7 @@ export {
 	DragHandleIcon,
 	MinusIcon,
 	ExpandIcon,
-	CollapseIcon
+	CollapseIcon,
+	keepIcon,
+	keepOffIcon
 };
