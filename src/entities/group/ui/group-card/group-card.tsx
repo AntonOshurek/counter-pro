@@ -1,26 +1,15 @@
 //NATIVE
 import { View } from 'react-native';
-//ENTITIES
-import { Counter } from '../../../counter';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
-import ExpandAnimatedView from '../../../../shared/ui/expand-animated-view/expand-animated-view';
 //MODEL
 import { GroupCardProps } from './group-card.model';
+//ICONS
+import KeepIcon from '../../../../shared/icons/keep-icon';
 //STYLES
 import style from './style';
 
-//MOK DATA
-import counters from '../../../../mok-data/counters';
-import KeepIcon from '../../../../shared/icons/keep-icon';
-
-const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
-	const groupCounter = counters.filter(counter => {
-		if (group.counters.includes(counter.id)) {
-			return counter;
-		}
-	});
-
+const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) => {
 	return (
 		<View style={[style.groupCard]}>
 			<View style={style.cardHeader}>
@@ -38,13 +27,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
 				</Paragraph>
 			</View>
 
-			<ExpandAnimatedView itemsCount={groupCounter.length}>
-				{groupCounter.map((counter: Counter) => (
-					<Paragraph contentType={'primary'} size={'small'} key={counter.id}>
-						{counter.name}
-					</Paragraph>
-				))}
-			</ExpandAnimatedView>
+			{children && children}
 		</View>
 	);
 };

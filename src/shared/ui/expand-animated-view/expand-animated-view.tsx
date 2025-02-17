@@ -29,7 +29,7 @@ const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) =
 
 	const heightInterpolation = animation.interpolate({
 		inputRange: [0, 1],
-		outputRange: [0, itemsCount * 30]
+		outputRange: [0, itemsCount * 100]
 	});
 
 	return (
@@ -40,7 +40,7 @@ const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) =
 				</Paragraph>
 			</TouchableOpacity>
 
-			<Animated.View style={{ height: heightInterpolation, overflow: 'hidden' }}>
+			<Animated.View style={{ height: heightInterpolation, overflow: 'hidden', gap: 5 }}>
 				{children}
 			</Animated.View>
 		</View>

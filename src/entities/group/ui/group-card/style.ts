@@ -6,14 +6,14 @@ import { paddings } from '../../../../shared/styles';
 const style = StyleSheet.create({
 	groupCard: {
 		borderRadius: 10,
-		padding: paddings.cardSavePaddings,
-		backgroundColor: 'transparent'
+		backgroundColor: 'transparent',
 	},
 	cardHeader: {
 		flexDirection: 'row',
 		gap: 10,
 		justifyContent: 'space-between',
-		alignItems: 'center'
+		alignItems: 'center',
+    padding: paddings.cardSavePaddings,
 	},
 	cardTitle: {
 		gap: 5,

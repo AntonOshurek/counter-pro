@@ -17,7 +17,7 @@ const style = (theme: ColorThemes, size?: Sizes) =>
 		Count: {
 			justifyContent: 'center',
 			alignItems: 'center',
-			flex: 1
+			// flex: 1
 		},
 		countText: {
 			color: colors[theme].textPrimary,
