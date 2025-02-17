@@ -2,11 +2,15 @@
 import Svg, { Path } from 'react-native-svg';
 //TYPES
 import type { IconProps } from './model/icon.model';
+import useThemeResolver from '../hooks/useThemeResolver';
+import { colors } from '../styles';
 
 const ExpandIcon = ({ width, height, color }: IconProps): JSX.Element => {
+	const theme = useThemeResolver();
+
 	const computedWidth = width ? `${width}px` : '40px';
 	const computedHeight = height ? `${height}px` : '40px';
-	const computedColor = color ? color : '#000000';
+	const computedColor = color ? color : colors[theme].textSecondary;
 
 	return (
 		<Svg
@@ -15,7 +19,7 @@ const ExpandIcon = ({ width, height, color }: IconProps): JSX.Element => {
 			width={computedWidth}
 			fill={computedColor}
 		>
-			<Path d='M480-59.33 217.33-322l71.84-71.33L480-203.67l191.17-189.66 71.5 71.33L480-59.33Zm-191.33-506.5L217.33-638 480-900.67 742.67-638 672-565.83l-192-190.5-191.33 190.5Z' />
+			<Path d='M480-320.67 217.33-583.33l72-71.34L480-464l190.67-190.67 72 71.34L480-320.67Z' />
 		</Svg>
 	);
 };
