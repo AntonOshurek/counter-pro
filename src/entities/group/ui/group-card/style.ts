@@ -10,7 +10,14 @@ const style = (theme: ColorThemes) =>
 		groupCard: {
 			borderRadius: 10,
 			padding: paddings.cardSavePaddings,
-			backgroundColor: colors[theme].mainSurfacePrimary
+			backgroundColor: 'transparent'
+		},
+		dropDown: {
+			flex: 1,
+			borderWidth: 1,
+			borderColor: 'tomato',
+      justifyContent: 'center',
+      alignItems: 'center'
 		}
 	});
 

@@ -28,7 +28,21 @@ const counters: Counter[] = [
 		step: 1,
 		count: 0,
 		group: ''
-	}
+	},
+  {
+    id: 'counter-5',
+    name: 'Counter name 5',
+    step: 1,
+    count: 0,
+    group: ''
+  },
+  {
+    id: 'counter-6',
+    name: 'Counter name 6',
+    step: 1,
+    count: 0,
+    group: ''
+  }
 ];
 
 export default counters;
