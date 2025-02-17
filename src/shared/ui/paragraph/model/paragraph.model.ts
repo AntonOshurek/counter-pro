@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 interface ParagraphProps {
 	contentType: 'primary' | 'secondary' | 'tertiary';
-	size: 'large' | 'medium' | 'small';
+	size: 'large' | 'medium' | 'small' | 'xSmall';
 	children: ReactNode;
-  textTransform?: 'capitalize' | 'uppercase' | 'lowercase';
+	textTransform?: 'capitalize' | 'uppercase' | 'lowercase';
 }
 
 export { ParagraphProps };

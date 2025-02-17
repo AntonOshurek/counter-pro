@@ -1,17 +1,24 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
-//TYPES
-import type { ColorThemes } from '../../../theme';
 //STYLES
-import { colors, paddings } from '../../../../shared/styles';
+import { paddings } from '../../../../shared/styles';
 
-const style = (theme: ColorThemes) =>
-	StyleSheet.create({
-		groupCard: {
-			borderRadius: 10,
-			padding: paddings.cardSavePaddings,
-			backgroundColor: colors[theme].mainSurfacePrimary
-		}
-	});
+const style = StyleSheet.create({
+	groupCard: {
+		borderRadius: 10,
+		backgroundColor: 'transparent',
+	},
+	cardHeader: {
+		flexDirection: 'row',
+		gap: 10,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+    padding: paddings.cardSavePaddings,
+	},
+	cardTitle: {
+		gap: 5,
+		flex: 1,
+	}
+});
 
 export default style;

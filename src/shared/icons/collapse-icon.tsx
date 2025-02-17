@@ -5,12 +5,12 @@ import withIconWrapper from '../hooks/withIconsWrapper';
 //TYPES
 import type { IconProps } from './model/icon.model';
 
-const plusIcon = (props: IconProps) => {
+const CollapseIcon = (props: IconProps) => {
 	return (
 		<Svg {...props} viewBox='0 -960 960 960'>
-			<Path d='M446.67-446.67H200v-66.66h246.67V-760h66.66v246.67H760v66.66H513.33V-200h-66.66v-246.67Z' />
+			<Path d='M480-520 289.33-329.33l-72-71.34L480-663.33l262.67 262.66-72 71.34L480-520Z' />
 		</Svg>
 	);
 };
 
-export default withIconWrapper(plusIcon);
+export default withIconWrapper(CollapseIcon);

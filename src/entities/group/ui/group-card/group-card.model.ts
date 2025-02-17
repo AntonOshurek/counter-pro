@@ -1,10 +1,16 @@
 import React, { ReactNode } from 'react';
 //MODEL
 import type { Group } from '../../';
+import { StyleProp, ViewStyle } from 'react-native';
 
 interface GroupCardProps {
 	group: Group;
-	OpenGroupScreenOpacity: React.ComponentType<{ group: Group; children: ReactNode }>;
+  children?: ReactNode;
+	OpenGroupScreenOpacity: React.ComponentType<{
+		group: Group;
+		children: ReactNode;
+		additionalStyles?: StyleProp<ViewStyle>;
+	}>;
 }
 
 export { GroupCardProps };

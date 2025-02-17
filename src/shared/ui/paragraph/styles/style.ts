@@ -16,6 +16,9 @@ const style = (theme: ColorThemes) =>
 		small: {
 			fontSize: 16
 		},
+    xSmall: {
+      fontSize: 14
+    },
 		primary: {
 			color: colors[theme].textPrimary
 		},

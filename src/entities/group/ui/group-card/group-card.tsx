@@ -1,28 +1,33 @@
 //NATIVE
 import { View } from 'react-native';
-//HOOKS
-import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //MODEL
 import { GroupCardProps } from './group-card.model';
+//ICONS
+import KeepIcon from '../../../../shared/icons/keep-icon';
 //STYLES
 import style from './style';
 
-const GroupCard = ({ group, OpenGroupScreenOpacity }: GroupCardProps) => {
-	const theme = UseThemeResolver();
-	const s = style(theme);
-
+const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) => {
 	return (
-		<View style={[s.groupCard]}>
-			<OpenGroupScreenOpacity group={group}>
-				<Paragraph contentType={'primary'} size={'large'}>
-					{group.name}
+		<View style={[style.groupCard]}>
+			<View style={style.cardHeader}>
+				<OpenGroupScreenOpacity group={group} additionalStyles={style.cardTitle}>
+					<Paragraph contentType={'primary'} size={'large'}>
+						{group.name}
+					</Paragraph>
+					<Paragraph contentType={'tertiary'} size={'xSmall'}>
+						Counters: {group.counters.length}
+					</Paragraph>
+				</OpenGroupScreenOpacity>
+
+				<Paragraph contentType={'secondary'} size={'large'}>
+					<KeepIcon width={30} height={30} />
 				</Paragraph>
-				<Paragraph contentType={'tertiary'} size={'small'}>
-					Counters: {group.counters.length}
-				</Paragraph>
-			</OpenGroupScreenOpacity>
+			</View>
+
+			{children && children}
 		</View>
 	);
 };
