@@ -36,11 +36,13 @@ const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) =
 		<View style={s.expandAnimatedView}>
 			<TouchableOpacity style={s.dropDown} onPress={toggleExpand}>
 				<Paragraph contentType={'primary'} size={'medium'}>
-					{isExpanded ?  <CollapseIcon /> : <ExpandIcon/>}
+					{isExpanded ? <CollapseIcon /> : <ExpandIcon />}
 				</Paragraph>
 			</TouchableOpacity>
 
-			<Animated.View style={{ height: heightInterpolation, overflow: 'hidden', gap: 5 }}>
+			<Animated.View
+				style={{ height: heightInterpolation, overflow: 'hidden', gap: 5 }}
+			>
 				{children}
 			</Animated.View>
 		</View>
