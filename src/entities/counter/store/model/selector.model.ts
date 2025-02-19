@@ -4,11 +4,11 @@ import { RootState } from '../../../../shared/store';
 import { Counter } from '../../model/counter.model';
 
 interface ISelectorGetCounter {
-	(counterId: string): (state: RootState) => Counter | undefined;
+	(counterId: string): (state: RootState) => Counter;
 }
 
 interface ISelectorGetCounters {
-  (): (state: RootState) => Record<string, Counter>;
+	(): (state: RootState) => Record<string, Counter>;
 }
 
 export { ISelectorGetCounter, ISelectorGetCounters };

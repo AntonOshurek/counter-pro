@@ -9,7 +9,7 @@ const useIncrement = ({ counterId }: UseIncrementProps) => {
 	const dispatch = useAppDispatch();
 
 	return () => {
-		// dispatch(IncrementAction({ counterId, amount: 1 }));
+		dispatch(IncrementAction({ counterId, amount: 1 }));
 		console.log(`increment feature for counter - ${counterId}`);
 	};
 };
