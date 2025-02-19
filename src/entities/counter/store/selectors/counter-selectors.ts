@@ -1,6 +1,6 @@
 //MODEL
 import type { RootState } from '../../../../shared/store';
-import type { ISelectorGetCounter, ISelectorGetCounters } from '../model/selector.model';
+import { ISelectorGetCounter, ISelectorGetCounters } from '../model/selector.model';
 
 const SelectorGetCounter: ISelectorGetCounter =
 	(counterId: string) => (state: RootState) => {
