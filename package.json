@@ -24,7 +24,8 @@
     "react-native-pager-view": "6.5.1",
     "react-native-screens": "~4.4.0",
     "react-native-svg": "15.8.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
