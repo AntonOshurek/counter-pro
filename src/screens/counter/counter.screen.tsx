@@ -15,7 +15,7 @@ const CounterScreen = () => {
 
 	return (
 		<ScreenLayout additionalClass={style.CounterScreen} withoutPaddings={true}>
-			<CounterWidget />
+			{counter && <CounterWidget counter={counter} />}
 		</ScreenLayout>
 	);
 };

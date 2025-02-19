@@ -4,20 +4,22 @@ import { View } from 'react-native';
 import { CounterValue } from '../../entities/counter/';
 //FEATURES
 import { PrimaryDecrementButton, IncrementSurface } from '../../features/counter';
+//MODEL
+import { CounterWidgetProps } from './model/counter-widget.model';
 //UI
 import { CounterControlsWrapper } from '../../shared/wrappers';
 //STYLES
 import style from './styles/style';
 
-const CounterWidget = () => {
+const CounterWidget = ({ counter }: CounterWidgetProps) => {
 	return (
 		<View style={style.counterWidget}>
-			<IncrementSurface counterId={'some-counter-id'}>
-				<CounterValue counterId={'some-counter-id'} />
+			<IncrementSurface counterId={counter.id}>
+				<CounterValue counterId={counter.id} />
 			</IncrementSurface>
 
 			<CounterControlsWrapper>
-				<PrimaryDecrementButton counterId={'some-counter-id'} />
+				<PrimaryDecrementButton counterId={counter.id} />
 			</CounterControlsWrapper>
 		</View>
 	);
