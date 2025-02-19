@@ -9,7 +9,6 @@ const useDecrement = ({ counterId }: UseDecrementProps) => {
 
 	return () => {
 		dispatch(DecrementAction({ counterId, amount: 1 }));
-		console.log(`decrement feature for counter - ${counterId}`);
 	};
 };
 
