@@ -14,6 +14,7 @@ import style from './styles/style';
 
 const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	const [name, setName] = useState<string>(counterName);
+	const [isFocused, setIsFocused] = useState(false);
 	const changeName = useChangeName({ counterId });
 
 	const theme = useThemeResolver();
@@ -30,10 +31,16 @@ const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	return (
 		<View style={s.changeNameField}>
 			<Paragraph contentType={'secondary'} size={'xSmall'}>
-				Change CounterName
+				Change Counter Name
 			</Paragraph>
 
-			<TextInput style={s.input} value={name} onChangeText={handleNameChange} />
+			<TextInput
+				style={[s.input, isFocused ? s.inputFocused : s.inputBlurred]}
+				value={name}
+				onChangeText={handleNameChange}
+				onFocus={() => setIsFocused(true)}
+				onBlur={() => setIsFocused(false)}
+			/>
 		</View>
 	);
 };
