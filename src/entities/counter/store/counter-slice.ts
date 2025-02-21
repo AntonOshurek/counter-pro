@@ -2,12 +2,13 @@
 import { counterInitialState } from './state/counter-state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //MODEL
-import type {
+import {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
 	ISetToGroupAction,
-	ISetNameAction
+	ISetNameAction,
+	ICreateCounterAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -15,6 +16,13 @@ const counterSlice = createSlice({
 	initialState: counterInitialState,
 
 	reducers: {
+		createCounter: (state, action: PayloadAction<ICreateCounterAction>) => {
+			const { newCounter } = action.payload;
+
+			state[newCounter.id] = {
+				...newCounter
+			};
+		},
 		increment: (state, action: PayloadAction<IIncrementAction>) => {
 			const { counterId, amount } = action.payload;
 

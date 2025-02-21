@@ -7,7 +7,8 @@ import {
 	DecrementAction,
 	setToGroupAction,
 	SetStepAction,
-	setNameAction
+	setNameAction,
+	CreateCounterAction
 } from './store/actions/counter-actions';
 
 export {
@@ -19,5 +20,6 @@ export {
 	DecrementAction,
 	setToGroupAction,
 	SetStepAction,
-	setNameAction
+	setNameAction,
+	CreateCounterAction
 };

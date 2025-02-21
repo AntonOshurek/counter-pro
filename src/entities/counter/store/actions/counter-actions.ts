@@ -1,12 +1,22 @@
+//STORE
+import counterSlice from '../counter-slice';
+//MODEL
 import {
+	ICreateCounterAction,
 	IDecrementAction,
 	IIncrementAction,
 	ISetNameAction,
 	ISetStepAction,
 	ISetToGroupAction
 } from '../model/action.model';
-import { AppThunk } from '../../../../shared/store';
-import counterSlice from '../counter-slice';
+//TYPES
+import type { AppThunk } from '../../../../shared/store';
+
+const CreateCounterAction =
+	(action: ICreateCounterAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.createCounter({ newCounter: action.newCounter }));
+	};
 
 const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
@@ -43,5 +53,6 @@ export {
 	DecrementAction,
 	setToGroupAction,
 	SetStepAction,
-	setNameAction
+	setNameAction,
+	CreateCounterAction
 };

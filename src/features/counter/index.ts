@@ -7,6 +7,7 @@ import useIncrement from './increment/increment';
 import MiniIncrementButton from './increment/ui/increment-button/mini-increment-button';
 import MiniDecrementButton from './decrement/ui/mini-decrement-button/mini-decrement-button';
 import OpenCounterScreenOpacity from './open-counter-screen/ui/open-counter-screen-opacity/open-counter-screen-opacity';
+import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
 
 export {
 	useCreateNewCounter,
@@ -17,5 +18,6 @@ export {
 	IncrementSurface,
 	MiniIncrementButton,
 	MiniDecrementButton,
-	OpenCounterScreenOpacity
+	OpenCounterScreenOpacity,
+	ChangeNameField
 };

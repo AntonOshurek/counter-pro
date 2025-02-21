@@ -1,9 +1,8 @@
+//NATIVE
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	counterSettingsScreen: {
-		justifyContent: 'flex-end'
-	}
+	counterSettings: {}
 });
 
 export default style;

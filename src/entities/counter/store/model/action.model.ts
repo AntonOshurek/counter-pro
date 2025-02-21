@@ -1,26 +1,32 @@
+import { Counter } from '../../model/counter.model';
+
 interface IIncrementAction {
 	amount: number;
-  counterId: string;
+	counterId: string;
 }
 
 interface IDecrementAction {
 	amount: number;
-  counterId: string;
+	counterId: string;
 }
 
 interface ISetStepAction {
 	newStep: number;
-  counterId: string;
+	counterId: string;
 }
 
 interface ISetToGroupAction {
 	newGroupId: string;
-  counterId: string;
+	counterId: string;
 }
 
 interface ISetNameAction {
 	newName: string;
-  counterId: string;
+	counterId: string;
+}
+
+interface ICreateCounterAction {
+	newCounter: Counter;
 }
 
 export {
@@ -28,5 +34,6 @@ export {
 	IDecrementAction,
 	ISetStepAction,
 	ISetToGroupAction,
-	ISetNameAction
+	ISetNameAction,
+	ICreateCounterAction
 };
