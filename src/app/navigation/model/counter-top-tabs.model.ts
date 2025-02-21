@@ -10,7 +10,7 @@ import { CounterTopTabsScreens, StackScreens } from '../../../shared/constants';
 import type { NavigationStackParams } from './stack.model';
 
 interface CounterScreenRouteProps {
-	counter?: Counter;
+	counter: Counter;
 }
 
 type CounterTopTabsNavigationParams = {

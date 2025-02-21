@@ -26,15 +26,13 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: counter ? counter.name : 'New Counter'
+			title: counter.name
 		});
 	}, [navigation, counter]);
 
 	return (
 		<Tab.Navigator
-			initialRouteName={
-				counter ? CounterTopTabsScreens.Counter : CounterTopTabsScreens.Settings
-			}
+			initialRouteName={CounterTopTabsScreens.Counter}
 			screenOptions={{
 				tabBarStyle: {
 					backgroundColor: colors[theme].mainSurfacePrimary
@@ -51,6 +49,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 			<Tab.Screen
 				name={CounterTopTabsScreens.Settings}
 				component={CounterSettingsScreen}
+				initialParams={{ counter }}
 			/>
 		</Tab.Navigator>
 	);
