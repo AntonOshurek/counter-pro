@@ -9,22 +9,20 @@ import { CreateCounterAction } from '../../../entities/counter';
 import { StackScreens } from '../../../shared/constants';
 //LIBS
 import { v4 } from 'uuid';
+import { createNewCounterTitleDate } from '../../../shared/lib/date-lib';
 
 const useCreateNewCounter = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
-
 	const dispatch = useAppDispatch();
 
 	return () => {
 		const newCounter = {
 			id: v4(),
-			name: 'New Counter',
+			name: `New Counter ${createNewCounterTitleDate()}`,
 			step: 1,
 			count: 0,
 			group: ''
 		};
-
-		console.log('create counter', newCounter);
 
 		dispatch(CreateCounterAction({ newCounter: newCounter }));
 		navigation.navigate(StackScreens.CounterScreen, { counter: newCounter });
