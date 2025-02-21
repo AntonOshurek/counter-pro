@@ -16,12 +16,16 @@ const useCreateNewCounter = () => {
 	const dispatch = useAppDispatch();
 
 	return () => {
+		const now = new Date();
+
 		const newCounter = {
 			id: v4(),
 			name: `New Counter ${createNewCounterTitleDate()}`,
 			step: 1,
 			count: 0,
-			group: ''
+			group: '',
+			createdAt: now.toISOString(),
+			createdAtTimestamp: now.getTime()
 		};
 
 		dispatch(CreateCounterAction({ newCounter: newCounter }));
