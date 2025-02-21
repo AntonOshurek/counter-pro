@@ -1,7 +1,9 @@
+//FEATURES
+import { ChangeNameField } from '../../features/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
 import Paragraph from '../../shared/ui/paragraph/paragraph';
-//Model
+//MODEL
 import { CounterSettingsWidgetProps } from './model/sounter-setting-widget.model';
 //STYLES
 import style from './styles/style';
@@ -9,17 +11,15 @@ import style from './styles/style';
 const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterSettings}>
+			<ChangeNameField counterId={counter.id} counterName={counter.name} />
+
 			<Paragraph contentType={'primary'} size={'medium'}>
-				change name {counter.name}
+				change step {counter.step}
 			</Paragraph>
 
-      <Paragraph contentType={'primary'} size={'medium'}>
-        change step {counter.step}
-      </Paragraph>
-      
-      <Paragraph contentType={'primary'} size={'medium'}>
-        {counter.group !== '' ? 'Change Group' : 'add to group'} {counter.group}
-      </Paragraph>
+			<Paragraph contentType={'primary'} size={'medium'}>
+				{counter.group !== '' ? 'Change Group' : 'add to group'} {counter.group}
+			</Paragraph>
 		</SettingsGroupWrapper>
 	);
 };

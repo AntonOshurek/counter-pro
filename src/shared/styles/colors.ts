@@ -13,6 +13,7 @@ interface IColors {
 	switchBg: string;
 	switchActive: string;
 	borderColor: string;
+  shadowColor: string;
 }
 
 const colors: Record<ColorThemes, IColors> = {
@@ -28,7 +29,8 @@ const colors: Record<ColorThemes, IColors> = {
 		basicGreen: '#419a82',
 		switchBg: '#cdcdcd',
 		switchActive: '#000000',
-		borderColor: 'rgba(0, 0, 0, 0.2)'
+		borderColor: 'rgba(0, 0, 0, 0.2)',
+    shadowColor: '#ffffff',
 	},
 	dark: {
 		alwaysWhite: '#ffffff',
@@ -42,7 +44,8 @@ const colors: Record<ColorThemes, IColors> = {
 		basicGreen: '#419a82',
 		switchBg: '#2f2f2f',
 		switchActive: '#419a82',
-		borderColor: 'hsla(0, 0%, 100%, 0.5)'
+		borderColor: 'hsla(0, 0%, 100%, 0.5)',
+    shadowColor: '#000000',
 	}
 };
 
