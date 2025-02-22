@@ -10,7 +10,13 @@ import type { InputFieldProps } from './input-field.model';
 //STYLES
 import { style } from './style';
 
-const InputField = ({ label, value, onChange, inputType }: InputFieldProps) => {
+const InputField = ({
+	label,
+	value,
+	onChange,
+	inputType,
+	additionalLabel
+}: InputFieldProps) => {
 	const [isFocused, setIsFocused] = useState(false);
 
 	const theme = useThemeResolver();
@@ -19,7 +25,7 @@ const InputField = ({ label, value, onChange, inputType }: InputFieldProps) => {
 	return (
 		<View style={s.textInputField}>
 			<Paragraph contentType={'secondary'} size={'xSmall'}>
-				{label}
+				{label} {additionalLabel && `(${additionalLabel})`}
 			</Paragraph>
 
 			<TextInput

@@ -15,7 +15,14 @@ const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 	}, [step, changeStep]);
 
 	const handleNameChange = (text: string) => {
-		setStep(+text);
+		const filteredText = text.replace(/[^0-9]/g, '');
+		const numericValue = Number(filteredText);
+
+		if (numericValue > 999) {
+			setStep(999);
+		} else {
+			setStep(numericValue);
+		}
 	};
 
 	return (
@@ -23,6 +30,7 @@ const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 			onChange={handleNameChange}
 			value={step.toString()}
 			label={'Step'}
+			additionalLabel={'max 999'}
 			inputType={'numeric'}
 		/>
 	);
