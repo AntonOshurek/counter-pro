@@ -4,6 +4,7 @@ import counterSlice from '../counter-slice';
 import {
 	ICreateCounterAction,
 	IDecrementAction,
+	IDeleteCounterAction,
 	IIncrementAction,
 	ISetNameAction,
 	ISetStepAction,
@@ -48,11 +49,18 @@ const setNameAction =
 		dispatch(counterSlice.actions.setName(action));
 	};
 
+const deleteCounterAction =
+	(action: IDeleteCounterAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.delete(action));
+	};
+
 export {
 	IncrementAction,
 	DecrementAction,
 	setToGroupAction,
 	SetStepAction,
 	setNameAction,
-	CreateCounterAction
+	CreateCounterAction,
+	deleteCounterAction
 };

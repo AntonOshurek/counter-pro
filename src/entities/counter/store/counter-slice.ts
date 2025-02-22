@@ -8,7 +8,8 @@ import {
 	ISetStepAction,
 	ISetToGroupAction,
 	ISetNameAction,
-	ICreateCounterAction
+	ICreateCounterAction,
+	IDeleteCounterAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -47,6 +48,13 @@ const counterSlice = createSlice({
 			const { counterId, newStep } = action.payload;
 
 			state[counterId].step = newStep;
+		},
+		delete: (state, action: PayloadAction<IDeleteCounterAction>) => {
+			const { counterId } = action.payload;
+
+			if (state.hasOwnProperty(counterId)) {
+				delete state[counterId];
+			}
 		}
 	}
 });

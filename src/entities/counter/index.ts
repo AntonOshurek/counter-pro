@@ -13,7 +13,8 @@ import {
 	setToGroupAction,
 	SetStepAction,
 	setNameAction,
-	CreateCounterAction
+	CreateCounterAction,
+	deleteCounterAction
 } from './store/actions/counter-actions';
 
 export {
@@ -29,5 +30,6 @@ export {
 	CreateCounterAction,
 	SelectorGetCounters,
 	SelectorGetCounterStep,
-	SelectorGetCounterName
+	SelectorGetCounterName,
+	deleteCounterAction
 };

@@ -29,11 +29,16 @@ interface ICreateCounterAction {
 	newCounter: Counter;
 }
 
+interface IDeleteCounterAction {
+	counterId: string;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
 	ISetToGroupAction,
 	ISetNameAction,
-	ICreateCounterAction
+	ICreateCounterAction,
+	IDeleteCounterAction
 };
