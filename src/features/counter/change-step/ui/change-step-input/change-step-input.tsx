@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 //FEATURES
 import useChangeStep from '../../change-step';
 //UI
-import TextInputField from '../../../../../shared/ui/text-input-field/text-input-field';
+import InputField from '../../../../../shared/ui/input-field/input-field';
 //MODEL
 import type { ChangeStepInputProps } from './change-step-input.model';
 
@@ -19,10 +19,11 @@ const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 	};
 
 	return (
-		<TextInputField
+		<InputField
 			onChange={handleNameChange}
 			value={step.toString()}
 			label={'Step'}
+			inputType={'numeric'}
 		/>
 	);
 };

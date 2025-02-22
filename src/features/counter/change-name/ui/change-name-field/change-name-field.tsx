@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 //FEATURES
 import useChangeName from '../../change-name';
 //UI
-import TextInputField from '../../../../../shared/ui/text-input-field/text-input-field';
+import InputField from '../../../../../shared/ui/input-field/input-field';
 //MODEL
 import { ChangeNameFieldProps } from './model/change-name-field.model';
 
@@ -19,7 +19,7 @@ const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	};
 
 	return (
-		<TextInputField onChange={handleNameChange} value={name} label={'Name'} />
+		<InputField onChange={handleNameChange} value={name} label={'Name'} />
 	);
 };
 

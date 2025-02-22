@@ -6,11 +6,11 @@ import Paragraph from '../paragraph/paragraph';
 //HOOKS
 import useThemeResolver from '../../hooks/useThemeResolver';
 //MODEL
-import type { TextInputProps } from './text-input-field.model';
+import type { InputFieldProps } from './input-field.model';
 //STYLES
 import { style } from './style';
 
-const TextInputField = ({ label, value, onChange }: TextInputProps) => {
+const InputField = ({ label, value, onChange, inputType }: InputFieldProps) => {
 	const [isFocused, setIsFocused] = useState(false);
 
 	const theme = useThemeResolver();
@@ -28,9 +28,10 @@ const TextInputField = ({ label, value, onChange }: TextInputProps) => {
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 				value={value}
+				keyboardType={inputType ? inputType : 'default'}
 			/>
 		</View>
 	);
 };
 
-export default TextInputField;
+export default InputField;
