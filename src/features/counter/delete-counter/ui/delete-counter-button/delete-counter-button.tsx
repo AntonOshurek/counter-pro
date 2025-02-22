@@ -4,11 +4,11 @@ import { View } from 'react-native';
 import useDeleteCounter from '../../delete-counter';
 //UI
 import DeleteButtonWithConfirm from '../../../../../shared/ui/delete-button-with-confirm/delete-button-with-confirm';
+import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 //PROPS
 import type { DeleteCounterButtonProps } from './delete-counter-button.model';
 //STYLES
 import { style } from './style';
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 
 const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	const deleteCounter = useDeleteCounter({ counterId });

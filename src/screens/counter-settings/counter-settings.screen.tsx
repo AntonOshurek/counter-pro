@@ -6,11 +6,12 @@ import type { CounterScreenRouteProp } from '../../app/navigation/model/counter-
 import { useAppSelector } from '../../shared/store';
 import { SelectorGetCounter } from '../../entities/counter';
 //WIDGETS
-import { CounterSettingsWidget, CounterSettingsControlsWidget } from '../../widgets';
+import { CounterSettingsWidget, CounterCriticalOptionsWidget } from '../../widgets';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //STYLES
 import style from './styles/style';
+import { View } from 'react-native';
 
 const CounterSettingsScreen = () => {
 	const route = useRoute<CounterScreenRouteProp>();
@@ -20,8 +21,13 @@ const CounterSettingsScreen = () => {
 
 	return (
 		<ScreenLayout additionalClass={style.counterSettingsScreen}>
-			<CounterSettingsControlsWidget counter={counter} />
-			<CounterSettingsWidget counter={counter} />
+			<View>
+				<CounterCriticalOptionsWidget counter={counter} />
+			</View>
+
+			<View>
+				<CounterSettingsWidget counter={counter} />
+			</View>
 		</ScreenLayout>
 	);
 };

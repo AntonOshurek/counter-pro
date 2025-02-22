@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { itemsGaps } from '../../../shared/styles';
 
 const style = StyleSheet.create({
-	counterSettingsControls: {
+	counterCrucialOptions: {
 		gap: itemsGaps.gapBetweenSettingItems
 	}
 });
