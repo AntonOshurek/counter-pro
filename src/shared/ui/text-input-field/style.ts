@@ -17,7 +17,7 @@ const style = (theme: ColorThemes) =>
 		},
 		inputFocused: {
 			color: colors[theme].textPrimary,
-			borderColor: colors[theme].switchActive,
+			borderColor: colors[theme].controlActive,
 			borderWidth: 1
 		},
 		inputBlurred: {
