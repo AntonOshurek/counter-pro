@@ -22,7 +22,7 @@ const CounterCard = ({
 	return (
 		<View style={s.counterCard}>
 			<View style={s.header}>
-				<OpenCounter counterId={counter.id}>
+				<OpenCounter counterId={counter.id} additionalClass={s.touchableHeader}>
 					<Paragraph contentType={'primary'} size={'medium'}>
 						{counter.name}
 					</Paragraph>

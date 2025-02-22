@@ -5,10 +5,18 @@ import useOpenCounterScreen from '../../open-counter-screen';
 //MODEL
 import type { OpenCounterScreenProps } from './open-counter-screen-opacity.model';
 
-const OpenCounterScreenOpacity = ({ counterId, children }: OpenCounterScreenProps) => {
+const OpenCounterScreenOpacity = ({
+	counterId,
+	children,
+	additionalClass
+}: OpenCounterScreenProps) => {
 	const openCounterScreen = useOpenCounterScreen({ counterId });
 
-	return <TouchableOpacity onPress={openCounterScreen}>{children}</TouchableOpacity>;
+	return (
+		<TouchableOpacity style={additionalClass} onPress={openCounterScreen}>
+			{children}
+		</TouchableOpacity>
+	);
 };
 
 export default OpenCounterScreenOpacity;

@@ -1,3 +1,5 @@
+//NATIVE
+import { StyleProp, ViewStyle } from 'react-native';
 import React, { ReactNode } from 'react';
 //MODEL
 import type { Counter } from '../../../model/counter.model';
@@ -12,6 +14,7 @@ interface CounterCardProps {
 	OpenCounter: React.ComponentType<{
 		counterId: string;
 		children: ReactNode;
+		additionalClass?: StyleProp<ViewStyle>;
 	}>;
 }
 
