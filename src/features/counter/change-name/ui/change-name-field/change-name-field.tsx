@@ -19,7 +19,7 @@ const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	};
 
 	return (
-		<TextInputField onChange={handleNameChange} value={name} label={'Counter Name'} />
+		<TextInputField onChange={handleNameChange} value={name} label={'Name'} />
 	);
 };
 

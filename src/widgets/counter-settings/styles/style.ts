@@ -2,7 +2,9 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	counterSettings: {}
+	counterSettings: {
+    gap: 20
+  }
 });
 
 export default style;
