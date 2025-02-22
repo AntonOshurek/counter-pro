@@ -6,7 +6,7 @@ import type { CounterScreenRouteProp } from '../../app/navigation/model/counter-
 import { useAppSelector } from '../../shared/store';
 import { SelectorGetCounter } from '../../entities/counter';
 //WIDGETS
-import { CounterSettingsWidget } from '../../widgets';
+import { CounterSettingsWidget, CounterSettingsControlsWidget } from '../../widgets';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //STYLES
@@ -20,6 +20,7 @@ const CounterSettingsScreen = () => {
 
 	return (
 		<ScreenLayout additionalClass={style.counterSettingsScreen}>
+			<CounterSettingsControlsWidget counter={counter} />
 			<CounterSettingsWidget counter={counter} />
 		</ScreenLayout>
 	);

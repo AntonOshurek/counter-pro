@@ -1,8 +1,12 @@
+//NATIVE
 import { StyleSheet } from 'react-native';
+//styles
+import { itemsGaps } from '../../../shared/styles';
 
 const style = StyleSheet.create({
 	counterSettingsScreen: {
-		justifyContent: 'flex-end'
+		justifyContent: 'flex-end',
+		gap: itemsGaps.gapBetweenSettingGroups
 	}
 });
 

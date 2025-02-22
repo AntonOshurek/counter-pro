@@ -7,6 +7,7 @@ import GroupListWidget from './group-list/group-list.widget';
 import CounterListWidget from './counter-list/counter-list.widget';
 import GroupScreenCounterListWidget from './group-screen-counter-list/group-screen-counter-list';
 import CounterSettingsWidget from './counter-settings/counter-settings.widget';
+import CounterSettingsControlsWidget from './counter-settings-controls/counter-settings-controls.widget';
 
 export {
 	CounterWidget,
@@ -17,5 +18,6 @@ export {
 	GroupListWidget,
 	CounterListWidget,
 	GroupScreenCounterListWidget,
-	CounterSettingsWidget
+	CounterSettingsWidget,
+  CounterSettingsControlsWidget
 };
