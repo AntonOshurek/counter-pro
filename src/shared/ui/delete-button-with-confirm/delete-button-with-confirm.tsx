@@ -8,12 +8,16 @@ import type { DeleteButtonWithConfirmProps } from './delete-button-with-confirm.
 import style from './style';
 import useThemeResolver from '../../hooks/useThemeResolver';
 
-const DeleteButtonWithConfirm = ({ deleteAction }: DeleteButtonWithConfirmProps) => {
+const DeleteButtonWithConfirm = ({
+	deleteAction,
+	confirmText,
+	buttonText
+}: DeleteButtonWithConfirmProps) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
 
 	const handleDelete = () => {
-		Alert.alert('Delete Counter', 'Are You sure you want to delete this counter?', [
+		Alert.alert(confirmText.title, confirmText.body, [
 			{
 				text: 'Cancel',
 				style: 'cancel'
@@ -29,7 +33,7 @@ const DeleteButtonWithConfirm = ({ deleteAction }: DeleteButtonWithConfirmProps)
 	return (
 		<Pressable style={s.deleteButtonWithConfirm} onPress={handleDelete}>
 			<Paragraph contentType={'primary'} size={'medium'}>
-				delete counter button
+				{buttonText}
 			</Paragraph>
 		</Pressable>
 	);

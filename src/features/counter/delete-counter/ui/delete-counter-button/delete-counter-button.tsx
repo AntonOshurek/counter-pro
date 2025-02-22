@@ -12,7 +12,16 @@ const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 		deleteCounter();
 	};
 
-	return <DeleteButtonWithConfirm deleteAction={onDeleteListener} />;
+	return (
+		<DeleteButtonWithConfirm
+			deleteAction={onDeleteListener}
+			confirmText={{
+				body: 'Are You sure you want to delete this counter?',
+				title: 'Delete Counter'
+			}}
+			buttonText={'Delete Counter'}
+		/>
+	);
 };
 
 export default DeleteCounterButton;
