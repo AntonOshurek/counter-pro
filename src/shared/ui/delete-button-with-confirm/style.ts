@@ -8,7 +8,9 @@ import { colors } from '../../styles';
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({
 		deleteButtonWithConfirm: {
-			backgroundColor: colors[theme].controlActive
+			backgroundColor: colors[theme].deleteColor,
+			paddingVertical: 8,
+			paddingHorizontal: 14
 		}
 	});
 
