@@ -9,6 +9,7 @@ import ExpandIcon from './expand-icon';
 import CollapseIcon from './collapse-icon';
 import keepIcon from './keep-icon';
 import keepOffIcon from './keep-off-icon';
+import ResetIcon from './reset-icon';
 
 export {
 	PlusIcon,
@@ -21,5 +22,6 @@ export {
 	ExpandIcon,
 	CollapseIcon,
 	keepIcon,
-	keepOffIcon
+	keepOffIcon,
+	ResetIcon
 };

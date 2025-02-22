@@ -1,9 +1,12 @@
+//NATIVE
 import { StyleSheet } from 'react-native';
+//styles
+import { itemsGaps } from '../../../shared/styles';
 
 const style = StyleSheet.create({
 	settingsScreen: {
 		justifyContent: 'flex-end',
-    gap: 40,
+    gap: itemsGaps.gapBetweenSettingGroups,
     paddingBottom: 30
 	}
 });

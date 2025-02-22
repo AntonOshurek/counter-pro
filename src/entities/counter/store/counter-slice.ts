@@ -8,7 +8,9 @@ import {
 	ISetStepAction,
 	ISetToGroupAction,
 	ISetNameAction,
-	ICreateCounterAction
+	ICreateCounterAction,
+	IDeleteCounterAction,
+	IResetAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -33,6 +35,11 @@ const counterSlice = createSlice({
 
 			state[counterId].count = state[counterId].count - amount;
 		},
+		reset: (state, action: PayloadAction<IResetAction>) => {
+			const { counterId } = action.payload;
+
+			state[counterId].count = 0;
+		},
 		setToGroup: (state, action: PayloadAction<ISetToGroupAction>) => {
 			const { counterId, newGroupId } = action.payload;
 
@@ -47,6 +54,16 @@ const counterSlice = createSlice({
 			const { counterId, newStep } = action.payload;
 
 			state[counterId].step = newStep;
+		},
+		delete: (state, action: PayloadAction<IDeleteCounterAction>) => {
+			const { counterId } = action.payload;
+
+			if (state.hasOwnProperty(counterId)) {
+				// delete state[counterId];
+				return Object.fromEntries(
+					Object.entries(state).filter(([key]) => key !== counterId)
+				);
+			}
 		}
 	}
 });

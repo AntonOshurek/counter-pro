@@ -16,6 +16,12 @@ const style = (theme: ColorThemes) =>
 			justifyContent: 'center',
 			alignItems: 'center'
 		},
+		touchableHeader: {
+			flex: 1,
+			width: '100%',
+			justifyContent: 'center',
+			alignItems: 'center'
+		},
 		controls: {
 			width: '100%',
 			flexDirection: 'row',

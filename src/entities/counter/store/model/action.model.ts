@@ -10,6 +10,10 @@ interface IDecrementAction {
 	counterId: string;
 }
 
+interface IResetAction {
+	counterId: string;
+}
+
 interface ISetStepAction {
 	newStep: number;
 	counterId: string;
@@ -29,11 +33,17 @@ interface ICreateCounterAction {
 	newCounter: Counter;
 }
 
+interface IDeleteCounterAction {
+	counterId: string;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
 	ISetToGroupAction,
 	ISetNameAction,
-	ICreateCounterAction
+	ICreateCounterAction,
+	IDeleteCounterAction,
+	IResetAction
 };

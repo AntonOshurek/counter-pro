@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-//ENTITIES
-import { Counter } from '../../../../../entities/counter';
+import { StyleProp, ViewStyle } from 'react-native';
 
 interface OpenCounterScreenProps {
-	counter: Counter;
+	counterId: string;
 	children: ReactNode;
+  additionalClass?: StyleProp<ViewStyle>;
 }
 
 export { OpenCounterScreenProps };

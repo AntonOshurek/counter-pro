@@ -7,11 +7,11 @@ import { StackScreens } from '../../../shared/constants';
 //MODEL
 import type { OpenCounterScreenProps } from './model/open-counter-screen.model';
 
-const useOpenCounterScreen = ({ counter }: OpenCounterScreenProps) => {
+const useOpenCounterScreen = ({ counterId }: OpenCounterScreenProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
 	return () => {
-		navigation.navigate(StackScreens.CounterScreen, { counter });
+		navigation.navigate(StackScreens.CounterScreen, { counterId });
 	};
 };
 

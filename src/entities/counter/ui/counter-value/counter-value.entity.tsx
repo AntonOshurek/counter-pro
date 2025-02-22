@@ -7,7 +7,7 @@ import { CounterValueProps } from './model/counter-value.model';
 import Count from '../../../../shared/ui/count/count';
 
 const CounterValue = ({ counterId, size }: CounterValueProps) => {
-  const counter = useAppSelector(SelectorGetCounter(counterId));
+	const counter = useAppSelector(SelectorGetCounter(counterId));
 
 	return <Count count={counter.count} size={size} />;
 };

@@ -4,7 +4,9 @@ import counterSlice from '../counter-slice';
 import {
 	ICreateCounterAction,
 	IDecrementAction,
+	IDeleteCounterAction,
 	IIncrementAction,
+	IResetAction,
 	ISetNameAction,
 	ISetStepAction,
 	ISetToGroupAction
@@ -22,6 +24,12 @@ const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(counterSlice.actions.increment(action));
+	};
+
+const ResetAction =
+	(action: IResetAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.reset(action));
 	};
 
 const DecrementAction =
@@ -48,11 +56,19 @@ const setNameAction =
 		dispatch(counterSlice.actions.setName(action));
 	};
 
+const deleteCounterAction =
+	(action: IDeleteCounterAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.delete(action));
+	};
+
 export {
 	IncrementAction,
 	DecrementAction,
 	setToGroupAction,
 	SetStepAction,
 	setNameAction,
-	CreateCounterAction
+	CreateCounterAction,
+	deleteCounterAction,
+	ResetAction
 };

@@ -11,9 +11,10 @@ interface IColors {
 	textTertiary: string;
 	basicGreen: string;
 	switchBg: string;
-	switchActive: string;
+	controlActive: string;
 	borderColor: string;
-  shadowColor: string;
+	shadowColor: string;
+	deleteColor: string;
 }
 
 const colors: Record<ColorThemes, IColors> = {
@@ -28,9 +29,10 @@ const colors: Record<ColorThemes, IColors> = {
 		textTertiary: '#b4b4b4',
 		basicGreen: '#419a82',
 		switchBg: '#cdcdcd',
-		switchActive: '#000000',
+		controlActive: '#000000',
 		borderColor: 'rgba(0, 0, 0, 0.2)',
-    shadowColor: '#ffffff',
+		shadowColor: '#ffffff',
+		deleteColor: '#B91C1C'
 	},
 	dark: {
 		alwaysWhite: '#ffffff',
@@ -43,9 +45,10 @@ const colors: Record<ColorThemes, IColors> = {
 		textTertiary: '#9b9b9b',
 		basicGreen: '#419a82',
 		switchBg: '#2f2f2f',
-		switchActive: '#419a82',
+		controlActive: '#419a82',
 		borderColor: 'hsla(0, 0%, 100%, 0.5)',
-    shadowColor: '#000000',
+		shadowColor: '#000000',
+		deleteColor: '#B91C1C'
 	}
 };
 
