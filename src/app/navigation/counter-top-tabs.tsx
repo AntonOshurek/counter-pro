@@ -7,7 +7,7 @@ import { CounterScreen, CounterSettingsScreen } from '../../screens';
 //STORE
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
-import { SelectorGetCounterName } from '../../entities/counter/store/selectors/counter-selectors';
+import { SelectorGetCounterName } from '../../entities/counter/';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS

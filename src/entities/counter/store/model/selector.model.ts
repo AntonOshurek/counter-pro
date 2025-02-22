@@ -15,4 +15,13 @@ interface ISelectorGetCounterName {
 	(counterId: string): (state: RootState) => string;
 }
 
-export { ISelectorGetCounter, ISelectorGetCounters, ISelectorGetCounterName };
+interface ISelectorGetCounterStep {
+	(counterId: string): (state: RootState) => number;
+}
+
+export {
+	ISelectorGetCounter,
+	ISelectorGetCounters,
+	ISelectorGetCounterName,
+	ISelectorGetCounterStep
+};

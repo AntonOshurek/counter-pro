@@ -2,7 +2,6 @@
 import { ChangeNameField, ChangeStepInput } from '../../features/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
-import Paragraph from '../../shared/ui/paragraph/paragraph';
 //MODEL
 import { CounterSettingsWidgetProps } from './model/sounter-setting-widget.model';
 //STYLES
