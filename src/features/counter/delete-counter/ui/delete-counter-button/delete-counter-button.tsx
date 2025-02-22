@@ -1,21 +1,18 @@
-//NATIVE
-import { Pressable } from 'react-native';
 //FEATURES
 import useDeleteCounter from '../../delete-counter';
+//UI
+import DeleteButtonWithConfirm from '../../../../../shared/ui/delete-button-with-confirm/delete-button-with-confirm';
 //PROPS
 import type { DeleteCounterButtonProps } from './delete-counter-button.model';
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 
 const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	const deleteCounter = useDeleteCounter({ counterId });
 
-	return (
-		<Pressable onPress={() => deleteCounter()}>
-			<Paragraph contentType={'primary'} size={'medium'}>
-				delete counter button
-			</Paragraph>
-		</Pressable>
-	);
+	const onDeleteListener = () => {
+		deleteCounter();
+	};
+
+	return <DeleteButtonWithConfirm deleteAction={onDeleteListener} />;
 };
 
 export default DeleteCounterButton;
