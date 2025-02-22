@@ -4,6 +4,10 @@ import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
 import { CounterScreen, CounterSettingsScreen } from '../../screens';
+//STORE
+import { useAppSelector } from '../../shared/store';
+//ENTITIES
+import { SelectorGetCounterName } from '../../entities/counter/store/selectors/counter-selectors';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
@@ -24,11 +28,13 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const route = useRoute<CounterScreenRouteProp>();
 	const { counter } = route.params || {};
 
+	const counterName = useAppSelector(SelectorGetCounterName(counter.id));
+
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: counter.name
+			title: counterName
 		});
-	}, [navigation, counter]);
+	}, [navigation, counter, counterName]);
 
 	return (
 		<Tab.Navigator

@@ -11,4 +11,8 @@ interface ISelectorGetCounters {
 	(): (state: RootState) => Record<string, Counter>;
 }
 
-export { ISelectorGetCounter, ISelectorGetCounters };
+interface ISelectorGetCounterName {
+	(counterId: string): (state: RootState) => string;
+}
+
+export { ISelectorGetCounter, ISelectorGetCounters, ISelectorGetCounterName };
