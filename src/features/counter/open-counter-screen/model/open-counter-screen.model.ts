@@ -1,7 +1,7 @@
 import { Counter } from '../../../../entities/counter';
 
 interface OpenCounterScreenProps {
-	counter: Counter;
+	counterId: string;
 }
 
 export { OpenCounterScreenProps };

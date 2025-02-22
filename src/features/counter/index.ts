@@ -9,6 +9,7 @@ import MiniDecrementButton from './decrement/ui/mini-decrement-button/mini-decre
 import OpenCounterScreenOpacity from './open-counter-screen/ui/open-counter-screen-opacity/open-counter-screen-opacity';
 import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
 import ChangeStepInput from './change-step/ui/change-step-input/change-step-input';
+import DeleteCounterButton from './delete-counter/ui/delete-counter-button/delete-counter-button';
 
 export {
 	useCreateNewCounter,
@@ -21,5 +22,6 @@ export {
 	MiniDecrementButton,
 	OpenCounterScreenOpacity,
 	ChangeNameField,
-	ChangeStepInput
+	ChangeStepInput,
+	DeleteCounterButton
 };

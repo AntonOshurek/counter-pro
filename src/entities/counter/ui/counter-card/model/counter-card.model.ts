@@ -10,7 +10,7 @@ interface CounterCardProps {
 	DecrementButton: React.ComponentType<{ counterId: string }>;
 	CounterValue: React.ComponentType<{ counterId: string; size?: Sizes }>;
 	OpenCounter: React.ComponentType<{
-		counter: Counter;
+		counterId: string;
 		children: ReactNode;
 	}>;
 }

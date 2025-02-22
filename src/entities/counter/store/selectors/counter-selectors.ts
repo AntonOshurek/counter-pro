@@ -18,12 +18,12 @@ const SelectorGetCounters: ISelectorGetCounters = () => (state: RootState) => {
 
 const SelectorGetCounterName: ISelectorGetCounterName =
 	(counterId: string) => (state: RootState) => {
-		return state.counter[counterId].name;
+		return state.counter[counterId]?.name;
 	};
 
 const SelectorGetCounterStep: ISelectorGetCounterStep =
 	(counterId: string) => (state: RootState) => {
-		return state.counter[counterId].step;
+		return state.counter[counterId]?.step;
 	};
 
 export {

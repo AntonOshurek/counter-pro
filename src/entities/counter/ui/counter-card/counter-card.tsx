@@ -22,7 +22,7 @@ const CounterCard = ({
 	return (
 		<View style={s.counterCard}>
 			<View style={s.header}>
-				<OpenCounter counter={counter}>
+				<OpenCounter counterId={counter.id}>
 					<Paragraph contentType={'primary'} size={'medium'}>
 						{counter.name}
 					</Paragraph>
@@ -33,7 +33,7 @@ const CounterCard = ({
 				<DecrementButton counterId={counter.id} />
 
 				<View style={s.openCounter}>
-					<OpenCounter counter={counter}>
+					<OpenCounter counterId={counter.id}>
 						<CounterValue counterId={counter.id} size={'small'} />
 					</OpenCounter>
 				</View>

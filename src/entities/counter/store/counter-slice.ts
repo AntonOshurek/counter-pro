@@ -53,8 +53,9 @@ const counterSlice = createSlice({
 			const { counterId } = action.payload;
 
 			if (state.hasOwnProperty(counterId)) {
-				delete state[counterId];
-			}
+				// delete state[counterId];
+        return Object.fromEntries(Object.entries(state).filter(([key]) => key !== counterId));
+      }
 		}
 	}
 });

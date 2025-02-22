@@ -1,5 +1,9 @@
 //FEATURES
-import { ChangeNameField, ChangeStepInput } from '../../features/counter';
+import {
+	ChangeNameField,
+	ChangeStepInput,
+	DeleteCounterButton
+} from '../../features/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
 //MODEL
@@ -10,6 +14,8 @@ import style from './styles/style';
 const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterSettings}>
+			<DeleteCounterButton counterId={counter.id} />
+
 			<ChangeNameField counterId={counter.id} counterName={counter.name} />
 
 			<ChangeStepInput counterId={counter.id} currentStep={counter.step} />

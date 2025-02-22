@@ -29,7 +29,7 @@ const useCreateNewCounter = () => {
 		};
 
 		dispatch(CreateCounterAction({ newCounter: newCounter }));
-		navigation.navigate(StackScreens.CounterScreen, { counter: newCounter });
+		navigation.navigate(StackScreens.CounterScreen, { counterId: newCounter.id });
 	};
 };
 
