@@ -14,7 +14,8 @@ import {
 	SetStepAction,
 	setNameAction,
 	CreateCounterAction,
-	deleteCounterAction
+	deleteCounterAction,
+	ResetAction
 } from './store/actions/counter-actions';
 
 export {
@@ -31,5 +32,6 @@ export {
 	SelectorGetCounters,
 	SelectorGetCounterStep,
 	SelectorGetCounterName,
-	deleteCounterAction
+	deleteCounterAction,
+	ResetAction
 };

@@ -1,5 +1,5 @@
 //FEATURES
-import { DeleteCounterButton } from '../../features/counter';
+import { DeleteCounterButton, ResetCounterButton } from '../../features/counter';
 //WRAPPERS
 import { SettingsGroupWrapper } from '../../shared/wrappers';
 //MODEL
@@ -11,6 +11,7 @@ const CounterSettingsControlsWidget = ({ counter }: CounterSettingsControlsProps
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterSettingsControls}>
 			<DeleteCounterButton counterId={counter.id} />
+			<ResetCounterButton counterId={counter.id} />
 		</SettingsGroupWrapper>
 	);
 };

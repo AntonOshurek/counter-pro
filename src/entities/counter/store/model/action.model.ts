@@ -10,6 +10,10 @@ interface IDecrementAction {
 	counterId: string;
 }
 
+interface IResetAction {
+	counterId: string;
+}
+
 interface ISetStepAction {
 	newStep: number;
 	counterId: string;
@@ -40,5 +44,6 @@ export {
 	ISetToGroupAction,
 	ISetNameAction,
 	ICreateCounterAction,
-	IDeleteCounterAction
+	IDeleteCounterAction,
+	IResetAction
 };

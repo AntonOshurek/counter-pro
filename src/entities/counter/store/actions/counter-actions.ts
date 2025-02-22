@@ -6,6 +6,7 @@ import {
 	IDecrementAction,
 	IDeleteCounterAction,
 	IIncrementAction,
+	IResetAction,
 	ISetNameAction,
 	ISetStepAction,
 	ISetToGroupAction
@@ -23,6 +24,12 @@ const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(counterSlice.actions.increment(action));
+	};
+
+const ResetAction =
+	(action: IResetAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.reset(action));
 	};
 
 const DecrementAction =
@@ -62,5 +69,6 @@ export {
 	SetStepAction,
 	setNameAction,
 	CreateCounterAction,
-	deleteCounterAction
+	deleteCounterAction,
+	ResetAction
 };

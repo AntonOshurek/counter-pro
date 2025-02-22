@@ -10,6 +10,7 @@ import OpenCounterScreenOpacity from './open-counter-screen/ui/open-counter-scre
 import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
 import ChangeStepInput from './change-step/ui/change-step-input/change-step-input';
 import DeleteCounterButton from './delete-counter/ui/delete-counter-button/delete-counter-button';
+import ResetCounterButton from './reset-counter/ui/reset-counter-button/reset-counter-button';
 
 export {
 	useCreateNewCounter,
@@ -23,5 +24,6 @@ export {
 	OpenCounterScreenOpacity,
 	ChangeNameField,
 	ChangeStepInput,
-	DeleteCounterButton
+	DeleteCounterButton,
+	ResetCounterButton
 };
