@@ -36,11 +36,13 @@ const CounterCard = ({
 			<View style={s.controls}>
 				<DecrementButton counterId={counter.id} />
 
-				<View style={s.openCounter}>
-					<OpenCounter counterId={counter.id}>
-						<CounterValue counterId={counter.id} size={'small'} />
-					</OpenCounter>
-				</View>
+				<OpenCounter counterId={counter.id} additionalClass={s.counterInfo}>
+					<CounterValue counterId={counter.id} size={'small'} />
+
+					<Paragraph contentType={'tertiary'} size={'xSmall'}>
+						step {counter.step}
+					</Paragraph>
+				</OpenCounter>
 
 				<IncrementButton counterId={counter.id} />
 			</View>
