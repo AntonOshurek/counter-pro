@@ -1,4 +1,6 @@
 import { useLayoutEffect } from 'react';
+//NATIVE
+import { View } from 'react-native';
 //NAVIGATION
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -17,16 +19,16 @@ import {
 } from '../../shared/constants';
 //LIBS
 import { truncateWithEllipsis } from '../../shared/lib/word-lib';
+//UI
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
 import { CounterTopTabsNavigationParams } from './model/';
-import {
+import type {
 	CounterScreenRouteProp,
 	CounterTopTabsProps
 } from './model/counter-top-tabs.model';
-import { View } from 'react-native';
-import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();

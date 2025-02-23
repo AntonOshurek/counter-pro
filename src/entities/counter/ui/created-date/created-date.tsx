@@ -11,6 +11,8 @@ import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 import { CreatedDateProps } from './model/created-date.model';
 //STYLES
 import { style } from './style/style';
+//TEXT
+import { counterText } from '../../../../shared/text-content/text-content';
 
 const CreatedDate = ({ counterId }: CreatedDateProps) => {
 	const createdDate = useAppSelector(SelectorGetCounterCreatedDate(counterId));
@@ -20,7 +22,7 @@ const CreatedDate = ({ counterId }: CreatedDateProps) => {
 	return (
 		<View style={style.createdDate}>
 			<Paragraph contentType={'primary'} size={'small'}>
-				created date:
+				{counterText.counterCreatedDateLabel}
 			</Paragraph>
 
 			<Paragraph contentType={'primary'} size={'small'}>
