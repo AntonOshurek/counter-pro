@@ -6,8 +6,13 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { GroupScreen, GroupSettingsScreen } from '../../screens';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
+//LIBS
+import { truncateWithEllipsis } from '../../shared/lib/word-lib';
 //CONSTANTS
-import { GroupTopTabsScreens } from '../../shared/constants';
+import {
+	GroupTopTabsScreens,
+	symbolsAmountOnNavigationHeader
+} from '../../shared/constants';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
@@ -26,7 +31,9 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: group ? group.name : 'New Group'
+			title: group
+				? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
+				: 'New Group'
 		});
 	}, [navigation, group]);
 

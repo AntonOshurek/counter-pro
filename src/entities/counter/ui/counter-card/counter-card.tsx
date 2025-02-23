@@ -2,6 +2,10 @@
 import { View } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
+//LIBS
+import { truncateWithEllipsis } from '../../../../shared/lib/word-lib';
+//CONSTANTS
+import { symbolsAmountOnItemCard } from '../../../../shared/constants';
 //MODEL
 import { CounterCardProps } from './model/counter-card.model';
 //UI
@@ -24,7 +28,7 @@ const CounterCard = ({
 			<View style={s.header}>
 				<OpenCounter counterId={counter.id} additionalClass={s.touchableHeader}>
 					<Paragraph contentType={'primary'} size={'medium'}>
-						{counter.name}
+						{truncateWithEllipsis(counter.name, symbolsAmountOnItemCard)}
 					</Paragraph>
 				</OpenCounter>
 			</View>

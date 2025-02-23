@@ -11,7 +11,12 @@ import { SelectorGetCounter } from '../../entities/counter/';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { CounterTopTabsScreens } from '../../shared/constants';
+import {
+	CounterTopTabsScreens,
+	symbolsAmountOnNavigationHeader
+} from '../../shared/constants';
+//LIBS
+import { truncateWithEllipsis } from '../../shared/lib/word-lib';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
@@ -33,7 +38,9 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: counter ? counter.name : 'Unknown counter'
+			title: counter
+				? truncateWithEllipsis(counter.name, symbolsAmountOnNavigationHeader)
+				: 'Unknown counter'
 		});
 	}, [navigation, counter]);
 
