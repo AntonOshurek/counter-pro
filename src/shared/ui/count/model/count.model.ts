@@ -1,5 +1,5 @@
 //TYPES
-import type { Sizes } from '../../../types/styling';
+import type { Sizes } from '../../../types/';
 
 interface CountProps {
 	count: number;

@@ -2,6 +2,7 @@
 import type { RootState } from '../../../../shared/store';
 import {
 	ISelectorGetCounter,
+	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
 	ISelectorGetCounterStep
@@ -26,9 +27,15 @@ const SelectorGetCounterStep: ISelectorGetCounterStep =
 		return state.counter[counterId]?.step;
 	};
 
+const SelectorGetCounterCreatedDate: ISelectorGetCounterCreatedDate =
+	(counterId: string) => (state: RootState) => {
+		return state.counter[counterId]?.createdAt;
+	};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
 	SelectorGetCounterName,
-	SelectorGetCounterStep
+	SelectorGetCounterStep,
+	SelectorGetCounterCreatedDate
 };

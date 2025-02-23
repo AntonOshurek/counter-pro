@@ -5,7 +5,8 @@ import {
 	SelectorGetCounter,
 	SelectorGetCounters,
 	SelectorGetCounterStep,
-	SelectorGetCounterName
+	SelectorGetCounterName,
+	SelectorGetCounterCreatedDate
 } from './store/selectors/counter-selectors';
 import {
 	IncrementAction,
@@ -17,6 +18,8 @@ import {
 	deleteCounterAction,
 	ResetAction
 } from './store/actions/counter-actions';
+import CreatedDate from './ui/created-date/created-date';
+import CounterStep from './ui/counter-step/counter-step';
 
 export {
 	CounterValue,
@@ -33,5 +36,8 @@ export {
 	SelectorGetCounterStep,
 	SelectorGetCounterName,
 	deleteCounterAction,
-	ResetAction
+	ResetAction,
+	CreatedDate,
+	SelectorGetCounterCreatedDate,
+	CounterStep
 };

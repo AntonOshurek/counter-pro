@@ -8,6 +8,7 @@ import CounterListWidget from './counter-list/counter-list.widget';
 import GroupScreenCounterListWidget from './group-screen-counter-list/group-screen-counter-list';
 import CounterSettingsWidget from './counter-settings/counter-settings.widget';
 import CounterCriticalOptionsWidget from './counter-critical-options/counter-critical-options.widget';
+import CounterAdditionalInfoWidget from './counter-additional-info/counter-additional-info.widget';
 
 export {
 	CounterWidget,
@@ -19,5 +20,6 @@ export {
 	CounterListWidget,
 	GroupScreenCounterListWidget,
 	CounterSettingsWidget,
-  CounterCriticalOptionsWidget
+	CounterCriticalOptionsWidget,
+	CounterAdditionalInfoWidget
 };

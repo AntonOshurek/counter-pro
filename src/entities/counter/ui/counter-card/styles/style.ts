@@ -28,8 +28,10 @@ const style = (theme: ColorThemes) =>
 			justifyContent: 'space-between',
 			alignItems: 'center'
 		},
-		openCounter: {
-			flex: 1
+		counterInfo: {
+			flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
 		}
 	});
 

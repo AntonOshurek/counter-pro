@@ -8,20 +8,25 @@ import { CounterScreen, CounterSettingsScreen } from '../../screens';
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
 import { SelectorGetCounter } from '../../entities/counter/';
+//UI
+import CounterNotFound from '../../shared/ui/counter-not-found/counter-not-found';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
-import { CounterTopTabsScreens } from '../../shared/constants';
+import {
+	CounterTopTabsScreens,
+	symbolsAmountOnNavigationHeader
+} from '../../shared/constants';
+//LIBS
+import { truncateWithEllipsis } from '../../shared/lib/word-lib';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
 import { CounterTopTabsNavigationParams } from './model/';
-import {
+import type {
 	CounterScreenRouteProp,
 	CounterTopTabsProps
 } from './model/counter-top-tabs.model';
-import { View } from 'react-native';
-import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();
@@ -33,18 +38,14 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: counter ? counter.name : 'Unknown counter'
+			title: counter
+				? truncateWithEllipsis(counter.name, symbolsAmountOnNavigationHeader)
+				: 'Unknown counter'
 		});
 	}, [navigation, counter]);
 
 	if (!counter) {
-		return (
-			<View>
-				<Paragraph contentType={'primary'} size={'large'}>
-					Don't found this counter
-				</Paragraph>
-			</View>
-		);
+		return <CounterNotFound />;
 	} else {
 		return (
 			<Tab.Navigator

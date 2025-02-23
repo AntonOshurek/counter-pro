@@ -9,6 +9,8 @@ import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 import type { DeleteCounterButtonProps } from './delete-counter-button.model';
 //STYLES
 import { style } from './style';
+//TEXT
+import { counterText } from '../../../../../shared/text-content/text-content';
 
 const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	const deleteCounter = useDeleteCounter({ counterId });
@@ -20,16 +22,16 @@ const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	return (
 		<View style={style.deleteCounterButton}>
 			<Paragraph contentType={'primary'} size={'medium'}>
-				Delete Counter
+				{counterText.deleteCounterButtonLabel}
 			</Paragraph>
 
 			<DeleteButtonWithConfirm
 				deleteAction={onDeleteListener}
 				confirmText={{
-					body: 'Are You sure you want to delete this counter?',
-					title: 'Delete Counter'
+					body: counterText.deleteCounterConfirmBody,
+					title: counterText.deleteCounterConfirmTitle
 				}}
-				buttonText={'Delete'}
+				buttonText={counterText.deleteCounterButtonText}
 			/>
 		</View>
 	);

@@ -5,6 +5,7 @@ import {
 	GroupTopTabsScreens,
 	StackScreens
 } from './navigation-screens';
+import { symbolsAmountOnNavigationHeader, symbolsAmountOnItemCard } from './word';
 
 export {
 	Themes,
@@ -13,5 +14,7 @@ export {
 	GroupTopTabsScreens,
 	CounterTopTabsScreens,
 	BottomTabsScreens,
-	StackScreens
+	StackScreens,
+	symbolsAmountOnNavigationHeader,
+	symbolsAmountOnItemCard
 };

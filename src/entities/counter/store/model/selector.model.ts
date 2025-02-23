@@ -19,9 +19,14 @@ interface ISelectorGetCounterStep {
 	(counterId: string): (state: RootState) => number;
 }
 
+interface ISelectorGetCounterCreatedDate {
+	(counterId: string): (state: RootState) => string;
+}
+
 export {
 	ISelectorGetCounter,
 	ISelectorGetCounters,
 	ISelectorGetCounterName,
-	ISelectorGetCounterStep
+	ISelectorGetCounterStep,
+	ISelectorGetCounterCreatedDate
 };

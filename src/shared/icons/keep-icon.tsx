@@ -1,7 +1,7 @@
 //LIBS
 import Svg, { Path } from 'react-native-svg';
 //HOC
-import withIconWrapper from '../hooks/withIconsWrapper';
+import withIconWrapper from '../HOC/withIconsWrapper';
 //TYPES
 import type { IconProps } from './model/icon.model';
 

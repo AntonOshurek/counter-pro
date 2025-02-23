@@ -5,6 +5,8 @@ import useChangeName from '../../change-name';
 import InputField from '../../../../../shared/ui/input-field/input-field';
 //MODEL
 import { ChangeNameFieldProps } from './model/change-name-field.model';
+//TEXT
+import { counterText } from '../../../../../shared/text-content/text-content';
 
 const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	const [name, setName] = useState<string>(counterName);
@@ -19,7 +21,11 @@ const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	};
 
 	return (
-		<InputField onChange={handleNameChange} value={name} label={'Name'} />
+		<InputField
+			onChange={handleNameChange}
+			value={name}
+			label={counterText.changeCounterNameInputLabel}
+		/>
 	);
 };
 

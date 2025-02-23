@@ -2,12 +2,17 @@
 import { View } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
+//LIBS
+import { truncateWithEllipsis } from '../../../../shared/lib/word-lib';
+//CONSTANTS
+import { symbolsAmountOnItemCard } from '../../../../shared/constants';
 //MODEL
 import { CounterCardProps } from './model/counter-card.model';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //STYLES
 import style from './styles/style';
+import CounterStep from '../counter-step/counter-step';
 
 const CounterCard = ({
 	counter,
@@ -24,7 +29,7 @@ const CounterCard = ({
 			<View style={s.header}>
 				<OpenCounter counterId={counter.id} additionalClass={s.touchableHeader}>
 					<Paragraph contentType={'primary'} size={'medium'}>
-						{counter.name}
+						{truncateWithEllipsis(counter.name, symbolsAmountOnItemCard)}
 					</Paragraph>
 				</OpenCounter>
 			</View>
@@ -32,11 +37,11 @@ const CounterCard = ({
 			<View style={s.controls}>
 				<DecrementButton counterId={counter.id} />
 
-				<View style={s.openCounter}>
-					<OpenCounter counterId={counter.id}>
-						<CounterValue counterId={counter.id} size={'small'} />
-					</OpenCounter>
-				</View>
+				<OpenCounter counterId={counter.id} additionalClass={s.counterInfo}>
+					<CounterValue counterId={counter.id} size={'small'} />
+
+					<CounterStep counterId={counter.id} />
+				</OpenCounter>
 
 				<IncrementButton counterId={counter.id} />
 			</View>

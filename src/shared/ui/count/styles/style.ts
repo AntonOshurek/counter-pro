@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 //ENTITIES
 import { ColorThemes } from '../../../../entities/theme';
 //TYPES
-import type { Sizes } from '../../../types/styling';
+import type { Sizes } from '../../../types/';
 //STYLES
 import { colors } from '../../../styles';
 
@@ -16,7 +16,7 @@ const style = (theme: ColorThemes, size?: Sizes) =>
 	StyleSheet.create({
 		Count: {
 			justifyContent: 'center',
-			alignItems: 'center',
+			alignItems: 'center'
 		},
 		countText: {
 			color: colors[theme].textPrimary,

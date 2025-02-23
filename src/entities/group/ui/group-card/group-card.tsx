@@ -1,5 +1,9 @@
 //NATIVE
 import { View } from 'react-native';
+//LIBS
+import { truncateWithEllipsis } from '../../../../shared/lib/word-lib';
+//CONSTANTS
+import { symbolsAmountOnItemCard } from '../../../../shared/constants';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //MODEL
@@ -15,7 +19,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) 
 			<View style={style.cardHeader}>
 				<OpenGroupScreenOpacity group={group} additionalStyles={style.cardTitle}>
 					<Paragraph contentType={'primary'} size={'large'}>
-						{group.name}
+						{truncateWithEllipsis(group.name, symbolsAmountOnItemCard)}
 					</Paragraph>
 					<Paragraph contentType={'tertiary'} size={'xSmall'}>
 						Counters: {group.counters.length}
