@@ -1,7 +1,7 @@
 //NATIVE
 import { View } from 'react-native';
 //ENTITIES
-import { CounterValue } from '../../entities/counter/';
+import { CounterValue, CounterStep } from '../../entities/counter/';
 //FEATURES
 import { PrimaryDecrementButton, IncrementSurface } from '../../features/counter';
 //MODEL
@@ -15,6 +15,7 @@ const CounterWidget = ({ counter }: CounterWidgetProps) => {
 	return (
 		<View style={style.counterWidget}>
 			<IncrementSurface counterId={counter.id}>
+				<CounterStep counterId={counter.id} additionalClass={style.stepInfo} />
 				<CounterValue counterId={counter.id} />
 			</IncrementSurface>
 

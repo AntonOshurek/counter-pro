@@ -19,6 +19,7 @@ import {
 	ResetAction
 } from './store/actions/counter-actions';
 import CreatedDate from './ui/created-date/created-date';
+import CounterStep from './ui/counter-step/counter-step';
 
 export {
 	CounterValue,
@@ -37,5 +38,6 @@ export {
 	deleteCounterAction,
 	ResetAction,
 	CreatedDate,
-	SelectorGetCounterCreatedDate
+	SelectorGetCounterCreatedDate,
+	CounterStep
 };

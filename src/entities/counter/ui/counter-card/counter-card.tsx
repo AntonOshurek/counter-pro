@@ -12,6 +12,7 @@ import { CounterCardProps } from './model/counter-card.model';
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //STYLES
 import style from './styles/style';
+import CounterStep from '../counter-step/counter-step';
 
 const CounterCard = ({
 	counter,
@@ -39,9 +40,7 @@ const CounterCard = ({
 				<OpenCounter counterId={counter.id} additionalClass={s.counterInfo}>
 					<CounterValue counterId={counter.id} size={'small'} />
 
-					<Paragraph contentType={'tertiary'} size={'xSmall'}>
-						step {counter.step}
-					</Paragraph>
+					<CounterStep counterId={counter.id} />
 				</OpenCounter>
 
 				<IncrementButton counterId={counter.id} />
