@@ -1,6 +1,4 @@
 import { useLayoutEffect } from 'react';
-//NATIVE
-import { View } from 'react-native';
 //NAVIGATION
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -10,6 +8,8 @@ import { CounterScreen, CounterSettingsScreen } from '../../screens';
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
 import { SelectorGetCounter } from '../../entities/counter/';
+//UI
+import CounterNotFound from '../../shared/ui/counter-not-found/counter-not-found';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
@@ -19,8 +19,6 @@ import {
 } from '../../shared/constants';
 //LIBS
 import { truncateWithEllipsis } from '../../shared/lib/word-lib';
-//UI
-import Paragraph from '../../shared/ui/paragraph/paragraph';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
@@ -47,13 +45,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	}, [navigation, counter]);
 
 	if (!counter) {
-		return (
-			<View>
-				<Paragraph contentType={'primary'} size={'large'}>
-					Don't found this counter
-				</Paragraph>
-			</View>
-		);
+		return <CounterNotFound />;
 	} else {
 		return (
 			<Tab.Navigator

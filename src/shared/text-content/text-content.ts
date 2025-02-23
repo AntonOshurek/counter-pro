@@ -8,7 +8,8 @@ const counterText = {
 	resetCounterButtonText: 'Reset Counter',
 	changeCounterNameInputLabel: 'Name',
 	changeCounterStepInputLabel: 'Step',
-	changeCounterStepAdditionalLabel: 'max 999'
+	changeCounterStepAdditionalLabel: 'max 999',
+  counterNotFound: 'Oops! We couldn\'t find this counter.'
 };
 
 export { counterText };
