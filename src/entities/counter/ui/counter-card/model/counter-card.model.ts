@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 //MODEL
 import type { Counter } from '../../../model/counter.model';
 //TYPES
-import { Sizes } from '../../../../../shared/types/styling';
+import { Sizes } from '../../../../../shared/types/';
 
 interface CounterCardProps {
 	counter: Counter;
