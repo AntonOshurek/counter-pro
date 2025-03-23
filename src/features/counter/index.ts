@@ -11,6 +11,7 @@ import ChangeNameField from './change-name/ui/change-name-field/change-name-fiel
 import ChangeStepInput from './change-step/ui/change-step-input/change-step-input';
 import DeleteCounterButton from './delete-counter/ui/delete-counter-button/delete-counter-button';
 import ResetCounterButton from './reset-counter/ui/reset-counter-button/reset-counter-button';
+import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-selector-header-button/sort-type-selector-header-button';
 
 export {
 	useCreateNewCounter,
@@ -25,5 +26,6 @@ export {
 	ChangeNameField,
 	ChangeStepInput,
 	DeleteCounterButton,
-	ResetCounterButton
+	ResetCounterButton,
+	SortTypeSelectorHeaderButton
 };

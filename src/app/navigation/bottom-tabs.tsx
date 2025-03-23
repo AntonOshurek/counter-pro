@@ -12,6 +12,7 @@ import { BottomTabsScreens } from '../../shared/constants';
 import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '../../shared/icons/';
 //STYLES
 import { colors } from '../../shared/styles';
+import { SortTypeSelectorHeaderButton } from '../../features/counter';
 
 const BottomTabs = () => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();
@@ -41,7 +42,8 @@ const BottomTabs = () => {
 					title: 'Home',
 					tabBarIcon: () => (
 						<HomeIcon height={40} width={40} color={colors[theme].textPrimary} />
-					)
+					),
+					headerRight: () => <SortTypeSelectorHeaderButton />
 				}}
 			/>
 			<BottomTabs.Screen
