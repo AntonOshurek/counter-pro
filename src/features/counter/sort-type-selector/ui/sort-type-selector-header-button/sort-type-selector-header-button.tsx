@@ -1,8 +1,9 @@
 import { useState } from 'react';
 //NATIVE
-import { Modal, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { Modal, TouchableOpacity, View, Text } from 'react-native';
 //UI
 import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import { SortListIcon } from '../../../../../shared/icons';
 //VARIABLES
 import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
 //STYLES
@@ -21,7 +22,7 @@ const SortTypeSelectorHeaderButton = () => {
 		<View>
 			<TouchableOpacity onPress={toggleModal}>
 				<Paragraph contentType={'primary'} size={'small'}>
-					Sort ▼
+					<SortListIcon />
 				</Paragraph>
 			</TouchableOpacity>
 

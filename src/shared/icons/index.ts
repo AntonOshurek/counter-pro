@@ -10,6 +10,7 @@ import CollapseIcon from './collapse-icon';
 import keepIcon from './keep-icon';
 import keepOffIcon from './keep-off-icon';
 import ResetIcon from './reset-icon';
+import SortListIcon from './sort-list-icon';
 
 export {
 	PlusIcon,
@@ -23,5 +24,6 @@ export {
 	CollapseIcon,
 	keepIcon,
 	keepOffIcon,
-	ResetIcon
+	ResetIcon,
+	SortListIcon
 };
