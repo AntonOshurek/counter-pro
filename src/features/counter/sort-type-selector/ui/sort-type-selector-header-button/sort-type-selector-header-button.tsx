@@ -1,56 +1,46 @@
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
-import { Modal, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
+//NATIVE
+import { Modal, TouchableOpacity, View, Text } from 'react-native';
+//UI
+import { SortListIcon } from '../../../../../shared/icons';
+//VARIABLES
+import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
+//STYLES
+import style from './styles/style';
 
 const SortTypeSelectorHeaderButton = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const toggleModal = () => setModalVisible(!modalVisible);
 
+	const onSortTypeChange = (sortOption: SortOptions) => {
+		console.log(sortOption);
+	};
+
 	return (
 		<View>
 			<TouchableOpacity onPress={toggleModal}>
-				<Paragraph contentType={'primary'} size={'small'}>
-					Sort ▼
-				</Paragraph>
+				<SortListIcon />
 			</TouchableOpacity>
 
 			<Modal visible={modalVisible} transparent animationType='fade'>
-				<TouchableOpacity style={styles.overlay} onPress={toggleModal} />
-				<View style={styles.menu}>
-					<TouchableOpacity onPress={() => console.log('Sort by name')}>
-						<Text style={styles.item}>Sort by Name</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => console.log('Sort by date')}>
-						<Text style={styles.item}>Sort by Date</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => console.log('Sort by count')}>
-						<Text style={styles.item}>Sort by Count</Text>
-					</TouchableOpacity>
+				<TouchableOpacity style={style.overlay} onPress={toggleModal} />
+
+				<View style={style.menu}>
+					{counterSortOptions.map((sortOption: SortOptions) => {
+						return (
+							<TouchableOpacity
+								onPress={() => onSortTypeChange(sortOption)}
+								key={sortOption}
+							>
+								<Text style={style.item}>{sortOption}</Text>
+							</TouchableOpacity>
+						);
+					})}
 				</View>
 			</Modal>
 		</View>
 	);
 };
-
-const styles = StyleSheet.create({
-	overlay: {
-		flex: 1,
-		backgroundColor: 'rgba(0, 0, 0, 0.5)'
-	},
-	menu: {
-		position: 'absolute',
-		top: 50,
-		right: 10,
-		backgroundColor: 'white',
-		padding: 10,
-		borderRadius: 5,
-		elevation: 5
-	},
-	item: {
-		padding: 10,
-		fontSize: 16
-	}
-});
 
 export default SortTypeSelectorHeaderButton;
