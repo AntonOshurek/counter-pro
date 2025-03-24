@@ -1,6 +1,8 @@
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
-import { Modal, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
+//NATIVE
+import { Modal, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+//UI
+import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 
 const SortTypeSelectorHeaderButton = () => {
 	const [modalVisible, setModalVisible] = useState(false);

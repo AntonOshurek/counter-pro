@@ -10,6 +10,7 @@ import { SettingsGroupWrapper } from '../../shared/wrappers';
 import { CounterSettingsWidgetProps } from './model/sounter-setting-widget.model';
 //STYLES
 import style from './styles/style';
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	return (
@@ -20,9 +21,9 @@ const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 
 			<ChangeStepInput counterId={counter.id} currentStep={counter.step} />
 
-			{/*<Paragraph contentType={'primary'} size={'medium'}>*/}
-			{/*	{counter.group !== '' ? 'Change Group' : 'add to group'} {counter.group}*/}
-			{/*</Paragraph>*/}
+			<Paragraph contentType={'primary'} size={'medium'}>
+				{counter.group !== '' ? 'Change Group' : 'add to group'} {counter.group}
+			</Paragraph>
 		</SettingsGroupWrapper>
 	);
 };

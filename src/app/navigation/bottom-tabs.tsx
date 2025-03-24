@@ -2,6 +2,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
 import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
+//FEATURES
+import { SortTypeSelectorHeaderButton } from '../../features/counter';
 //TYPES
 import { BottomTabsNavigationParams } from './model/';
 //HOOKS
@@ -12,7 +14,6 @@ import { BottomTabsScreens } from '../../shared/constants';
 import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '../../shared/icons/';
 //STYLES
 import { colors } from '../../shared/styles';
-import { SortTypeSelectorHeaderButton } from '../../features/counter';
 
 const BottomTabs = () => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();
