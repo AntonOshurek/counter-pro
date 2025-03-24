@@ -3,11 +3,17 @@ import { useState } from 'react';
 import { Modal, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 //UI
 import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+//VARIABLES
+import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
 
 const SortTypeSelectorHeaderButton = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const toggleModal = () => setModalVisible(!modalVisible);
+
+	const onSortTypeChange = (sortOption: SortOptions) => {
+    console.log(sortOption);
+  };
 
 	return (
 		<View>
@@ -19,16 +25,15 @@ const SortTypeSelectorHeaderButton = () => {
 
 			<Modal visible={modalVisible} transparent animationType='fade'>
 				<TouchableOpacity style={styles.overlay} onPress={toggleModal} />
+
 				<View style={styles.menu}>
-					<TouchableOpacity onPress={() => console.log('Sort by name')}>
-						<Text style={styles.item}>Sort by Name</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => console.log('Sort by date')}>
-						<Text style={styles.item}>Sort by Date</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => console.log('Sort by count')}>
-						<Text style={styles.item}>Sort by Count</Text>
-					</TouchableOpacity>
+					{counterSortOptions.map((sortOption: SortOptions) => {
+						return (
+							<TouchableOpacity onPress={() => onSortTypeChange(sortOption)} key={sortOption}>
+								<Text style={styles.item}>{sortOption}</Text>
+							</TouchableOpacity>
+						);
+					})}
 				</View>
 			</Modal>
 		</View>
