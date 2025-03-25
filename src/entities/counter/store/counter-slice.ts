@@ -21,48 +21,48 @@ const counterSlice = createSlice({
 		createCounter: (state, action: PayloadAction<ICreateCounterAction>) => {
 			const { newCounter } = action.payload;
 
-			state[newCounter.id] = {
+			state.counters[newCounter.id] = {
 				...newCounter
 			};
 		},
 		increment: (state, action: PayloadAction<IIncrementAction>) => {
 			const { counterId, amount } = action.payload;
 
-			state[counterId].count = state[counterId].count + amount;
+			state.counters[counterId].count = state.counters[counterId].count + amount;
 		},
 		decrement: (state, action: PayloadAction<IDecrementAction>) => {
 			const { counterId, amount } = action.payload;
 
-			state[counterId].count = state[counterId].count - amount;
+			state.counters[counterId].count = state.counters[counterId].count - amount;
 		},
 		reset: (state, action: PayloadAction<IResetAction>) => {
 			const { counterId } = action.payload;
 
-			state[counterId].count = 0;
+			state.counters[counterId].count = 0;
 		},
 		setToGroup: (state, action: PayloadAction<ISetToGroupAction>) => {
 			const { counterId, newGroupId } = action.payload;
 
-			state[counterId].group = newGroupId;
+			state.counters[counterId].group = newGroupId;
 		},
 		setName: (state, action: PayloadAction<ISetNameAction>) => {
 			const { counterId, newName } = action.payload;
 
-			state[counterId].name = newName;
+			state.counters[counterId].name = newName;
 		},
 		setStep: (state, action: PayloadAction<ISetStepAction>) => {
 			const { counterId, newStep } = action.payload;
 
-			state[counterId].step = newStep;
+			state.counters[counterId].step = newStep;
 		},
 		delete: (state, action: PayloadAction<IDeleteCounterAction>) => {
 			const { counterId } = action.payload;
 
-			if (state.hasOwnProperty(counterId)) {
-				// delete state[counterId];
-				return Object.fromEntries(
-					Object.entries(state).filter(([key]) => key !== counterId)
-				);
+			if (state.counters.hasOwnProperty(counterId)) {
+				delete state.counters[counterId];
+				// return Object.fromEntries(
+				// 	Object.entries(state.counters).filter(([key]) => key !== counterId)
+				// );
 			}
 		}
 	}
