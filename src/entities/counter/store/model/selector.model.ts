@@ -2,6 +2,7 @@
 import { RootState } from '../../../../shared/store';
 //MODEL
 import { Counter } from '../../model/counter.model';
+import { SortOptions } from '../../../../shared/constants/sort';
 
 interface ISelectorGetCounter {
 	(counterId: string): (state: RootState) => Counter;
@@ -24,7 +25,7 @@ interface ISelectorGetCounterCreatedDate {
 }
 
 interface ISelectorGetListSortType {
-	(): (state: RootState) => string;
+	(): (state: RootState) => SortOptions;
 }
 
 export {
