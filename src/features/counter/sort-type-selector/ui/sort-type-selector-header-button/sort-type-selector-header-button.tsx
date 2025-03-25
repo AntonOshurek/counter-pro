@@ -1,6 +1,12 @@
 import { useState } from 'react';
 //NATIVE
 import { Modal, TouchableOpacity, View, Text } from 'react-native';
+//STORE
+import { useAppSelector } from '../../../../../shared/store';
+//FEATURES
+import useSortTypeSelector from '../../sotrt-type-selector';
+//ENTITIES
+import { SelectorGetListSortType } from '../../../../../entities/counter/store/selectors/counter-selectors';
 //UI
 import { SortListIcon } from '../../../../../shared/icons';
 //VARIABLES
@@ -10,11 +16,13 @@ import style from './styles/style';
 
 const SortTypeSelectorHeaderButton = () => {
 	const [modalVisible, setModalVisible] = useState(false);
+	const setListSortType = useSortTypeSelector();
+	const sortType = useAppSelector(SelectorGetListSortType());
 
 	const toggleModal = () => setModalVisible(!modalVisible);
 
 	const onSortTypeChange = (sortOption: SortOptions) => {
-		console.log(sortOption);
+		setListSortType(sortOption);
 	};
 
 	return (
@@ -30,6 +38,7 @@ const SortTypeSelectorHeaderButton = () => {
 					{counterSortOptions.map((sortOption: SortOptions) => {
 						return (
 							<TouchableOpacity
+								style={sortType === sortOption && style.selected}
 								onPress={() => onSortTypeChange(sortOption)}
 								key={sortOption}
 							>
