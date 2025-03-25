@@ -1,4 +1,5 @@
 import { Counter } from '../../model/counter.model';
+import { SortOptions } from '../../../../shared/constants/sort';
 
 interface IIncrementAction {
 	amount: number;
@@ -37,6 +38,10 @@ interface IDeleteCounterAction {
 	counterId: string;
 }
 
+interface ISetListSortTypeAction {
+	sortType: SortOptions;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
@@ -45,5 +50,6 @@ export {
 	ISetNameAction,
 	ICreateCounterAction,
 	IDeleteCounterAction,
-	IResetAction
+	IResetAction,
+	ISetListSortTypeAction
 };

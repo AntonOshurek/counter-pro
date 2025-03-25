@@ -5,7 +5,8 @@ import {
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
-	ISelectorGetCounterStep
+	ISelectorGetCounterStep,
+	ISelectorGetListSortType
 } from '../model/selector.model';
 
 const SelectorGetCounter: ISelectorGetCounter =
@@ -32,10 +33,15 @@ const SelectorGetCounterCreatedDate: ISelectorGetCounterCreatedDate =
 		return state.counter.counters[counterId]?.createdAt;
 	};
 
+const SelectorGetListSortType: ISelectorGetListSortType = () => (state: RootState) => {
+	return state.counter.counterListSortType;
+};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
 	SelectorGetCounterName,
 	SelectorGetCounterStep,
-	SelectorGetCounterCreatedDate
+	SelectorGetCounterCreatedDate,
+	SelectorGetListSortType
 };

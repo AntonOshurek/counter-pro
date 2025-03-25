@@ -10,7 +10,8 @@ import {
 	ISetNameAction,
 	ICreateCounterAction,
 	IDeleteCounterAction,
-	IResetAction
+	IResetAction,
+	ISetListSortTypeAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -60,10 +61,10 @@ const counterSlice = createSlice({
 
 			if (state.counters.hasOwnProperty(counterId)) {
 				delete state.counters[counterId];
-				// return Object.fromEntries(
-				// 	Object.entries(state.counters).filter(([key]) => key !== counterId)
-				// );
 			}
+		},
+		setListSortType: (state, action: PayloadAction<ISetListSortTypeAction>) => {
+			state.counterListSortType = action.payload.sortType;
 		}
 	}
 });

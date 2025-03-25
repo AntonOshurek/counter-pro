@@ -23,10 +23,15 @@ interface ISelectorGetCounterCreatedDate {
 	(counterId: string): (state: RootState) => string;
 }
 
+interface ISelectorGetListSortType {
+	(): (state: RootState) => string;
+}
+
 export {
 	ISelectorGetCounter,
 	ISelectorGetCounters,
 	ISelectorGetCounterName,
 	ISelectorGetCounterStep,
-	ISelectorGetCounterCreatedDate
+	ISelectorGetCounterCreatedDate,
+	ISelectorGetListSortType
 };
