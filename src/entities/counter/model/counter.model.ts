@@ -5,7 +5,8 @@ interface Counter {
 	count: number;
 	group: string;
 	createdAt: string;
-  createdAtTimestamp: number;
+	isPinned: boolean;
+	createdAtTimestamp: number;
 }
 
 export { Counter };

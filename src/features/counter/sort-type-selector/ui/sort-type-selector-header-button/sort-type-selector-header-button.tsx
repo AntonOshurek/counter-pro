@@ -1,45 +1,28 @@
-import { useState } from 'react';
-//NATIVE
-import { Modal, TouchableOpacity, View, Text } from 'react-native';
-//UI
-import { SortListIcon } from '../../../../../shared/icons';
+//STORE
+import { useAppSelector } from '../../../../../shared/store';
+//FEATURES
+import useSortTypeSelector from '../../sotrt-type-selector';
+//ENTITIES
+import { SelectorGetListSortType } from '../../../../../entities/counter/store/selectors/counter-selectors';
 //VARIABLES
 import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
-//STYLES
-import style from './styles/style';
+//UI
+import SortModalInHeader from '../../../../../shared/ui/sort-modal-in-header/sort-modal-in-header';
 
 const SortTypeSelectorHeaderButton = () => {
-	const [modalVisible, setModalVisible] = useState(false);
-
-	const toggleModal = () => setModalVisible(!modalVisible);
+	const setListSortType = useSortTypeSelector();
+	const sortType = useAppSelector(SelectorGetListSortType());
 
 	const onSortTypeChange = (sortOption: SortOptions) => {
-		console.log(sortOption);
+		setListSortType(sortOption);
 	};
 
 	return (
-		<View>
-			<TouchableOpacity onPress={toggleModal}>
-				<SortListIcon />
-			</TouchableOpacity>
-
-			<Modal visible={modalVisible} transparent animationType='fade'>
-				<TouchableOpacity style={style.overlay} onPress={toggleModal} />
-
-				<View style={style.menu}>
-					{counterSortOptions.map((sortOption: SortOptions) => {
-						return (
-							<TouchableOpacity
-								onPress={() => onSortTypeChange(sortOption)}
-								key={sortOption}
-							>
-								<Text style={style.item}>{sortOption}</Text>
-							</TouchableOpacity>
-						);
-					})}
-				</View>
-			</Modal>
-		</View>
+		<SortModalInHeader<SortOptions>
+			options={counterSortOptions}
+			currentOption={sortType}
+			onOptionListener={onSortTypeChange}
+		/>
 	);
 };
 
