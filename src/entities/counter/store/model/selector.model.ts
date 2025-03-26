@@ -28,11 +28,16 @@ interface ISelectorGetListSortType {
 	(): (state: RootState) => SortOptions;
 }
 
+interface ISelectorGetIsPinned {
+	(counterId: string): (state: RootState) => boolean;
+}
+
 export {
 	ISelectorGetCounter,
 	ISelectorGetCounters,
 	ISelectorGetCounterName,
 	ISelectorGetCounterStep,
 	ISelectorGetCounterCreatedDate,
-	ISelectorGetListSortType
+	ISelectorGetListSortType,
+	ISelectorGetIsPinned
 };
