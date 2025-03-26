@@ -28,6 +28,12 @@ const style = (theme: ColorThemes) =>
 		tertiary: {
 			color: colors[theme].textTertiary
 		},
+    alwaysBlack: {
+      color: colors[theme].alwaysBlack
+    },
+    alwaysWhite: {
+      color: colors[theme].alwaysWhite
+    },
     capitalize: {
       textTransform: 'capitalize'
     },

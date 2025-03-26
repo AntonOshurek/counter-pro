@@ -21,7 +21,7 @@ const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 
 	return (
 		<View style={style.deleteCounterButton}>
-			<Paragraph contentType={'primary'} size={'medium'}>
+			<Paragraph contentType={'primary'} size={'medium'} >
 				{counterText.deleteCounterButtonLabel}
 			</Paragraph>
 

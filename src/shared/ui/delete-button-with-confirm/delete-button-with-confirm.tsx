@@ -1,12 +1,13 @@
 //NATIVE
 import { Alert, Pressable } from 'react-native';
+//HOOKS
+import useThemeResolver from '../../hooks/useThemeResolver';
 //UI
 import Paragraph from '../paragraph/paragraph';
 //MODEL
 import type { DeleteButtonWithConfirmProps } from './delete-button-with-confirm.model';
 //STYLES
 import style from './style';
-import useThemeResolver from '../../hooks/useThemeResolver';
 
 const DeleteButtonWithConfirm = ({
 	deleteAction,
@@ -32,7 +33,7 @@ const DeleteButtonWithConfirm = ({
 
 	return (
 		<Pressable style={s.deleteButtonWithConfirm} onPress={handleDelete}>
-			<Paragraph contentType={'primary'} size={'medium'}>
+			<Paragraph contentType={'alwaysWhite'} size={'medium'}>
 				{buttonText}
 			</Paragraph>
 		</Pressable>
