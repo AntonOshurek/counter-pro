@@ -1,5 +1,11 @@
 //NATIVE
 import { TouchableOpacity, View } from 'react-native';
+//STORE
+import { useAppSelector } from '../../../../../shared/store';
+//FEATURES
+import useChangePinned from '../../change-pinned';
+//ENTITIES
+import { SelectorGetIsPinned } from '../../../../../entities/counter';
 //UI
 import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 //VARIABLES
@@ -10,9 +16,6 @@ import { ChangePinnedSettingProps } from './model/change-pinned-setting.model';
 import ChangePinnedButton from '../../../../../shared/ui/changer-pinned-button/change-pinned-button';
 //STYLES
 import { style } from './styles/style';
-import useChangePinned from '../../change-pinned';
-import { useAppSelector } from '../../../../../shared/store';
-import { SelectorGetIsPinned } from '../../../../../entities/counter';
 
 const ChangePinnedSetting = ({ counterId }: ChangePinnedSettingProps) => {
 	const changePinned = useChangePinned({ counterId: counterId });

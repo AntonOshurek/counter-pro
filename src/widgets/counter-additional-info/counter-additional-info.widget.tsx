@@ -1,5 +1,7 @@
 //WRAPPERS
 import { SettingsGroupWrapper } from '../../shared/wrappers';
+//FEATURES
+import { ChangePinnedSetting } from '../../features/counter';
 //ENTITIES
 import { CreatedDate } from '../../entities/counter';
 //MODEL
@@ -11,6 +13,8 @@ const CounterAdditionalInfoWidget = ({ counter }: CounterAdditionalInfoProps) =>
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterAdditionalInfo}>
 			<CreatedDate counterId={counter.id} />
+
+			<ChangePinnedSetting counterId={counter.id} />
 		</SettingsGroupWrapper>
 	);
 };
