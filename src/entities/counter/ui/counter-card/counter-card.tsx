@@ -33,9 +33,7 @@ const CounterCard = ({
 					<Paragraph contentType={'primary'} size={'medium'}>
 						{truncateWithEllipsis(counter.name, symbolsAmountOnItemCard)}
 					</Paragraph>
-          {
-            counter.isPinned && <KeepIcon width={15} height={15}/>
-          }
+					{counter.isPinned && <KeepIcon width={15} height={15} />}
 				</OpenCounter>
 			</View>
 

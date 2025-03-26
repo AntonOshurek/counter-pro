@@ -40,18 +40,18 @@ const GroupListWidget = () => {
 					key={item.id}
 					OpenGroupScreenOpacity={OpenGroupScreenOpacity}
 				>
-					<ExpandAnimatedView itemsCount={groupCounter(item).length}>
-						{groupCounter(item).map((counter: Counter) => (
-							<CounterCard
-								key={counter.id}
-								counter={counter}
-								DecrementButton={MiniDecrementButton}
-								IncrementButton={MiniIncrementButton}
-								CounterValue={CounterValue}
-								OpenCounter={OpenCounterScreenOpacity}
-							/>
-						))}
-					</ExpandAnimatedView>
+					{/*<ExpandAnimatedView itemsCount={groupCounter(item).length}>*/}
+					{groupCounter(item).map((counter: Counter) => (
+						<CounterCard
+							key={counter.id}
+							counter={counter}
+							DecrementButton={MiniDecrementButton}
+							IncrementButton={MiniIncrementButton}
+							CounterValue={CounterValue}
+							OpenCounter={OpenCounterScreenOpacity}
+						/>
+					))}
+					{/*</ExpandAnimatedView>*/}
 				</GroupCard>
 			)}
 		/>
