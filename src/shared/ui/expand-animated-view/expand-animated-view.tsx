@@ -12,8 +12,8 @@ import { ExpandAnimatedViewProps } from './model/expand-animated-view.model';
 import style from './styles/style';
 
 const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) => {
-	const [isExpanded, setIsExpanded] = useState(false);
-	const animation = useRef(new Animated.Value(0)).current;
+	const [isExpanded, setIsExpanded] = useState(true);
+	const animation = useRef(new Animated.Value(1)).current;
 
 	const theme = UseThemeResolver();
 	const s = style(theme);
@@ -40,9 +40,7 @@ const ExpandAnimatedView = ({ itemsCount, children }: ExpandAnimatedViewProps) =
 				</Paragraph>
 			</TouchableOpacity>
 
-			<Animated.View
-				style={{ height: heightInterpolation, overflow: 'hidden', gap: 5 }}
-			>
+			<Animated.View style={{ height: heightInterpolation, overflow: 'hidden', gap: 5 }}>
 				{children}
 			</Animated.View>
 		</View>

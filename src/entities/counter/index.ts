@@ -4,9 +4,11 @@ import CounterCard from './ui/counter-card/counter-card';
 import {
 	SelectorGetCounter,
 	SelectorGetCounters,
-	SelectorGetCounterStep,
 	SelectorGetCounterName,
-	SelectorGetCounterCreatedDate
+	SelectorGetCounterStep,
+	SelectorGetCounterCreatedDate,
+	SelectorGetListSortType,
+	SelectorGetIsPinned
 } from './store/selectors/counter-selectors';
 import {
 	IncrementAction,
@@ -16,7 +18,9 @@ import {
 	setNameAction,
 	CreateCounterAction,
 	deleteCounterAction,
-	ResetAction
+	ResetAction,
+	setListSortTypeAction,
+	setIsPinnedAction
 } from './store/actions/counter-actions';
 import CreatedDate from './ui/created-date/created-date';
 import CounterStep from './ui/counter-step/counter-step';
@@ -39,5 +43,9 @@ export {
 	ResetAction,
 	CreatedDate,
 	SelectorGetCounterCreatedDate,
-	CounterStep
+	CounterStep,
+	SelectorGetListSortType,
+	SelectorGetIsPinned,
+	setListSortTypeAction,
+	setIsPinnedAction
 };

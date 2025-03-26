@@ -6,6 +6,7 @@ import {
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
 	ISelectorGetCounterStep,
+	ISelectorGetIsPinned,
 	ISelectorGetListSortType
 } from '../model/selector.model';
 
@@ -37,11 +38,17 @@ const SelectorGetListSortType: ISelectorGetListSortType = () => (state: RootStat
 	return state.counter.counterListSortType;
 };
 
+const SelectorGetIsPinned: ISelectorGetIsPinned =
+	(counterId: string) => (state: RootState) => {
+		return state.counter.counters[counterId].isPinned;
+	};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
 	SelectorGetCounterName,
 	SelectorGetCounterStep,
 	SelectorGetCounterCreatedDate,
-	SelectorGetListSortType
+	SelectorGetListSortType,
+	SelectorGetIsPinned
 };

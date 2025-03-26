@@ -11,7 +11,8 @@ import {
 	ICreateCounterAction,
 	IDeleteCounterAction,
 	IResetAction,
-	ISetListSortTypeAction
+	ISetListSortTypeAction,
+	ISetIsPinnedAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -65,6 +66,10 @@ const counterSlice = createSlice({
 		},
 		setListSortType: (state, action: PayloadAction<ISetListSortTypeAction>) => {
 			state.counterListSortType = action.payload.sortType;
+		},
+		setIsPinnedCounter: (state, action: PayloadAction<ISetIsPinnedAction>) => {
+			const { isPinned, counterId } = action.payload;
+			state.counters[counterId].isPinned = isPinned;
 		}
 	}
 });

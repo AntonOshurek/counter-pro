@@ -7,6 +7,7 @@ const style = StyleSheet.create({
 	groupCard: {
 		borderRadius: 10,
 		backgroundColor: 'transparent',
+    gap: 5
 	},
 	cardHeader: {
 		flexDirection: 'row',

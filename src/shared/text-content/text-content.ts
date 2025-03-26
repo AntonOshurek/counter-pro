@@ -6,6 +6,8 @@ const counterText = {
 	deleteCounterConfirmBody: 'Are You sure you want to delete this counter?',
 	counterCreatedDateLabel: 'Created Date:',
 	resetCounterButtonText: 'Reset Counter',
+  pinCounterButtonLabel: 'Pin this counter',
+  unpinCounterButtonLabel: 'Unpin this counter',
 	changeCounterNameInputLabel: 'Name',
 	changeCounterStepInputLabel: 'Step',
 	changeCounterStepAdditionalLabel: 'max 999',

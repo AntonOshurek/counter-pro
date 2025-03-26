@@ -42,6 +42,11 @@ interface ISetListSortTypeAction {
 	sortType: SortOptions;
 }
 
+interface ISetIsPinnedAction {
+	isPinned: boolean;
+  counterId: string;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
@@ -51,5 +56,6 @@ export {
 	ICreateCounterAction,
 	IDeleteCounterAction,
 	IResetAction,
-	ISetListSortTypeAction
+	ISetListSortTypeAction,
+	ISetIsPinnedAction
 };

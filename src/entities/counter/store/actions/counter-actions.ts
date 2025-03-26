@@ -7,6 +7,7 @@ import {
 	IDeleteCounterAction,
 	IIncrementAction,
 	IResetAction,
+	ISetIsPinnedAction,
 	ISetListSortTypeAction,
 	ISetNameAction,
 	ISetStepAction,
@@ -69,6 +70,12 @@ const setListSortTypeAction =
 		dispatch(counterSlice.actions.setListSortType(action));
 	};
 
+const setIsPinnedAction =
+	(action: ISetIsPinnedAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.setIsPinnedCounter(action));
+	};
+
 export {
 	IncrementAction,
 	DecrementAction,
@@ -78,5 +85,6 @@ export {
 	CreateCounterAction,
 	deleteCounterAction,
 	ResetAction,
-  setListSortTypeAction
+	setListSortTypeAction,
+	setIsPinnedAction
 };

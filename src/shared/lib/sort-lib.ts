@@ -12,4 +12,20 @@ const sortCountersByType = (sortType: SortOptions, counters: Counter[]): Counter
 	}
 };
 
-export { sortCountersByType };
+const sortCounters = (sortType: SortOptions, counters: Counter[]): Counter[] => {
+	return counters.sort((a, b) => {
+		if (a.isPinned && !b.isPinned) return -1;
+		if (!a.isPinned && b.isPinned) return 1;
+
+		switch (sortType) {
+			case SortOptions.ByDate:
+				return b.createdAtTimestamp - a.createdAtTimestamp;
+			case SortOptions.ByName:
+				return a.name.localeCompare(b.name);
+			default:
+				return 0;
+		}
+	});
+};
+
+export { sortCountersByType, sortCounters };

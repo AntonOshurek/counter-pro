@@ -2,7 +2,6 @@
 import { FlatList } from 'react-native';
 //STORE
 import { useAppSelector } from '../../shared/store';
-import { SelectorGetCounters } from '../../entities/counter/';
 //FEATURES
 import {
 	MiniIncrementButton,
@@ -10,18 +9,23 @@ import {
 	OpenCounterScreenOpacity
 } from '../../features/counter';
 //ENTITIES
-import { Counter, CounterCard, CounterValue } from '../../entities/counter';
-import { SelectorGetListSortType } from '../../entities/counter/store/selectors/counter-selectors';
+import {
+	Counter,
+	CounterCard,
+	CounterValue,
+	SelectorGetListSortType,
+	SelectorGetCounters
+} from '../../entities/counter';
 //LIBS
 import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
-import { sortCountersByType } from '../../shared/lib/sort-lib';
+import { sortCounters } from '../../shared/lib/sort-lib';
 //STYLES
 import style from './styles/style';
 
 const CounterListWidget = () => {
 	const sortType = useAppSelector(SelectorGetListSortType());
 	const counters = convertObjectToArray<Counter>(useAppSelector(SelectorGetCounters()));
-	const sortedCounters = sortCountersByType(sortType, counters);
+	const sortedCounters = sortCounters(sortType, counters);
 
 	return (
 		<FlatList
