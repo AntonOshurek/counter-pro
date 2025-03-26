@@ -1,10 +1,13 @@
 //NATIVE
 import { TouchableOpacity } from 'react-native';
+//HOOKS
+import useThemeResolver from '../../hooks/useThemeResolver';
 //MODEL
 import type { ChangePinnedButtonProps } from './change-pinned-button.model';
 //ICONS
 import KeepIcon from '../../icons/keep-icon';
-import useThemeResolver from '../../hooks/useThemeResolver';
+import KeepOffIcon from '../../icons/keep-off-icon';
+//STYLES
 import { colors } from '../../styles';
 
 const ChangePinnedButton = ({ onReset, isActive }: ChangePinnedButtonProps) => {
@@ -13,7 +16,7 @@ const ChangePinnedButton = ({ onReset, isActive }: ChangePinnedButtonProps) => {
 	return (
 		<TouchableOpacity onPress={onReset}>
 			{isActive ? (
-				<KeepIcon width={30} height={30} color={colors[theme].textPrimary} />
+				<KeepOffIcon width={30} height={30} color={colors[theme].textPrimary} />
 			) : (
 				<KeepIcon width={30} height={30} color={colors[theme].textTertiary} />
 			)}

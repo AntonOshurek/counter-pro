@@ -20,7 +20,8 @@ const style = (theme: ColorThemes) =>
 			flex: 1,
 			width: '100%',
 			justifyContent: 'center',
-			alignItems: 'center'
+			alignItems: 'center',
+      flexDirection: 'row',
 		},
 		controls: {
 			width: '100%',

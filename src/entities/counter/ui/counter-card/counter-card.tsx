@@ -10,9 +10,11 @@ import { symbolsAmountOnItemCard } from '../../../../shared/constants';
 import { CounterCardProps } from './model/counter-card.model';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
+import CounterStep from '../counter-step/counter-step';
+//ICONS
+import KeepIcon from '../../../../shared/icons/keep-icon';
 //STYLES
 import style from './styles/style';
-import CounterStep from '../counter-step/counter-step';
 
 const CounterCard = ({
 	counter,
@@ -31,6 +33,9 @@ const CounterCard = ({
 					<Paragraph contentType={'primary'} size={'medium'}>
 						{truncateWithEllipsis(counter.name, symbolsAmountOnItemCard)}
 					</Paragraph>
+          {
+            counter.isPinned && <KeepIcon width={15} height={15}/>
+          }
 				</OpenCounter>
 			</View>
 
