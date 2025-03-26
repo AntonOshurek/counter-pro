@@ -12,6 +12,7 @@ import ChangeStepInput from './change-step/ui/change-step-input/change-step-inpu
 import DeleteCounterButton from './delete-counter/ui/delete-counter-button/delete-counter-button';
 import ResetCounterButton from './reset-counter/ui/reset-counter-button/reset-counter-button';
 import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-selector-header-button/sort-type-selector-header-button';
+import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
 
 export {
 	useCreateNewCounter,
@@ -27,5 +28,6 @@ export {
 	ChangeStepInput,
 	DeleteCounterButton,
 	ResetCounterButton,
-	SortTypeSelectorHeaderButton
+	SortTypeSelectorHeaderButton,
+	ChangePinnedSetting
 };

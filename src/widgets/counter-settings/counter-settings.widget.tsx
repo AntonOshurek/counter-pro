@@ -2,7 +2,8 @@
 import {
 	ChangeNameField,
 	ChangeStepInput,
-	ResetCounterButton
+	ResetCounterButton,
+	ChangePinnedSetting
 } from '../../features/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
@@ -16,6 +17,8 @@ const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterSettings}>
 			<ResetCounterButton counterId={counter.id} />
+
+			<ChangePinnedSetting counterId={counter.id} />
 
 			<ChangeNameField counterId={counter.id} counterName={counter.name} />
 
