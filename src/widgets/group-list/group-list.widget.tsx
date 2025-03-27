@@ -2,7 +2,7 @@
 import { FlatList } from 'react-native';
 //STORE
 import { useAppSelector } from '../../shared/store';
-import { SelectorGetCounters } from '../../entities/counter/store/selectors/counter-selectors';
+import { SelectorGetCounters } from '../../entities/counter/';
 //ENTITIES
 import { Counter, CounterCard, CounterValue } from '../../entities/counter';
 import { Group, GroupCard } from '../../entities/group';
@@ -20,12 +20,18 @@ import style from './styles/style';
 
 //MOK DATA
 import groups from '../../mok-data/groups';
+import { sortCounters } from '../../shared/lib/sort-lib';
+import { SortOptions } from '../../shared/constants/sort';
 
 const GroupListWidget = () => {
 	const counters = useAppSelector(SelectorGetCounters());
 
 	const groupCounter = (group: Group) => {
-		return Object.values(counters).filter(counter => counter.group === group.id);
+		let groupCounters = Object.values(counters).filter(
+			counter => counter.group === group.id
+		);
+		groupCounters = sortCounters(SortOptions.ByName, groupCounters);
+		return groupCounters;
 	};
 
 	return (
