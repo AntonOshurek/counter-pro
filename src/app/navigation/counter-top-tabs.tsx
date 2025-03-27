@@ -3,13 +3,11 @@ import { useLayoutEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
-import { CounterScreen, CounterSettingsScreen } from '../../screens';
+import { CounterScreen, CounterSettingsScreen, NotFoundScreen } from '../../screens';
 //STORE
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
 import { SelectorGetCounter } from '../../entities/counter/';
-//UI
-import CounterNotFound from '../../shared/ui/counter-not-found/counter-not-found';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //CONSTANTS
@@ -27,6 +25,8 @@ import type {
 	CounterScreenRouteProp,
 	CounterTopTabsProps
 } from './model/counter-top-tabs.model';
+//TEXT
+import { counterText } from '../../shared/text-content/text-content';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();
@@ -45,7 +45,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	}, [navigation, counter]);
 
 	if (!counter) {
-		return <CounterNotFound />;
+		return <NotFoundScreen notFoundText={counterText.counterNotFound} />;
 	} else {
 		return (
 			<Tab.Navigator

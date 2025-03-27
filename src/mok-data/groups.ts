@@ -1,5 +1,5 @@
 //TYPES
-import { Group } from '../entities/group/';
+import type { Group } from '../entities/group/';
 
 const groups: Group[] = [
 	{

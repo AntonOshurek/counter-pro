@@ -6,11 +6,11 @@ import useOpenGroupScreen from '../../open-group-screen';
 import type { OpenGroupScreenProps } from './open-group-screen-opacity.model';
 
 const OpenGroupScreenOpacity = ({
-	group,
+	groupId,
 	children,
 	additionalStyles
 }: OpenGroupScreenProps) => {
-	const openGroupScreen = useOpenGroupScreen({ group });
+	const openGroupScreen = useOpenGroupScreen({ groupId });
 
 	return (
 		<TouchableOpacity style={additionalStyles} onPress={openGroupScreen}>

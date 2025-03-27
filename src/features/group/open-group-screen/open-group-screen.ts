@@ -7,11 +7,11 @@ import type { openGroupScreenProps } from './model/open-group-screen.model';
 //CONSTANTS
 import { StackScreens } from '../../../shared/constants';
 
-const useOpenGroupScreen = ({ group }: openGroupScreenProps) => {
+const useOpenGroupScreen = ({ groupId }: openGroupScreenProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 
 	return () => {
-		navigation.navigate(StackScreens.GroupScreen, { group });
+		navigation.navigate(StackScreens.GroupScreen, { groupId });
 	};
 };
 

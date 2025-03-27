@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
-//ENTITIES
-import type { Group } from '../../../../../entities/group';
+//NATIVE
 import { StyleProp, ViewStyle } from 'react-native';
 
 interface OpenGroupScreenProps {
-	group: Group;
+	groupId: string;
 	children: ReactNode;
 	additionalStyles?: StyleProp<ViewStyle>;
 }

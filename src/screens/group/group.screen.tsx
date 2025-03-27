@@ -12,13 +12,13 @@ import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const GroupScreen = () => {
 	const route = useRoute<GroupScreenRouteProp>();
-	const { group } = route.params || {};
+	const { groupId } = route.params || {};
 
 	return (
 		<ScreenLayout additionalClass={style.groupScreen}>
 			<View>
 				<Paragraph size={'large'} contentType={'primary'}>
-					Group item screen {group?.name}
+					Group item screen
 				</Paragraph>
 			</View>
 		</ScreenLayout>

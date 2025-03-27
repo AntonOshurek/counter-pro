@@ -2,15 +2,13 @@
 import { RouteProp } from '@react-navigation/native';
 //NAVIGATION
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-//ENTITIES
-import type { Group } from '../../../entities/group';
 //CONSTANTS
 import { GroupTopTabsScreens, StackScreens } from '../../../shared/constants';
 //MODEL
 import type { NavigationStackParams } from './stack.model';
 
 interface GroupScreenRouteProps {
-	group?: Group;
+	groupId: string;
 }
 
 type GroupTopTabsNavigationParams = {

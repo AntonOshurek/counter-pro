@@ -6,12 +6,16 @@ const counterText = {
 	deleteCounterConfirmBody: 'Are You sure you want to delete this counter?',
 	counterCreatedDateLabel: 'Created Date:',
 	resetCounterButtonText: 'Reset Counter',
-  pinCounterButtonLabel: 'Pin this counter',
-  unpinCounterButtonLabel: 'Unpin this counter',
+	pinCounterButtonLabel: 'Pin this counter',
+	unpinCounterButtonLabel: 'Unpin this counter',
 	changeCounterNameInputLabel: 'Name',
 	changeCounterStepInputLabel: 'Step',
 	changeCounterStepAdditionalLabel: 'max 999',
-  counterNotFound: 'Oops! We couldn\'t find this counter.'
+	counterNotFound: "Oops! We couldn't find this counter."
 };
 
-export { counterText };
+const groupText = {
+	groupNotFound: "Oops! We couldn't find this group."
+};
+
+export { counterText, groupText };
