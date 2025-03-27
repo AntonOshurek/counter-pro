@@ -6,6 +6,7 @@ import GroupsScreen from './groups/groups.screen';
 import CounterSettingsScreen from './counter-settings/counter-settings.screen';
 import GroupScreen from './group/group.screen';
 import GroupSettingsScreen from './group-settings/group-settings.screen';
+import NotFoundScreen from './not-found/not-found.screen';
 
 export {
 	HomeScreen,
@@ -15,5 +16,6 @@ export {
 	GroupsScreen,
 	CounterSettingsScreen,
 	GroupScreen,
-	GroupSettingsScreen
+	GroupSettingsScreen,
+	NotFoundScreen
 };
