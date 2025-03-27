@@ -21,41 +21,48 @@ import {
 	GroupTopTabsNavigationParams,
 	GroupTopTabsProps
 } from './model/';
+import { Group } from '../../entities/group';
 
 const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
 	const theme = UseThemeResolver();
 
 	const route = useRoute<GroupScreenRouteProp>();
-	const { group } = route.params || {};
+	const { groupId } = route.params || {};
+  const group: Group | null = null;
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: group
-				? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
-				: 'New Group'
+			// title: group.name
+			// 	? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
+			// 	: 'New Group'
 		});
 	}, [navigation, group]);
 
-	return (
-		<Tab.Navigator
-			initialRouteName={group ? GroupTopTabsScreens.Group : GroupTopTabsScreens.Settings}
-			screenOptions={{
-				tabBarStyle: {
-					backgroundColor: colors[theme].mainSurfacePrimary
-				},
-				tabBarActiveTintColor: colors[theme].textPrimary,
-				tabBarInactiveTintColor: colors[theme].textSecondary
-			}}
-		>
-			<Tab.Screen
-				name={GroupTopTabsScreens.Group}
-				component={GroupScreen}
-				initialParams={{ group }}
-			/>
-			<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} />
-		</Tab.Navigator>
-	);
+  if(!group) {
+    return ''
+  } else {
+    return (
+      <Tab.Navigator
+        initialRouteName={group ? GroupTopTabsScreens.Group : GroupTopTabsScreens.Settings}
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: colors[theme].mainSurfacePrimary
+          },
+          tabBarActiveTintColor: colors[theme].textPrimary,
+          tabBarInactiveTintColor: colors[theme].textSecondary
+        }}
+      >
+        <Tab.Screen
+          name={GroupTopTabsScreens.Group}
+          component={GroupScreen}
+          initialParams={{ groupId }}
+        />
+        <Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} />
+      </Tab.Navigator>
+    );
+  }
+
 };
 
 export default GroupTopTabs;

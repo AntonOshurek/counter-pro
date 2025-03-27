@@ -1,8 +1,5 @@
-//ENTITIES
-import type { Group } from '../../../../entities/group';
-
 interface openGroupScreenProps {
-	group: Group;
+	groupId: string;
 }
 
 export { openGroupScreenProps };

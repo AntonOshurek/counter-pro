@@ -17,7 +17,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) 
 	return (
 		<View style={[style.groupCard]}>
 			<View style={style.cardHeader}>
-				<OpenGroupScreenOpacity group={group} additionalStyles={style.cardTitle}>
+				<OpenGroupScreenOpacity groupId={group.id} additionalStyles={style.cardTitle}>
 					<Paragraph contentType={'primary'} size={'large'}>
 						{truncateWithEllipsis(group.name, symbolsAmountOnItemCard)}
 					</Paragraph>
