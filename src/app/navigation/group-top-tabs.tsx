@@ -21,9 +21,10 @@ import {
 	GroupTopTabsNavigationParams,
 	GroupTopTabsProps
 } from './model/';
-import { Group } from '../../entities/group';
+import { SelectorGetGroup } from '../../entities/group';
 //TEXT
 import { groupText } from '../../shared/text-content/text-content';
+import { useAppSelector } from '../../shared/store';
 
 const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
@@ -31,13 +32,13 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 
 	const route = useRoute<GroupScreenRouteProp>();
 	const { groupId } = route.params || {};
-	const group: Group | null = null;
+  const group = useAppSelector(SelectorGetGroup(groupId));
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			// title: group.name
-			// 	? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
-			// 	: 'New Group'
+			title: group
+				? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
+				: 'Undefined Group '
 		});
 	}, [navigation, group]);
 
