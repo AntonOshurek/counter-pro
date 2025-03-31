@@ -28,10 +28,10 @@ const GroupListWidget = () => {
 	const groups = convertObjectToArray<Group>(useAppSelector(SelectorGetGroups()));
 
 	const groupCounters = (group: Group) => {
-    let groupCounters = group.counters.map((counterId) => {
-      return counters[counterId];
-    })
-    return sortCounters(SortOptions.ByName, groupCounters);
+		let groupCounters = group.counters.map(counterId => {
+			return counters[counterId];
+		});
+		return sortCounters(SortOptions.ByName, groupCounters);
 	};
 
 	return (

@@ -5,6 +5,7 @@ import {
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
+	ISelectorGetCountersByIds,
 	ISelectorGetCounterStep,
 	ISelectorGetIsPinned,
 	ISelectorGetListSortType
@@ -43,6 +44,11 @@ const SelectorGetIsPinned: ISelectorGetIsPinned =
 		return state.counter.counters[counterId].isPinned;
 	};
 
+const SelectorGetCountersByIds: ISelectorGetCountersByIds =
+	(counterIds: string[]) => (state: RootState) => {
+		return counterIds.map(id => state.counter.counters[id]);
+	};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -50,5 +56,6 @@ export {
 	SelectorGetCounterStep,
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
-	SelectorGetIsPinned
+	SelectorGetIsPinned,
+	SelectorGetCountersByIds
 };
