@@ -1,5 +1,5 @@
 //NATIVE
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 //NAVIGATION
 import { GroupScreenRouteProp } from '../../app/navigation/model';
@@ -7,6 +7,8 @@ import { GroupScreenRouteProp } from '../../app/navigation/model';
 import { useAppSelector } from '../../shared/store';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
+//WIDGETS
+import { CounterListWidget } from '../../widgets';
 //ENTITIES
 import { SelectorGetGroup } from '../../entities/group';
 import { SelectorGetCountersByIds } from '../../entities/counter';
@@ -19,15 +21,12 @@ const GroupScreen = () => {
 	const route = useRoute<GroupScreenRouteProp>();
 	const { groupId } = route.params || {};
 	const group = useAppSelector(SelectorGetGroup(groupId));
-  const counters = useAppSelector(SelectorGetCountersByIds(group.counters));
+	// const counters = useAppSelector(SelectorGetCountersByIds(group.counters));
 
 	return (
 		<ScreenLayout additionalClass={style.groupScreen}>
-			<View>
-				<Paragraph size={'large'} contentType={'primary'}>
-					Group item screen - {group.name}
-				</Paragraph>
-			</View>
+			<Text>some</Text>
+			{/*<CounterListWidget counterIds={group.counters}/>*/}
 		</ScreenLayout>
 	);
 };

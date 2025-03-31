@@ -13,6 +13,10 @@ interface ISelectorGetCounters {
 	(): (state: RootState) => Record<string, Counter>;
 }
 
+interface ISelectorGetCountersArray {
+	(): (state: RootState) => Counter[];
+}
+
 interface ISelectorGetCounterName {
 	(counterId: string): (state: RootState) => string;
 }
@@ -45,5 +49,6 @@ export {
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetListSortType,
 	ISelectorGetIsPinned,
-	ISelectorGetCountersByIds
+	ISelectorGetCountersByIds,
+	ISelectorGetCountersArray
 };

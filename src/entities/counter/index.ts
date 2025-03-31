@@ -9,7 +9,8 @@ import {
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
 	SelectorGetIsPinned,
-	SelectorGetCountersByIds
+	SelectorGetCountersByIds,
+	SelectorGetCountersArray
 } from './store/selectors/counter-selectors';
 import {
 	IncrementAction,
@@ -49,5 +50,6 @@ export {
 	SelectorGetIsPinned,
 	setListSortTypeAction,
 	setIsPinnedAction,
-	SelectorGetCountersByIds
+	SelectorGetCountersByIds,
+	SelectorGetCountersArray
 };
