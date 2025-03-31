@@ -5,10 +5,15 @@ import {
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
+	ISelectorGetCountersByIds,
 	ISelectorGetCounterStep,
 	ISelectorGetIsPinned,
-	ISelectorGetListSortType
+	ISelectorGetListSortType,
+	ISelectorGetCountersArray
 } from '../model/selector.model';
+import { convertObjectToArray } from '../../../../shared/lib/convertObjectToArray';
+import { Counter } from '../../model/counter.model';
+import { createSelector } from '@reduxjs/toolkit';
 
 const SelectorGetCounter: ISelectorGetCounter =
 	(counterId: string) => (state: RootState) => {
@@ -18,6 +23,11 @@ const SelectorGetCounter: ISelectorGetCounter =
 const SelectorGetCounters: ISelectorGetCounters = () => (state: RootState) => {
 	return state.counter.counters;
 };
+
+const SelectorGetCountersArray = createSelector(
+  (state: RootState) => state.counter.counters,
+  (countersMap: Record<string, Counter>): Counter[] => convertObjectToArray<Counter>(countersMap)
+);
 
 const SelectorGetCounterName: ISelectorGetCounterName =
 	(counterId: string) => (state: RootState) => {
@@ -43,6 +53,11 @@ const SelectorGetIsPinned: ISelectorGetIsPinned =
 		return state.counter.counters[counterId].isPinned;
 	};
 
+const SelectorGetCountersByIds: ISelectorGetCountersByIds =
+	(counterIds: string[]) => (state: RootState) => {
+		return counterIds.map(id => state.counter.counters[id]);
+	};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -50,5 +65,7 @@ export {
 	SelectorGetCounterStep,
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
-	SelectorGetIsPinned
+	SelectorGetIsPinned,
+	SelectorGetCountersByIds,
+	SelectorGetCountersArray
 };

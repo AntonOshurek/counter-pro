@@ -8,12 +8,12 @@ const groupInitialState: IGroupState = {
 	groups: {
 		['g-1']: {
 			id: 'g-1',
-			name: 'Group 1',
+			name: 'main counters',
 			counters: ['counter-1', 'counter-2', 'counter-3']
 		},
 		['g-2']: {
 			id: 'g-2',
-			name: 'Group 2',
+			name: 'Rest',
 			counters: ['counter-4', 'counter-5', 'counter-6']
 		}
 	}

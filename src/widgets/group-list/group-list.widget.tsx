@@ -5,7 +5,7 @@ import { useAppSelector } from '../../shared/store';
 import { SelectorGetCounters } from '../../entities/counter/';
 //ENTITIES
 import { Counter, CounterCard, CounterValue } from '../../entities/counter';
-import { Group, GroupCard } from '../../entities/group';
+import { Group, GroupCard, SelectorGetGroups } from '../../entities/group';
 //FEATURES
 import { OpenGroupScreenOpacity } from '../../features/group';
 import {
@@ -13,25 +13,25 @@ import {
 	MiniIncrementButton,
 	OpenCounterScreenOpacity
 } from '../../features/counter';
+//LIBS
+import { sortCounters } from '../../shared/lib/sort-lib';
+import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 //UI
 import ExpandAnimatedView from '../../shared/ui/expand-animated-view/expand-animated-view';
 //STYLES
 import style from './styles/style';
-
-//MOK DATA
-import groups from '../../mok-data/groups';
-import { sortCounters } from '../../shared/lib/sort-lib';
+//CONSTANTS
 import { SortOptions } from '../../shared/constants/sort';
 
 const GroupListWidget = () => {
 	const counters = useAppSelector(SelectorGetCounters());
+	const groups = convertObjectToArray<Group>(useAppSelector(SelectorGetGroups()));
 
-	const groupCounter = (group: Group) => {
-		let groupCounters = Object.values(counters).filter(
-			counter => counter.group === group.id
-		);
-		groupCounters = sortCounters(SortOptions.ByName, groupCounters);
-		return groupCounters;
+	const groupCounters = (group: Group) => {
+		let groupCounters = group.counters.map(counterId => {
+			return counters[counterId];
+		});
+		return sortCounters(SortOptions.ByName, groupCounters);
 	};
 
 	return (
@@ -47,7 +47,7 @@ const GroupListWidget = () => {
 					OpenGroupScreenOpacity={OpenGroupScreenOpacity}
 				>
 					{/*<ExpandAnimatedView itemsCount={groupCounter(item).length}>*/}
-					{groupCounter(item).map((counter: Counter) => (
+					{groupCounters(item).map((counter: Counter) => (
 						<CounterCard
 							key={counter.id}
 							counter={counter}
