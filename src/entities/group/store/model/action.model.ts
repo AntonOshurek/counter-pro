@@ -7,4 +7,9 @@ interface ICreateGroupAction {
 	newGroup: Group;
 }
 
-export { ICreateGroupAction };
+interface ISetIsPinnedAction {
+	isPinned: boolean;
+	groupId: string;
+}
+
+export { ICreateGroupAction, ISetIsPinnedAction };

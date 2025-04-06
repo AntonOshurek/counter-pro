@@ -13,4 +13,8 @@ interface ISelectorGetGroups {
   (): (state: RootState) => Record<string, Group>;
 }
 
-export { ISelectorGetGroup, ISelectorGetGroups };
+interface ISelectorGetIsPinnedGroup {
+  (groupId: string): (state: RootState) => boolean;
+}
+
+export { ISelectorGetGroup, ISelectorGetGroups, ISelectorGetIsPinnedGroup };

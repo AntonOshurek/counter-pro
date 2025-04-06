@@ -7,7 +7,7 @@ import { SelectorGetCounters } from '../../entities/counter/';
 import { Counter, CounterCard, CounterValue } from '../../entities/counter';
 import { Group, GroupCard, SelectorGetGroups } from '../../entities/group';
 //FEATURES
-import { OpenGroupScreenOpacity } from '../../features/group';
+import { OpenGroupScreenOpacity, ChangePinnedGroupButton } from '../../features/group';
 import {
 	MiniDecrementButton,
 	MiniIncrementButton,
@@ -45,6 +45,7 @@ const GroupListWidget = () => {
 					group={item}
 					key={item.id}
 					OpenGroupScreenOpacity={OpenGroupScreenOpacity}
+					controls={<ChangePinnedGroupButton groupId={item.id} key={item.id} />}
 				>
 					<ExpandAnimatedView itemsCount={groupCounters(item).length}>
 						{groupCounters(item).map((counter: Counter) => (

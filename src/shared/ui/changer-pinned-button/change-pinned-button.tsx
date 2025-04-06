@@ -16,9 +16,9 @@ const ChangePinnedButton = ({ onReset, isActive }: ChangePinnedButtonProps) => {
 	return (
 		<TouchableOpacity onPress={onReset}>
 			{isActive ? (
-				<KeepOffIcon width={30} height={30} color={colors[theme].textPrimary} />
+				<KeepIcon width={30} height={30} color={colors[theme].textPrimary} />
 			) : (
-				<KeepIcon width={30} height={30} color={colors[theme].textTertiary} />
+				<KeepOffIcon width={30} height={30} color={colors[theme].textTertiary} />
 			)}
 		</TouchableOpacity>
 	);
