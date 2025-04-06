@@ -15,7 +15,9 @@ const counterText = {
 };
 
 const groupText = {
-	groupNotFound: "Oops! We couldn't find this group."
+	groupNotFound: "Oops! We couldn't find this group.",
+	pinGroupButtonLabel: 'Pin this group',
+	unpinGroupButtonLabel: 'Unpin this group'
 };
 
 export { counterText, groupText };

@@ -1,16 +1,6 @@
 import { SortOptions } from '../constants/sort';
 import { Counter } from '../../entities/counter';
-
-const sortCountersByType = (sortType: SortOptions, counters: Counter[]): Counter[] => {
-	switch (sortType) {
-		case SortOptions.ByDate:
-			return counters.sort((a, b) => b.createdAtTimestamp - a.createdAtTimestamp);
-		case SortOptions.ByName:
-			return counters.sort((a, b) => a.name.localeCompare(b.name));
-		default:
-			return counters;
-	}
-};
+import { Group } from '../../entities/group';
 
 const sortCounters = (sortType: SortOptions, counters: Counter[]): Counter[] => {
 	return counters.sort((a, b) => {
@@ -28,4 +18,20 @@ const sortCounters = (sortType: SortOptions, counters: Counter[]): Counter[] => 
 	});
 };
 
-export { sortCountersByType, sortCounters };
+const sortGroups = (sortType: SortOptions, groups: Group[]): Group[] => {
+	return groups.sort((a, b) => {
+		if (a.isPinned && !b.isPinned) return -1;
+		if (!a.isPinned && b.isPinned) return 1;
+
+		switch (sortType) {
+			case SortOptions.ByDate:
+				return b.createdAtTimestamp - a.createdAtTimestamp;
+			case SortOptions.ByName:
+				return a.name.localeCompare(b.name);
+			default:
+				return 0;
+		}
+	});
+};
+
+export { sortCounters, sortGroups };

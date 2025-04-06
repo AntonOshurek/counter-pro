@@ -5,6 +5,7 @@ import { StyleProp, ViewStyle } from 'react-native';
 
 interface GroupCardProps {
 	group: Group;
+	controls?: ReactNode;
 	children?: ReactNode;
 	OpenGroupScreenOpacity: React.ComponentType<{
 		groupId: string;

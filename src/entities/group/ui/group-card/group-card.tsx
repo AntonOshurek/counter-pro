@@ -8,12 +8,15 @@ import { symbolsAmountOnItemCard } from '../../../../shared/constants';
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 //MODEL
 import { GroupCardProps } from './group-card.model';
-//ICONS
-import KeepIcon from '../../../../shared/icons/keep-icon';
 //STYLES
 import style from './style';
 
-const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) => {
+const GroupCard = ({
+	group,
+	OpenGroupScreenOpacity,
+	children,
+	controls
+}: GroupCardProps) => {
 	return (
 		<View style={[style.groupCard]}>
 			<View style={style.cardHeader}>
@@ -26,9 +29,7 @@ const GroupCard = ({ group, OpenGroupScreenOpacity, children }: GroupCardProps) 
 					</Paragraph>
 				</OpenGroupScreenOpacity>
 
-				<Paragraph contentType={'secondary'} size={'large'}>
-					<KeepIcon width={30} height={30} />
-				</Paragraph>
+				{controls}
 			</View>
 
 			{children && children}

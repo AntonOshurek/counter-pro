@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { groupInitialState } from './state/group-state';
 //MODEL
-import type { ICreateGroupAction } from './model/action.model';
+import type { ICreateGroupAction, ISetIsPinnedAction } from './model/action.model';
 
 const groupSlice = createSlice({
 	name: 'group',
@@ -15,6 +15,10 @@ const groupSlice = createSlice({
 			state.groups[newGroup.id] = {
 				...newGroup
 			};
+		},
+		setIsPinnedGroup: (state, action: PayloadAction<ISetIsPinnedAction>) => {
+			const { isPinned, groupId } = action.payload;
+			state.groups[groupId].isPinned = isPinned;
 		}
 	}
 });
