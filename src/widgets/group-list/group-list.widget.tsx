@@ -14,7 +14,7 @@ import {
 	OpenCounterScreenOpacity
 } from '../../features/counter';
 //LIBS
-import { sortCounters } from '../../shared/lib/sort-lib';
+import { sortCounters, sortGroups } from '../../shared/lib/sort-lib';
 import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 //UI
 import ExpandAnimatedView from '../../shared/ui/expand-animated-view/expand-animated-view';
@@ -26,6 +26,7 @@ import { SortOptions } from '../../shared/constants/sort';
 const GroupListWidget = () => {
 	const counters = useAppSelector(SelectorGetCounters());
 	const groups = convertObjectToArray<Group>(useAppSelector(SelectorGetGroups()));
+	const sortedGroups = sortGroups(SortOptions.ByName, groups);
 
 	const groupCounters = (group: Group) => {
 		let groupCounters = group.counters.map(counterId => {
@@ -37,7 +38,7 @@ const GroupListWidget = () => {
 	return (
 		<FlatList
 			style={style.groupList}
-			data={groups}
+			data={sortedGroups}
 			contentContainerStyle={{ rowGap: 5, paddingBottom: 150 }}
 			keyExtractor={item => item.id}
 			renderItem={({ item }) => (
