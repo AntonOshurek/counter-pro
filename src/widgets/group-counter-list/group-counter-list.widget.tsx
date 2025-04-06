@@ -18,8 +18,8 @@ const GroupCounterListWidget = ({ groupCounters }: GroupCounterListProps) => {
 		<FlatList
 			style={style.GroupCounterList}
 			data={groupCounters}
-      contentContainerStyle={{ rowGap: 5, paddingBottom: 150 }}
-      keyExtractor={item => item.id}
+			contentContainerStyle={{ rowGap: 5, paddingBottom: 150 }}
+			keyExtractor={item => item.id}
 			renderItem={({ item }) => (
 				<CounterCard
 					key={item.id}

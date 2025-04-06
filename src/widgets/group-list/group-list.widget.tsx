@@ -1,5 +1,5 @@
 //NATIVE
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 //STORE
 import { useAppSelector } from '../../shared/store';
 import { SelectorGetCounters } from '../../entities/counter/';
@@ -46,18 +46,18 @@ const GroupListWidget = () => {
 					key={item.id}
 					OpenGroupScreenOpacity={OpenGroupScreenOpacity}
 				>
-					{/*<ExpandAnimatedView itemsCount={groupCounter(item).length}>*/}
-					{groupCounters(item).map((counter: Counter) => (
-						<CounterCard
-							key={counter.id}
-							counter={counter}
-							DecrementButton={MiniDecrementButton}
-							IncrementButton={MiniIncrementButton}
-							CounterValue={CounterValue}
-							OpenCounter={OpenCounterScreenOpacity}
-						/>
-					))}
-					{/*</ExpandAnimatedView>*/}
+					<ExpandAnimatedView itemsCount={groupCounters(item).length}>
+						{groupCounters(item).map((counter: Counter) => (
+							<CounterCard
+								key={counter.id}
+								counter={counter}
+								DecrementButton={MiniDecrementButton}
+								IncrementButton={MiniIncrementButton}
+								CounterValue={CounterValue}
+								OpenCounter={OpenCounterScreenOpacity}
+							/>
+						))}
+					</ExpandAnimatedView>
 				</GroupCard>
 			)}
 		/>
