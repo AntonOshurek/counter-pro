@@ -3,12 +3,8 @@ import { StyleSheet } from 'react-native';
 const style = StyleSheet.create({
 	counterList: {
 		flex: 1,
-		paddingTop: 20,
-    gap: 20
-	},
-  list: {
-    flex: 1
-  }
+		paddingTop: 20
+	}
 });
 
 export default style;
