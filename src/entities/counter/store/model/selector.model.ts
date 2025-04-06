@@ -3,7 +3,6 @@ import { RootState } from '../../../../shared/store';
 //MODEL
 import { Counter } from '../../model/counter.model';
 import { SortOptions } from '../../../../shared/constants/sort';
-import { SelectorGetCountersByIds } from '../selectors/counter-selectors';
 
 interface ISelectorGetCounter {
 	(counterId: string): (state: RootState) => Counter;
@@ -11,10 +10,6 @@ interface ISelectorGetCounter {
 
 interface ISelectorGetCounters {
 	(): (state: RootState) => Record<string, Counter>;
-}
-
-interface ISelectorGetCountersArray {
-	(): (state: RootState) => Counter[];
 }
 
 interface ISelectorGetCounterName {
@@ -37,10 +32,6 @@ interface ISelectorGetIsPinned {
 	(counterId: string): (state: RootState) => boolean;
 }
 
-interface ISelectorGetCountersByIds {
-	(countersIds: string[]): (state: RootState) => Counter[];
-}
-
 export {
 	ISelectorGetCounter,
 	ISelectorGetCounters,
@@ -48,7 +39,5 @@ export {
 	ISelectorGetCounterStep,
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetListSortType,
-	ISelectorGetIsPinned,
-	ISelectorGetCountersByIds,
-	ISelectorGetCountersArray
+	ISelectorGetIsPinned
 };

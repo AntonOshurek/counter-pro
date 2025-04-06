@@ -5,11 +5,9 @@ import {
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
 	ISelectorGetCounters,
-	ISelectorGetCountersByIds,
 	ISelectorGetCounterStep,
 	ISelectorGetIsPinned,
-	ISelectorGetListSortType,
-	ISelectorGetCountersArray
+	ISelectorGetListSortType
 } from '../model/selector.model';
 import { convertObjectToArray } from '../../../../shared/lib/convertObjectToArray';
 import { Counter } from '../../model/counter.model';
@@ -25,8 +23,9 @@ const SelectorGetCounters: ISelectorGetCounters = () => (state: RootState) => {
 };
 
 const SelectorGetCountersArray = createSelector(
-  (state: RootState) => state.counter.counters,
-  (countersMap: Record<string, Counter>): Counter[] => convertObjectToArray<Counter>(countersMap)
+	(state: RootState) => state.counter.counters,
+	(countersMap: Record<string, Counter>): Counter[] =>
+		convertObjectToArray<Counter>(countersMap)
 );
 
 const SelectorGetCounterName: ISelectorGetCounterName =
@@ -53,11 +52,6 @@ const SelectorGetIsPinned: ISelectorGetIsPinned =
 		return state.counter.counters[counterId].isPinned;
 	};
 
-const SelectorGetCountersByIds: ISelectorGetCountersByIds =
-	(counterIds: string[]) => (state: RootState) => {
-		return counterIds.map(id => state.counter.counters[id]);
-	};
-
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -66,6 +60,5 @@ export {
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
 	SelectorGetIsPinned,
-	SelectorGetCountersByIds,
 	SelectorGetCountersArray
 };
