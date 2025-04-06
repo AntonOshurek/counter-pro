@@ -9,12 +9,14 @@ const groupInitialState: IGroupState = {
 		['g-1']: {
 			id: 'g-1',
 			name: 'main counters',
-			counters: ['counter-1', 'counter-2', 'counter-3']
+			counters: ['counter-1', 'counter-2', 'counter-3'],
+			isPinned: false
 		},
 		['g-2']: {
 			id: 'g-2',
 			name: 'Rest',
-			counters: ['counter-4', 'counter-5', 'counter-6']
+			counters: ['counter-4', 'counter-5', 'counter-6'],
+			isPinned: false
 		}
 	}
 };
