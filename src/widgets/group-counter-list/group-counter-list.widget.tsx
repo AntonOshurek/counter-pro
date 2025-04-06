@@ -1,15 +1,17 @@
 //NATIVE
 import { FlatList } from 'react-native';
-//MODEL
-import { GroupCounterListProps } from './model/group-counter-list.model';
-//STYLES
-import style from './styles/style';
+//ENTITIES
 import { CounterCard, CounterValue } from '../../entities/counter';
+//FEATURES
 import {
 	MiniDecrementButton,
 	MiniIncrementButton,
 	OpenCounterScreenOpacity
 } from '../../features/counter';
+//MODEL
+import { GroupCounterListProps } from './model/group-counter-list.model';
+//STYLES
+import style from './styles/style';
 
 const GroupCounterListWidget = ({ groupCounters }: GroupCounterListProps) => {
 	return (
