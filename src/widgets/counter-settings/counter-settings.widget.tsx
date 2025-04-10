@@ -6,11 +6,11 @@ import {
 } from '../../features/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
+import Paragraph from '../../shared/ui/paragraph/paragraph';
 //MODEL
-import { CounterSettingsWidgetProps } from './model/sounter-setting-widget.model';
+import { CounterSettingsWidgetProps } from './model/counter-setting-widget.model';
 //STYLES
 import style from './styles/style';
-import Paragraph from '../../shared/ui/paragraph/paragraph';
 
 const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	return (

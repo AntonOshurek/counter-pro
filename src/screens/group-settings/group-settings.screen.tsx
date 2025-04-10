@@ -1,12 +1,16 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 //NAVIGATION
 import { GroupScreenRouteProp } from '../../app/navigation/model';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupCriticalOptionsWidget, GroupAdditionalInfoWidget } from '../../widgets';
+import {
+	GroupCriticalOptionsWidget,
+	GroupAdditionalInfoWidget,
+	GroupSettingsWidget
+} from '../../widgets';
 //STORE
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
@@ -28,6 +32,7 @@ const GroupSettingsScreen = () => {
 
 			<View style={style.settingsGroup}>
 				<GroupAdditionalInfoWidget group={group} />
+				<GroupSettingsWidget group={group} />
 			</View>
 		</ScreenLayout>
 	);
