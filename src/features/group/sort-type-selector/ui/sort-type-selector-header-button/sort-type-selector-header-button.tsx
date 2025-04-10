@@ -1,9 +1,9 @@
 //STORE
 import { useAppSelector } from '../../../../../shared/store';
 //FEATURES
-import useSortTypeSelector from '../../sotrt-type-selector';
+import useSortTypeSelector from '../../sort-type-selector';
 //ENTITIES
-import { SelectorGetListSortType } from '../../../../../entities/counter/';
+import { SelectorGetListSortType } from '../../../../../entities/group/';
 //VARIABLES
 import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
 //UI

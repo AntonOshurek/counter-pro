@@ -4,7 +4,7 @@ import {
 	SelectorGetGroups,
 	SelectorGetGroup,
 	SelectorGetIsPinnedGroup,
-	SelectorGetListSortTYpe
+  SelectorGetListSortType
 } from './store/selectors/group-selectors';
 import {
 	setIsPinnedAction,
@@ -21,5 +21,5 @@ export {
 	CreateGroupAction,
 	SelectorGetIsPinnedGroup,
 	setListSortTypeAction,
-	SelectorGetListSortTYpe
+  SelectorGetListSortType
 };

@@ -21,7 +21,7 @@ const SelectorGetIsPinnedGroup: ISelectorGetIsPinnedGroup =
 		return state.group.groups[groupId].isPinned;
 	};
 
-const SelectorGetListSortTYpe: ISelectorGetListSortType = () => (state: RootState) => {
+const SelectorGetListSortType: ISelectorGetListSortType = () => (state: RootState) => {
 	return state.group.groupListSortType;
 };
 
@@ -29,5 +29,5 @@ export {
 	SelectorGetGroup,
 	SelectorGetGroups,
 	SelectorGetIsPinnedGroup,
-	SelectorGetListSortTYpe
+  SelectorGetListSortType
 };

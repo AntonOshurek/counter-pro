@@ -3,7 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
 import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
 //FEATURES
-import { SortTypeSelectorHeaderButton } from '../../features/counter';
+import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonCounter } from '../../features/counter';
+import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonGroup } from '../../features/group/';
 //TYPES
 import { BottomTabsNavigationParams } from './model/';
 //HOOKS
@@ -44,7 +45,7 @@ const BottomTabs = () => {
 					tabBarIcon: () => (
 						<HomeIcon height={40} width={40} color={colors[theme].textPrimary} />
 					),
-					headerRight: () => <SortTypeSelectorHeaderButton />
+					headerRight: () => <SortTypeSelectorHeaderButtonCounter />
 				}}
 			/>
 			<BottomTabs.Screen
@@ -54,7 +55,8 @@ const BottomTabs = () => {
 					title: 'Groups',
 					tabBarIcon: () => (
 						<ListIcon height={40} width={40} color={colors[theme].textPrimary} />
-					)
+					),
+					headerRight: () => <SortTypeSelectorHeaderButtonGroup />
 				}}
 			/>
 			<BottomTabs.Screen
