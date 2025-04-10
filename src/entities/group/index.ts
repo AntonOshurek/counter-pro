@@ -3,9 +3,14 @@ import GroupCard from './ui/group-card/group-card';
 import {
 	SelectorGetGroups,
 	SelectorGetGroup,
-	SelectorGetIsPinnedGroup
+	SelectorGetIsPinnedGroup,
+	SelectorGetListSortTYpe
 } from './store/selectors/group-selectors';
-import { setIsPinnedAction, CreateGroupAction } from './store/actions/group-actions';
+import {
+	setIsPinnedAction,
+	CreateGroupAction,
+	setListSortTypeAction
+} from './store/actions/group-actions';
 
 export {
 	Group,
@@ -14,5 +19,7 @@ export {
 	SelectorGetGroup,
 	setIsPinnedAction,
 	CreateGroupAction,
-	SelectorGetIsPinnedGroup
+	SelectorGetIsPinnedGroup,
+	setListSortTypeAction,
+	SelectorGetListSortTYpe
 };

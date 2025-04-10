@@ -1,5 +1,5 @@
 //ENTITIES
-import { setListSortTypeAction } from '../../../entities/counter/store/actions/counter-actions';
+import { setListSortTypeAction } from '../../../entities/group/';
 //STORE
 import { useAppDispatch } from '../../../shared/store';
 //CONSTANTS
