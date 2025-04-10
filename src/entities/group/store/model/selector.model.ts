@@ -17,4 +17,8 @@ interface ISelectorGetIsPinnedGroup {
   (groupId: string): (state: RootState) => boolean;
 }
 
-export { ISelectorGetGroup, ISelectorGetGroups, ISelectorGetIsPinnedGroup };
+interface ISelectorGetListSortType {
+  (): (state: RootState) => SortOptions;
+}
+
+export { ISelectorGetGroup, ISelectorGetGroups, ISelectorGetIsPinnedGroup, ISelectorGetListSortType };

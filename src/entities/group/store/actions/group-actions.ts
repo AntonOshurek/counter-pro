@@ -1,7 +1,11 @@
 //STORE
 import groupSlice from '../group-slice';
 //MODEL
-import { ICreateGroupAction, ISetIsPinnedAction } from '../model/action.model';
+import {
+	ICreateGroupAction,
+	ISetIsPinnedAction,
+	ISetListSortTypeAction
+} from '../model/action.model';
 //TYPES
 import type { AppThunk } from '../../../../shared/store';
 
@@ -17,4 +21,10 @@ const setIsPinnedAction =
 		dispatch(groupSlice.actions.setIsPinnedGroup(action));
 	};
 
-export { CreateGroupAction, setIsPinnedAction };
+const setListSortTypeAction =
+	(action: ISetListSortTypeAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(groupSlice.actions.setListSortType(action));
+	};
+
+export { CreateGroupAction, setIsPinnedAction, setListSortTypeAction };

@@ -1,10 +1,11 @@
 //STORE
 import type { RootState } from '../../../../shared/store';
 //MODEL
-import type {
+import {
 	ISelectorGetGroup,
 	ISelectorGetGroups,
-	ISelectorGetIsPinnedGroup
+	ISelectorGetIsPinnedGroup,
+	ISelectorGetListSortType
 } from '../model/selector.model';
 
 const SelectorGetGroup: ISelectorGetGroup = (groupId: string) => (state: RootState) => {
@@ -20,4 +21,13 @@ const SelectorGetIsPinnedGroup: ISelectorGetIsPinnedGroup =
 		return state.group.groups[groupId].isPinned;
 	};
 
-export { SelectorGetGroup, SelectorGetGroups, SelectorGetIsPinnedGroup };
+const SelectorGetListSortTYpe: ISelectorGetListSortType = () => (state: RootState) => {
+	return state.group.groupListSortType;
+};
+
+export {
+	SelectorGetGroup,
+	SelectorGetGroups,
+	SelectorGetIsPinnedGroup,
+	SelectorGetListSortTYpe
+};
