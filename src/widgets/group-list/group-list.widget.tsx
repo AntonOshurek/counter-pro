@@ -5,7 +5,12 @@ import { useAppSelector } from '../../shared/store';
 import { SelectorGetCounters } from '../../entities/counter/';
 //ENTITIES
 import { Counter, CounterCard, CounterValue } from '../../entities/counter';
-import { Group, GroupCard, SelectorGetGroups } from '../../entities/group';
+import {
+	Group,
+	GroupCard,
+	SelectorGetGroups,
+	SelectorGetListSortType
+} from '../../entities/group';
 //FEATURES
 import { OpenGroupScreenOpacity, ChangePinnedGroupButton } from '../../features/group';
 import {
@@ -24,9 +29,10 @@ import style from './styles/style';
 import { SortOptions } from '../../shared/constants/sort';
 
 const GroupListWidget = () => {
+	const sortType = useAppSelector(SelectorGetListSortType());
 	const counters = useAppSelector(SelectorGetCounters());
 	const groups = convertObjectToArray<Group>(useAppSelector(SelectorGetGroups()));
-	const sortedGroups = sortGroups(SortOptions.ByName, groups);
+	const sortedGroups = sortGroups(sortType, groups);
 
 	const groupCounters = (group: Group) => {
 		let groupCounters = group.counters.map(counterId => {
