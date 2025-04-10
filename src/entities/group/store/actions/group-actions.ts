@@ -4,7 +4,8 @@ import groupSlice from '../group-slice';
 import {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
-	ISetListSortTypeAction
+	ISetListSortTypeAction,
+	IDeleteGroupAction
 } from '../model/action.model';
 //TYPES
 import type { AppThunk } from '../../../../shared/store';
@@ -27,4 +28,10 @@ const setListSortTypeAction =
 		dispatch(groupSlice.actions.setListSortType(action));
 	};
 
-export { CreateGroupAction, setIsPinnedAction, setListSortTypeAction };
+const deleteGroupAction =
+	(action: IDeleteGroupAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(groupSlice.actions.delete(action));
+	};
+
+export { CreateGroupAction, setIsPinnedAction, setListSortTypeAction, deleteGroupAction };

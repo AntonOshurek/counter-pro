@@ -5,7 +5,8 @@ import { groupInitialState } from './state/group-state';
 import {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
-	ISetListSortTypeAction
+	ISetListSortTypeAction,
+	IDeleteGroupAction
 } from './model/action.model';
 
 const groupSlice = createSlice({
@@ -27,6 +28,13 @@ const groupSlice = createSlice({
 		setListSortType: (state, action: PayloadAction<ISetListSortTypeAction>) => {
 			const { sortType } = action.payload;
 			state.groupListSortType = sortType;
+		},
+		delete: (state, action: PayloadAction<IDeleteGroupAction>) => {
+			const { groupId } = action.payload;
+
+			if (state.groups.hasOwnProperty(groupId)) {
+				delete state.groups[groupId];
+			}
 		}
 	}
 });

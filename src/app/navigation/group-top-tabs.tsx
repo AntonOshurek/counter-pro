@@ -63,7 +63,7 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 					component={GroupScreen}
 					initialParams={{ groupId }}
 				/>
-				<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} />
+				<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} initialParams={{ groupId }}/>
 			</Tab.Navigator>
 		);
 	}

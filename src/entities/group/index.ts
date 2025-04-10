@@ -4,12 +4,13 @@ import {
 	SelectorGetGroups,
 	SelectorGetGroup,
 	SelectorGetIsPinnedGroup,
-  SelectorGetListSortType
+	SelectorGetListSortType
 } from './store/selectors/group-selectors';
 import {
 	setIsPinnedAction,
 	CreateGroupAction,
-	setListSortTypeAction
+	setListSortTypeAction,
+	deleteGroupAction
 } from './store/actions/group-actions';
 
 export {
@@ -21,5 +22,6 @@ export {
 	CreateGroupAction,
 	SelectorGetIsPinnedGroup,
 	setListSortTypeAction,
-  SelectorGetListSortType
+	SelectorGetListSortType,
+	deleteGroupAction
 };

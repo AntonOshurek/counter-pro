@@ -16,4 +16,13 @@ interface ISetListSortTypeAction {
 	sortType: SortOptions;
 }
 
-export { ICreateGroupAction, ISetIsPinnedAction, ISetListSortTypeAction };
+interface IDeleteGroupAction {
+	groupId: string;
+}
+
+export {
+	ICreateGroupAction,
+	ISetIsPinnedAction,
+	ISetListSortTypeAction,
+	IDeleteGroupAction
+};
