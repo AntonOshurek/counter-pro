@@ -12,4 +12,17 @@ interface ISetIsPinnedAction {
 	groupId: string;
 }
 
-export { ICreateGroupAction, ISetIsPinnedAction };
+interface ISetListSortTypeAction {
+	sortType: SortOptions;
+}
+
+interface IDeleteGroupAction {
+	groupId: string;
+}
+
+export {
+	ICreateGroupAction,
+	ISetIsPinnedAction,
+	ISetListSortTypeAction,
+	IDeleteGroupAction
+};

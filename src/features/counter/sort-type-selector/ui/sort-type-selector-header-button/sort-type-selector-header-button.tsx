@@ -3,7 +3,7 @@ import { useAppSelector } from '../../../../../shared/store';
 //FEATURES
 import useSortTypeSelector from '../../sotrt-type-selector';
 //ENTITIES
-import { SelectorGetListSortType } from '../../../../../entities/counter/store/selectors/counter-selectors';
+import { SelectorGetListSortType } from '../../../../../entities/counter/';
 //VARIABLES
 import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
 //UI

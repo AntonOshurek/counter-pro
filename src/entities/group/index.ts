@@ -1,11 +1,19 @@
 import { Group } from './model/group.model';
 import GroupCard from './ui/group-card/group-card';
+import CreatedDate from './ui/created-date/created-date';
 import {
 	SelectorGetGroups,
 	SelectorGetGroup,
-	SelectorGetIsPinnedGroup
+	SelectorGetIsPinnedGroup,
+	SelectorGetListSortType,
+	SelectorGetGroupCreatedDate
 } from './store/selectors/group-selectors';
-import { setIsPinnedAction, CreateGroupAction } from './store/actions/group-actions';
+import {
+	setIsPinnedAction,
+	CreateGroupAction,
+	setListSortTypeAction,
+	deleteGroupAction
+} from './store/actions/group-actions';
 
 export {
 	Group,
@@ -14,5 +22,10 @@ export {
 	SelectorGetGroup,
 	setIsPinnedAction,
 	CreateGroupAction,
-	SelectorGetIsPinnedGroup
+	SelectorGetIsPinnedGroup,
+	setListSortTypeAction,
+	SelectorGetListSortType,
+	deleteGroupAction,
+	SelectorGetGroupCreatedDate,
+	CreatedDate
 };

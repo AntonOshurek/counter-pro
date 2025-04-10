@@ -1,5 +1,6 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
+import { View } from 'react-native';
 //NAVIGATION
 import type { CounterScreenRouteProp } from '../../app/navigation/model/counter-top-tabs.model';
 //STORE
@@ -15,7 +16,6 @@ import {
 import { ScreenLayout } from '../layouts';
 //STYLES
 import style from './styles/style';
-import { View } from 'react-native';
 
 const CounterSettingsScreen = () => {
 	const route = useRoute<CounterScreenRouteProp>();

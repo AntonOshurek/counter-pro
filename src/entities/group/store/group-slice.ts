@@ -2,7 +2,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { groupInitialState } from './state/group-state';
 //MODEL
-import type { ICreateGroupAction, ISetIsPinnedAction } from './model/action.model';
+import {
+	ICreateGroupAction,
+	ISetIsPinnedAction,
+	ISetListSortTypeAction,
+	IDeleteGroupAction
+} from './model/action.model';
 
 const groupSlice = createSlice({
 	name: 'group',
@@ -19,6 +24,17 @@ const groupSlice = createSlice({
 		setIsPinnedGroup: (state, action: PayloadAction<ISetIsPinnedAction>) => {
 			const { isPinned, groupId } = action.payload;
 			state.groups[groupId].isPinned = isPinned;
+		},
+		setListSortType: (state, action: PayloadAction<ISetListSortTypeAction>) => {
+			const { sortType } = action.payload;
+			state.groupListSortType = sortType;
+		},
+		delete: (state, action: PayloadAction<IDeleteGroupAction>) => {
+			const { groupId } = action.payload;
+
+			if (state.groups.hasOwnProperty(groupId)) {
+				delete state.groups[groupId];
+			}
 		}
 	}
 });

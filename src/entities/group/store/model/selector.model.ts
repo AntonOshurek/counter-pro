@@ -10,11 +10,25 @@ interface ISelectorGetGroup {
 }
 
 interface ISelectorGetGroups {
-  (): (state: RootState) => Record<string, Group>;
+	(): (state: RootState) => Record<string, Group>;
 }
 
 interface ISelectorGetIsPinnedGroup {
-  (groupId: string): (state: RootState) => boolean;
+	(groupId: string): (state: RootState) => boolean;
 }
 
-export { ISelectorGetGroup, ISelectorGetGroups, ISelectorGetIsPinnedGroup };
+interface ISelectorGetListSortType {
+	(): (state: RootState) => SortOptions;
+}
+
+interface ISelectorGetGroupCreatedDate {
+	(groupId: string): (state: RootState) => string;
+}
+
+export {
+	ISelectorGetGroup,
+	ISelectorGetGroups,
+	ISelectorGetIsPinnedGroup,
+	ISelectorGetListSortType,
+	ISelectorGetGroupCreatedDate
+};

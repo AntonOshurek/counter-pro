@@ -9,7 +9,7 @@ const useSortTypeSelector = () => {
 	const dispatch = useAppDispatch();
 
 	return (sortType: SortOptions) => {
-		dispatch(setListSortTypeAction({ sortType: sortType }));
+		dispatch(setListSortTypeAction({ sortType }));
 	};
 };
 

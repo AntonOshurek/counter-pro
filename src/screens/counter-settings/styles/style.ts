@@ -1,6 +1,6 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
-//styles
+//STYLES
 import { itemsGaps, paddings } from '../../../shared/styles';
 
 const style = StyleSheet.create({

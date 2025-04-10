@@ -17,7 +17,12 @@ const counterText = {
 const groupText = {
 	groupNotFound: "Oops! We couldn't find this group.",
 	pinGroupButtonLabel: 'Pin this group',
-	unpinGroupButtonLabel: 'Unpin this group'
+	unpinGroupButtonLabel: 'Unpin this group',
+  deleteGroupButtonLabel: 'Delete Group',
+  deleteGroupButtonText: 'Delete',
+  deleteGroupConfirmTitle: 'Delete Group',
+  deleteGroupConfirmBody: 'Are You sure you want to delete this group?',
+  groupCreatedDateLabel: 'Created Date:',
 };
 
 export { counterText, groupText };

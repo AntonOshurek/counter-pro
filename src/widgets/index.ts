@@ -10,6 +10,9 @@ import CounterSettingsWidget from './counter-settings/counter-settings.widget';
 import CounterCriticalOptionsWidget from './counter-critical-options/counter-critical-options.widget';
 import CounterAdditionalInfoWidget from './counter-additional-info/counter-additional-info.widget';
 import GroupCounterListWidget from './group-counter-list/group-counter-list.widget';
+import GroupCriticalOptionsWidget from './group-critical-options/group-critical-options.widget';
+import GroupAdditionalInfoWidget from './group-additional-info/group-additional-info.widget';
+import GroupSettingsWidget from './group-settings/group-settings.widget';
 
 export {
 	CounterWidget,
@@ -23,5 +26,8 @@ export {
 	CounterSettingsWidget,
 	CounterCriticalOptionsWidget,
 	CounterAdditionalInfoWidget,
-	GroupCounterListWidget
+	GroupCounterListWidget,
+	GroupCriticalOptionsWidget,
+	GroupAdditionalInfoWidget,
+	GroupSettingsWidget
 };
