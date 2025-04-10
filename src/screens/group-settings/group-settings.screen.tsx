@@ -6,7 +6,7 @@ import { GroupScreenRouteProp } from '../../app/navigation/model';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupCriticalOptionsWidget } from '../../widgets';
+import { GroupCriticalOptionsWidget, GroupAdditionalInfoWidget } from '../../widgets';
 //STORE
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
@@ -27,7 +27,7 @@ const GroupSettingsScreen = () => {
 			</View>
 
 			<View style={style.settingsGroup}>
-				<Text>Other settings of group</Text>
+				<GroupAdditionalInfoWidget group={group} />
 			</View>
 		</ScreenLayout>
 	);
