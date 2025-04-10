@@ -24,11 +24,12 @@ const useCreateNewCounter = () => {
 			step: 1,
 			count: 0,
 			group: '',
+			isPinned: false,
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime()
 		};
 
-		dispatch(CreateCounterAction({ newCounter: newCounter }));
+		dispatch(CreateCounterAction({ newCounter }));
 		navigation.navigate(StackScreens.CounterScreen, { counterId: newCounter.id });
 	};
 };
