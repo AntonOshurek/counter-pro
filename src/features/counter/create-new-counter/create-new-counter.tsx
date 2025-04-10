@@ -9,7 +9,7 @@ import { CreateCounterAction } from '../../../entities/counter';
 import { StackScreens } from '../../../shared/constants';
 //LIBS
 import { v4 } from 'uuid';
-import { createNewCounterTitleDate } from '../../../shared/lib/date-lib';
+import { createNewItemTitleDate } from '../../../shared/lib/date-lib';
 
 const useCreateNewCounter = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
@@ -20,7 +20,7 @@ const useCreateNewCounter = () => {
 
 		const newCounter = {
 			id: v4(),
-			name: `New Counter ${createNewCounterTitleDate()}`,
+			name: `New Counter ${createNewItemTitleDate()}`,
 			step: 1,
 			count: 0,
 			group: '',

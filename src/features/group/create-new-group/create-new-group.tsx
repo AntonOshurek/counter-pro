@@ -10,6 +10,7 @@ import { CreateGroupAction, Group } from '../../../entities/group';
 import { StackScreens } from '../../../shared/constants';
 //LIBS
 import { v4 } from 'uuid';
+import { createNewItemTitleDate } from '../../../shared/lib/date-lib';
 
 const useCreateNewGroup = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
@@ -20,7 +21,7 @@ const useCreateNewGroup = () => {
 
 		const newGroup: Group = {
 			id: v4(),
-			name: ``,
+			name: `New Group ${createNewItemTitleDate()}`,
 			counters: [],
 			isPinned: false,
 			createdAt: now.toISOString(),
