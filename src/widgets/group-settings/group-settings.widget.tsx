@@ -1,5 +1,5 @@
 //FEATURES
-
+import { ChangeNameField } from '../../features/group';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
 import Paragraph from '../../shared/ui/paragraph/paragraph';
@@ -15,7 +15,7 @@ const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
 				{group.name}
 			</Paragraph>
 
-			{/*<ChangeNameField counterId={group.id} counterName={group.name} />*/}
+			<ChangeNameField groupId={group.id} groupName={group.name} />
 		</SettingsGroupWrapper>
 	);
 };
