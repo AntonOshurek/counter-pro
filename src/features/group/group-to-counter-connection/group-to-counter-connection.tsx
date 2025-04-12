@@ -1,6 +1,11 @@
+import { useCallback } from 'react';
 //STORE
 import { useAppDispatch } from '../../../shared/store';
-import { useCallback } from 'react';
+//ENTITIES
+import {
+	deleteConnectionWithCounterAction,
+	addConnectionWithCounterAction
+} from '../../../entities/group';
 //MODEL
 import type { GroupToCounterConnectionProps } from './model/group-to-counter-connection.model';
 
@@ -9,16 +14,14 @@ const useGroupToCounterConnection = ({ groupId }: GroupToCounterConnectionProps)
 
 	const addConnection = useCallback(
 		(counterId: string) => {
-			console.log(`Добавить связь: counterId=${counterId}, groupId=${groupId}`);
-			// dispatch(addConnectionAction({ counterId, groupId }));
+			dispatch(addConnectionWithCounterAction({ counterId, groupId }));
 		},
 		[groupId, dispatch]
 	);
 
 	const deleteConnection = useCallback(
 		(counterId: string) => {
-			console.log(`Удалить связь: counterId=${counterId}, groupId=${groupId}`);
-			// dispatch(deleteConnectionAction({ counterId, groupId }));
+			dispatch(deleteConnectionWithCounterAction({ counterId, groupId }));
 		},
 		[groupId, dispatch]
 	);

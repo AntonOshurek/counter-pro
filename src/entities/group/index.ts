@@ -14,7 +14,9 @@ import {
 	CreateGroupAction,
 	setListSortTypeAction,
 	deleteGroupAction,
-	setNameAction
+	setNameAction,
+	deleteConnectionWithCounterAction,
+	addConnectionWithCounterAction
 } from './store/actions/group-actions';
 
 export {
@@ -31,5 +33,7 @@ export {
 	SelectorGetGroupCreatedDate,
 	CreatedDate,
 	setNameAction,
-	SelectorGetGroupName
+	SelectorGetGroupName,
+	deleteConnectionWithCounterAction,
+	addConnectionWithCounterAction
 };
