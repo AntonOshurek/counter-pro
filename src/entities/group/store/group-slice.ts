@@ -6,7 +6,8 @@ import {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
-	IDeleteGroupAction
+	IDeleteGroupAction,
+	ISetNameAction
 } from './model/action.model';
 
 const groupSlice = createSlice({
@@ -35,6 +36,10 @@ const groupSlice = createSlice({
 			if (state.groups.hasOwnProperty(groupId)) {
 				delete state.groups[groupId];
 			}
+		},
+		setName: (state, action: PayloadAction<ISetNameAction>) => {
+			const { newName, groupId } = action.payload;
+			state.groups[groupId].name = newName;
 		}
 	}
 });

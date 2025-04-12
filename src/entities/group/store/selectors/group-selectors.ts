@@ -6,7 +6,8 @@ import {
 	ISelectorGetGroups,
 	ISelectorGetIsPinnedGroup,
 	ISelectorGetListSortType,
-	ISelectorGetGroupCreatedDate
+	ISelectorGetGroupCreatedDate,
+	ISelectorGetGroupName
 } from '../model/selector.model';
 
 const SelectorGetGroup: ISelectorGetGroup = (groupId: string) => (state: RootState) => {
@@ -26,6 +27,10 @@ const SelectorGetListSortType: ISelectorGetListSortType = () => (state: RootStat
 	return state.group.groupListSortType;
 };
 
+const SelectorGetGroupName: ISelectorGetGroupName = groupId => (state: RootState) => {
+	return state.group.groups[groupId].name;
+};
+
 const SelectorGetGroupCreatedDate: ISelectorGetGroupCreatedDate =
 	(groupId: string) => (state: RootState) => {
 		return state.group.groups[groupId].createdAt;
@@ -36,5 +41,6 @@ export {
 	SelectorGetGroups,
 	SelectorGetIsPinnedGroup,
 	SelectorGetListSortType,
-	SelectorGetGroupCreatedDate
+	SelectorGetGroupCreatedDate,
+	SelectorGetGroupName
 };

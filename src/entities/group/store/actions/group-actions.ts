@@ -5,7 +5,8 @@ import {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
-	IDeleteGroupAction
+	IDeleteGroupAction,
+	ISetNameAction
 } from '../model/action.model';
 //TYPES
 import type { AppThunk } from '../../../../shared/store';
@@ -34,4 +35,16 @@ const deleteGroupAction =
 		dispatch(groupSlice.actions.delete(action));
 	};
 
-export { CreateGroupAction, setIsPinnedAction, setListSortTypeAction, deleteGroupAction };
+const setNameAction =
+	(action: ISetNameAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(groupSlice.actions.setName(action));
+	};
+
+export {
+	CreateGroupAction,
+	setIsPinnedAction,
+	setListSortTypeAction,
+	deleteGroupAction,
+	setNameAction
+};

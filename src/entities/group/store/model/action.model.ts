@@ -20,9 +20,15 @@ interface IDeleteGroupAction {
 	groupId: string;
 }
 
+interface ISetNameAction {
+	newName: string;
+	groupId: string;
+}
+
 export {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
-	IDeleteGroupAction
+	IDeleteGroupAction,
+	ISetNameAction
 };
