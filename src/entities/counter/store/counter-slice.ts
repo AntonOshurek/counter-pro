@@ -12,7 +12,9 @@ import {
 	IDeleteCounterAction,
 	IResetAction,
 	ISetListSortTypeAction,
-	ISetIsPinnedAction
+	ISetIsPinnedAction,
+	IDeleteConnectionWithGroupAction,
+	IAddConnectionToGroupAction
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -70,6 +72,22 @@ const counterSlice = createSlice({
 		setIsPinnedCounter: (state, action: PayloadAction<ISetIsPinnedAction>) => {
 			const { isPinned, counterId } = action.payload;
 			state.counters[counterId].isPinned = isPinned;
+		},
+		addConnectionWithGroup: (
+			state,
+			action: PayloadAction<IAddConnectionToGroupAction>
+		) => {
+			const { counterId, groupId } = action.payload;
+			state.counters[counterId].group = groupId;
+		},
+		deleteConnectionWithGroup: (
+			state,
+			action: PayloadAction<IDeleteConnectionWithGroupAction>
+		) => {
+			const { counterId, groupId } = action.payload;
+			if (state.counters[counterId].group === groupId) {
+				state.counters[counterId].group = groupId;
+			}
 		}
 	}
 });

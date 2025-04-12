@@ -25,10 +25,15 @@ interface ISelectorGetGroupCreatedDate {
 	(groupId: string): (state: RootState) => string;
 }
 
+interface ISelectorGetGroupName {
+	(groupId: string): (state: RootState) => string;
+}
+
 export {
 	ISelectorGetGroup,
 	ISelectorGetGroups,
 	ISelectorGetIsPinnedGroup,
 	ISelectorGetListSortType,
-	ISelectorGetGroupCreatedDate
+	ISelectorGetGroupCreatedDate,
+	ISelectorGetGroupName
 };

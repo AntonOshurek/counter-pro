@@ -6,7 +6,10 @@ import {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
-	IDeleteGroupAction
+	IDeleteGroupAction,
+	ISetNameAction,
+	IDeleteConnectionWithCounterAction,
+	IAddConnectionToCounterAction
 } from './model/action.model';
 
 const groupSlice = createSlice({
@@ -35,6 +38,29 @@ const groupSlice = createSlice({
 			if (state.groups.hasOwnProperty(groupId)) {
 				delete state.groups[groupId];
 			}
+		},
+		setName: (state, action: PayloadAction<ISetNameAction>) => {
+			const { newName, groupId } = action.payload;
+			state.groups[groupId].name = newName;
+		},
+		deleteConnectionWithCounter: (
+			state,
+			action: PayloadAction<IDeleteConnectionWithCounterAction>
+		) => {
+			const { groupId, counterId } = action.payload;
+			if (
+				state.groups[groupId].counters.includes(counterId) &&
+				state.groups.hasOwnProperty(groupId)
+			) {
+				state.groups[groupId].counters.filter(counter => counter !== counterId);
+			}
+		},
+		addConnectionToCounter: (
+			state,
+			action: PayloadAction<IAddConnectionToCounterAction>
+		) => {
+			const { groupId, counterId } = action.payload;
+			state.groups[groupId].counters.push(counterId);
 		}
 	}
 });

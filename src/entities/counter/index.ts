@@ -21,7 +21,9 @@ import {
 	deleteCounterAction,
 	ResetAction,
 	setListSortTypeAction,
-	setIsPinnedAction
+	setIsPinnedAction,
+	deleteConnectionWithGroupAction,
+	addConnectionWithGroupAction
 } from './store/actions/counter-actions';
 import CreatedDate from './ui/created-date/created-date';
 import CounterStep from './ui/counter-step/counter-step';
@@ -49,5 +51,7 @@ export {
 	SelectorGetIsPinned,
 	setListSortTypeAction,
 	setIsPinnedAction,
-	SelectorGetCountersArray
+	SelectorGetCountersArray,
+	deleteConnectionWithGroupAction,
+	addConnectionWithGroupAction
 };

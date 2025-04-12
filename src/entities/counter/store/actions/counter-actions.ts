@@ -11,7 +11,9 @@ import {
 	ISetListSortTypeAction,
 	ISetNameAction,
 	ISetStepAction,
-	ISetToGroupAction
+	ISetToGroupAction,
+	IDeleteConnectionWithGroupAction,
+	IAddConnectionToGroupAction
 } from '../model/action.model';
 //TYPES
 import type { AppThunk } from '../../../../shared/store';
@@ -76,6 +78,18 @@ const setIsPinnedAction =
 		dispatch(counterSlice.actions.setIsPinnedCounter(action));
 	};
 
+const deleteConnectionWithGroupAction =
+	(action: IDeleteConnectionWithGroupAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.deleteConnectionWithGroup(action));
+	};
+
+const addConnectionWithGroupAction =
+	(action: IAddConnectionToGroupAction): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.addConnectionWithGroup(action));
+	};
+
 export {
 	IncrementAction,
 	DecrementAction,
@@ -86,5 +100,7 @@ export {
 	deleteCounterAction,
 	ResetAction,
 	setListSortTypeAction,
-	setIsPinnedAction
+	setIsPinnedAction,
+	deleteConnectionWithGroupAction,
+	addConnectionWithGroupAction
 };

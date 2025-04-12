@@ -20,9 +20,27 @@ interface IDeleteGroupAction {
 	groupId: string;
 }
 
+interface ISetNameAction {
+	newName: string;
+	groupId: string;
+}
+
+interface IDeleteConnectionWithCounterAction {
+	groupId: string;
+	counterId: string;
+}
+
+interface IAddConnectionToCounterAction {
+	groupId: string;
+	counterId: string;
+}
+
 export {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
-	IDeleteGroupAction
+	IDeleteGroupAction,
+	ISetNameAction,
+	IDeleteConnectionWithCounterAction,
+	IAddConnectionToCounterAction
 };

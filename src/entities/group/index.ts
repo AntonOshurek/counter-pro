@@ -6,13 +6,17 @@ import {
 	SelectorGetGroup,
 	SelectorGetIsPinnedGroup,
 	SelectorGetListSortType,
-	SelectorGetGroupCreatedDate
+	SelectorGetGroupCreatedDate,
+	SelectorGetGroupName
 } from './store/selectors/group-selectors';
 import {
 	setIsPinnedAction,
 	CreateGroupAction,
 	setListSortTypeAction,
-	deleteGroupAction
+	deleteGroupAction,
+	setNameAction,
+	deleteConnectionWithCounterAction,
+	addConnectionWithCounterAction
 } from './store/actions/group-actions';
 
 export {
@@ -27,5 +31,9 @@ export {
 	SelectorGetListSortType,
 	deleteGroupAction,
 	SelectorGetGroupCreatedDate,
-	CreatedDate
+	CreatedDate,
+	setNameAction,
+	SelectorGetGroupName,
+	deleteConnectionWithCounterAction,
+	addConnectionWithCounterAction
 };
