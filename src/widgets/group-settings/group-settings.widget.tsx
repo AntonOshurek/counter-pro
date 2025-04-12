@@ -1,5 +1,5 @@
 //FEATURES
-import { ChangeNameField } from '../../features/group';
+import { ChangeNameField, GroupCounterSelectModal } from '../../features/group';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
 //MODEL
@@ -11,6 +11,7 @@ const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
 	return (
 		<SettingsGroupWrapper additionalClass={style.groupSettings}>
 			<ChangeNameField groupId={group.id} groupName={group.name} />
+			<GroupCounterSelectModal groupId={group.id} />
 		</SettingsGroupWrapper>
 	);
 };
