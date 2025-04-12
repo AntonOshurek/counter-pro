@@ -1,6 +1,6 @@
 interface ChangeNameFieldProps {
-	counterName: string;
-	counterId: string;
+	groupName: string;
+	groupId: string;
 }
 
 export { ChangeNameFieldProps };

@@ -4,6 +4,7 @@ import ChangePinnedGroupButton from './change-pinned/ui/change-pinned-button/cha
 import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-selector-header-button/sort-type-selector-header-button';
 import DeleteGroupButton from './delete-group/ui/delete-counter-button/delete-group-button';
 import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
+import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
 
 export {
 	CreateNewGroupButton,
@@ -11,5 +12,6 @@ export {
 	ChangePinnedGroupButton,
 	SortTypeSelectorHeaderButton,
 	DeleteGroupButton,
-	ChangePinnedSetting
+	ChangePinnedSetting,
+	ChangeNameField
 };
