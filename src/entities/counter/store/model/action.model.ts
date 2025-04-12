@@ -47,6 +47,16 @@ interface ISetIsPinnedAction {
   counterId: string;
 }
 
+interface IDeleteConnectionWithGroupAction {
+  groupId: string;
+  counterId: string;
+}
+
+interface IAddConnectionToGroupAction {
+  groupId: string;
+  counterId: string;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
@@ -57,5 +67,7 @@ export {
 	IDeleteCounterAction,
 	IResetAction,
 	ISetListSortTypeAction,
-	ISetIsPinnedAction
+	ISetIsPinnedAction,
+	IDeleteConnectionWithGroupAction,
+	IAddConnectionToGroupAction
 };
