@@ -1,40 +1,31 @@
+//NATIVE
 import { StyleSheet } from 'react-native';
+//MODEL
+import type { ColorThemes } from '../../../../entities/theme';
+//STYLES
+import { colors } from '../../../styles';
 
-const style = StyleSheet.create({
-	overlay: {
-		flex: 1,
-		backgroundColor: '#00000088',
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
-	container: {
-		width: '90%',
-		maxHeight: '80%',
-		backgroundColor: '#fff',
-		borderRadius: 12,
-		padding: 16
-	},
-	title: {
-		fontSize: 18,
-		marginBottom: 12,
-		fontWeight: 'bold'
-	},
-	item: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		paddingVertical: 8
-	},
-	closeButton: {
-		marginTop: 16,
-		alignSelf: 'center',
-		backgroundColor: '#2196F3',
-		padding: 10,
-		borderRadius: 8
-	},
-	closeButtonText: {
-		color: '#fff',
-		fontWeight: 'bold'
-	}
-});
+const style = (theme: ColorThemes) =>
+	StyleSheet.create({
+		overlay: {
+			flex: 1,
+			backgroundColor: '#00000070',
+			justifyContent: 'center',
+			alignItems: 'center'
+		},
+		container: {
+			width: '90%',
+			maxHeight: '70%',
+			backgroundColor: colors[theme].mainSurfaceTertiary,
+			borderRadius: 12,
+			padding: 16,
+			gap: 20
+		},
+		item: {
+			flexDirection: 'row',
+			alignItems: 'center',
+			paddingVertical: 8
+		}
+	});
 
 export { style };

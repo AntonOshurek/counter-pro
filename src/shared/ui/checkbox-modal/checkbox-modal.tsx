@@ -1,51 +1,60 @@
 import React from 'react';
 //NATIVE
 import { Modal, View, Text, FlatList, TouchableOpacity } from 'react-native';
+//HOOKS
+import useThemeResolver from '../../hooks/useThemeResolver';
 //UI
 import CustomCheckbox from '../../checkbox/checkbox';
 import MainButton from '../main-button/main-button';
+import Paragraph from '../paragraph/paragraph';
 //MODEL
-import type { CheckboxModalProps } from './model/checlbox-modal.model';
+import { checkboxModalItems, CheckboxModalProps } from './model/checlbox-modal.model';
 //STYLES
 import { style } from './styles/style';
 
 const CheckboxModal = ({
 	visible,
-	title = 'Choose Counters',
+	title,
 	items,
 	onToggle,
 	onClose
 }: CheckboxModalProps) => {
+	const theme = useThemeResolver();
+	const s = style(theme);
+
+	const checkboxToggle = (item: checkboxModalItems) => {
+		onToggle(item.id, !item.isSelected);
+	};
+
 	return (
 		<Modal visible={visible} transparent animationType='slide'>
-			<View style={style.overlay}>
-				<View style={style.container}>
-					<Text style={style.title}>{title}</Text>
+			<TouchableOpacity style={s.overlay} onPress={onClose}>
+				<View style={s.container}>
+					<Paragraph size={'large'} contentType={'primary'}>
+						{title}
+					</Paragraph>
 
 					<FlatList
 						data={items}
 						keyExtractor={item => item.id}
 						renderItem={({ item }) => {
 							return (
-								<TouchableOpacity
-									style={style.item}
-									onPress={() => onToggle(item.id, !item.isSelected)}
-								>
+								<TouchableOpacity style={s.item} onPress={() => checkboxToggle(item)}>
 									<CustomCheckbox
 										value={item.isSelected}
-										onChange={() => onToggle(item.id, !item.isSelected)}
+										onChange={() => checkboxToggle(item)}
 									/>
-									<Text>{item.label}</Text>
+									<Paragraph size={'medium'} contentType={'primary'}>
+										{item.label}
+									</Paragraph>
 								</TouchableOpacity>
 							);
 						}}
 					/>
 
-					<TouchableOpacity onPress={onClose} style={style.closeButton}>
-						<Text style={style.closeButtonText}>Close</Text>
-					</TouchableOpacity>
+					<MainButton onPress={onClose} label={'Close'} />
 				</View>
-			</View>
+			</TouchableOpacity>
 		</Modal>
 	);
 };

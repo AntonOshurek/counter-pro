@@ -33,16 +33,14 @@ const GroupCounterSelectModal = ({
 
 	return (
 		<View style={style.groupCounterSelectModal}>
-			<MainButton
-				label={'List of Counters'}
-				onPress={() => modalVisibleHandler(true)}
-			/>
+			<MainButton label={'List of Counters'} onPress={() => modalVisibleHandler(true)} />
 
 			<CheckboxModal
 				visible={modalVisible}
 				onClose={() => modalVisibleHandler(false)}
 				onToggle={onCounterToggleListener}
 				items={counters}
+				title={'Manage Counters'}
 			/>
 		</View>
 	);
