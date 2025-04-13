@@ -2,9 +2,9 @@ import { checkboxModalItems } from '../../../../../../shared/ui/checkbox-modal/m
 
 interface GroupCounterSelectModalProps {
 	groupId: string;
-	useCounterConnection: (args: { counterId: string }) => {
-		addConnection: (groupId: string) => void;
-		deleteConnection: (groupId: string) => void;
+  counterToGroupConnection: () => {
+    addGroupToCounter: (counterId: string, groupId: string) => void;
+    deleteGroupFromCounter: (counterId: string, groupId: string) => void;
 	};
 	counters: checkboxModalItems[];
 }

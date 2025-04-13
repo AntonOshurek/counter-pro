@@ -86,7 +86,7 @@ const counterSlice = createSlice({
 		) => {
 			const { counterId, groupId } = action.payload;
 			if (state.counters[counterId].group === groupId) {
-				state.counters[counterId].group = groupId;
+				state.counters[counterId].group = '';
 			}
 		}
 	}

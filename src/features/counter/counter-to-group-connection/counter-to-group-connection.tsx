@@ -6,29 +6,27 @@ import {
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction
 } from '../../../entities/counter';
-//MODEL
-import type { CounterToGroupConnectionProps } from './model/counter-to-group-connection.model';
 
-const useCounterToGroupConnection = ({ counterId }: CounterToGroupConnectionProps) => {
+const useCounterToGroupConnection = () => {
 	const dispatch = useAppDispatch();
 
-	const addConnection = useCallback(
-		(groupId: string) => {
+	const addGroupToCounter = useCallback(
+		(counterId: string, groupId: string) => {
 			dispatch(addConnectionWithGroupAction({ counterId, groupId }));
 		},
-		[counterId, dispatch]
+		[dispatch]
 	);
 
-	const deleteConnection = useCallback(
-		(groupId: string) => {
+	const deleteGroupFromCounter = useCallback(
+		(counterId: string, groupId: string) => {
 			dispatch(deleteConnectionWithGroupAction({ counterId, groupId }));
 		},
-		[counterId, dispatch]
+		[dispatch]
 	);
 
 	return {
-		addConnection,
-		deleteConnection
+    addGroupToCounter,
+    deleteGroupFromCounter
 	};
 };
 

@@ -30,7 +30,7 @@ const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
 			<ChangeNameField groupId={group.id} groupName={group.name} />
 			<GroupCounterSelectModal
 				groupId={group.id}
-				useCounterConnection={useCounterToGroupConnection}
+				counterToGroupConnection={useCounterToGroupConnection}
 				counters={groupCounters}
 			/>
 		</SettingsGroupWrapper>

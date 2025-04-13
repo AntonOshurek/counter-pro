@@ -1,6 +1,6 @@
 import { useState } from 'react';
 //NATIVE
-import { Button, View } from 'react-native';
+import { View } from 'react-native';
 //FEATURES
 import useGroupToCounterConnection from '../../group-to-counter-connection';
 //MODEL
@@ -13,22 +13,25 @@ import { style } from './styles/style';
 
 const GroupCounterSelectModal = ({
 	groupId,
-	useCounterConnection,
+	counterToGroupConnection,
 	counters
 }: GroupCounterSelectModalProps) => {
 	const [modalVisible, setModalVisible] = useState(false);
-	const { deleteConnection, addConnection } = useGroupToCounterConnection({ groupId });
+	const { deleteCounterFromGroup, addCounterToGroup } = useGroupToCounterConnection();
+	const { deleteGroupFromCounter, addGroupToCounter } = counterToGroupConnection();
 
 	const modalVisibleHandler = (visible: boolean) => {
 		setModalVisible(visible);
 	};
 
 	const onCounterToggleListener = (counterId: string, newIsSelectedValue: boolean) => {
-		// const {} = useCounterConnection(counterId);
-
 		if (newIsSelectedValue) {
-			addConnection(counterId);
-		} else deleteConnection(counterId);
+			addCounterToGroup(counterId, groupId);
+			addGroupToCounter(counterId, groupId);
+		} else {
+			deleteGroupFromCounter(counterId, groupId);
+			deleteCounterFromGroup(counterId, groupId);
+		}
 	};
 
 	return (
