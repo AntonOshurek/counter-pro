@@ -1,35 +1,23 @@
 import React from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+//NATIVE
+import { TouchableOpacity, View } from 'react-native';
+//HOOKS
+import useThemeResolver from '../hooks/useThemeResolver';
+//MODEL
+import { CheckboxProps } from './checkbox.model';
+//STYLES
+import { style } from './styles';
+import { colors } from '../styles';
 
-type Props = {
-  value: boolean;
-  onChange: () => void;
-  size?: number;
-  color?: string;
-};
+const CustomCheckbox = ({ value, onChange }: CheckboxProps) => {
+	const theme = useThemeResolver();
+	const s = style(theme);
 
-const CustomCheckbox: React.FC<Props> = ({ value, onChange, size = 24, color = '#007aff' }) => {
-  return (
-    <TouchableOpacity onPress={onChange} style={[styles.box, { width: size, height: size }]}>
-      {value && <View style={[styles.inner, { backgroundColor: color }]} />}
-    </TouchableOpacity>
-  );
+	return (
+		<TouchableOpacity onPress={onChange} style={[s.box, { width: 24, height: 24 }]}>
+			{value && <View style={[s.inner, { backgroundColor: colors[theme].basicGreen }]} />}
+		</TouchableOpacity>
+	);
 };
 
 export default CustomCheckbox;
-
-const styles = StyleSheet.create({
-  box: {
-    borderWidth: 2,
-    borderColor: '#ccc',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    marginRight: 8,
-  },
-  inner: {
-    width: '60%',
-    height: '60%',
-    borderRadius: 2,
-  },
-});
