@@ -1,11 +1,12 @@
+import { useState } from 'react';
 //NATIVE
-import { View } from 'react-native';
+import { Button, View } from 'react-native';
 //FEATURES
 import useGroupToCounterConnection from '../../group-to-counter-connection';
 //MODEL
 import { GroupCounterSelectModalProps } from './model/group-counter-select-modal.model';
 //UI
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
 //STYLES
 import { style } from './styles/style';
 
@@ -14,17 +15,27 @@ const GroupCounterSelectModal = ({
 	useCounterConnection,
 	counters
 }: GroupCounterSelectModalProps) => {
+	const [modalVisible, setModalVisible] = useState(false);
 	const { deleteConnection, addConnection } = useGroupToCounterConnection({ groupId });
+
+	const modalVisibleHandler = (visible: boolean) => {
+		setModalVisible(visible);
+	};
+
+  const onCounterTooglerListener = (counterId: string) => {
+
+  }
 
 	return (
 		<View style={style.groupCounterSelectModal}>
-			<Paragraph contentType={'secondary'} size={'xSmall'}>
-				Counters
-			</Paragraph>
+			<Button title='Group Counters List' onPress={() => modalVisibleHandler(true)} />
 
-			<Paragraph contentType={'primary'} size={'medium'}>
-				Manage Counters
-			</Paragraph>
+			<CheckboxModal
+				visible={modalVisible}
+				onClose={() => modalVisibleHandler(false)}
+				onToggle={() => console.log('toggle')}
+				items={counters}
+			/>
 		</View>
 	);
 };
