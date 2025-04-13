@@ -2,7 +2,7 @@
 import { View } from 'react-native';
 //STORE
 import { useAppSelector } from '../../../../shared/store';
-import { SelectorGetGroupCreatedDate } from '../../';
+import { SelectorGetGroupCreatedDate } from '../../store/selectors/group-selectors';
 //LIBS
 import { formatDate } from '../../../../shared/lib/date-lib';
 //UI

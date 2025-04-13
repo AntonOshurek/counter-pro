@@ -1,5 +1,5 @@
 //NATIVE
-import { TextInput, View } from 'react-native';
+import { View } from 'react-native';
 //FEATURES
 import useGroupToCounterConnection from '../../group-to-counter-connection';
 //MODEL
@@ -9,7 +9,11 @@ import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 //STYLES
 import { style } from './styles/style';
 
-const GroupCounterSelectModal = ({ groupId }: GroupCounterSelectModalProps) => {
+const GroupCounterSelectModal = ({
+	groupId,
+	useCounterConnection,
+	counters
+}: GroupCounterSelectModalProps) => {
 	const { deleteConnection, addConnection } = useGroupToCounterConnection({ groupId });
 
 	return (

@@ -13,6 +13,7 @@ import DeleteCounterButton from './delete-counter/ui/delete-counter-button/delet
 import ResetCounterButton from './reset-counter/ui/reset-counter-button/reset-counter-button';
 import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-selector-header-button/sort-type-selector-header-button';
 import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
+import useCounterToGroupConnection from './counter-to-group-connection/counter-to-group-connection';
 
 export {
 	useCreateNewCounter,
@@ -29,5 +30,6 @@ export {
 	DeleteCounterButton,
 	ResetCounterButton,
 	SortTypeSelectorHeaderButton,
-	ChangePinnedSetting
+	ChangePinnedSetting,
+	useCounterToGroupConnection
 };
