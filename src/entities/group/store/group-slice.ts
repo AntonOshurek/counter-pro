@@ -48,11 +48,14 @@ const groupSlice = createSlice({
 			action: PayloadAction<IDeleteConnectionWithCounterAction>
 		) => {
 			const { groupId, counterId } = action.payload;
+
 			if (
 				state.groups[groupId].counters.includes(counterId) &&
 				state.groups.hasOwnProperty(groupId)
 			) {
-				state.groups[groupId].counters.filter(counter => counter !== counterId);
+				state.groups[groupId].counters = state.groups[groupId].counters.filter(
+					counter => counter !== counterId
+				);
 			}
 		},
 		addConnectionToCounter: (

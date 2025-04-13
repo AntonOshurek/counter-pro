@@ -1,5 +1,3 @@
-interface GroupToCounterConnectionProps {
-	groupId: string;
-}
+interface GroupToCounterConnectionProps {}
 
 export { GroupToCounterConnectionProps };

@@ -5,6 +5,8 @@ import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-sele
 import DeleteGroupButton from './delete-group/ui/delete-counter-button/delete-group-button';
 import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
 import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
+import GroupCounterSelectModal from './group-to-counter-connection/ui/group-counter-select-modal/group-counter-select-modal';
+import useGroupToCounterConnection from './group-to-counter-connection/group-to-counter-connection';
 
 export {
 	CreateNewGroupButton,
@@ -13,5 +15,7 @@ export {
 	SortTypeSelectorHeaderButton,
 	DeleteGroupButton,
 	ChangePinnedSetting,
-	ChangeNameField
+	ChangeNameField,
+	GroupCounterSelectModal,
+	useGroupToCounterConnection
 };
