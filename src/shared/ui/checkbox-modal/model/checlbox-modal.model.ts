@@ -8,7 +8,7 @@ interface CheckboxModalProps {
 	visible: boolean;
 	title?: string;
 	items: checkboxModalItems[];
-	onToggle: (id: string) => void;
+	onToggle: (id: string, newIsSelectedValue: boolean) => void;
 	onClose: () => void;
 }
 

@@ -7,6 +7,7 @@ import useGroupToCounterConnection from '../../group-to-counter-connection';
 import { GroupCounterSelectModalProps } from './model/group-counter-select-modal.model';
 //UI
 import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
+import MainButton from '../../../../../shared/ui/main-button/main-button';
 //STYLES
 import { style } from './styles/style';
 
@@ -22,18 +23,25 @@ const GroupCounterSelectModal = ({
 		setModalVisible(visible);
 	};
 
-  const onCounterTooglerListener = (counterId: string) => {
+	const onCounterToggleListener = (counterId: string, newIsSelectedValue: boolean) => {
+		// const {} = useCounterConnection(counterId);
 
-  }
+		if (newIsSelectedValue) {
+			addConnection(counterId);
+		} else deleteConnection(counterId);
+	};
 
 	return (
 		<View style={style.groupCounterSelectModal}>
-			<Button title='Group Counters List' onPress={() => modalVisibleHandler(true)} />
+			<MainButton
+				label={'List of Counters'}
+				onPress={() => modalVisibleHandler(true)}
+			/>
 
 			<CheckboxModal
 				visible={modalVisible}
 				onClose={() => modalVisibleHandler(false)}
-				onToggle={() => console.log('toggle')}
+				onToggle={onCounterToggleListener}
 				items={counters}
 			/>
 		</View>

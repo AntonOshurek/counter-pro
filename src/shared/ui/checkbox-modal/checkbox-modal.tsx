@@ -1,13 +1,13 @@
 import React from 'react';
 //NATIVE
 import { Modal, View, Text, FlatList, TouchableOpacity } from 'react-native';
-//LIBS
-import Checkbox from '@react-native-community/checkbox';
+//UI
+import CustomCheckbox from '../../checkbox/checkbox';
+import MainButton from '../main-button/main-button';
 //MODEL
 import type { CheckboxModalProps } from './model/checlbox-modal.model';
 //STYLES
 import { style } from './styles/style';
-import CustomCheckbox from '../../checkbox/checkbox';
 
 const CheckboxModal = ({
 	visible,
@@ -27,10 +27,13 @@ const CheckboxModal = ({
 						keyExtractor={item => item.id}
 						renderItem={({ item }) => {
 							return (
-								<TouchableOpacity style={style.item} onPress={() => onToggle(item.id)}>
+								<TouchableOpacity
+									style={style.item}
+									onPress={() => onToggle(item.id, !item.isSelected)}
+								>
 									<CustomCheckbox
 										value={item.isSelected}
-										onChange={() => onToggle(item.id)}
+										onChange={() => onToggle(item.id, !item.isSelected)}
 									/>
 									<Text>{item.label}</Text>
 								</TouchableOpacity>
@@ -39,7 +42,7 @@ const CheckboxModal = ({
 					/>
 
 					<TouchableOpacity onPress={onClose} style={style.closeButton}>
-						<Text style={style.closeButtonText}>Закрыть</Text>
+						<Text style={style.closeButtonText}>Close</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
