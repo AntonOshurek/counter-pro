@@ -10,6 +10,7 @@ interface CheckboxModalProps {
 	items: checkboxModalItems[];
 	onToggle: (id: string, newIsSelectedValue: boolean) => void;
 	onClose: () => void;
+	itemsIsEmptyText?: string;
 }
 
 export { CheckboxModalProps, checkboxModalItems };

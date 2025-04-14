@@ -1,7 +1,7 @@
 //TYPES
 import type { checkboxModalItems } from '../../../../../../shared/ui/checkbox-modal/model/checlbox-modal.model';
 
-interface GroupCounterSelectModalProps {
+interface OpenGroupToCounterModalButtonProps {
 	groupId: string;
 	counterToGroupConnection: () => {
 		addGroupToCounter: (counterId: string, groupId: string) => void;
@@ -10,4 +10,4 @@ interface GroupCounterSelectModalProps {
 	counters: checkboxModalItems[];
 }
 
-export { GroupCounterSelectModalProps };
+export { OpenGroupToCounterModalButtonProps };

@@ -1,6 +1,6 @@
 import React from 'react';
 //NATIVE
-import { Modal, View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { Modal, View, FlatList, TouchableOpacity } from 'react-native';
 //HOOKS
 import useThemeResolver from '../../hooks/useThemeResolver';
 //UI
@@ -17,7 +17,8 @@ const CheckboxModal = ({
 	title,
 	items,
 	onToggle,
-	onClose
+	onClose,
+	itemsIsEmptyText
 }: CheckboxModalProps) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
@@ -28,12 +29,12 @@ const CheckboxModal = ({
 
 	return (
 		<Modal visible={visible} transparent animationType='slide'>
-			<TouchableOpacity style={s.overlay} onPress={onClose}>
-				<View style={s.container}>
-					<Paragraph size={'large'} contentType={'primary'}>
-						{title}
-					</Paragraph>
+			<View style={s.container}>
+				<Paragraph size={'large'} contentType={'primary'}>
+					{title}
+				</Paragraph>
 
+				{items.length > 0 ? (
 					<FlatList
 						data={items}
 						keyExtractor={item => item.id}
@@ -51,10 +52,16 @@ const CheckboxModal = ({
 							);
 						}}
 					/>
+				) : (
+					<Paragraph contentType={'tertiary'} size={'small'}>
+						{itemsIsEmptyText}
+					</Paragraph>
+				)}
 
-					<MainButton onPress={onClose} label={'Close'} />
-				</View>
-			</TouchableOpacity>
+				<MainButton onPress={onClose} label={'Close modal'} />
+			</View>
+
+			<TouchableOpacity style={s.overlay} onPress={onClose}></TouchableOpacity>
 		</Modal>
 	);
 };

@@ -1,21 +1,23 @@
+//NATIVE
+import { View } from 'react-native';
 //STORE
 import { useAppSelector } from '../../shared/store';
-//FEATURES
-import { ChangeNameField, GroupCounterSelectModal } from '../../features/group';
-import { useCounterToGroupConnection } from '../../features/counter/';
 //ENTITIES
 import { SelectorGetCounters } from '../../entities/counter';
-//UI
-import { SettingsGroupWrapper } from '../../shared/wrappers';
-//UTILS
+import { SelectorGetGroup } from '../../entities/group';
+//FEATURES
+import { OpenGroupToCounterModalButton } from '../../features/group';
+import { useCounterToGroupConnection } from '../../features/counter';
+//LIBS
 import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 //MODEL
-import type { GroupSettingsWidgetProps } from './model/group-settings-widget.model';
+import type { GroupScreenControlsProps } from './model/group-screen-controls.model';
 import type { checkboxModalItems } from '../../shared/ui/checkbox-modal/model/checlbox-modal.model';
 //STYLES
-import style from './styles/style';
+import style from './style/style';
 
-const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
+const GroupScreenControlsWidget = ({ groupId }: GroupScreenControlsProps) => {
+	const group = useAppSelector(SelectorGetGroup(groupId));
 	const allCounters = useAppSelector(SelectorGetCounters());
 
 	const groupCounters: checkboxModalItems[] = convertObjectToArray(allCounters)
@@ -27,15 +29,14 @@ const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
 		}));
 
 	return (
-		<SettingsGroupWrapper additionalClass={style.groupSettings}>
-			<ChangeNameField groupId={group.id} groupName={group.name} />
-			<GroupCounterSelectModal
+		<View style={style.groupScreenControlsWidget}>
+			<OpenGroupToCounterModalButton
 				groupId={group.id}
-				counterToGroupConnection={useCounterToGroupConnection}
 				counters={groupCounters}
+				counterToGroupConnection={useCounterToGroupConnection}
 			/>
-		</SettingsGroupWrapper>
+		</View>
 	);
 };
 
-export default GroupSettingsWidget;
+export default GroupScreenControlsWidget;

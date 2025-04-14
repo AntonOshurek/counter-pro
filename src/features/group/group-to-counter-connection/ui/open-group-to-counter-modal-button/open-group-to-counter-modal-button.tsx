@@ -1,28 +1,24 @@
 import { useState } from 'react';
-//NATIVE
-import { View } from 'react-native';
 //FEATURES
 import useGroupToCounterConnection from '../../group-to-counter-connection';
-//MODEL
-import { GroupCounterSelectModalProps } from './model/group-counter-select-modal.model';
 //UI
+import CreateButton from '../../../../../shared/ui/create-button/create-button';
 import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
-import MainButton from '../../../../../shared/ui/main-button/main-button';
 import { groupText } from '../../../../../shared/text-content/text-content';
-//STYLES
-import { style } from './styles/style';
+//MODEL
+import type { OpenGroupToCounterModalButtonProps } from './model/open-group-to-counter-modal-button.model';
 
-const GroupCounterSelectModal = ({
-	groupId,
+const OpenGroupToCounterModalButton = ({
 	counterToGroupConnection,
+	groupId,
 	counters
-}: GroupCounterSelectModalProps) => {
+}: OpenGroupToCounterModalButtonProps) => {
 	const [modalVisible, setModalVisible] = useState(false);
 	const { deleteCounterFromGroup, addCounterToGroup } = useGroupToCounterConnection();
 	const { deleteGroupFromCounter, addGroupToCounter } = counterToGroupConnection();
 
-	const modalVisibleHandler = (visible: boolean) => {
-		setModalVisible(visible);
+	const modalVisibleHandler = () => {
+		setModalVisible(true);
 	};
 
 	const onCounterToggleListener = (counterId: string, newIsSelectedValue: boolean) => {
@@ -36,19 +32,18 @@ const GroupCounterSelectModal = ({
 	};
 
 	return (
-		<View style={style.groupCounterSelectModal}>
-			<MainButton label={'List of Counters'} onPress={() => modalVisibleHandler(true)} />
-
+		<>
+			<CreateButton onPress={modalVisibleHandler} hiddenText='Add counter to group' />
 			<CheckboxModal
 				visible={modalVisible}
-				onClose={() => modalVisibleHandler(false)}
+				onClose={() => setModalVisible(false)}
 				onToggle={onCounterToggleListener}
 				items={counters}
 				title={groupText.manageCountersModalTitle}
 				itemsIsEmptyText={groupText.noAvailableCounter}
 			/>
-		</View>
+		</>
 	);
 };
 
-export default GroupCounterSelectModal;
+export default OpenGroupToCounterModalButton;
