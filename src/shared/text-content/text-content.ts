@@ -11,7 +11,9 @@ const counterText = {
 	changeCounterNameInputLabel: 'Name',
 	changeCounterStepInputLabel: 'Step',
 	changeCounterStepAdditionalLabel: 'max 999',
-	counterNotFound: "Oops! We couldn't find this counter."
+	counterNotFound: "Oops! We couldn't find this counter.",
+	noAvailableCounter:
+		'No available counters. Please remove a counter from another group to add one to this group.'
 };
 
 const groupText = {
@@ -23,7 +25,10 @@ const groupText = {
 	deleteGroupConfirmTitle: 'Delete Group',
 	deleteGroupConfirmBody: 'Are You sure you want to delete this group?',
 	groupCreatedDateLabel: 'Created Date:',
-	changeGroupNameInputLabel: 'Name'
+	changeGroupNameInputLabel: 'Name',
+	noAvailableCounter:
+		'No available counters. Please remove a counter from another group to add one to this group.',
+  manageCountersModalTitle: 'Manage Counters',
 };
 
 export { counterText, groupText };

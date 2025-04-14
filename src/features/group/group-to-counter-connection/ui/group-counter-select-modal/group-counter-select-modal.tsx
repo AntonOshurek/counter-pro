@@ -8,6 +8,7 @@ import { GroupCounterSelectModalProps } from './model/group-counter-select-modal
 //UI
 import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
 import MainButton from '../../../../../shared/ui/main-button/main-button';
+import { groupText } from '../../../../../shared/text-content/text-content';
 //STYLES
 import { style } from './styles/style';
 
@@ -43,7 +44,8 @@ const GroupCounterSelectModal = ({
 				onClose={() => modalVisibleHandler(false)}
 				onToggle={onCounterToggleListener}
 				items={counters}
-				title={'Manage Counters'}
+				title={groupText.manageCountersModalTitle}
+				itemsIsEmptyText={groupText.noAvailableCounter}
 			/>
 		</View>
 	);

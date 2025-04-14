@@ -17,7 +17,8 @@ const CheckboxModal = ({
 	title,
 	items,
 	onToggle,
-	onClose
+	onClose,
+	itemsIsEmptyText
 }: CheckboxModalProps) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
@@ -34,25 +35,31 @@ const CheckboxModal = ({
 						{title}
 					</Paragraph>
 
-					<FlatList
-						data={items}
-						keyExtractor={item => item.id}
-						renderItem={({ item }) => {
-							return (
-								<TouchableOpacity style={s.item} onPress={() => checkboxToggle(item)}>
-									<CustomCheckbox
-										value={item.isSelected}
-										onChange={() => checkboxToggle(item)}
-									/>
-									<Paragraph size={'medium'} contentType={'primary'}>
-										{item.label}
-									</Paragraph>
-								</TouchableOpacity>
-							);
-						}}
-					/>
+					{items.length > 0 ? (
+						<FlatList
+							data={items}
+							keyExtractor={item => item.id}
+							renderItem={({ item }) => {
+								return (
+									<TouchableOpacity style={s.item} onPress={() => checkboxToggle(item)}>
+										<CustomCheckbox
+											value={item.isSelected}
+											onChange={() => checkboxToggle(item)}
+										/>
+										<Paragraph size={'medium'} contentType={'primary'}>
+											{item.label}
+										</Paragraph>
+									</TouchableOpacity>
+								);
+							}}
+						/>
+					) : (
+						<Paragraph contentType={'tertiary'} size={'small'}>
+							{itemsIsEmptyText}
+						</Paragraph>
+					)}
 
-					<MainButton onPress={onClose} label={'Close'} />
+					<MainButton onPress={onClose} label={'Close modal'} />
 				</View>
 			</TouchableOpacity>
 		</Modal>
