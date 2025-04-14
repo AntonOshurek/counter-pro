@@ -13,6 +13,7 @@ import GroupCounterListWidget from './group-counter-list/group-counter-list.widg
 import GroupCriticalOptionsWidget from './group-critical-options/group-critical-options.widget';
 import GroupAdditionalInfoWidget from './group-additional-info/group-additional-info.widget';
 import GroupSettingsWidget from './group-settings/group-settings.widget';
+import GroupScreenControlsWidget from './group-screen-controls/group-screen-controls.widget';
 
 export {
 	CounterWidget,
@@ -29,5 +30,6 @@ export {
 	GroupCounterListWidget,
 	GroupCriticalOptionsWidget,
 	GroupAdditionalInfoWidget,
-	GroupSettingsWidget
+	GroupSettingsWidget,
+	GroupScreenControlsWidget
 };

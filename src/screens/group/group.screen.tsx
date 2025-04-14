@@ -7,7 +7,7 @@ import { useAppSelector } from '../../shared/store';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupCounterListWidget } from '../../widgets';
+import { GroupCounterListWidget, GroupScreenControlsWidget } from '../../widgets';
 //ENTITIES
 import { SelectorGetGroup } from '../../entities/group';
 import { SelectorGetCounters } from '../../entities/counter';
@@ -24,6 +24,7 @@ const GroupScreen = () => {
 	return (
 		<ScreenLayout additionalClass={style.groupScreen}>
 			<GroupCounterListWidget groupCounters={groupCounters} />
+			<GroupScreenControlsWidget group={group} />
 		</ScreenLayout>
 	);
 };

@@ -7,6 +7,7 @@ import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change
 import ChangeNameField from './change-name/ui/change-name-field/change-name-field';
 import GroupCounterSelectModal from './group-to-counter-connection/ui/group-counter-select-modal/group-counter-select-modal';
 import useGroupToCounterConnection from './group-to-counter-connection/group-to-counter-connection';
+import OpenGroupToCounterModalButton from './group-to-counter-connection/ui/open-group-to-counter-modal-button/open-group-to-counter-modal-button';
 
 export {
 	CreateNewGroupButton,
@@ -17,5 +18,6 @@ export {
 	ChangePinnedSetting,
 	ChangeNameField,
 	GroupCounterSelectModal,
-	useGroupToCounterConnection
+	useGroupToCounterConnection,
+	OpenGroupToCounterModalButton
 };
