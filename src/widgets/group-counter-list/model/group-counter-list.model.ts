@@ -1,8 +1,8 @@
 //ENTITIES
-import type { Counter } from '../../../entities/counter';
+import type { Group } from '../../../entities/group';
 
 interface GroupCounterListProps {
-	groupCounters: Counter[];
+	groupId: string;
 }
 
 export { GroupCounterListProps };

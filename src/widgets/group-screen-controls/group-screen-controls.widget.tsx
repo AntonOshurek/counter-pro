@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { useAppSelector } from '../../shared/store';
 //ENTITIES
 import { SelectorGetCounters } from '../../entities/counter';
+import { SelectorGetGroup } from '../../entities/group';
 //FEATURES
 import { OpenGroupToCounterModalButton } from '../../features/group';
 import { useCounterToGroupConnection } from '../../features/counter';
@@ -15,7 +16,8 @@ import type { checkboxModalItems } from '../../shared/ui/checkbox-modal/model/ch
 //STYLES
 import style from './style/style';
 
-const GroupScreenControlsWidget = ({ group }: GroupScreenControlsProps) => {
+const GroupScreenControlsWidget = ({ groupId }: GroupScreenControlsProps) => {
+	const group = useAppSelector(SelectorGetGroup(groupId));
 	const allCounters = useAppSelector(SelectorGetCounters());
 
 	const groupCounters: checkboxModalItems[] = convertObjectToArray(allCounters)
