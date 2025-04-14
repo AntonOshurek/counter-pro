@@ -7,12 +7,13 @@ import { useCounterToGroupConnection } from '../../features/counter/';
 import { SelectorGetCounters } from '../../entities/counter';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
+//UTILS
+import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 //MODEL
-import { GroupSettingsWidgetProps } from './model/group-settings-widget.model';
+import type { GroupSettingsWidgetProps } from './model/group-settings-widget.model';
+import type { checkboxModalItems } from '../../shared/ui/checkbox-modal/model/checlbox-modal.model';
 //STYLES
 import style from './styles/style';
-import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
-import { checkboxModalItems } from '../../shared/ui/checkbox-modal/model/checlbox-modal.model';
 
 const GroupSettingsWidget = ({ group }: GroupSettingsWidgetProps) => {
 	const allCounters = useAppSelector(SelectorGetCounters());
