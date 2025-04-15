@@ -8,9 +8,10 @@ import { CounterGroupSelectModalProps } from './model/counter-group-select-modal
 //UI
 import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
 import MainButton from '../../../../../shared/ui/main-button/main-button';
-import { groupText } from '../../../../../shared/text-content/text-content';
+import { counterText } from '../../../../../shared/text-content/text-content';
 //STYLES
 import { style } from './styles/style';
+import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 
 const CounterGroupSelectModal = ({
 	counter,
@@ -21,14 +22,18 @@ const CounterGroupSelectModal = ({
 	const { deleteGroupFromCounter, addGroupToCounter } = useCounterToGroupConnection();
 	const { addCounterToGroup, deleteCounterFromGroup } = groupToCounterConnection();
 
+	const counterGroup = groups.find(g => g.id === counter.group);
+
 	const modalVisibleHandler = (visible: boolean) => {
 		setModalVisible(visible);
 	};
 
 	const onGroupToggleListener = (groupId: string, newIsSelectedValue: boolean) => {
 		if (newIsSelectedValue) {
-			deleteGroupFromCounter(counter.id, counter.group);
-			deleteCounterFromGroup(counter.id, counter.group);
+			if (counter.group) {
+				deleteGroupFromCounter(counter.id, counter.group);
+				deleteCounterFromGroup(counter.id, counter.group);
+			}
 			addGroupToCounter(counter.id, groupId);
 			addCounterToGroup(counter.id, groupId);
 		} else {
@@ -38,16 +43,30 @@ const CounterGroupSelectModal = ({
 	};
 
 	return (
-		<View style={style.groupCounterSelectModal}>
-			<MainButton label={'List of Counters'} onPress={() => modalVisibleHandler(true)} />
+		<View style={style.counterGroupSelectModal}>
+			{counterGroup && (
+				<View style={style.connectedGroup}>
+					<Paragraph contentType={'secondary'} size={'medium'}>
+						Connected with group:
+					</Paragraph>
+					<Paragraph contentType={'primary'} size={'medium'}>
+						{counterGroup.label}
+					</Paragraph>
+				</View>
+			)}
+
+			<MainButton
+				label={counterGroup ? 'Change Group' : 'Add to Group'}
+				onPress={() => modalVisibleHandler(true)}
+			/>
 
 			<CheckboxModal
 				visible={modalVisible}
 				onClose={() => modalVisibleHandler(false)}
 				onToggle={onGroupToggleListener}
 				items={groups}
-				title={groupText.manageCountersModalTitle}
-				itemsIsEmptyText={groupText.noAvailableCounter}
+				title={counterText.manageGroupsModalTitle} //add to group or change group
+				itemsIsEmptyText={counterText.noAvailableGroups}
 			/>
 		</View>
 	);

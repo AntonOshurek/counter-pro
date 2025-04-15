@@ -2,9 +2,15 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-	groupCounterSelectModal: {
-		gap: 3
-	}
+	counterGroupSelectModal: {
+		gap: 15
+	},
+  connectedGroup: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 10
+  }
 });
 
 export { style };

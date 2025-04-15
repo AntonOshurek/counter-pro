@@ -1,3 +1,5 @@
+//STORE
+import { useAppSelector } from '../../shared/store';
 //FEATURES
 import {
 	ChangeNameField,
@@ -10,13 +12,12 @@ import { useGroupToCounterConnection } from '../../features/group';
 import { SelectorGetGroups } from '../../entities/group';
 //UI
 import { SettingsGroupWrapper } from '../../shared/wrappers';
-import Paragraph from '../../shared/ui/paragraph/paragraph';
+//LIBS
+import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 //MODEL
 import { CounterSettingsWidgetProps } from './model/counter-setting-widget.model';
 //STYLES
 import style from './styles/style';
-import { useAppSelector } from '../../shared/store';
-import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
 
 const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 	const groups = convertObjectToArray(useAppSelector(SelectorGetGroups()));
@@ -39,10 +40,6 @@ const CounterSettingsWidget = ({ counter }: CounterSettingsWidgetProps) => {
 				groups={transformedGroups}
 				groupToCounterConnection={useGroupToCounterConnection}
 			/>
-
-			<Paragraph contentType={'primary'} size={'medium'}>
-				{counter.group !== '' ? 'Change Group' : 'add to group'} {counter.group}
-			</Paragraph>
 		</SettingsGroupWrapper>
 	);
 };
