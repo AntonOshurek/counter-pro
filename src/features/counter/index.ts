@@ -14,6 +14,7 @@ import ResetCounterButton from './reset-counter/ui/reset-counter-button/reset-co
 import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-selector-header-button/sort-type-selector-header-button';
 import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
 import useCounterToGroupConnection from './counter-to-group-connection/counter-to-group-connection';
+import CounterGroupSelectModal from './counter-to-group-connection/ui/counter-group-select-modal/counter-group-select-modal';
 
 export {
 	useCreateNewCounter,
@@ -31,5 +32,6 @@ export {
 	ResetCounterButton,
 	SortTypeSelectorHeaderButton,
 	ChangePinnedSetting,
-	useCounterToGroupConnection
+	useCounterToGroupConnection,
+	CounterGroupSelectModal
 };

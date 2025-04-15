@@ -1,0 +1,75 @@
+import { useState } from 'react';
+//NATIVE
+import { View } from 'react-native';
+//FEATURES
+import useCounterToGroupConnection from '../../counter-to-group-connection';
+//MODEL
+import { CounterGroupSelectModalProps } from './model/counter-group-select-modal.model';
+//UI
+import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
+import MainButton from '../../../../../shared/ui/main-button/main-button';
+import { counterText } from '../../../../../shared/text-content/text-content';
+//STYLES
+import { style } from './styles/style';
+import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+
+const CounterGroupSelectModal = ({
+	counter,
+	groupToCounterConnection,
+	groups
+}: CounterGroupSelectModalProps) => {
+	const [modalVisible, setModalVisible] = useState(false);
+	const { deleteGroupFromCounter, addGroupToCounter } = useCounterToGroupConnection();
+	const { addCounterToGroup, deleteCounterFromGroup } = groupToCounterConnection();
+
+	const counterGroup = groups.find(g => g.id === counter.group);
+
+	const modalVisibleHandler = (visible: boolean) => {
+		setModalVisible(visible);
+	};
+
+	const onGroupToggleListener = (groupId: string, newIsSelectedValue: boolean) => {
+		if (newIsSelectedValue) {
+			if (counter.group) {
+				deleteGroupFromCounter(counter.id, counter.group);
+				deleteCounterFromGroup(counter.id, counter.group);
+			}
+			addGroupToCounter(counter.id, groupId);
+			addCounterToGroup(counter.id, groupId);
+		} else {
+			deleteGroupFromCounter(counter.id, groupId);
+			deleteCounterFromGroup(counter.id, groupId);
+		}
+	};
+
+	return (
+		<View style={style.counterGroupSelectModal}>
+			{counterGroup && (
+				<View style={style.connectedGroup}>
+					<Paragraph contentType={'secondary'} size={'medium'}>
+						Connected with group:
+					</Paragraph>
+					<Paragraph contentType={'primary'} size={'medium'}>
+						{counterGroup.label}
+					</Paragraph>
+				</View>
+			)}
+
+			<MainButton
+				label={counterGroup ? 'Change Group' : 'Add to Group'}
+				onPress={() => modalVisibleHandler(true)}
+			/>
+
+			<CheckboxModal
+				visible={modalVisible}
+				onClose={() => modalVisibleHandler(false)}
+				onToggle={onGroupToggleListener}
+				items={groups}
+				title={counterText.manageGroupsModalTitle} //add to group or change group
+				itemsIsEmptyText={counterText.noAvailableGroups}
+			/>
+		</View>
+	);
+};
+
+export default CounterGroupSelectModal;
