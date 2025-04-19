@@ -4,7 +4,7 @@ import { Modal, View, FlatList, TouchableOpacity } from 'react-native';
 //HOOKS
 import useThemeResolver from '../../hooks/useThemeResolver';
 //UI
-import CustomCheckbox from '../../checkbox/checkbox';
+import CustomCheckbox from '@shared/ui/custom-checkbox/custom-checkbox';
 import MainButton from '../main-button/main-button';
 import Paragraph from '../paragraph/paragraph';
 //MODEL

@@ -15,6 +15,9 @@
       "@shared/*": [
         "src/shared/*"
       ],
+      "@ui/*": [
+        "src/shared/ui/*"
+      ],
       "@pages/*": [
         "src/pages/*"
       ],

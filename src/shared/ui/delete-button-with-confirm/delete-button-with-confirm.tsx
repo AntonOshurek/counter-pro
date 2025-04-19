@@ -5,9 +5,9 @@ import useThemeResolver from '../../hooks/useThemeResolver';
 //UI
 import Paragraph from '../paragraph/paragraph';
 //MODEL
-import type { DeleteButtonWithConfirmProps } from './delete-button-with-confirm.model';
+import type { DeleteButtonWithConfirmProps } from './model/delete-button-with-confirm.model';
 //STYLES
-import style from './style';
+import style from './styles/style';
 
 const DeleteButtonWithConfirm = ({
 	deleteAction,

@@ -13,7 +13,7 @@ import { groupText } from '../../../../../shared/text-content/text-content';
 //MODEL
 import { ChangePinnedSettingProps } from './model/change-pinned-setting.model';
 //UI
-import ChangePinnedButton from '../../../../../shared/ui/changer-pinned-button/change-pinned-button';
+import ChangePinnedButton from '@shared/ui/change-pinned-button/change-pinned-button';
 //STYLES
 import { style } from './styles/style';
 

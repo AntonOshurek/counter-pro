@@ -9,7 +9,7 @@ import { SelectorGetIsPinnedGroup } from '../../../../../entities/group';
 //MODEL
 import { ChangePinnedGroupButtonProps } from './model/change-pinned-group-button.model';
 //UI
-import ChangePinnedButton from '../../../../../shared/ui/changer-pinned-button/change-pinned-button';
+import ChangePinnedButton from '@shared/ui/change-pinned-button/change-pinned-button';
 //STYLES
 import { style } from './styles/style';
 

@@ -1,7 +1,7 @@
 //NATIVE
 import { TouchableOpacity } from 'react-native';
 //MODEL
-import type { ResetButtonProps } from './reset-counter-button.model';
+import type { ResetButtonProps } from './model/reset-button.model';
 //ICONS
 import { ResetIcon } from '../../icons';
 

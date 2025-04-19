@@ -6,9 +6,9 @@ import Paragraph from '../paragraph/paragraph';
 //HOOKS
 import useThemeResolver from '../../hooks/useThemeResolver';
 //MODEL
-import type { InputFieldProps } from './input-field.model';
+import type { InputFieldProps } from './model/input-field.model';
 //STYLES
-import { style } from './style';
+import { style } from './styles/style';
 
 const InputField = ({
 	label,

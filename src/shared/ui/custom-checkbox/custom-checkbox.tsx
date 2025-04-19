@@ -2,12 +2,12 @@ import React from 'react';
 //NATIVE
 import { TouchableOpacity, View } from 'react-native';
 //HOOKS
-import useThemeResolver from '../hooks/useThemeResolver';
+import useThemeResolver from '../../hooks/useThemeResolver';
 //MODEL
-import { CheckboxProps } from './checkbox.model';
+import { CheckboxProps } from './model/custom-checkbox.model';
 //STYLES
-import { style } from './styles';
-import { colors } from '../styles';
+import { style } from './styles/styles';
+import { colors } from '../../styles';
 
 const CustomCheckbox = ({ value, onChange }: CheckboxProps) => {
 	const theme = useThemeResolver();

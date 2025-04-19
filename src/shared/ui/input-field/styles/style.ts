@@ -1,9 +1,9 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
 //TYPES
-import { ColorThemes } from '../../../entities/theme';
+import { ColorThemes } from '@entities/theme';
 //STYLES
-import { colors } from '../../styles';
+import { colors } from '../../../styles';
 
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({

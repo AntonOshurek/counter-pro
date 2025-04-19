@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import useResetCounter from '../../reset-counter';
 //UI
 import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
-import ResetButton from '../../../../../shared/ui/reset-counter-button/reset-counter-button';
+import ResetButton from '@shared/ui/reset-button/reset-button';
 //MODEL
 import type { ResetCounterButtonProps } from './reset-counter-button.model';
 //STYLES
