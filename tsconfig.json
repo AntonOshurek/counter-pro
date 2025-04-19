@@ -21,7 +21,7 @@
       "@widgets/*": [
         "src/widgets/*"
       ],
-      "@service/*": [
+      "@services/*": [
         "src/services/*"
       ]
     }

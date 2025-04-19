@@ -1,6 +1,7 @@
 import { useColorScheme } from 'react-native';
 //ENTITIES
-import { SelectorGetTheme, ColorThemes } from '../../entities/theme';
+import { SelectorGetTheme } from '@entities/theme';
+import { ColorThemes } from '@shared/types';
 //STORE
 import { useAppSelector } from '../store';
 //CONSTANTS
