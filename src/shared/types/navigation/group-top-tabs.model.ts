@@ -3,7 +3,7 @@ import { RouteProp } from '@react-navigation/native';
 //NAVIGATION
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 //CONSTANTS
-import { GroupTopTabsScreens, StackScreens } from '../../../shared/constants';
+import { GroupTopTabsScreens, StackScreens } from '@shared/constants';
 //MODEL
 import type { NavigationStackParams } from './stack.model';
 

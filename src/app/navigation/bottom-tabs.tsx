@@ -1,20 +1,20 @@
 //NAVIGATION
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //SCREENS
-import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '../../screens';
+import { HomeScreen, InfoScreen, SettingsScreen, GroupsScreen } from '@screens';
 //FEATURES
-import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonCounter } from '../../features/counter';
-import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonGroup } from '../../features/group/';
+import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonCounter } from '@features/counter';
+import { SortTypeSelectorHeaderButton as SortTypeSelectorHeaderButtonGroup } from '@features/group/';
 //TYPES
-import { BottomTabsNavigationParams } from './model/';
+import type { BottomTabsNavigationParams } from '@shared/types/navigation';
 //HOOKS
-import UseThemeResolver from '../../shared/hooks/useThemeResolver';
+import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //CONSTANTS
-import { BottomTabsScreens } from '../../shared/constants';
+import { BottomTabsScreens } from '@shared/constants';
 //ICONS
-import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '../../shared/icons/';
+import { HomeIcon, SettingsIcon, ListIcon, InfoIcon } from '@shared/icons/';
 //STYLES
-import { colors } from '../../shared/styles';
+import { colors } from '@shared/styles';
 
 const BottomTabs = () => {
 	const BottomTabs = createBottomTabNavigator<BottomTabsNavigationParams>();

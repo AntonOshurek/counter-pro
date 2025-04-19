@@ -15,8 +15,11 @@
       "@shared/*": [
         "src/shared/*"
       ],
-      "@pages/*": [
-        "src/pages/*"
+      "@screens": [
+        "src/screens/index.ts"
+      ],
+      "@screens/*": [
+        "src/screens/*"
       ],
       "@widgets/*": [
         "src/widgets/*"

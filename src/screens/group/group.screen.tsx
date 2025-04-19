@@ -1,7 +1,7 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
 //NAVIGATION
-import { GroupScreenRouteProp } from '../../app/navigation/model';
+import { GroupScreenRouteProp } from '../../app/navigation/model1';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS

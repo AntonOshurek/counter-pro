@@ -1,19 +1,31 @@
 import { NavigationStackParams } from './stack.model';
 import { BottomTabsNavigationParams } from './bottom-tabs.model';
-import { CounterTopTabsNavigationParams } from './counter-top-tabs.model';
+import {
+	CounterTopTabsNavigationParams,
+	CounterScreenRouteProps,
+	CounterScreenNavigationProps,
+	CounterTopTabsProps,
+	CounterScreenRouteProp
+} from './counter-top-tabs.model';
 import {
 	GroupTopTabsNavigationParams,
 	GroupScreenRouteProp,
 	GroupScreenNavigationProp,
-	GroupTopTabsProps
+	GroupTopTabsProps,
+	GroupScreenRouteProps
 } from './group-top-tabs.model';
 
 export {
-	NavigationStackParams,
 	BottomTabsNavigationParams,
+	NavigationStackParams,
 	CounterTopTabsNavigationParams,
+	CounterScreenRouteProps,
+	CounterScreenNavigationProps,
+	CounterTopTabsProps,
+	CounterScreenRouteProp,
 	GroupTopTabsNavigationParams,
 	GroupScreenRouteProp,
 	GroupScreenNavigationProp,
-	GroupTopTabsProps
+	GroupTopTabsProps,
+	GroupScreenRouteProps
 };

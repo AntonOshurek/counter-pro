@@ -1,7 +1,7 @@
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { NavigationStackParams } from '../../../app/navigation/model';
+import { NavigationStackParams } from '@shared/types/navigation';
 //CONSTANTS
 import { StackScreens } from '@shared/constants';
 //MODEL

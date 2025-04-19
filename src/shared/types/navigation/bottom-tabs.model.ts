@@ -1,5 +1,5 @@
 //CONSTANTS
-import { BottomTabsScreens } from '../../../shared/constants';
+import { BottomTabsScreens } from '@shared/constants';
 
 type BottomTabsNavigationParams = {
 	[BottomTabsScreens.HomeScreen]: undefined;

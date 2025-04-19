@@ -3,16 +3,13 @@ import { useLayoutEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
-import { GroupScreen, GroupSettingsScreen, NotFoundScreen } from '../../screens';
+import { GroupScreen, GroupSettingsScreen, NotFoundScreen } from '@screens';
 //HOOKS
 import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //LIBS
-import { truncateWithEllipsis } from '../../shared/lib/word-lib';
+import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
-import {
-	GroupTopTabsScreens,
-	symbolsAmountOnNavigationHeader
-} from '../../shared/constants';
+import { GroupTopTabsScreens, symbolsAmountOnNavigationHeader } from '@shared/constants';
 //STYLES
 import { colors } from '../../shared/styles';
 //TYPES
@@ -20,11 +17,11 @@ import {
 	GroupScreenRouteProp,
 	GroupTopTabsNavigationParams,
 	GroupTopTabsProps
-} from './model/';
-import { SelectorGetGroup } from '../../entities/group';
+} from '@shared/types/navigation';
+import { SelectorGetGroup } from '@entities/group';
 //TEXT
-import { groupText } from '../../shared/text-content/text-content';
-import { useAppSelector } from '../../shared/store';
+import { groupText } from '@shared/text-content/text-content';
+import { useAppSelector } from '@shared/store';
 
 const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<GroupTopTabsNavigationParams>();
@@ -32,7 +29,7 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 
 	const route = useRoute<GroupScreenRouteProp>();
 	const { groupId } = route.params || {};
-  const group = useAppSelector(SelectorGetGroup(groupId));
+	const group = useAppSelector(SelectorGetGroup(groupId));
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
@@ -63,7 +60,11 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 					component={GroupScreen}
 					initialParams={{ groupId }}
 				/>
-				<Tab.Screen name={GroupTopTabsScreens.Settings} component={GroupSettingsScreen} initialParams={{ groupId }}/>
+				<Tab.Screen
+					name={GroupTopTabsScreens.Settings}
+					component={GroupSettingsScreen}
+					initialParams={{ groupId }}
+				/>
 			</Tab.Navigator>
 		);
 	}

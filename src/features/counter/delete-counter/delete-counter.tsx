@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { NavigationStackParams } from '../../../app/navigation/model';
+import { NavigationStackParams } from '@shared/types/navigation';
 //STORE
 import { useAppDispatch } from '@shared/store';
 import { deleteCounterAction } from '@entities/counter';
