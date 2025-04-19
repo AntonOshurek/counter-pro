@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 //FEATURES
 import useOpenCounterScreen from '../../open-counter-screen';
 //MODEL
-import type { OpenCounterScreenProps } from './open-counter-screen-opacity.model';
+import type { OpenCounterScreenProps } from './model/open-counter-screen-opacity.model';
 
 const OpenCounterScreenOpacity = ({
 	counterId,

@@ -1,16 +1,16 @@
 //NAVIGATION
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { NavigationStackParams } from '../../../app/navigation/model';
+import { NavigationStackParams } from '@shared/types/navigation';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { CreateGroupAction, Group } from '../../../entities/group';
+import { CreateGroupAction, Group } from '@entities/group';
 //CONSTANTS
-import { StackScreens } from '../../../shared/constants';
+import { StackScreens } from '@shared/constants';
 //LIBS
 import { v4 } from 'uuid';
-import { createNewItemTitleDate } from '../../../shared/lib/date-lib';
+import { createNewItemTitleDate } from '@shared/lib/date-lib';
 
 const useCreateNewGroup = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();

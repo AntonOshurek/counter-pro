@@ -1,6 +1,11 @@
+//UI
 import CounterValue from './ui/counter-value/counter-value.entity';
-import { Counter } from './model/counter.model';
 import CounterCard from './ui/counter-card/counter-card';
+import CreatedDate from './ui/created-date/created-date';
+import CounterStep from './ui/counter-step/counter-step';
+//MODEL
+import { Counter } from './model/counter.model';
+//STORE
 import {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -25,8 +30,6 @@ import {
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction
 } from './store/actions/counter-actions';
-import CreatedDate from './ui/created-date/created-date';
-import CounterStep from './ui/counter-step/counter-step';
 
 export {
 	CounterValue,

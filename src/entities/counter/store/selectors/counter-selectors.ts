@@ -1,6 +1,7 @@
+import { createSelector } from '@reduxjs/toolkit';
 //MODEL
-import type { RootState } from '../../../../shared/store';
-import {
+import type { RootState } from '@shared/store';
+import type {
 	ISelectorGetCounter,
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetCounterName,
@@ -9,9 +10,9 @@ import {
 	ISelectorGetIsPinned,
 	ISelectorGetListSortType
 } from '../model/selector.model';
-import { convertObjectToArray } from '../../../../shared/lib/convertObjectToArray';
-import { Counter } from '../../model/counter.model';
-import { createSelector } from '@reduxjs/toolkit';
+import type { Counter } from '../../model/counter.model';
+//LIBS
+import { convertObjectToArray } from '@shared/lib/convertObjectToArray';
 
 const SelectorGetCounter: ISelectorGetCounter =
 	(counterId: string) => (state: RootState) => {

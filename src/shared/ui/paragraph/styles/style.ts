@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 //TYPES
-import type { ColorThemes } from '../../../../entities/theme';
+import type { ColorThemes } from '@shared/types';
 //COLORS
 import { colors } from '../../../styles';
 
@@ -16,9 +16,9 @@ const style = (theme: ColorThemes) =>
 		small: {
 			fontSize: 16
 		},
-    xSmall: {
-      fontSize: 14
-    },
+		xSmall: {
+			fontSize: 14
+		},
 		primary: {
 			color: colors[theme].textPrimary
 		},
@@ -28,21 +28,21 @@ const style = (theme: ColorThemes) =>
 		tertiary: {
 			color: colors[theme].textTertiary
 		},
-    alwaysBlack: {
-      color: colors[theme].alwaysBlack
-    },
-    alwaysWhite: {
-      color: colors[theme].alwaysWhite
-    },
-    capitalize: {
-      textTransform: 'capitalize'
-    },
-    lowercase: {
-      textTransform: 'lowercase'
-    },
-    uppercase: {
-      textTransform: 'uppercase'
-    }
+		alwaysBlack: {
+			color: colors[theme].alwaysBlack
+		},
+		alwaysWhite: {
+			color: colors[theme].alwaysWhite
+		},
+		capitalize: {
+			textTransform: 'capitalize'
+		},
+		lowercase: {
+			textTransform: 'lowercase'
+		},
+		uppercase: {
+			textTransform: 'uppercase'
+		}
 	});
 
 export default style;

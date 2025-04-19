@@ -1,7 +1,7 @@
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { setIsPinnedAction } from '../../../entities/group';
+import { setIsPinnedAction } from '@entities/group';
 //MODEL
 import { UseChangePinnedProps } from './model/change-pinned.model';
 

@@ -1,9 +1,9 @@
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { setIsPinnedAction } from '../../../entities/counter';
+import { setIsPinnedAction } from '@entities/counter';
 //MODEL
-import { UseChangePinnedProps } from './model/change-pinned.model';
+import type { UseChangePinnedProps } from './model/change-pinned.model';
 
 const useChangePinned = ({ counterId }: UseChangePinnedProps) => {
 	const dispatch = useAppDispatch();

@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 //FEATURES
 import useChangeName from '../../change-name';
 //UI
-import InputField from '../../../../../shared/ui/input-field/input-field';
+import { InputField } from '@shared/ui/';
 //MODEL
-import { ChangeNameFieldProps } from './model/change-name-field.model';
+import type { ChangeNameFieldProps } from './model/change-name-field.model';
 //TEXT
-import { groupText } from '../../../../../shared/text-content/text-content';
+import { groupText } from '@shared/text-content/text-content';
 
 const ChangeNameField = ({ groupName, groupId }: ChangeNameFieldProps) => {
 	const [name, setName] = useState<string>(groupName);

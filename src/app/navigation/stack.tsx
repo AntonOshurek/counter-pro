@@ -4,13 +4,13 @@ import CounterTopTabs from './counter-top-tabs';
 import BottomTabs from './bottom-tabs';
 import GroupTopTabs from './group-top-tabs';
 //TYPES
-import { NavigationStackParams } from './model/';
+import type { NavigationStackParams } from '@shared/types/navigation';
 //HOOKS
-import UseThemeResolver from '../../shared/hooks/useThemeResolver';
+import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //CONSTANTS
-import { StackScreens } from '../../shared/constants';
+import { StackScreens } from '@shared/constants';
 //STYLES
-import { colors } from '../../shared/styles';
+import { colors } from '@shared/styles';
 
 const Stack = () => {
 	const Stack = createNativeStackNavigator<NavigationStackParams>();

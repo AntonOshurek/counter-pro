@@ -1,5 +1,5 @@
 //ENTITIES
-import type { AppThemes } from '../../../../entities/theme';
+import type { AppThemes } from '@shared/types';
 
 interface ThemeSwitcherProps {
 	currentTheme: AppThemes;

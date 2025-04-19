@@ -1,4 +1,4 @@
-import { ColorThemes } from '../../entities/theme/';
+import { ColorThemes } from '@shared/types';
 
 interface IColors {
 	alwaysWhite: string;

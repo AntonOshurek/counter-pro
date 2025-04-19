@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
-import { SetStepAction } from '../../../entities/counter';
+import { useAppDispatch } from '@shared/store';
+import { SetStepAction } from '@entities/counter';
 //MODEL
 import { UseChangeStepProps } from './model/change-step.model';
 

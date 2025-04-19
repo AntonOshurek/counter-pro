@@ -1,15 +1,15 @@
 //NATIVE
 import { View } from 'react-native';
 //LIBS
-import { truncateWithEllipsis } from '../../../../shared/lib/word-lib';
+import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
-import { symbolsAmountOnItemCard } from '../../../../shared/constants';
+import { symbolsAmountOnItemCard } from '@shared/constants';
 //UI
-import Paragraph from '../../../../shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui/';
 //MODEL
-import { GroupCardProps } from './group-card.model';
+import type { GroupCardProps } from './model/group-card.model';
 //STYLES
-import style from './style';
+import style from './styles/style';
 
 const GroupCard = ({
 	group,

@@ -1,8 +1,8 @@
 //STORE
-import { RootState } from '../../../../shared/store';
+import { RootState } from '@shared/store';
 //MODEL
 import { Counter } from '../../model/counter.model';
-import { SortOptions } from '../../../../shared/constants/sort';
+import { SortOptions } from '@shared/constants/sort';
 
 interface ISelectorGetCounter {
 	(counterId: string): (state: RootState) => Counter;

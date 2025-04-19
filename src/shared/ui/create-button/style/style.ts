@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 //TYPES
-import type { ColorThemes } from '../../../../entities/theme';
+import type { ColorThemes } from '@shared/types';
 //COLORS
 import { colors } from '../../../styles';
 

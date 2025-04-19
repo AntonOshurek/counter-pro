@@ -1,10 +1,10 @@
+import React, { ReactNode } from 'react';
 //NATIVE
 import { StyleProp, ViewStyle } from 'react-native';
-import React, { ReactNode } from 'react';
 //MODEL
 import type { Counter } from '../../../model/counter.model';
 //TYPES
-import { Sizes } from '../../../../../shared/types/';
+import { Sizes } from '@shared/types/';
 
 interface CounterCardProps {
 	counter: Counter;

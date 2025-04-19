@@ -1,7 +1,7 @@
 //ENTITIES
-import { DecrementAction, SelectorGetCounterStep } from '../../../entities/counter';
+import { DecrementAction, SelectorGetCounterStep } from '@entities/counter';
 //STORE
-import { useAppDispatch, useAppSelector } from '../../../shared/store';
+import { useAppDispatch, useAppSelector } from '@shared/store';
 //MODEL
 import type { UseDecrementProps } from './model/decrement.model';
 

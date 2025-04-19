@@ -2,9 +2,9 @@ import { useState } from 'react';
 //FEATURES
 import useGroupToCounterConnection from '../../group-to-counter-connection';
 //UI
-import CreateButton from '../../../../../shared/ui/create-button/create-button';
-import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
-import { groupText } from '../../../../../shared/text-content/text-content';
+import { CreateButton, CheckboxModal } from '@shared/ui/';
+//TEXT
+import { groupText } from '@shared/text-content/text-content';
 //MODEL
 import type { OpenGroupToCounterModalButtonProps } from './model/open-group-to-counter-modal-button.model';
 

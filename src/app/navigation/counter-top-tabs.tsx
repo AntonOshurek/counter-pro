@@ -3,30 +3,30 @@ import { useLayoutEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //SCREENS
-import { CounterScreen, CounterSettingsScreen, NotFoundScreen } from '../../screens';
+import { CounterScreen, CounterSettingsScreen, NotFoundScreen } from '@screens';
 //STORE
-import { useAppSelector } from '../../shared/store';
+import { useAppSelector } from '@shared/store';
 //ENTITIES
-import { SelectorGetCounter } from '../../entities/counter/';
+import { SelectorGetCounter } from '@entities/counter/';
 //HOOKS
-import UseThemeResolver from '../../shared/hooks/useThemeResolver';
+import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //CONSTANTS
 import {
 	CounterTopTabsScreens,
 	symbolsAmountOnNavigationHeader
-} from '../../shared/constants';
+} from '@shared/constants';
 //LIBS
-import { truncateWithEllipsis } from '../../shared/lib/word-lib';
+import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //STYLES
-import { colors } from '../../shared/styles';
+import { colors } from '@shared/styles';
 //TYPES
-import { CounterTopTabsNavigationParams } from './model/';
 import type {
+	CounterTopTabsNavigationParams,
 	CounterScreenRouteProp,
 	CounterTopTabsProps
-} from './model/counter-top-tabs.model';
+} from '@shared/types/navigation';
 //TEXT
-import { counterText } from '../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();

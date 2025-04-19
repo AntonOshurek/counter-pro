@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
-import { setNameAction } from '../../../entities/counter';
+import { useAppDispatch } from '@shared/store';
+import { setNameAction } from '@entities/counter';
 //MODEL
 import { UseChangeNameProps } from './model/change-name.model';
 

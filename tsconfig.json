@@ -4,6 +4,29 @@
     "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "@features/*": [
+        "src/features/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@screens": [
+        "src/screens/index.ts"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@widgets/*": [
+        "src/widgets/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ]
+    }
   }
 }

@@ -1,13 +1,13 @@
 //STORE
-import { useAppSelector } from '../../../../../shared/store';
+import { useAppSelector } from '@shared/store';
 //FEATURES
 import useSortTypeSelector from '../../sort-type-selector';
 //ENTITIES
-import { SelectorGetListSortType } from '../../../../../entities/group/';
+import { SelectorGetListSortType } from '@entities/group/';
 //VARIABLES
-import { counterSortOptions, SortOptions } from '../../../../../shared/constants/sort';
+import { counterSortOptions, SortOptions } from '@shared/constants/sort';
 //UI
-import SortModalInHeader from '../../../../../shared/ui/sort-modal-in-header/sort-modal-in-header';
+import { SortModalInHeader } from '@shared/ui/';
 
 const SortTypeSelectorHeaderButton = () => {
 	const setListSortType = useSortTypeSelector();

@@ -1,5 +1,5 @@
 //TYPES
-import type { Sizes } from '../../../../../shared/types/';
+import type { Sizes } from '@shared/types/';
 
 interface CounterValueProps {
 	counterId: string;

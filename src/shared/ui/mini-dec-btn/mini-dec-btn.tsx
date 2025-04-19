@@ -3,12 +3,12 @@ import { Pressable, Text } from 'react-native';
 //HOOKS
 import UseThemeResolver from '../../hooks/useThemeResolver';
 //MODEL
-import type { MiniDecBtnProps } from './mini-dec-btn.model';
+import type { MiniDecBtnProps } from './model/mini-dec-btn.model';
 //ICONS
 import { MinusIcon } from '../../icons';
 //STYLES
 import { semanticStyle, colors } from '../../styles/';
-import style from './style';
+import style from './styles/style';
 
 const MiniDecBtn = ({ incAction }: MiniDecBtnProps) => {
 	const theme = UseThemeResolver();

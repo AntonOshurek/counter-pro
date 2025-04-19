@@ -1,18 +1,18 @@
 //NATIVE
 import { View } from 'react-native';
 //STORE
-import { useAppSelector } from '../../../../shared/store';
+import { useAppSelector } from '@shared/store';
 import { SelectorGetCounterCreatedDate } from '../../store/selectors/counter-selectors';
 //LIBS
-import { formatDate } from '../../../../shared/lib/date-lib';
+import { formatDate } from '@shared/lib/date-lib';
 //UI
-import Paragraph from '../../../../shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui';
 //MODEL
-import { CreatedDateProps } from './model/created-date.model';
+import type { CreatedDateProps } from './model/created-date.model';
 //STYLES
 import { style } from './style/style';
 //TEXT
-import { counterText } from '../../../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 
 const CreatedDate = ({ counterId }: CreatedDateProps) => {
 	const createdDate = useAppSelector(SelectorGetCounterCreatedDate(counterId));

@@ -1,15 +1,14 @@
 //NATIVE
 import { View } from 'react-native';
 //STORE
-import { useAppSelector } from '../../../../shared/store';
-//ENTITIES
+import { useAppSelector } from '@shared/store';
 import { SelectorGetCounterStep } from '../../store/selectors/counter-selectors';
 //UI
-import Paragraph from '../../../../shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui';
 //MODEL
-import { CounterStepProps } from './model/counter-step.model';
+import type { CounterStepProps } from './model/counter-step.model';
 //TEXT
-import { counterText } from '../../../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 
 const CounterStep = ({ additionalClass, counterId }: CounterStepProps) => {
 	const step = useAppSelector(SelectorGetCounterStep(counterId));

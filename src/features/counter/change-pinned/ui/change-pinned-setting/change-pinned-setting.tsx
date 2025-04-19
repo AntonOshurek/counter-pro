@@ -1,19 +1,17 @@
 //NATIVE
 import { TouchableOpacity, View } from 'react-native';
 //STORE
-import { useAppSelector } from '../../../../../shared/store';
+import { useAppSelector } from '@shared/store';
 //FEATURES
 import useChangePinned from '../../change-pinned';
 //ENTITIES
 import { SelectorGetIsPinned } from '../../../../../entities/counter';
 //UI
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import { Paragraph, ChangePinnedButton } from '@shared/ui/';
 //VARIABLES
-import { counterText } from '../../../../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 //MODEL
 import { ChangePinnedSettingProps } from './model/change-pinned-setting.model';
-//UI
-import ChangePinnedButton from '../../../../../shared/ui/changer-pinned-button/change-pinned-button';
 //STYLES
 import { style } from './styles/style';
 

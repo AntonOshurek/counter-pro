@@ -1,18 +1,18 @@
 //NATIVE
 import { View } from 'react-native';
 //HOOKS
-import UseThemeResolver from '../../../../shared/hooks/useThemeResolver';
+import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //LIBS
-import { truncateWithEllipsis } from '../../../../shared/lib/word-lib';
+import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
-import { symbolsAmountOnItemCard } from '../../../../shared/constants';
+import { symbolsAmountOnItemCard } from '@shared/constants';
 //MODEL
-import { CounterCardProps } from './model/counter-card.model';
+import type { CounterCardProps } from './model/counter-card.model';
 //UI
-import Paragraph from '../../../../shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui';
 import CounterStep from '../counter-step/counter-step';
 //ICONS
-import KeepIcon from '../../../../shared/icons/keep-icon';
+import KeepIcon from '@shared/icons/keep-icon';
 //STYLES
 import style from './styles/style';
 

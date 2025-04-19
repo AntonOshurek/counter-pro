@@ -4,5 +4,13 @@ module.exports = {
   ignorePatterns: ["/dist/*"],
   rules: {
     "react/display-name": "off"
-  }
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
+      },
+    },
+  },
 };
