@@ -8,7 +8,7 @@ import { useAppSelector } from '../../shared/store';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { CounterWidget } from '../../widgets';
+import { CounterWidget } from '@widgets/counter';
 //STYLES
 import style from './styles/style';
 

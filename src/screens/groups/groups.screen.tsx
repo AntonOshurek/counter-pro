@@ -1,7 +1,7 @@
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupsScreenControlsWidget, GroupListWidget } from '../../widgets';
+import { GroupsScreenControlsWidget, GroupListWidget } from '@widgets/group';
 //STYLES
 import style from './styles/style';
 

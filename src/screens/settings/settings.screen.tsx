@@ -1,7 +1,7 @@
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { UiSettingsWidget, SystemSettingsWidget } from '../../widgets/';
+import { UiSettingsWidget, SystemSettingsWidget } from '@widgets/app';
 //STYLES
 import style from './styles/style';
 

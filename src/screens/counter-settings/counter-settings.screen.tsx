@@ -11,7 +11,7 @@ import {
 	CounterSettingsWidget,
 	CounterCriticalOptionsWidget,
 	CounterAdditionalInfoWidget
-} from '../../widgets';
+} from '@widgets/counter';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //STYLES

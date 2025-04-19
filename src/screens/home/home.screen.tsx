@@ -1,7 +1,8 @@
 //LAYOUTS
 import { ScreenLayout } from '../layouts/';
 //WIDGETS
-import { HomeScreenControlsWidget, CounterListWidget } from '../../widgets';
+import { HomeScreenControlsWidget } from '@widgets/app';
+import { CounterListWidget } from '@widgets/counter';
 //STYLES
 import style from './styles/style';
 

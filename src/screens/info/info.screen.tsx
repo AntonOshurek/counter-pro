@@ -1,5 +1,5 @@
 //NATIVE
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //UI

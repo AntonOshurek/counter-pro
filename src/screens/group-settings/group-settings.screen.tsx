@@ -10,7 +10,7 @@ import {
 	GroupCriticalOptionsWidget,
 	GroupAdditionalInfoWidget,
 	GroupSettingsWidget
-} from '../../widgets';
+} from '@widgets/group';
 //STORE
 import { useAppSelector } from '../../shared/store';
 //ENTITIES

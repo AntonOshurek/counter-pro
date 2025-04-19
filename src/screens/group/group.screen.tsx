@@ -5,7 +5,7 @@ import { GroupScreenRouteProp } from '../../app/navigation/model';
 //LAYOUTS
 import { ScreenLayout } from '../layouts';
 //WIDGETS
-import { GroupCounterListWidget, GroupScreenControlsWidget } from '../../widgets';
+import { GroupCounterListWidget, GroupScreenControlsWidget } from '@widgets/group';
 //STYLES
 import style from './styles/style';
 
