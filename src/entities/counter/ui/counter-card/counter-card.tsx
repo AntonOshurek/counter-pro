@@ -9,7 +9,7 @@ import { symbolsAmountOnItemCard } from '@shared/constants';
 //MODEL
 import type { CounterCardProps } from './model/counter-card.model';
 //UI
-import Paragraph from '@shared/ui/paragraph/paragraph';
+import Paragraph from '@ui/paragraph/paragraph';
 import CounterStep from '../counter-step/counter-step';
 //ICONS
 import KeepIcon from '@shared/icons/keep-icon';

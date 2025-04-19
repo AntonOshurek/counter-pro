@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { useAppSelector } from '@shared/store';
 import { SelectorGetCounterStep } from '../../store/selectors/counter-selectors';
 //UI
-import Paragraph from '@shared/ui/paragraph/paragraph';
+import Paragraph from '@ui/paragraph/paragraph';
 //MODEL
 import type { CounterStepProps } from './model/counter-step.model';
 //TEXT
