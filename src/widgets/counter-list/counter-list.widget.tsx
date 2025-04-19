@@ -1,13 +1,13 @@
 //NATIVE
 import { FlatList } from 'react-native';
 //STORE
-import { useAppSelector } from '../../shared/store';
+import { useAppSelector } from '@shared/store';
 //FEATURES
 import {
 	MiniIncrementButton,
 	MiniDecrementButton,
 	OpenCounterScreenOpacity
-} from '../../features/counter';
+} from '@features/counter';
 //ENTITIES
 import {
 	Counter,
@@ -15,10 +15,10 @@ import {
 	CounterValue,
 	SelectorGetListSortType,
 	SelectorGetCounters
-} from '../../entities/counter';
+} from '@entities/counter';
 //LIBS
-import { convertObjectToArray } from '../../shared/lib/convertObjectToArray';
-import { sortCounters } from '../../shared/lib/sort-lib';
+import { convertObjectToArray } from '@shared/lib/convertObjectToArray';
+import { sortCounters } from '@shared/lib/sort-lib';
 //STYLES
 import style from './styles/style';
 
