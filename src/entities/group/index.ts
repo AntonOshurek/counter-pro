@@ -1,6 +1,9 @@
+//MODEL
 import { Group } from './model/group.model';
+//UI
 import GroupCard from './ui/group-card/group-card';
 import CreatedDate from './ui/created-date/created-date';
+//STORE
 import {
 	SelectorGetGroups,
 	SelectorGetGroup,

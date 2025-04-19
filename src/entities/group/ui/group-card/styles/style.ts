@@ -1,7 +1,7 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
 //STYLES
-import { paddings } from '../../../../shared/styles';
+import { paddings } from '@shared/styles';
 
 const style = StyleSheet.create({
 	groupCard: {

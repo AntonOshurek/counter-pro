@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
-//MODEL
-import type { Group } from '../../';
+//NATIVE
 import { StyleProp, ViewStyle } from 'react-native';
+//MODEL
+import type { Group } from '../../../model/group.model';
 
 interface GroupCardProps {
 	group: Group;
