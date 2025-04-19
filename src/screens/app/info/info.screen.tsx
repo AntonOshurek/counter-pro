@@ -1,9 +1,9 @@
 //NATIVE
 import { View } from 'react-native';
 //LAYOUTS
-import { ScreenLayout } from '../layouts';
+import { ScreenLayout } from '@shared/layouts/';
 //UI
-import { Paragraph } from '@shared/ui/';
+import { Paragraph } from '@shared/ui';
 //STYLES
 import style from './styles/style';
 

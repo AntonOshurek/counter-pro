@@ -1,5 +1,5 @@
 //LAYOUTS
-import { ScreenLayout } from '../layouts';
+import { ScreenLayout } from '@shared/layouts/';
 //WIDGETS
 import { UiSettingsWidget, SystemSettingsWidget } from '@widgets/app';
 //STYLES

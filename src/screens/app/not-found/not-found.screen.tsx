@@ -1,11 +1,11 @@
 //NATIVE
 import { View } from 'react-native';
 //HOOKS
-import useThemeResolver from '../../shared/hooks/useThemeResolver';
+import useThemeResolver from '@shared/hooks/useThemeResolver';
 //MODEL
 import type { NotFoundScreenProps } from './model/not-found.model';
 //UI
-import Paragraph from '../../shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui/';
 //STYLES
 import { style } from './styles/style';
 

@@ -1,7 +1,7 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
 //styles
-import { itemsGaps } from '../../../shared/styles';
+import { itemsGaps } from '@shared/styles';
 
 const style = StyleSheet.create({
 	settingsScreen: {

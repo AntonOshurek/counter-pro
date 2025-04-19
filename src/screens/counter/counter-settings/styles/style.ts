@@ -1,10 +1,10 @@
 //NATIVE
 import { StyleSheet } from 'react-native';
 //STYLES
-import { itemsGaps, paddings } from '../../../shared/styles';
+import { itemsGaps, paddings } from '@shared/styles';
 
 const style = StyleSheet.create({
-	groupSettingsScreen: {
+	counterSettingsScreen: {
 		paddingTop: 40,
 		justifyContent: 'space-between',
 		gap: itemsGaps.gapBetweenSettingGroups,

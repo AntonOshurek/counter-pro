@@ -2,9 +2,9 @@
 import { useRoute } from '@react-navigation/native';
 import { View } from 'react-native';
 //NAVIGATION
-import { GroupScreenRouteProp } from '../../app/navigation/model1';
+import { GroupScreenRouteProp } from '@shared/types/navigation';
 //LAYOUTS
-import { ScreenLayout } from '../layouts';
+import { ScreenLayout } from '@shared/layouts/';
 //WIDGETS
 import {
 	GroupCriticalOptionsWidget,

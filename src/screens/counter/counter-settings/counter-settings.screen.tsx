@@ -2,7 +2,7 @@
 import { useRoute } from '@react-navigation/native';
 import { View } from 'react-native';
 //NAVIGATION
-import type { CounterScreenRouteProp } from '../../app/navigation/model1/counter-top-tabs.model';
+import type { CounterScreenRouteProp } from '@shared/types/navigation';
 //STORE
 import { useAppSelector } from '@shared/store';
 import { SelectorGetCounter } from '@entities/counter';
@@ -13,7 +13,7 @@ import {
 	CounterAdditionalInfoWidget
 } from '@widgets/counter';
 //LAYOUTS
-import { ScreenLayout } from '../layouts';
+import { ScreenLayout } from '@shared/layouts/';
 //STYLES
 import style from './styles/style';
 
