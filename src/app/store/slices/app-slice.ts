@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { appInitialState } from '../state/app-state';
 //TYPES
 import type { IUpdateStateAction } from '../model/actions.model';
-import type { ISetNewThemeAction } from '../../../entities/theme/';
+import type { ISetNewThemeAction } from '@entities/theme/';
 
 export const appSlice = createSlice({
 	name: 'app',
