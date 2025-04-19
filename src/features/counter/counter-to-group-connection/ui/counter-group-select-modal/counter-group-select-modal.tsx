@@ -4,14 +4,13 @@ import { View } from 'react-native';
 //FEATURES
 import useCounterToGroupConnection from '../../counter-to-group-connection';
 //MODEL
-import { CounterGroupSelectModalProps } from './model/counter-group-select-modal.model';
+import type { CounterGroupSelectModalProps } from './model/counter-group-select-modal.model';
 //UI
-import CheckboxModal from '../../../../../shared/ui/checkbox-modal/checkbox-modal';
-import MainButton from '../../../../../shared/ui/main-button/main-button';
-import { counterText } from '../../../../../shared/text-content/text-content';
+import { CheckboxModal, MainButton, Paragraph } from '@shared/ui/';
+//TEXT CONTENT
+import { counterText } from '@shared/text-content/text-content';
 //STYLES
 import { style } from './styles/style';
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
 
 const CounterGroupSelectModal = ({
 	counter,

@@ -5,7 +5,7 @@ import { NavigationStackParams } from '../../../app/navigation/model';
 //MODEL
 import type { openGroupScreenProps } from './model/open-group-screen.model';
 //CONSTANTS
-import { StackScreens } from '../../../shared/constants';
+import { StackScreens } from '@shared/constants';
 
 const useOpenGroupScreen = ({ groupId }: openGroupScreenProps) => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();

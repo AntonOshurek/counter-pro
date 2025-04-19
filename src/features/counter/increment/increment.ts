@@ -1,7 +1,7 @@
 //ENTITIES
-import { IncrementAction, SelectorGetCounterStep } from '../../../entities/counter';
+import { IncrementAction, SelectorGetCounterStep } from '@entities/counter';
 //STORE
-import { useAppDispatch, useAppSelector } from '../../../shared/store';
+import { useAppDispatch, useAppSelector } from '@shared/store';
 //MODEL
 import type { UseIncrementProps } from './model/increment.model';
 

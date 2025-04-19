@@ -6,7 +6,7 @@ import { SelectorGetCounterCreatedDate } from '../../store/selectors/counter-sel
 //LIBS
 import { formatDate } from '@shared/lib/date-lib';
 //UI
-import Paragraph from '@ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui';
 //MODEL
 import type { CreatedDateProps } from './model/created-date.model';
 //STYLES

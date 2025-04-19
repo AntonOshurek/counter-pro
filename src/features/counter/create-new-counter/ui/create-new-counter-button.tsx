@@ -1,7 +1,7 @@
 //FEATURES
 import useCreateNewCounter from '../create-new-counter';
 //UI
-import CreateButton from '../../../../shared/ui/create-button/create-button';
+import { CreateButton } from '@shared/ui/';
 
 const CreateNewCounterButton = () => {
 	const createNewCounter = useCreateNewCounter();

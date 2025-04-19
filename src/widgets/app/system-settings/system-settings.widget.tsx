@@ -1,7 +1,7 @@
 //WRAPPERS
 import { SettingsGroupWrapper } from '@shared/wrappers';
 //UI
-import Paragraph from '@shared/ui/paragraph/paragraph';
+import Paragraph from '@ui/paragraph/paragraph';
 
 const SystemSettingsWidget = () => {
 	return (

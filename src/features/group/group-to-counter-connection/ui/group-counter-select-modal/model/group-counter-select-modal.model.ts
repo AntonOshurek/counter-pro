@@ -1,5 +1,5 @@
 //TYPES
-import type { checkboxModalItems } from '../../../../../../shared/ui/checkbox-modal/model/checlbox-modal.model';
+import type { checkboxModalItems } from '@shared/ui/checkbox-modal/model/checlbox-modal.model';
 
 interface GroupCounterSelectModalProps {
 	groupId: string;

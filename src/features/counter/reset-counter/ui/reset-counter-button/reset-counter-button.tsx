@@ -1,15 +1,15 @@
+//NATIVE
 import { View } from 'react-native';
 //FEATURES
 import useResetCounter from '../../reset-counter';
 //UI
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
-import ResetButton from '@shared/ui/reset-button/reset-button';
+import { Paragraph, ResetButton } from '@shared/ui/';
 //MODEL
-import type { ResetCounterButtonProps } from './reset-counter-button.model';
+import type { ResetCounterButtonProps } from './model/reset-counter-button.model';
 //STYLES
-import { style } from './style';
+import { style } from './styles/style';
 //TEXT
-import { counterText } from '../../../../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 
 const ResetCounterButton = ({ counterId }: ResetCounterButtonProps) => {
 	const resetButton = useResetCounter({ counterId });

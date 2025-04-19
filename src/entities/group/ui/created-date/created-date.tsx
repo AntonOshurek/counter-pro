@@ -6,7 +6,7 @@ import { SelectorGetGroupCreatedDate } from '../../store/selectors/group-selecto
 //LIBS
 import { formatDate } from '@shared/lib/date-lib';
 //UI
-import Paragraph from '@shared/ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui/';
 //MODEL
 import type { CreatedDateProps } from './model/created-date.model';
 //STYLES

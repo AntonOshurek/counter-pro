@@ -1,15 +1,15 @@
 //NATIVE
 import { View } from 'react-native';
 //STORE
-import { useAppSelector } from '../../../../../shared/store';
+import { useAppSelector } from '@shared/store';
 //FEATURES
 import useChangePinned from '../../change-pinned';
 //ENTITIES
-import { SelectorGetIsPinnedGroup } from '../../../../../entities/group';
+import { SelectorGetIsPinnedGroup } from '@entities/group';
 //MODEL
-import { ChangePinnedGroupButtonProps } from './model/change-pinned-group-button.model';
+import type { ChangePinnedGroupButtonProps } from './model/change-pinned-group-button.model';
 //UI
-import ChangePinnedButton from '@shared/ui/change-pinned-button/change-pinned-button';
+import { ChangePinnedButton } from '@shared/ui/';
 //STYLES
 import { style } from './styles/style';
 

@@ -1,9 +1,9 @@
 //FEATURES
 import useDecrement from '../../decrement';
 //MODEL
-import type { MiniDecrementButtonProps } from './primary-decrement-button.model';
+import type { MiniDecrementButtonProps } from './model/primary-decrement-button.model';
 //UI
-import MinusButton from '../../../../../shared/ui/minus-button/minus-button';
+import { MinusButton } from '@shared/ui/';
 
 const PrimaryDecrementButton = ({ counterId }: MiniDecrementButtonProps) => {
 	const decrement = useDecrement({ counterId });

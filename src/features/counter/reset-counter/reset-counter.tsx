@@ -1,7 +1,7 @@
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { ResetAction } from '../../../entities/counter/';
+import { ResetAction } from '@entities/counter/';
 //MODEL
 import type { ResetCounterProps } from './model/reset-counter.model';
 

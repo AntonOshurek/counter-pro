@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '../../../app/navigation/model';
 //CONSTANTS
-import { StackScreens } from '../../../shared/constants';
+import { StackScreens } from '@shared/constants';
 //MODEL
 import type { OpenCounterScreenProps } from './model/open-counter-screen.model';
 

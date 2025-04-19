@@ -3,13 +3,13 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '../../../app/navigation/model';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
-import { CreateCounterAction } from '../../../entities/counter';
+import { useAppDispatch } from '@shared/store';
+import { CreateCounterAction } from '@entities/counter';
 //CONSTANTS
-import { StackScreens } from '../../../shared/constants';
+import { StackScreens } from '@shared/constants';
 //LIBS
 import { v4 } from 'uuid';
-import { createNewItemTitleDate } from '../../../shared/lib/date-lib';
+import { createNewItemTitleDate } from '@shared/lib/date-lib';
 
 const useCreateNewCounter = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();

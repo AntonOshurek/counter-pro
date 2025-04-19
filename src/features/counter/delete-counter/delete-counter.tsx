@@ -4,9 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '../../../app/navigation/model';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
-//ENTITIES
-import { deleteCounterAction } from '../../../entities/counter';
+import { useAppDispatch } from '@shared/store';
+import { deleteCounterAction } from '@entities/counter';
 //MODEL
 import type { UseDeleteCounterProps } from './model/delete-counter.model';
 

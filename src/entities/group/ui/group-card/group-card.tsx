@@ -5,7 +5,7 @@ import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
 import { symbolsAmountOnItemCard } from '@shared/constants';
 //UI
-import Paragraph from '@ui/paragraph/paragraph';
+import { Paragraph } from '@shared/ui/';
 //MODEL
 import type { GroupCardProps } from './model/group-card.model';
 //STYLES

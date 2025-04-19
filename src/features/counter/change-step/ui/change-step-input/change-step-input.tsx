@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 //FEATURES
 import useChangeStep from '../../change-step';
 //UI
-import InputField from '../../../../../shared/ui/input-field/input-field';
+import { InputField } from '@shared/ui/';
 //MODEL
-import type { ChangeStepInputProps } from './change-step-input.model';
+import type { ChangeStepInputProps } from './model/change-step-input.model';
 //TEXT
-import { counterText } from '../../../../../shared/text-content/text-content';
+import { counterText } from '@shared/text-content/text-content';
 
 const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 	const [step, setStep] = useState<number>(currentStep);

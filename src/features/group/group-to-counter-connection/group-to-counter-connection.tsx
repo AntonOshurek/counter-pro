@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
 import {
 	deleteConnectionWithCounterAction,
 	addConnectionWithCounterAction
-} from '../../../entities/group';
+} from '@entities/group';
 
 const useGroupToCounterConnection = () => {
 	const dispatch = useAppDispatch();
@@ -25,8 +25,8 @@ const useGroupToCounterConnection = () => {
 	);
 
 	return {
-    addCounterToGroup,
-    deleteCounterFromGroup
+		addCounterToGroup,
+		deleteCounterFromGroup
 	};
 };
 

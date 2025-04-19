@@ -3,14 +3,13 @@ import { View } from 'react-native';
 //FEATURES
 import useDeleteCounter from '../../delete-group';
 //UI
-import DeleteButtonWithConfirm from '../../../../../shared/ui/delete-button-with-confirm/delete-button-with-confirm';
-import Paragraph from '../../../../../shared/ui/paragraph/paragraph';
+import { DeleteButtonWithConfirm, Paragraph } from '@shared/ui/';
 //PROPS
-import type { DeleteGroupButtonProps } from './delete-group-button.model';
+import type { DeleteGroupButtonProps } from './model/delete-group-button.model';
 //STYLES
-import { style } from './style';
+import { style } from './styles/style';
 //TEXT
-import { groupText } from '../../../../../shared/text-content/text-content';
+import { groupText } from '@shared/text-content/text-content';
 
 const DeleteGroupButton = ({ groupId }: DeleteGroupButtonProps) => {
 	const deleteGroup = useDeleteCounter({ groupId });

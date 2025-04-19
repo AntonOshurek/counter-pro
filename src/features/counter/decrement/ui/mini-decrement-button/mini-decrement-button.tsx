@@ -3,9 +3,9 @@ import { Pressable } from 'react-native';
 //FEATURES
 import useIncrement from '../../decrement';
 //MODEL
-import { MiniIncrementButtonProps } from './mini-decrement-button.model';
+import type { MiniIncrementButtonProps } from './model/mini-decrement-button.model';
 //UI
-import MiniDecBtn from '../../../../../shared/ui/mini-dec-btn/mini-dec-btn';
+import { MiniDecBtn } from '@shared/ui/';
 
 const MiniIncrementButton = ({ counterId }: MiniIncrementButtonProps) => {
 	const increment = useIncrement({ counterId });
