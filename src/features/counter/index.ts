@@ -1,4 +1,3 @@
-import useCreateNewCounter from './create-new-counter/create-new-counter';
 import CreateNewCounterButton from './create-new-counter/ui/create-new-counter-button';
 import useDecrement from './decrement/decrement';
 import PrimaryDecrementButton from './decrement/ui/primary-decrement-button/primary-decrement-button';
@@ -17,7 +16,6 @@ import useCounterToGroupConnection from './counter-to-group-connection/counter-t
 import CounterGroupSelectModal from './counter-to-group-connection/ui/counter-group-select-modal/counter-group-select-modal';
 
 export {
-	useCreateNewCounter,
 	CreateNewCounterButton,
 	useDecrement,
 	PrimaryDecrementButton,
