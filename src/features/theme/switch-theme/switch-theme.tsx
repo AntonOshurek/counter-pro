@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
 //STORE
-import { useAppDispatch } from '../../../shared/store';
+import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { AppThemes, SetNewThemeAction } from '../../../entities/theme';
+import { SetNewThemeAction } from '@entities/theme';
+//TYPES
+import type { AppThemes } from '@shared/types';
 
 const useSwitchTheme = () => {
 	const dispatch = useAppDispatch();

@@ -12,9 +12,9 @@ import {
 	GroupSettingsWidget
 } from '@widgets/group';
 //STORE
-import { useAppSelector } from '../../shared/store';
+import { useAppSelector } from '@shared/store';
 //ENTITIES
-import { SelectorGetGroup } from '../../entities/group';
+import { SelectorGetGroup } from '@entities/group';
 //STYLES
 import style from './styles/style';
 

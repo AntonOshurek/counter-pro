@@ -11,7 +11,7 @@ import {
 	IAddConnectionToCounterAction
 } from '../model/action.model';
 //TYPES
-import type { AppThunk } from '../../../../shared/store';
+import type { AppThunk } from '@shared/store';
 
 const CreateGroupAction =
 	(action: ICreateGroupAction): AppThunk =>

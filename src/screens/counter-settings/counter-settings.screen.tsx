@@ -4,8 +4,8 @@ import { View } from 'react-native';
 //NAVIGATION
 import type { CounterScreenRouteProp } from '../../app/navigation/model/counter-top-tabs.model';
 //STORE
-import { useAppSelector } from '../../shared/store';
-import { SelectorGetCounter } from '../../entities/counter';
+import { useAppSelector } from '@shared/store';
+import { SelectorGetCounter } from '@entities/counter';
 //WIDGETS
 import {
 	CounterSettingsWidget,

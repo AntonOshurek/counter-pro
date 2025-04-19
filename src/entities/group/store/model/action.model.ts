@@ -1,5 +1,5 @@
 //CONSTANTS
-import { SortOptions } from '../../../../shared/constants/sort';
+import { SortOptions } from '@shared/constants/sort';
 //MODEL
 import type { Group } from '../../model/group.model';
 

@@ -1,5 +1,5 @@
 import { Counter } from '../../model/counter.model';
-import { SortOptions } from '../../../../shared/constants/sort';
+import { SortOptions } from '@shared/constants/sort';
 
 interface IIncrementAction {
 	amount: number;
@@ -44,17 +44,17 @@ interface ISetListSortTypeAction {
 
 interface ISetIsPinnedAction {
 	isPinned: boolean;
-  counterId: string;
+	counterId: string;
 }
 
 interface IDeleteConnectionWithGroupAction {
-  groupId: string;
-  counterId: string;
+	groupId: string;
+	counterId: string;
 }
 
 interface IAddConnectionToGroupAction {
-  groupId: string;
-  counterId: string;
+	groupId: string;
+	counterId: string;
 }
 
 export {

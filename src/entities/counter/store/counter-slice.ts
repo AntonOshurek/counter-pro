@@ -2,7 +2,7 @@
 import { counterInitialState } from './state/counter-state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //MODEL
-import {
+import type {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,

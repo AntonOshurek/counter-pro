@@ -1,7 +1,7 @@
 //MODEL
 import type { IGroupState } from '../model/group-state.model';
 //CONSTANTS
-import { SortOptions } from '../../../../shared/constants/sort';
+import { SortOptions } from '@shared/constants/sort';
 
 const now = new Date();
 

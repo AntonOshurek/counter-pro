@@ -1,5 +1,5 @@
 //STORE
-import type { RootState } from '../../../../shared/store';
+import type { RootState } from '@shared/store';
 //MODEL
 import {
 	ISelectorGetGroup,

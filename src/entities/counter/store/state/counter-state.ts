@@ -1,6 +1,6 @@
 //MODEL
 import { ICounterState } from '../model/counter-state.model';
-import { SortOptions } from '../../../../shared/constants/sort';
+import { SortOptions } from '@shared/constants/sort';
 
 const now = new Date();
 

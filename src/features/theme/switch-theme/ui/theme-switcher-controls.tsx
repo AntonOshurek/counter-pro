@@ -1,7 +1,7 @@
 //NATIVE
 import { View } from 'react-native';
 //ENTITIES
-import { AppThemes } from '../../../../entities/theme';
+import { AppThemes } from '@shared/types';
 //UI
 import Paragraph from '../../../../shared/ui/paragraph/paragraph';
 import Switcher from '../../../../shared/ui/switcher/switcher';

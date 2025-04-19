@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { groupInitialState } from './state/group-state';
 //MODEL
-import {
+import type {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
