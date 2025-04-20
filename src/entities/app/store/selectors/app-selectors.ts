@@ -1,11 +1,10 @@
-//types
+//MODEL
+import type { ISelectorGetTheme } from '@entities/app/store/model/selectors.model';
+//TYPES
 import type { RootState } from '@shared/store';
-import type { AppThemes } from '@shared/types';
 
-const SelectorGetTheme =
-	() =>
-	(state: RootState): AppThemes => {
-		return state.app.theme;
-	};
+const SelectorGetTheme: ISelectorGetTheme = () => (state: RootState) => {
+	return state.app.theme;
+};
 
 export { SelectorGetTheme };
