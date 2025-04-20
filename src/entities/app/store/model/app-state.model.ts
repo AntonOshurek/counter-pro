@@ -1,6 +1,8 @@
 //TYPES
 import type { AppThemes } from '@shared/types';
 
-export interface IAppState {
+interface IAppState {
 	theme: AppThemes;
 }
+
+export { IAppState };

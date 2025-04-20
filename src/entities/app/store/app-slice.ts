@@ -1,10 +1,9 @@
 //STATE
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { appInitialState } from '../state/app-state';
+import { appInitialState } from './state/app-state';
 //TYPES
-import type { IUpdateStateAction } from '../model/actions.model';
-import type { ISetNewThemeAction } from '@entities/theme/';
+import type { IUpdateStateAction, ISetNewThemeAction } from './model/actions.model';
 
 export const appSlice = createSlice({
 	name: 'app',
