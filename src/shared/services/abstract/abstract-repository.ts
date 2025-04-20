@@ -1,4 +1,4 @@
-import asyncStorageService from '@services/async-store-service/async-store.service';
+import asyncStorageService from '../async-storage/async-store.service';
 
 abstract class AbstractRepository<T> {
 	#defaultState: T;
