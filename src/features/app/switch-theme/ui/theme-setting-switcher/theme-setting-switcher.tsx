@@ -13,7 +13,7 @@ import type { AppThemes } from '@shared/types';
 //CONSTANTS
 import { appThemes } from '@shared/constants';
 //TEXT
-import { appText } from '@shared/text-content/text-content';
+import { APP_TEXT } from '@shared/text-content/text-content';
 //STYLES
 import style from './styles/style';
 
@@ -24,7 +24,7 @@ const ThemeSettingSwitcher = () => {
 	return (
 		<View style={style.themeSwitcher}>
 			<Paragraph size='medium' contentType='secondary' textTransform='capitalize'>
-				{appText.themeSwitcherAlias}
+				{APP_TEXT.themeSwitcherAlias}
 			</Paragraph>
 
 			<View style={style.themeSwitcherGroup}>

@@ -6,7 +6,7 @@ import { InputField } from '@shared/ui/';
 //MODEL
 import type { ChangeStepInputProps } from './model/change-step-input.model';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 	const [step, setStep] = useState<number>(currentStep);
@@ -31,8 +31,8 @@ const ChangeStepInput = ({ counterId, currentStep }: ChangeStepInputProps) => {
 		<InputField
 			onChange={handleNameChange}
 			value={step.toString()}
-			label={counterText.changeCounterStepInputLabel}
-			additionalLabel={counterText.changeCounterStepAdditionalLabel}
+			label={COUNTER_TEXT.changeCounterStepInputLabel}
+			additionalLabel={COUNTER_TEXT.changeCounterStepAdditionalLabel}
 			inputType={'numeric'}
 		/>
 	);

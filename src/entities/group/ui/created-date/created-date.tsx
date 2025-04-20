@@ -12,7 +12,7 @@ import type { CreatedDateProps } from './model/created-date.model';
 //STYLES
 import { style } from './style/style';
 //TEXT
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 
 const CreatedDate = ({ groupId }: CreatedDateProps) => {
 	const createdDate = useAppSelector(SelectorGetGroupCreatedDate(groupId));
@@ -22,7 +22,7 @@ const CreatedDate = ({ groupId }: CreatedDateProps) => {
 	return (
 		<View style={style.createdDate}>
 			<Paragraph contentType={'primary'} size={'small'}>
-				{groupText.groupCreatedDateLabel}
+				{GROUP_TEXT.groupCreatedDateLabel}
 			</Paragraph>
 
 			<Paragraph contentType={'primary'} size={'small'}>

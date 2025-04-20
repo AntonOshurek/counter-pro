@@ -8,7 +8,7 @@ import type { GroupCounterSelectModalProps } from './model/group-counter-select-
 //UI
 import { CheckboxModal, MainButton } from '@shared/ui/';
 //TEXT
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 //STYLES
 import { style } from './styles/style';
 
@@ -44,8 +44,8 @@ const GroupCounterSelectModal = ({
 				onClose={() => modalVisibleHandler(false)}
 				onToggle={onCounterToggleListener}
 				items={counters}
-				title={groupText.manageCountersModalTitle}
-				itemsIsEmptyText={groupText.noAvailableCounter}
+				title={GROUP_TEXT.manageCountersModalTitle}
+				itemsIsEmptyText={GROUP_TEXT.noAvailableCounter}
 			/>
 		</View>
 	);

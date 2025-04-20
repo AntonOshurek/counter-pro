@@ -9,7 +9,7 @@ import type { DeleteGroupButtonProps } from './model/delete-group-button.model';
 //STYLES
 import { style } from './styles/style';
 //TEXT
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 
 const DeleteGroupButton = ({ groupId }: DeleteGroupButtonProps) => {
 	const deleteGroup = useDeleteCounter({ groupId });
@@ -21,16 +21,16 @@ const DeleteGroupButton = ({ groupId }: DeleteGroupButtonProps) => {
 	return (
 		<View style={style.deleteGroupButton}>
 			<Paragraph contentType={'primary'} size={'medium'}>
-				{groupText.deleteGroupButtonLabel}
+				{GROUP_TEXT.deleteGroupButtonLabel}
 			</Paragraph>
 
 			<DeleteButtonWithConfirm
 				deleteAction={onDeleteListener}
 				confirmText={{
-					body: groupText.deleteGroupConfirmBody,
-					title: groupText.deleteGroupConfirmTitle
+					body: GROUP_TEXT.deleteGroupConfirmBody,
+					title: GROUP_TEXT.deleteGroupConfirmTitle
 				}}
-				buttonText={groupText.deleteGroupButtonText}
+				buttonText={GROUP_TEXT.deleteGroupButtonText}
 			/>
 		</View>
 	);

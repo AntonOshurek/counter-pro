@@ -9,7 +9,7 @@ import { SelectorGetIsPinnedGroup } from '@entities/group';
 //UI
 import { Paragraph } from '@shared/ui/';
 //VARIABLES
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 //MODEL
 import type { ChangePinnedSettingProps } from './model/change-pinned-setting.model';
 //UI
@@ -30,7 +30,7 @@ const ChangePinnedSetting = ({ groupId }: ChangePinnedSettingProps) => {
 		<View style={style.changePinnedSetting}>
 			<TouchableOpacity onPress={onChange}>
 				<Paragraph contentType={isPinned ? 'primary' : 'secondary'} size={'medium'}>
-					{isPinned ? groupText.unpinGroupButtonLabel : groupText.pinGroupButtonLabel}
+					{isPinned ? GROUP_TEXT.unpinGroupButtonLabel : GROUP_TEXT.pinGroupButtonLabel}
 				</Paragraph>
 			</TouchableOpacity>
 

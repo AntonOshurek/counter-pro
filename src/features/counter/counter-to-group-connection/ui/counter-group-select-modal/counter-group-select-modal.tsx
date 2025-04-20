@@ -8,7 +8,7 @@ import type { CounterGroupSelectModalProps } from './model/counter-group-select-
 //UI
 import { CheckboxModal, MainButton, Paragraph } from '@shared/ui/';
 //TEXT CONTENT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 //STYLES
 import { style } from './styles/style';
 
@@ -64,8 +64,8 @@ const CounterGroupSelectModal = ({
 				onClose={() => modalVisibleHandler(false)}
 				onToggle={onGroupToggleListener}
 				items={groups}
-				title={counterText.manageGroupsModalTitle} //add to group or change group
-				itemsIsEmptyText={counterText.noAvailableGroups}
+				title={COUNTER_TEXT.manageGroupsModalTitle}
+				itemsIsEmptyText={COUNTER_TEXT.noAvailableGroups}
 			/>
 		</View>
 	);

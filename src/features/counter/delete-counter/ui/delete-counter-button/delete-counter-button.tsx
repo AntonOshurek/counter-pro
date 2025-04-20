@@ -9,7 +9,7 @@ import type { DeleteCounterButtonProps } from './model/delete-counter-button.mod
 //STYLES
 import { style } from './styles/style';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	const deleteCounter = useDeleteCounter({ counterId });
@@ -21,16 +21,16 @@ const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
 	return (
 		<View style={style.deleteCounterButton}>
 			<Paragraph contentType={'primary'} size={'medium'}>
-				{counterText.deleteCounterButtonLabel}
+				{COUNTER_TEXT.deleteCounterButtonLabel}
 			</Paragraph>
 
 			<DeleteButtonWithConfirm
 				deleteAction={onDeleteListener}
 				confirmText={{
-					body: counterText.deleteCounterConfirmBody,
-					title: counterText.deleteCounterConfirmTitle
+					body: COUNTER_TEXT.deleteCounterConfirmBody,
+					title: COUNTER_TEXT.deleteCounterConfirmTitle
 				}}
-				buttonText={counterText.deleteCounterButtonText}
+				buttonText={COUNTER_TEXT.deleteCounterButtonText}
 			/>
 		</View>
 	);

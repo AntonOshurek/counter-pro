@@ -26,7 +26,7 @@ import type {
 	CounterTopTabsProps
 } from '@shared/types/navigation';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();
@@ -45,7 +45,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	}, [navigation, counter]);
 
 	if (!counter) {
-		return <NotFoundScreen notFoundText={counterText.counterNotFound} />;
+		return <NotFoundScreen notFoundText={COUNTER_TEXT.counterNotFound} />;
 	} else {
 		return (
 			<Tab.Navigator

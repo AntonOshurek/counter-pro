@@ -6,7 +6,7 @@ import { InputField } from '@shared/ui/';
 //MODEL
 import type { ChangeNameFieldProps } from './model/change-name-field.model';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 	const [name, setName] = useState<string>(counterName);
@@ -24,7 +24,7 @@ const ChangeNameField = ({ counterName, counterId }: ChangeNameFieldProps) => {
 		<InputField
 			onChange={handleNameChange}
 			value={name}
-			label={counterText.changeCounterNameInputLabel}
+			label={COUNTER_TEXT.changeCounterNameInputLabel}
 		/>
 	);
 };

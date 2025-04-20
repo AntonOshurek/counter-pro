@@ -4,7 +4,7 @@ import useGroupToCounterConnection from '../../group-to-counter-connection';
 //UI
 import { CreateButton, CheckboxModal } from '@shared/ui/';
 //TEXT
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 //MODEL
 import type { OpenGroupToCounterModalButtonProps } from './model/open-group-to-counter-modal-button.model';
 
@@ -39,8 +39,8 @@ const OpenGroupToCounterModalButton = ({
 				onClose={() => setModalVisible(false)}
 				onToggle={onCounterToggleListener}
 				items={counters}
-				title={groupText.manageCountersModalTitle}
-				itemsIsEmptyText={groupText.noAvailableCounter}
+				title={GROUP_TEXT.manageCountersModalTitle}
+				itemsIsEmptyText={GROUP_TEXT.noAvailableCounter}
 			/>
 		</>
 	);
