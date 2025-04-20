@@ -1,12 +1,12 @@
 //FEATURES
-import ThemeSwitcher from '@features/theme/switch-theme';
+import { ThemeSettingSwitcher } from '@features/app/';
 //WRAPPERS
 import { SettingsGroupWrapper } from '@shared/wrappers';
 
 const UiSettingsWidget = () => {
 	return (
 		<SettingsGroupWrapper>
-			<ThemeSwitcher />
+			<ThemeSettingSwitcher />
 		</SettingsGroupWrapper>
 	);
 };

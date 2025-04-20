@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 //STORE
 import { useAppDispatch } from '@shared/store';
 //ENTITIES
-import { SetNewThemeAction } from '../../../entities/app';
+import { SetNewThemeAction } from '@entities/app';
 //TYPES
 import type { AppThemes } from '@shared/types';
 
