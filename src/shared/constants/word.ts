@@ -1,4 +1,4 @@
-const symbolsAmountOnNavigationHeader = 20;
-const symbolsAmountOnItemCard = 30;
+const SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER = 20;
+const SYMBOLS_AMOUNT_ON_ITEM_CARD = 30; //symbolsAmountOnItemCard
 
-export { symbolsAmountOnNavigationHeader, symbolsAmountOnItemCard };
+export { SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER, SYMBOLS_AMOUNT_ON_ITEM_CARD };

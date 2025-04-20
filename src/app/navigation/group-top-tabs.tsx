@@ -11,7 +11,10 @@ import UseThemeResolver from '../../shared/hooks/useThemeResolver';
 //LIBS
 import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
-import { GroupTopTabsScreens, symbolsAmountOnNavigationHeader } from '@shared/constants';
+import {
+	GroupTopTabsScreens,
+	SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER
+} from '@shared/constants';
 //STYLES
 import { colors } from '@shared/styles';
 //TYPES
@@ -35,7 +38,7 @@ const GroupTopTabs = ({ navigation }: GroupTopTabsProps) => {
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			title: group
-				? truncateWithEllipsis(group.name, symbolsAmountOnNavigationHeader)
+				? truncateWithEllipsis(group.name, SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER)
 				: 'Undefined Group '
 		});
 	}, [navigation, group]);

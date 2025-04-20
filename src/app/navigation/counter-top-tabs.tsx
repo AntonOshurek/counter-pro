@@ -13,7 +13,7 @@ import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //CONSTANTS
 import {
 	CounterTopTabsScreens,
-	symbolsAmountOnNavigationHeader
+  SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER
 } from '@shared/constants';
 //LIBS
 import { truncateWithEllipsis } from '@shared/lib/word-lib';
@@ -39,7 +39,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			title: counter
-				? truncateWithEllipsis(counter.name, symbolsAmountOnNavigationHeader)
+			? truncateWithEllipsis(counter.name, SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER)
 				: 'Unknown counter'
 		});
 	}, [navigation, counter]);
