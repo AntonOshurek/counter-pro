@@ -1,9 +1,9 @@
-// features/theme/switch-theme/counter.mini-decrement-button.mini-increment-button.model1.ts
+// features/app/switch-app/counter.mini-decrement-button.mini-increment-button.model1.ts
 import { useAppSelector } from '../../../shared/store';
 //FEATURES
 import useSwitchTheme from './switch-theme';
 //ENTITIES
-import { SelectorGetTheme } from '../../../entities/theme';
+import { SelectorGetTheme } from '../../../entities/app';
 //CONSTANTS
 import { appThemes } from '../../../shared/constants';
 //UI

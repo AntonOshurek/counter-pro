@@ -4,6 +4,7 @@ import { Group } from './model/group.model';
 import GroupCard from './ui/group-card/group-card';
 import CreatedDate from './ui/created-date/created-date';
 //STORE
+import groupSlice from './store/group-slice';
 import {
 	SelectorGetGroups,
 	SelectorGetGroup,
@@ -38,5 +39,6 @@ export {
 	setNameAction,
 	SelectorGetGroupName,
 	deleteConnectionWithCounterAction,
-	addConnectionWithCounterAction
+	addConnectionWithCounterAction,
+	groupSlice
 };

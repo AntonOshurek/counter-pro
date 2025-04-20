@@ -6,6 +6,7 @@ import CounterStep from './ui/counter-step/counter-step';
 //MODEL
 import { Counter } from './model/counter.model';
 //STORE
+import counterSlice from './store/counter-slice';
 import {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -56,5 +57,6 @@ export {
 	setIsPinnedAction,
 	SelectorGetCountersArray,
 	deleteConnectionWithGroupAction,
-	addConnectionWithGroupAction
+	addConnectionWithGroupAction,
+  counterSlice
 };

@@ -1,9 +1,9 @@
 //SERVICES
 import asyncStorageService from '../async-store-service/async-store.service';
 //STATE
-import { appInitialState } from '../../app/store/state/app-state';
+import { appInitialState } from '@entities/app/store/state/app-state';
 //TYPES
-import type { IAppState } from '../../app/store/model/state.model';
+import type { IAppState } from '@entities/app/';
 
 class AppRepository {
 	#defaultAppState: IAppState;
