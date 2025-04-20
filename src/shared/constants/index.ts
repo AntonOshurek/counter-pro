@@ -6,6 +6,7 @@ import {
 	StackScreens
 } from './navigation-screens';
 import { symbolsAmountOnNavigationHeader, symbolsAmountOnItemCard } from './word';
+import { SortOptions, SORT_OPTIONS } from './sort';
 
 export {
 	Themes,
@@ -16,5 +17,7 @@ export {
 	BottomTabsScreens,
 	StackScreens,
 	symbolsAmountOnNavigationHeader,
-	symbolsAmountOnItemCard
+	symbolsAmountOnItemCard,
+	SortOptions,
+	SORT_OPTIONS
 };

@@ -3,4 +3,4 @@ export const enum SortOptions {
 	ByDate = 'By Date'
 }
 
-export const counterSortOptions = [SortOptions.ByName, SortOptions.ByDate];
+export const SORT_OPTIONS = [SortOptions.ByName, SortOptions.ByDate];

@@ -5,7 +5,7 @@ import useSortTypeSelector from '../../sort-type-selector';
 //ENTITIES
 import { SelectorGetListSortType } from '@entities/group/';
 //VARIABLES
-import { counterSortOptions, SortOptions } from '@shared/constants/sort';
+import { SORT_OPTIONS, SortOptions } from '@shared/constants/';
 //UI
 import { SortModalInHeader } from '@shared/ui/';
 
@@ -19,7 +19,7 @@ const SortTypeSelectorHeaderButton = () => {
 
 	return (
 		<SortModalInHeader<SortOptions>
-			options={counterSortOptions}
+			options={SORT_OPTIONS}
 			currentOption={sortType}
 			onOptionListener={onSortTypeChange}
 		/>
