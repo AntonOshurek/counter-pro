@@ -1,9 +1,9 @@
 //STATE
-import { appInitialState } from '@entities/app/store/state/app-state';
+import { appInitialState } from '../state/app-state';
 //TYPES
-import type { IAppState } from '@entities/app/';
+import type { IAppState } from '../model/app-state.model';
 //ABSTRACT
-import AbstractRepository from '@services/app-repository/abstract-repository';
+import AbstractRepository from '@shared/abstract/abstract-repository';
 
 export class AppRepository extends AbstractRepository<IAppState> {
 	constructor() {

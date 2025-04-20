@@ -1,7 +1,7 @@
 //STORE
 import appSlice from '../app-slice';
 //REPOSITORY
-import appRepository from '@services/app-repository/app-repository';
+import appRepository from '@entities/app/store/repository/app-repository';
 //MODEL
 import type { ISetNewThemeAction, IUpdateStateAction } from '../model/actions.model';
 //TYPES

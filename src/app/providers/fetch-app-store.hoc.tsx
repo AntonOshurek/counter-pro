@@ -4,7 +4,7 @@ import { ComponentType, useEffect } from 'react';
 import { useAppDispatch } from '@shared/store/';
 import { updateState } from '@entities/app/';
 //REPOSITORY
-import appRepository from '../../services/app-repository/app-repository';
+import appRepository from '@entities/app/store/repository/app-repository';
 
 const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
