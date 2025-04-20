@@ -1,5 +1,5 @@
 //CONSTANTS
-import { appThemes, colorThemes } from '../constants';
+import { APP_THEMES, COLOR_THEMES } from '../constants';
 
-export type AppThemes = (typeof appThemes)[number];
-export type ColorThemes = (typeof colorThemes)[number];
+export type AppThemes = (typeof APP_THEMES)[number];
+export type ColorThemes = (typeof COLOR_THEMES)[number];

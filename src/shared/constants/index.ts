@@ -1,4 +1,4 @@
-import { Themes, appThemes, colorThemes } from './theme';
+import { Themes, APP_THEMES, COLOR_THEMES } from './theme';
 import {
 	BottomTabsScreens,
 	CounterTopTabsScreens,
@@ -9,8 +9,8 @@ import { symbolsAmountOnNavigationHeader, symbolsAmountOnItemCard } from './word
 
 export {
 	Themes,
-	appThemes,
-	colorThemes,
+	APP_THEMES,
+	COLOR_THEMES,
 	GroupTopTabsScreens,
 	CounterTopTabsScreens,
 	BottomTabsScreens,

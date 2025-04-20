@@ -11,7 +11,7 @@ import { Paragraph, Switcher } from '@shared/ui/';
 //TYPES
 import type { AppThemes } from '@shared/types';
 //CONSTANTS
-import { appThemes } from '@shared/constants';
+import { APP_THEMES } from '@shared/constants';
 //TEXT
 import { APP_TEXT } from '@shared/text-content/text-content';
 //STYLES
@@ -28,7 +28,7 @@ const ThemeSettingSwitcher = () => {
 			</Paragraph>
 
 			<View style={style.themeSwitcherGroup}>
-				{appThemes.map(theme => (
+				{APP_THEMES.map(theme => (
 					<Switcher<AppThemes>
 						value={theme}
 						isChecked={currentTheme === theme}
