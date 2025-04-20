@@ -32,4 +32,8 @@ const groupText = {
 	manageCountersModalTitle: 'Manage Counters'
 };
 
-export { counterText, groupText };
+const appText = {
+	themeSwitcherAlias: 'theme switcher'
+};
+
+export { counterText, groupText, appText };
