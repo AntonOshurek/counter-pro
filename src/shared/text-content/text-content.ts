@@ -1,4 +1,4 @@
-const counterText = {
+const COUNTER_TEXT = {
 	stepInfoParagraph: 'step',
 	deleteCounterButtonLabel: 'Delete Counter',
 	deleteCounterButtonText: 'Delete',
@@ -17,7 +17,7 @@ const counterText = {
 	manageGroupsModalTitle: 'Manage Group'
 };
 
-const groupText = {
+const GROUP_TEXT = {
 	groupNotFound: "Oops! We couldn't find this group.",
 	pinGroupButtonLabel: 'Pin this group',
 	unpinGroupButtonLabel: 'Unpin this group',
@@ -32,4 +32,8 @@ const groupText = {
 	manageCountersModalTitle: 'Manage Counters'
 };
 
-export { counterText, groupText };
+const APP_TEXT = {
+	themeSwitcherAlias: 'theme switcher'
+};
+
+export { COUNTER_TEXT, GROUP_TEXT, APP_TEXT };

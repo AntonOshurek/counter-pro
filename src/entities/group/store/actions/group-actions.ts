@@ -1,7 +1,9 @@
 //STORE
 import groupSlice from '../group-slice';
+//REPOSITORY
+import groupRepository from '@entities/group/store/repository/counter-repository';
 //MODEL
-import {
+import type {
 	ICreateGroupAction,
 	ISetIsPinnedAction,
 	ISetListSortTypeAction,
@@ -11,7 +13,24 @@ import {
 	IAddConnectionToCounterAction
 } from '../model/action.model';
 //TYPES
-import type { AppThunk } from '@shared/store';
+import type { AppThunk, RootState } from '@shared/store';
+//LIBS
+import { omitKey } from '@shared/lib/object-lib';
+
+const addToGroupRepo = (getState: () => RootState) => {
+	groupRepository
+		.setState(omitKey('groups', getState().group))
+		.then(res => {
+			if (res !== true) {
+				console.log(res);
+				// возможно: dispatch(appSlice.actions.setError(...))
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			// возможно: dispatch(appSlice.actions.setError(...))
+		});
+};
 
 const CreateGroupAction =
 	(action: ICreateGroupAction): AppThunk =>
@@ -29,6 +48,8 @@ const setListSortTypeAction =
 	(action: ISetListSortTypeAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(groupSlice.actions.setListSortType(action));
+
+		addToGroupRepo(getState);
 	};
 
 const deleteGroupAction =

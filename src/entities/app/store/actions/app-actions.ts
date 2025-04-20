@@ -5,25 +5,29 @@ import appRepository from '@entities/app/store/repository/app-repository';
 //MODEL
 import type { ISetNewThemeAction, IUpdateStateAction } from '../model/actions.model';
 //TYPES
-import type { AppThunk } from '@shared/store';
+import type { AppThunk, RootState } from '@shared/store';
+
+const addToAppRepo = (getState: () => RootState) => {
+	appRepository
+		.setState(getState().app)
+		.then(res => {
+			if (res !== true) {
+				console.log(res);
+				// возможно: dispatch(appSlice.actions.setError(...))
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			// возможно: dispatch(appSlice.actions.setError(...))
+		});
+};
 
 const SetNewThemeAction =
 	(action: ISetNewThemeAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(appSlice.actions.changeTheme(action));
 
-		appRepository
-			.setState(getState().app)
-			.then(res => {
-				if (res !== true) {
-					console.log(res);
-					//dispatch error if occur to redux and show this error in styles
-				}
-			})
-			.catch(error => {
-				console.log(error);
-				//dispatch error if occur to redux and show this error in styles
-			});
+		addToAppRepo(getState);
 	};
 
 const updateState =
@@ -31,18 +35,7 @@ const updateState =
 	(dispatch, getState) => {
 		dispatch(appSlice.actions.setState(action));
 
-		appRepository
-			.setState(getState().app)
-			.then(res => {
-				if (res !== true) {
-					console.log(res);
-					//dispatch error if occur to redux and show this error in styles
-				}
-			})
-			.catch(error => {
-				console.log(error);
-				//dispatch error if occur to redux and show this error in styles
-			});
+		addToAppRepo(getState);
 	};
 
 export { SetNewThemeAction, updateState };

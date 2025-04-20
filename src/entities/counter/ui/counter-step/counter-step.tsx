@@ -8,7 +8,7 @@ import { Paragraph } from '@shared/ui';
 //MODEL
 import type { CounterStepProps } from './model/counter-step.model';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const CounterStep = ({ additionalClass, counterId }: CounterStepProps) => {
 	const step = useAppSelector(SelectorGetCounterStep(counterId));
@@ -16,7 +16,7 @@ const CounterStep = ({ additionalClass, counterId }: CounterStepProps) => {
 	return (
 		<View style={additionalClass}>
 			<Paragraph contentType={'tertiary'} size={'xSmall'}>
-				{counterText.stepInfoParagraph} {step}
+				{COUNTER_TEXT.stepInfoParagraph} {step}
 			</Paragraph>
 		</View>
 	);

@@ -8,12 +8,14 @@ import useSwitchTheme from '../../switch-theme';
 import { SelectorGetTheme } from '@entities/app';
 //UI
 import { Paragraph, Switcher } from '@shared/ui/';
-//STYLES
-import style from './styles/style';
 //TYPES
 import type { AppThemes } from '@shared/types';
 //CONSTANTS
-import { appThemes } from '@shared/constants';
+import { APP_THEMES } from '@shared/constants';
+//TEXT
+import { APP_TEXT } from '@shared/text-content/text-content';
+//STYLES
+import style from './styles/style';
 
 const ThemeSettingSwitcher = () => {
 	const currentTheme = useAppSelector(SelectorGetTheme());
@@ -22,11 +24,11 @@ const ThemeSettingSwitcher = () => {
 	return (
 		<View style={style.themeSwitcher}>
 			<Paragraph size='medium' contentType='secondary' textTransform='capitalize'>
-				theme switcher
+				{APP_TEXT.themeSwitcherAlias}
 			</Paragraph>
 
 			<View style={style.themeSwitcherGroup}>
-				{appThemes.map(theme => (
+				{APP_THEMES.map(theme => (
 					<Switcher<AppThemes>
 						value={theme}
 						isChecked={currentTheme === theme}

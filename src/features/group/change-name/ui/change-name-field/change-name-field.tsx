@@ -6,7 +6,7 @@ import { InputField } from '@shared/ui/';
 //MODEL
 import type { ChangeNameFieldProps } from './model/change-name-field.model';
 //TEXT
-import { groupText } from '@shared/text-content/text-content';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 
 const ChangeNameField = ({ groupName, groupId }: ChangeNameFieldProps) => {
 	const [name, setName] = useState<string>(groupName);
@@ -24,7 +24,7 @@ const ChangeNameField = ({ groupName, groupId }: ChangeNameFieldProps) => {
 		<InputField
 			onChange={handleNameChange}
 			value={name}
-			label={groupText.changeGroupNameInputLabel}
+			label={GROUP_TEXT.changeGroupNameInputLabel}
 		/>
 	);
 };

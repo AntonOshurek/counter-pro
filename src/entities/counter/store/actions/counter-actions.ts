@@ -1,7 +1,9 @@
 //STORE
 import counterSlice from '../counter-slice';
+//REPOSITORY
+import counterRepository from '../repository/counter-repository';
 //MODEL
-import {
+import type {
 	ICreateCounterAction,
 	IDecrementAction,
 	IDeleteCounterAction,
@@ -16,7 +18,24 @@ import {
 	IAddConnectionToGroupAction
 } from '../model/action.model';
 //TYPES
-import type { AppThunk } from '@shared/store';
+import type { AppThunk, RootState } from '@shared/store';
+//LIBS
+import { omitKey } from '@shared/lib/object-lib';
+
+const addToCounterRepo = (getState: () => RootState) => {
+	counterRepository
+		.setState(omitKey('counters', getState().counter))
+		.then(res => {
+			if (res !== true) {
+				console.log(res);
+				// возможно: dispatch(appSlice.actions.setError(...))
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			// возможно: dispatch(appSlice.actions.setError(...))
+		});
+};
 
 const CreateCounterAction =
 	(action: ICreateCounterAction): AppThunk =>
@@ -70,6 +89,8 @@ const setListSortTypeAction =
 	(action: ISetListSortTypeAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(counterSlice.actions.setListSortType(action));
+
+		addToCounterRepo(getState);
 	};
 
 const setIsPinnedAction =

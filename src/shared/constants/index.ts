@@ -1,20 +1,23 @@
-import { Themes, appThemes, colorThemes } from './theme';
+import { Themes, APP_THEMES, COLOR_THEMES } from './theme';
 import {
 	BottomTabsScreens,
 	CounterTopTabsScreens,
 	GroupTopTabsScreens,
 	StackScreens
 } from './navigation-screens';
-import { symbolsAmountOnNavigationHeader, symbolsAmountOnItemCard } from './word';
+import { SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER, SYMBOLS_AMOUNT_ON_ITEM_CARD } from './word';
+import { SortOptions, SORT_OPTIONS } from './sort';
 
 export {
 	Themes,
-	appThemes,
-	colorThemes,
+	APP_THEMES,
+	COLOR_THEMES,
 	GroupTopTabsScreens,
 	CounterTopTabsScreens,
 	BottomTabsScreens,
 	StackScreens,
-	symbolsAmountOnNavigationHeader,
-	symbolsAmountOnItemCard
+	SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER,
+	SYMBOLS_AMOUNT_ON_ITEM_CARD,
+	SortOptions,
+	SORT_OPTIONS
 };

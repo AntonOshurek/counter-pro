@@ -5,7 +5,7 @@ import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //LIBS
 import { truncateWithEllipsis } from '@shared/lib/word-lib';
 //CONSTANTS
-import { symbolsAmountOnItemCard } from '@shared/constants';
+import { SYMBOLS_AMOUNT_ON_ITEM_CARD } from '@shared/constants';
 //MODEL
 import type { CounterCardProps } from './model/counter-card.model';
 //UI
@@ -31,7 +31,7 @@ const CounterCard = ({
 			<View style={s.header}>
 				<OpenCounter counterId={counter.id} additionalClass={s.touchableHeader}>
 					<Paragraph contentType={'primary'} size={'medium'}>
-						{truncateWithEllipsis(counter.name, symbolsAmountOnItemCard)}
+						{truncateWithEllipsis(counter.name, SYMBOLS_AMOUNT_ON_ITEM_CARD)}
 					</Paragraph>
 					{counter.isPinned && <KeepIcon width={15} height={15} />}
 				</OpenCounter>

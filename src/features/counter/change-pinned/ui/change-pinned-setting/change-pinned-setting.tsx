@@ -9,7 +9,7 @@ import { SelectorGetIsPinned } from '../../../../../entities/counter';
 //UI
 import { Paragraph, ChangePinnedButton } from '@shared/ui/';
 //VARIABLES
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 //MODEL
 import { ChangePinnedSettingProps } from './model/change-pinned-setting.model';
 //STYLES
@@ -29,8 +29,8 @@ const ChangePinnedSetting = ({ counterId }: ChangePinnedSettingProps) => {
 			<TouchableOpacity onPress={onChange}>
 				<Paragraph contentType={isPinned ? 'primary' : 'secondary'} size={'medium'}>
 					{isPinned
-						? counterText.unpinCounterButtonLabel
-						: counterText.pinCounterButtonLabel}
+						? COUNTER_TEXT.unpinCounterButtonLabel
+						: COUNTER_TEXT.pinCounterButtonLabel}
 				</Paragraph>
 			</TouchableOpacity>
 

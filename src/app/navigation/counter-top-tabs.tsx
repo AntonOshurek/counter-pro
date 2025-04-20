@@ -13,7 +13,7 @@ import UseThemeResolver from '@shared/hooks/useThemeResolver';
 //CONSTANTS
 import {
 	CounterTopTabsScreens,
-	symbolsAmountOnNavigationHeader
+  SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER
 } from '@shared/constants';
 //LIBS
 import { truncateWithEllipsis } from '@shared/lib/word-lib';
@@ -26,7 +26,7 @@ import type {
 	CounterTopTabsProps
 } from '@shared/types/navigation';
 //TEXT
-import { counterText } from '@shared/text-content/text-content';
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	const Tab = createMaterialTopTabNavigator<CounterTopTabsNavigationParams>();
@@ -39,13 +39,13 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			title: counter
-				? truncateWithEllipsis(counter.name, symbolsAmountOnNavigationHeader)
+			? truncateWithEllipsis(counter.name, SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER)
 				: 'Unknown counter'
 		});
 	}, [navigation, counter]);
 
 	if (!counter) {
-		return <NotFoundScreen notFoundText={counterText.counterNotFound} />;
+		return <NotFoundScreen notFoundText={COUNTER_TEXT.counterNotFound} />;
 	} else {
 		return (
 			<Tab.Navigator
