@@ -15,7 +15,8 @@ import {
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
 	SelectorGetIsPinned,
-	SelectorGetCountersArray
+	SelectorGetCountersArray,
+	SelectorGetVibrationOnClick
 } from './store/selectors/counter-selectors';
 import {
 	IncrementAction,
@@ -58,5 +59,6 @@ export {
 	SelectorGetCountersArray,
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction,
-  counterSlice
+	counterSlice,
+	SelectorGetVibrationOnClick
 };

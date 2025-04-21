@@ -1,6 +1,6 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
-import { View, ScrollView } from 'react-native';
+import { View } from 'react-native';
 //NAVIGATION
 import type { CounterScreenRouteProp } from '@shared/types/navigation';
 //STORE

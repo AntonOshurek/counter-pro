@@ -6,6 +6,7 @@ const now = new Date();
 
 const counterInitialState: ICounterState = {
 	counterListSortType: SortOptions.ByDate,
+	vibrationOnClick: true,
 	counters: {
 		['counter-1']: {
 			id: 'counter-1',
@@ -15,7 +16,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-1',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		},
 		['counter-2']: {
 			id: 'counter-2',
@@ -25,7 +26,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-1',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		},
 		['counter-3']: {
 			id: 'counter-3',
@@ -35,7 +36,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-1',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		},
 		['counter-4']: {
 			id: 'counter-4',
@@ -45,7 +46,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-2',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		},
 		['counter-5']: {
 			id: 'counter-5',
@@ -55,7 +56,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-2',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		},
 		['counter-6']: {
 			id: 'counter-6',
@@ -65,7 +66,7 @@ const counterInitialState: ICounterState = {
 			group: 'g-2',
 			createdAt: now.toISOString(),
 			createdAtTimestamp: now.getTime(),
-      isPinned: false
+			isPinned: false
 		}
 	}
 };

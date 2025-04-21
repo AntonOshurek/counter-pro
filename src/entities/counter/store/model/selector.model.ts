@@ -32,6 +32,10 @@ interface ISelectorGetIsPinned {
 	(counterId: string): (state: RootState) => boolean;
 }
 
+interface ISelectorGetVibrationOnClick {
+	(): (state: RootState) => boolean;
+}
+
 export {
 	ISelectorGetCounter,
 	ISelectorGetCounters,
@@ -39,5 +43,6 @@ export {
 	ISelectorGetCounterStep,
 	ISelectorGetCounterCreatedDate,
 	ISelectorGetListSortType,
-	ISelectorGetIsPinned
+	ISelectorGetIsPinned,
+	ISelectorGetVibrationOnClick
 };
