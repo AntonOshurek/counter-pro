@@ -1,6 +1,6 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 //NAVIGATION
 import type { CounterScreenRouteProp } from '@shared/types/navigation';
 //STORE
@@ -24,7 +24,7 @@ const CounterSettingsScreen = () => {
 	const counter = useAppSelector(SelectorGetCounter(counterId));
 
 	return (
-		<ScreenLayout additionalClass={style.counterSettingsScreen}>
+		<ScreenLayout additionalClass={style.counterSettingsScreen} withScroll={true}>
 			<View style={style.settingsGroup}>
 				<CounterCriticalOptionsWidget counter={counter} />
 			</View>

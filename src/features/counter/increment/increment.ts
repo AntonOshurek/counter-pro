@@ -1,3 +1,5 @@
+//NATIVE
+import { Vibration } from 'react-native';
 //ENTITIES
 import { IncrementAction, SelectorGetCounterStep } from '@entities/counter';
 //STORE
@@ -10,6 +12,7 @@ const useIncrement = ({ counterId }: UseIncrementProps) => {
 	const step = useAppSelector(SelectorGetCounterStep(counterId));
 
 	return () => {
+    Vibration.vibrate(15);
 		dispatch(IncrementAction({ counterId, amount: step }));
 	};
 };
