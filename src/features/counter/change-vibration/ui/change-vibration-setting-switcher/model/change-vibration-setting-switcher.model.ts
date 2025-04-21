@@ -1,3 +1,0 @@
-interface ChangeVibrationSettingSwitcherProps {}
-
-export { ChangeVibrationSettingSwitcherProps };

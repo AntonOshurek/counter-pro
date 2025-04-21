@@ -2,13 +2,14 @@
 import { View } from 'react-native';
 //STORE
 import { useAppSelector } from '@shared/store';
-//MODEL
-// import { ChangeVibrationSettingSwitcherProps } from './model/change-vibration-setting-switcher.model';
 //FEATURES
 import useChangeVibration from '../../change-vibration';
-import { Paragraph, Switcher } from '@shared/ui';
-import { APP_TEXT } from '@shared/text-content/text-content';
+//ENTITIES
 import { SelectorGetVibrationOnClick } from '@entities/counter';
+//UI
+import { Switcher } from '@shared/ui';
+//TEXT
+import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
 const ChangeVibrationSettingSwitcher = () => {
 	const vibration = useAppSelector(SelectorGetVibrationOnClick());
@@ -20,15 +21,11 @@ const ChangeVibrationSettingSwitcher = () => {
 
 	return (
 		<View>
-			<Paragraph size='medium' contentType='secondary' textTransform='capitalize'>
-				{APP_TEXT.themeSwitcherAlias}
-			</Paragraph>
-
 			<Switcher<boolean>
 				value={vibration}
 				isChecked={vibration}
 				onChange={onSwitcherHandler}
-				label={'Vibration on Inc or Dec'}
+				label={COUNTER_TEXT.vibrationSwitcher}
 			/>
 		</View>
 	);
