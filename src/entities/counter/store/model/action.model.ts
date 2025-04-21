@@ -57,6 +57,10 @@ interface IAddConnectionToGroupAction {
 	counterId: string;
 }
 
+interface ISetVibrationOnCounterClick {
+	vibration: boolean;
+}
+
 export {
 	IIncrementAction,
 	IDecrementAction,
@@ -69,5 +73,6 @@ export {
 	ISetListSortTypeAction,
 	ISetIsPinnedAction,
 	IDeleteConnectionWithGroupAction,
-	IAddConnectionToGroupAction
+	IAddConnectionToGroupAction,
+	ISetVibrationOnCounterClick
 };

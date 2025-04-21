@@ -30,7 +30,8 @@ import {
 	setListSortTypeAction,
 	setIsPinnedAction,
 	deleteConnectionWithGroupAction,
-	addConnectionWithGroupAction
+	addConnectionWithGroupAction,
+	setVibrationOnCounterClickAction
 } from './store/actions/counter-actions';
 
 export {
@@ -60,5 +61,6 @@ export {
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction,
 	counterSlice,
-	SelectorGetVibrationOnClick
+	SelectorGetVibrationOnClick,
+	setVibrationOnCounterClickAction
 };
