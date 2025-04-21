@@ -14,7 +14,8 @@ const COUNTER_TEXT = {
 	counterNotFound: "Oops! We couldn't find this counter.",
 	noAvailableGroups:
 		'No available groups. Please create new group to add this counter to this group.',
-	manageGroupsModalTitle: 'Manage Group'
+	manageGroupsModalTitle: 'Manage Group',
+  vibrationSwitcher: 'Vibration on Inc or Dec'
 };
 
 const GROUP_TEXT = {

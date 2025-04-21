@@ -8,7 +8,8 @@ import type {
 	ISelectorGetCounters,
 	ISelectorGetCounterStep,
 	ISelectorGetIsPinned,
-	ISelectorGetListSortType
+	ISelectorGetListSortType,
+	ISelectorGetVibrationOnClick
 } from '../model/selector.model';
 import type { Counter } from '../../model/counter.model';
 //LIBS
@@ -53,6 +54,11 @@ const SelectorGetIsPinned: ISelectorGetIsPinned =
 		return state.counter.counters[counterId].isPinned;
 	};
 
+const SelectorGetVibrationOnClick: ISelectorGetVibrationOnClick =
+	() => (state: RootState) => {
+		return state.counter.vibrationOnClick;
+	};
+
 export {
 	SelectorGetCounter,
 	SelectorGetCounters,
@@ -61,5 +67,6 @@ export {
 	SelectorGetCounterCreatedDate,
 	SelectorGetListSortType,
 	SelectorGetIsPinned,
-	SelectorGetCountersArray
+	SelectorGetCountersArray,
+	SelectorGetVibrationOnClick
 };

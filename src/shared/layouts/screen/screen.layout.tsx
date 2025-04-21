@@ -1,5 +1,5 @@
 //NATIVE
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 //HOOKS
 import useThemeResolver from '@shared/hooks/useThemeResolver';
@@ -14,20 +14,35 @@ import { colors } from '@shared/styles';
 const ScreenLayout = ({
 	children,
 	additionalClass,
-	withoutPaddings
+	withoutPaddings,
+	withScroll
 }: ScreenLayoutProps) => {
 	const theme = useThemeResolver();
 	const s = style(theme);
 
-	return (
-		<View
-			style={[
-				withoutPaddings ? s.ScreenLayoutWithoutPadding : s.ScreenLayout,
-				additionalClass
-			]}
+	const containerStyle = [
+		withoutPaddings ? s.ScreenLayoutWithoutPadding : s.ScreenLayout,
+		additionalClass
+	];
+
+	const statusBarStyle = theme === Themes.dark ? Themes.light : Themes.dark;
+
+	return withScroll ? (
+		<ScrollView
+			contentContainerStyle={containerStyle}
+			showsVerticalScrollIndicator={false}
 		>
 			<StatusBar
-				style={theme === Themes.dark ? Themes.light : Themes.dark}
+				style={statusBarStyle}
+				backgroundColor={colors[theme].mainSurfaceTertiary}
+				translucent={true}
+			/>
+			{children}
+		</ScrollView>
+	) : (
+		<View style={containerStyle}>
+			<StatusBar
+				style={statusBarStyle}
 				backgroundColor={colors[theme].mainSurfaceTertiary}
 				translucent={true}
 			/>

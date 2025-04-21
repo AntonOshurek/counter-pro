@@ -15,7 +15,8 @@ import type {
 	ISetStepAction,
 	ISetToGroupAction,
 	IDeleteConnectionWithGroupAction,
-	IAddConnectionToGroupAction
+	IAddConnectionToGroupAction,
+	ISetVibrationOnCounterClick
 } from '../model/action.model';
 //TYPES
 import type { AppThunk, RootState } from '@shared/store';
@@ -111,6 +112,12 @@ const addConnectionWithGroupAction =
 		dispatch(counterSlice.actions.addConnectionWithGroup(action));
 	};
 
+const setVibrationOnCounterClickAction =
+	(action: ISetVibrationOnCounterClick): AppThunk =>
+	(dispatch, getState) => {
+		dispatch(counterSlice.actions.setVibrationOnCounterClick(action));
+	};
+
 export {
 	IncrementAction,
 	DecrementAction,
@@ -123,5 +130,6 @@ export {
 	setListSortTypeAction,
 	setIsPinnedAction,
 	deleteConnectionWithGroupAction,
-	addConnectionWithGroupAction
+	addConnectionWithGroupAction,
+	setVibrationOnCounterClickAction
 };

@@ -14,6 +14,7 @@ import SortTypeSelectorHeaderButton from './sort-type-selector/ui/sort-type-sele
 import ChangePinnedSetting from './change-pinned/ui/change-pinned-setting/change-pinned-setting';
 import useCounterToGroupConnection from './counter-to-group-connection/counter-to-group-connection';
 import CounterGroupSelectModal from './counter-to-group-connection/ui/counter-group-select-modal/counter-group-select-modal';
+import ChangeVibrationSettingSwitcher from './change-vibration/ui/change-vibration-setting-switcher/change-vibration-setting-switcher';
 
 export {
 	CreateNewCounterButton,
@@ -31,5 +32,6 @@ export {
 	SortTypeSelectorHeaderButton,
 	ChangePinnedSetting,
 	useCounterToGroupConnection,
-	CounterGroupSelectModal
+	CounterGroupSelectModal,
+	ChangeVibrationSettingSwitcher
 };

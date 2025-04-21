@@ -14,7 +14,8 @@ import type {
 	ISetListSortTypeAction,
 	ISetIsPinnedAction,
 	IDeleteConnectionWithGroupAction,
-	IAddConnectionToGroupAction
+	IAddConnectionToGroupAction,
+	ISetVibrationOnCounterClick
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -88,6 +89,13 @@ const counterSlice = createSlice({
 			if (state.counters[counterId].group === groupId) {
 				state.counters[counterId].group = '';
 			}
+		},
+		setVibrationOnCounterClick: (
+			state,
+			action: PayloadAction<ISetVibrationOnCounterClick>
+		) => {
+			const { vibration } = action.payload;
+			state.vibrationOnClick = vibration;
 		}
 	}
 });

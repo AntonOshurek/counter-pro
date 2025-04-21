@@ -1,14 +1,12 @@
 //WRAPPERS
 import { SettingsGroupWrapper } from '@shared/wrappers';
-//UI
-import { Paragraph } from '@shared/ui';
+//FEATURES
+import { ChangeVibrationSettingSwitcher } from '@features/counter';
 
 const SystemSettingsWidget = () => {
 	return (
 		<SettingsGroupWrapper>
-			<Paragraph contentType={'secondary'} size={'medium'} textTransform={'capitalize'}>
-				System Settings
-			</Paragraph>
+			<ChangeVibrationSettingSwitcher />
 		</SettingsGroupWrapper>
 	);
 };
