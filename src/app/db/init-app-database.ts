@@ -8,8 +8,6 @@ const initAppDatabase = async (db: SQLiteDatabase) => {
 
 	await initCounterTable(db);
 	// await initGroupTable(db);
-
-	console.log('[SQLite] Database initialized');
 };
 
 export { initAppDatabase };
