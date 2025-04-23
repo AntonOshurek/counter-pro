@@ -1,7 +1,7 @@
 //STORE
 import groupSlice from '../group-slice';
 //REPOSITORY
-import groupRepository from '@entities/group/store/repository/counter-repository';
+import groupRepository from '../repository/group-repository';
 //MODEL
 import type {
 	ICreateGroupAction,
