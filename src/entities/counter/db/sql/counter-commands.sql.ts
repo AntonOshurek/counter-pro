@@ -11,4 +11,30 @@ const CREATE_COUNTER_TABLE_SQL = `
   );
 `;
 
-export { CREATE_COUNTER_TABLE_SQL }
+const SELECT_ALL_COUNTERS_QUERY = `SELECT * FROM counters`;
+
+const INSERT_COUNTER_QUERY = `
+  INSERT INTO counters (
+    id, name, step, count, group_name, created_at, is_pinned, created_at_timestamp
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+
+const DELETE_COUNTER_BY_ID_QUERY = `DELETE FROM counters WHERE id = ?`;
+
+const UPDATE_COUNTER_QUERY = `
+  UPDATE counters SET
+    name = ?,
+    step = ?,
+    count = ?,
+    group_name = ?,
+    created_at = ?,
+    is_pinned = ?,
+    created_at_timestamp = ?
+  WHERE id = ?`;
+
+export {
+  CREATE_COUNTER_TABLE_SQL,
+  SELECT_ALL_COUNTERS_QUERY,
+  INSERT_COUNTER_QUERY,
+  DELETE_COUNTER_BY_ID_QUERY,
+  UPDATE_COUNTER_QUERY
+};

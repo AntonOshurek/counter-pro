@@ -46,8 +46,17 @@ const CreateCounterAction =
 
 const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
-	(dispatch, getState) => {
+	async (dispatch, getState, { counterDbRepository }) => {
 		dispatch(counterSlice.actions.increment(action));
+
+		const state = getState();
+		const updatedCounter = state.counter.counters[action.counterId];
+
+		try {
+			await counterDbRepository.updateOne(updatedCounter);
+		} catch (error) {
+			console.error('Failed to update counter in SQLite:', error);
+		}
 	};
 
 const ResetAction =

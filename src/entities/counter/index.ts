@@ -7,6 +7,7 @@ import CounterStep from './ui/counter-step/counter-step';
 import { Counter } from './model/counter.model';
 //DB
 import { initCounterTable } from './db/init-counter-table';
+import { useCounterDbRepository } from './store/repository/counter-db-repository';
 //STORE
 import counterSlice from './store/counter-slice';
 import {
@@ -65,5 +66,6 @@ export {
 	counterSlice,
 	SelectorGetVibrationOnClick,
 	setVibrationOnCounterClickAction,
-	initCounterTable
+	initCounterTable,
+	useCounterDbRepository
 };
