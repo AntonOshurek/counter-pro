@@ -13,7 +13,7 @@ import CounterDbRepository from '@entities/counter/store/repository/counter-db-r
 // 	}
 // });
 
-type ExtraThunkArg = {
+export type ExtraThunkArg = {
 	counterDbRepository: CounterDbRepository;
 };
 
