@@ -2,13 +2,20 @@
 import App from './App';
 //STORE
 import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { initAppDatabase } from './db/init-app-database';
+import { SQLiteProvider } from 'expo-sqlite';
+import StoreProvider from './providers/store-provider.hoc';
+// import { store } from './store/store';
 
 const Root = () => {
 	return (
-			<Provider store={store}>
+		<SQLiteProvider databaseName='app.db' onInit={initAppDatabase}>
+			<StoreProvider>
 				<App />
-			</Provider>
+			</StoreProvider>
+		</SQLiteProvider>
+		// <Provider store={store}>
+		// </Provider>
 	);
 };
 

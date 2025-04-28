@@ -10,8 +10,9 @@ import {
 	SELECT_ALL_COUNTERS_QUERY,
 	UPDATE_COUNTER_QUERY
 } from '../../db/sql/counter-commands.sql';
+import { useSQLiteContext } from 'expo-sqlite';
 
-export class CounterRepository extends SQLiteRepository<Counter> {
+export class CounterDbRepository extends SQLiteRepository<Counter> {
 	constructor(service: SQLiteService) {
 		super(service, 'counters');
 	}
@@ -54,4 +55,11 @@ export class CounterRepository extends SQLiteRepository<Counter> {
 	}
 }
 
-export default CounterRepository;
+export const useCounterDbRepository = () => {
+	const db = useSQLiteContext();
+	const sqliteService = new SQLiteService(db);
+	const counterDbRepository = new CounterDbRepository(sqliteService);
+	return counterDbRepository;
+};
+
+export default CounterDbRepository;
