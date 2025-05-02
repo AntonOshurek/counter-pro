@@ -1,4 +1,3 @@
-//REACT
 import { ComponentType, useEffect } from 'react';
 //STORE
 import { useAppDispatch } from '@shared/store/';

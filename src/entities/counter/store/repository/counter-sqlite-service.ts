@@ -57,4 +57,6 @@ export class CounterSqliteService extends SqliteService<Counter> {
 	}
 }
 
-export default CounterSqliteService;
+const counterSqliteService = new CounterSqliteService();
+
+export default counterSqliteService;

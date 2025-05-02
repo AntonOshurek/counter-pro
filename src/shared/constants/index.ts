@@ -8,6 +8,7 @@ import {
 import { SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER, SYMBOLS_AMOUNT_ON_ITEM_CARD } from './word';
 import { SortOptions, SORT_OPTIONS } from './sort';
 import { VIBRATION_DURATION_ON_COUNTER_CLICK, COUNTER_SQL_TABLE_NAME } from './counter';
+import { DATABASE_NAME } from './sqlite';
 
 export {
 	Themes,
@@ -22,5 +23,6 @@ export {
 	SortOptions,
 	SORT_OPTIONS,
 	VIBRATION_DURATION_ON_COUNTER_CLICK,
-	COUNTER_SQL_TABLE_NAME
+	COUNTER_SQL_TABLE_NAME,
+	DATABASE_NAME
 };

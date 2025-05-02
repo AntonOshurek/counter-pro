@@ -2,8 +2,10 @@
 import counterSlice from '../counter-slice';
 //REPOSITORY
 import counterRepository from '../repository/counter-repository';
+//SERVICES
+import counterSqliteService from '@entities/counter/store/repository/counter-sqlite-service';
 //MODEL
-import type {
+import {
 	ICreateCounterAction,
 	IDecrementAction,
 	IDeleteCounterAction,
@@ -16,7 +18,8 @@ import type {
 	ISetToGroupAction,
 	IDeleteConnectionWithGroupAction,
 	IAddConnectionToGroupAction,
-	ISetVibrationOnCounterClick
+	ISetVibrationOnCounterClick,
+	IUpdateState
 } from '../model/action.model';
 //TYPES
 import type { AppThunk, RootState } from '@shared/store';
@@ -37,6 +40,12 @@ const addToCounterRepo = (getState: () => RootState) => {
 			// возможно: dispatch(appSlice.actions.setError(...))
 		});
 };
+
+const UpdateStateAction =
+	(action: IUpdateState): AppThunk =>
+	async (dispatch, getState) => {
+		dispatch(counterSlice.actions.updateState({ newState: action.newState }));
+	};
 
 const CreateCounterAction =
 	(action: ICreateCounterAction): AppThunk =>
@@ -76,8 +85,14 @@ const setToGroupAction =
 
 const setNameAction =
 	(action: ISetNameAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.setName(action));
+
+		const state = getState();
+		const counter = state.counter.counters[action.counterId];
+
+		if (!counter) return;
+		await counterSqliteService.updateOne(db, counter);
 	};
 
 const deleteCounterAction =
@@ -133,5 +148,6 @@ export {
 	setIsPinnedAction,
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction,
-	setVibrationOnCounterClickAction
+	setVibrationOnCounterClickAction,
+	UpdateStateAction
 };
