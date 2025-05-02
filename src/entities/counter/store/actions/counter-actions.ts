@@ -40,32 +40,14 @@ const addToCounterRepo = (getState: () => RootState) => {
 
 const CreateCounterAction =
 	(action: ICreateCounterAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.createCounter({ newCounter: action.newCounter }));
-
-		const state = getState();
-		const createdCounter = state.counter.counters[action.newCounter.id];
-
-		try {
-			await counterDbRepository.insertOne(createdCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.increment(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const ResetAction =
@@ -76,74 +58,32 @@ const ResetAction =
 
 const DecrementAction =
 	(action: IDecrementAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.decrement(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const SetStepAction =
 	(action: ISetStepAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.setStep(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const setToGroupAction =
 	(action: ISetToGroupAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.setToGroup(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const setNameAction =
 	(action: ISetNameAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.setName(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const deleteCounterAction =
 	(action: IDeleteCounterAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.delete(action));
-
-		try {
-			await counterDbRepository.deleteById(action.counterId);
-		} catch (error) {
-			console.error('Failed to delete counter in SQLite:', error);
-		}
 	};
 
 const setListSortTypeAction =
@@ -156,47 +96,20 @@ const setListSortTypeAction =
 
 const setIsPinnedAction =
 	(action: ISetIsPinnedAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.setIsPinnedCounter(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const deleteConnectionWithGroupAction =
 	(action: IDeleteConnectionWithGroupAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.deleteConnectionWithGroup(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const addConnectionWithGroupAction =
 	(action: IAddConnectionToGroupAction): AppThunk =>
-	async (dispatch, getState, { counterDbRepository }) => {
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.addConnectionWithGroup(action));
-
-		const state = getState();
-		const updatedCounter = state.counter.counters[action.counterId];
-
-		try {
-			await counterDbRepository.updateOne(updatedCounter);
-		} catch (error) {
-			console.error('Failed to update counter in SQLite:', error);
-		}
 	};
 
 const setVibrationOnCounterClickAction =
