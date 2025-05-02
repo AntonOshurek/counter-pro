@@ -25,6 +25,8 @@ import {
 import type { AppThunk, RootState } from '@shared/store';
 //LIBS
 import { omitKey } from '@shared/lib/object-lib';
+import { SQLiteDatabase } from 'expo-sqlite';
+import type { Counter } from '@entities/counter';
 
 const addToCounterRepo = (getState: () => RootState) => {
 	counterRepository
@@ -41,6 +43,23 @@ const addToCounterRepo = (getState: () => RootState) => {
 		});
 };
 
+const updateOne = async (
+	getState: () => RootState,
+	counterId: string,
+	db: SQLiteDatabase
+) => {
+	const state = getState();
+	const counter = state.counter.counters[counterId];
+
+	if (!counter) return;
+	await counterSqliteService.updateOne(db, counter);
+};
+
+const insertOne = async (counter: Counter, db: SQLiteDatabase) => {
+	if (!counter) return;
+	await counterSqliteService.insertOne(db, counter);
+};
+
 const UpdateStateAction =
 	(action: IUpdateState): AppThunk =>
 	async (dispatch, getState) => {
@@ -49,38 +68,50 @@ const UpdateStateAction =
 
 const CreateCounterAction =
 	(action: ICreateCounterAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.createCounter({ newCounter: action.newCounter }));
+
+		await insertOne(action.newCounter, db);
 	};
 
 const IncrementAction =
 	(action: IIncrementAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.increment(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const ResetAction =
 	(action: IResetAction): AppThunk =>
-	(dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.reset(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const DecrementAction =
 	(action: IDecrementAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.decrement(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const SetStepAction =
 	(action: ISetStepAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.setStep(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const setToGroupAction =
 	(action: ISetToGroupAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.setToGroup(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const setNameAction =
@@ -88,17 +119,15 @@ const setNameAction =
 	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.setName(action));
 
-		const state = getState();
-		const counter = state.counter.counters[action.counterId];
-
-		if (!counter) return;
-		await counterSqliteService.updateOne(db, counter);
+		await updateOne(getState, action.counterId, db);
 	};
 
 const deleteCounterAction =
 	(action: IDeleteCounterAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.delete(action));
+
+		await counterSqliteService.deleteById(db, action.counterId);
 	};
 
 const setListSortTypeAction =
@@ -111,20 +140,26 @@ const setListSortTypeAction =
 
 const setIsPinnedAction =
 	(action: ISetIsPinnedAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.setIsPinnedCounter(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const deleteConnectionWithGroupAction =
 	(action: IDeleteConnectionWithGroupAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.deleteConnectionWithGroup(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const addConnectionWithGroupAction =
 	(action: IAddConnectionToGroupAction): AppThunk =>
-	async (dispatch, getState) => {
+	async (dispatch, getState, { db }) => {
 		dispatch(counterSlice.actions.addConnectionWithGroup(action));
+
+		await updateOne(getState, action.counterId, db);
 	};
 
 const setVibrationOnCounterClickAction =
