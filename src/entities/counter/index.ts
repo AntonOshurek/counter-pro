@@ -7,7 +7,7 @@ import CounterStep from './ui/counter-step/counter-step';
 import { Counter } from './model/counter.model';
 //DB
 import { initCounterTable } from './db/init-counter-table';
-import { useCounterDbRepository } from './store/repository/counter-db-repository';
+import { useCounterDbRepository } from './store/repository/counter-sqlite-service';
 //STORE
 import counterSlice from './store/counter-slice';
 import {

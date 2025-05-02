@@ -1,5 +1,8 @@
+//CONSTANTS
+import { COUNTER_SQL_TABLE_NAME } from '@shared/constants';
+
 const CREATE_COUNTER_TABLE_SQL = `
-  CREATE TABLE IF NOT EXISTS counters (
+  CREATE TABLE IF NOT EXISTS ${COUNTER_SQL_TABLE_NAME} (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     step INTEGER NOT NULL,
@@ -11,17 +14,17 @@ const CREATE_COUNTER_TABLE_SQL = `
   );
 `;
 
-const SELECT_ALL_COUNTERS_QUERY = `SELECT * FROM counters`;
+const SELECT_ALL_COUNTERS_QUERY = `SELECT * FROM ${COUNTER_SQL_TABLE_NAME}`;
 
 const INSERT_COUNTER_QUERY = `
-  INSERT INTO counters (
+  INSERT INTO ${COUNTER_SQL_TABLE_NAME} (
     id, name, step, count, group_name, created_at, is_pinned, created_at_timestamp
   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
-const DELETE_COUNTER_BY_ID_QUERY = `DELETE FROM counters WHERE id = ?`;
+const DELETE_COUNTER_BY_ID_QUERY = `DELETE FROM ${COUNTER_SQL_TABLE_NAME} WHERE id = ?`;
 
 const UPDATE_COUNTER_QUERY = `
-  UPDATE counters SET
+  UPDATE ${COUNTER_SQL_TABLE_NAME} SET
     name = ?,
     step = ?,
     count = ?,
