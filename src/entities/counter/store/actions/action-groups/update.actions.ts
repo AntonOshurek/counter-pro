@@ -1,7 +1,7 @@
 //STORE
 import counterSlice from '../../counter-slice';
 //DB ACTIONS
-import { updateOne } from '@entities/counter/db/actions/counter-db-actions';
+import { updateOne } from '@entities/counter/db/actions/counter-db.actions';
 //MODEL
 import {
 	IDecrementAction,

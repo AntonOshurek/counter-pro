@@ -7,7 +7,7 @@ import {
 	ISetToGroupAction
 } from '@entities/counter/store/model/action.model';
 //DB ACTIONS
-import { updateOne } from '@entities/counter/db/actions/counter-db-actions';
+import { updateOne } from '@entities/counter/db/actions/counter-db.actions';
 //TYPES
 import type { AppThunk } from '@shared/store';
 

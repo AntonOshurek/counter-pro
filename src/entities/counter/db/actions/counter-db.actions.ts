@@ -6,6 +6,12 @@ import counterSqliteService from '@entities/counter/store/services/counter-sqlit
 import type { RootState } from '@shared/store';
 //MODEL
 import type { Counter } from '@entities/counter';
+//SQL COMMANDS
+import { CREATE_COUNTER_TABLE_SQL } from '@entities/counter/db/sql/counter-commands.sql';
+
+const initCounterTableAction = async (db: SQLiteDatabase) => {
+	await db.execAsync(CREATE_COUNTER_TABLE_SQL);
+};
 
 const updateOne = async (
 	getState: () => RootState,
@@ -24,4 +30,4 @@ const insertOne = async (counter: Counter, db: SQLiteDatabase) => {
 	await counterSqliteService.insertOne(db, counter);
 };
 
-export { insertOne, updateOne };
+export { insertOne, updateOne, initCounterTableAction };

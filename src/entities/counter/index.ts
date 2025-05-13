@@ -5,9 +5,8 @@ import CreatedDate from './ui/created-date/created-date';
 import CounterStep from './ui/counter-step/counter-step';
 //MODEL
 import { Counter } from './model/counter.model';
-//DB
-import { initCounterTable } from './db/init-counter-table';
-import { useCounterDbRepository } from '@entities/counter/store/services/counter-sqlite.service';
+//DB ACTIONS
+import { initCounterTableAction } from './db/actions/counter-db.actions';
 //STORE
 import counterSlice from './store/counter-slice';
 import {
@@ -66,6 +65,5 @@ export {
 	counterSlice,
 	SelectorGetVibrationOnClick,
 	setVibrationOnCounterClickAction,
-	initCounterTable,
-	useCounterDbRepository
+	initCounterTableAction
 };
