@@ -7,7 +7,7 @@ import CounterStep from './ui/counter-step/counter-step';
 import { Counter } from './model/counter.model';
 //DB
 import { initCounterTable } from './db/init-counter-table';
-import { useCounterDbRepository } from './store/repository/counter-sqlite-service';
+import { useCounterDbRepository } from '@entities/counter/store/services/counter-sqlite.service';
 //STORE
 import counterSlice from './store/counter-slice';
 import {
@@ -35,7 +35,7 @@ import {
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction,
 	setVibrationOnCounterClickAction
-} from './store/actions/counter-actions';
+} from './store/actions/counter.actions';
 
 export {
 	CounterValue,

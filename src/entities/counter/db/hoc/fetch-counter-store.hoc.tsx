@@ -4,10 +4,10 @@ import { useAppDispatch } from '@shared/store';
 //DB
 import { useSQLiteContext } from 'expo-sqlite';
 //ENTITIES
-import { UpdateStateAction } from '@entities/counter/store/actions/counter-actions';
+import { UpdateStateAction } from '@entities/counter/store/actions/counter.actions';
 //REPOSITORY
-import counterRepository from '@entities/counter/store/repository/counter-repository';
-import counterSqliteService from '@entities/counter/store/repository/counter-sqlite-service';
+import counterRepository from '@entities/counter/store/services/counter-async-store.service';
+import counterSqliteService from '@entities/counter/store/services/counter-sqlite.service';
 //TYPES
 import type { ICounterState } from '@entities/counter/store/model/counter-state.model';
 

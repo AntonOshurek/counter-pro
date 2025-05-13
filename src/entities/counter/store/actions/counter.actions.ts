@@ -1,9 +1,8 @@
 //STORE
 import counterSlice from '../counter-slice';
-//REPOSITORY
-import counterRepository from '../repository/counter-repository';
 //SERVICES
-import counterSqliteService from '@entities/counter/store/repository/counter-sqlite-service';
+import { addToCounterRepo } from '@entities/counter/store/services/counter-async-store.service';
+import counterSqliteService from '@entities/counter/store/services/counter-sqlite.service';
 //MODEL
 import {
 	ICreateCounterAction,
@@ -22,43 +21,9 @@ import {
 	IUpdateState
 } from '../model/action.model';
 //TYPES
-import type { AppThunk, RootState } from '@shared/store';
-//LIBS
-import { omitKey } from '@shared/lib/object-lib';
-import { SQLiteDatabase } from 'expo-sqlite';
-import type { Counter } from '@entities/counter';
-
-const addToCounterRepo = (getState: () => RootState) => {
-	counterRepository
-		.setState(omitKey('counters', getState().counter))
-		.then(res => {
-			if (res !== true) {
-				console.log(res);
-				// возможно: dispatch(appSlice.actions.setError(...))
-			}
-		})
-		.catch(error => {
-			console.log(error);
-			// возможно: dispatch(appSlice.actions.setError(...))
-		});
-};
-
-const updateOne = async (
-	getState: () => RootState,
-	counterId: string,
-	db: SQLiteDatabase
-) => {
-	const state = getState();
-	const counter = state.counter.counters[counterId];
-
-	if (!counter) return;
-	await counterSqliteService.updateOne(db, counter);
-};
-
-const insertOne = async (counter: Counter, db: SQLiteDatabase) => {
-	if (!counter) return;
-	await counterSqliteService.insertOne(db, counter);
-};
+import type { AppThunk } from '@shared/store';
+//DB ACTIONS
+import { insertOne, updateOne } from '@entities/counter/db/actions/counter-db-actions';
 
 const UpdateStateAction =
 	(action: IUpdateState): AppThunk =>

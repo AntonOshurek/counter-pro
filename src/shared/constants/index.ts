@@ -7,7 +7,11 @@ import {
 } from './navigation-screens';
 import { SYMBOLS_AMOUNT_ON_NAVIGATION_HEADER, SYMBOLS_AMOUNT_ON_ITEM_CARD } from './word';
 import { SortOptions, SORT_OPTIONS } from './sort';
-import { VIBRATION_DURATION_ON_COUNTER_CLICK, COUNTER_SQL_TABLE_NAME } from './counter';
+import {
+	VIBRATION_DURATION_ON_COUNTER_CLICK,
+	COUNTER_SQL_TABLE_NAME,
+	COUNTER_STORE_NAME
+} from './counter';
 import { APP_STORE_NAME, DATABASE_NAME } from './app';
 
 export {
@@ -25,5 +29,6 @@ export {
 	VIBRATION_DURATION_ON_COUNTER_CLICK,
 	COUNTER_SQL_TABLE_NAME,
 	DATABASE_NAME,
-	APP_STORE_NAME
+	APP_STORE_NAME,
+	COUNTER_STORE_NAME
 };
