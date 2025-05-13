@@ -5,6 +5,8 @@ import { IAppState } from './store/model/app-state.model';
 import { appSlice } from './store/app-slice';
 import { SetNewThemeAction, updateState } from './store/actions/app.actions';
 import { SelectorGetTheme } from './store/selectors/app.selectors';
+//PROVIDERS
+import FetchAppDataHoc from './providers/fetch-app-data.hoc';
 
 export {
 	SetNewThemeAction,
@@ -13,5 +15,6 @@ export {
 	appSlice,
 	updateState,
 	IUpdateStateAction,
-	IAppState
+	IAppState,
+	FetchAppDataHoc
 };

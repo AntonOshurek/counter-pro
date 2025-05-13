@@ -11,13 +11,12 @@ import counterSqliteService from '@entities/counter/store/services/counter-sqlit
 //TYPES
 import type { ICounterState } from '@entities/counter/store/model/counter-state.model';
 
-const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => {
+const FetchCounterDataHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
 	const db = useSQLiteContext();
 
 	useEffect(() => {
-		// console.log('try to fetch counter store');
-		(() => async () => {
+		const fetchState = async () => {
 			try {
 				const state = await counterAsyncStoreService.getState();
 				const countersFromDb = await counterSqliteService.getAll(db);
@@ -38,7 +37,9 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 				//dispatch this error
 				console.error('Unexpected error in fetchState:', error);
 			}
-		})();
+		};
+
+		fetchState();
 	}, [dispatch, db]); //dispatch, db
 
 	return (props: P) => {
@@ -46,4 +47,4 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 	};
 };
 
-export default FetchCounterStoreHoc;
+export default FetchCounterDataHoc;

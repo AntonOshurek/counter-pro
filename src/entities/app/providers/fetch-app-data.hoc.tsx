@@ -1,11 +1,11 @@
 import { ComponentType, useEffect } from 'react';
 //STORE
-import { useAppDispatch } from '@shared/store/';
-import { updateState } from '@entities/app/';
+import { useAppDispatch } from '@shared/store';
+import { updateState } from '@entities/app';
 //REPOSITORY
 import appRepository from '@entities/app/async-store/services/app-async-store.service';
 
-const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
+const FetchAppDataHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
@@ -31,4 +31,4 @@ const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 		return <Component {...props} />;
 	};
 };
-export default FetchAppStoreHoc;
+export default FetchAppDataHoc;
