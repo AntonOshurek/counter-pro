@@ -6,12 +6,14 @@ import type { IGroupState } from '../../store/model/group-state.model';
 import { groupInitialState } from '../../store/state/group-state';
 //LIBS
 import { omitKey } from '@shared/lib/object-lib';
+//CONSTANTS
+import { GROUP_ASYNC_STORE_NAME } from '@shared/constants';
 
 class GroupAsyncStoreService extends AbstractAsyncStoreService<
 	Omit<IGroupState, 'groups'>
 > {
 	constructor() {
-		super(omitKey('groups', groupInitialState), 'group-store');
+		super(omitKey('groups', groupInitialState), GROUP_ASYNC_STORE_NAME);
 	}
 }
 

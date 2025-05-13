@@ -1,4 +1,4 @@
-const APP_STORE_NAME = 'app-store';
+const APP_ASYNC_STORE_NAME = 'app-store';
 const DATABASE_NAME = 'app.db';
 
-export { APP_STORE_NAME, DATABASE_NAME };
+export { APP_ASYNC_STORE_NAME, DATABASE_NAME };

@@ -4,10 +4,12 @@ import { appInitialState } from '../../store/state/app-state';
 import type { IAppState } from '../../store/model/app-state.model';
 //ABSTRACT
 import { AbstractAsyncStoreService } from '@shared/services';
+//CONSTANTS
+import { APP_ASYNC_STORE_NAME } from '@shared/constants';
 
 class AppAsyncStoreService extends AbstractAsyncStoreService<IAppState> {
 	constructor() {
-		super(appInitialState, 'app-store');
+		super(appInitialState, APP_ASYNC_STORE_NAME);
 	}
 }
 

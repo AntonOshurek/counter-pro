@@ -7,13 +7,13 @@ import type { ICounterState } from '../../store/model/counter-state.model';
 //LIBS
 import { omitKey } from '@shared/lib/object-lib';
 //CONSTANTS
-import { COUNTER_STORE_NAME } from '@shared/constants';
+import { COUNTER_ASYNC_STORE_NAME } from '@shared/constants';
 
 class CounterAsyncStoreService extends AbstractAsyncStoreService<
 	Omit<ICounterState, 'counters'>
 > {
 	constructor() {
-		super(omitKey('counters', counterInitialState), COUNTER_STORE_NAME);
+		super(omitKey('counters', counterInitialState), COUNTER_ASYNC_STORE_NAME);
 	}
 }
 
