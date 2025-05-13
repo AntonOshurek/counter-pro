@@ -16,10 +16,13 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 	const db = useSQLiteContext();
 
 	useEffect(() => {
+    // console.log('try to fetch counter store');
 		(() => async () => {
 			try {
 				const state = await counterRepository.getState();
 				const countersFromDb = await counterSqliteService.getAll(db);
+
+
 
 				if (state instanceof Error) {
 					//dispatch this error
@@ -38,7 +41,7 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 				console.error('Unexpected error in fetchState:', error);
 			}
 		})();
-	}, [dispatch]); //dispatch, db
+	}, [dispatch, db]); //dispatch, db
 
 	return (props: P) => {
 		return <Component {...props} />;

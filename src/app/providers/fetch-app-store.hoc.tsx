@@ -9,22 +9,22 @@ const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		(() => async () => {
+		const fetchState = async () => {
 			try {
 				const state = await appRepository.getState();
 
 				if (state instanceof Error) {
-					//dispatch this error
 					console.error('Failed to load state:', state.message);
 					return;
 				}
 
 				dispatch(updateState({ newState: state }));
 			} catch (error) {
-				//dispatch this error
 				console.error('Unexpected error in fetchState:', error);
 			}
-		})();
+		};
+
+		fetchState();
 	}, [dispatch]);
 
 	return (props: P) => {

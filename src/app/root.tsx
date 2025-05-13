@@ -1,9 +1,10 @@
 //APP
 import App from './App';
 //STORE
-import { initAppDatabase } from './db/init-app-database';
 import { SQLiteProvider } from 'expo-sqlite';
+import { initAppDatabase } from './db/init-app-database';
 import StoreProvider from './providers/store-provider.hoc';
+//CONSTANTS
 import { DATABASE_NAME } from '@shared/constants';
 
 const Root = () => {
