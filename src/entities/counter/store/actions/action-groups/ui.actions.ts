@@ -8,14 +8,14 @@ import {
 //TYPES
 import type { AppThunk } from '@shared/store';
 //ASYNC STORE ACTIONS
-import { setStateToAsyncStoreAction } from '../../../async-store/actions/counter-async-store.actions';
+import { setStateToCounterAsyncStoreAction } from '../../../async-store/actions/counter-async-store.actions';
 
 const setListSortTypeAction =
 	(action: ISetListSortTypeAction): AppThunk =>
 	(dispatch, getState) => {
 		dispatch(counterSlice.actions.setListSortType(action));
 
-		setStateToAsyncStoreAction(getState);
+		setStateToCounterAsyncStoreAction(getState);
 	};
 
 const setVibrationOnCounterClickAction =
@@ -23,7 +23,7 @@ const setVibrationOnCounterClickAction =
 	(dispatch, getState) => {
 		dispatch(counterSlice.actions.setVibrationOnCounterClick(action));
 
-		setStateToAsyncStoreAction(getState);
+		setStateToCounterAsyncStoreAction(getState);
 	};
 
 export { setListSortTypeAction, setVibrationOnCounterClickAction };

@@ -3,7 +3,7 @@ import { ComponentType, useEffect } from 'react';
 import { useAppDispatch } from '@shared/store/';
 import { updateState } from '@entities/app/';
 //REPOSITORY
-import appRepository from '@entities/app/store/repository/app-repository';
+import appRepository from '@entities/app/async-store/services/app-async-store.service';
 
 const FetchAppStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();

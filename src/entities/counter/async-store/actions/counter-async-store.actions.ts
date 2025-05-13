@@ -5,8 +5,8 @@ import type { RootState } from '@shared/store';
 //UTILS
 import { omitKey } from '@shared/lib/object-lib';
 
-const setStateToAsyncStoreAction = (getState: () => RootState) => {
-  counterAsyncStoreService
+const setStateToCounterAsyncStoreAction = (getState: () => RootState) => {
+	counterAsyncStoreService
 		.setState(omitKey('counters', getState().counter))
 		.then(res => {
 			if (res !== true) {
@@ -20,4 +20,4 @@ const setStateToAsyncStoreAction = (getState: () => RootState) => {
 		});
 };
 
-export { setStateToAsyncStoreAction };
+export { setStateToCounterAsyncStoreAction };
