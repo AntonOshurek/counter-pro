@@ -1,7 +1,7 @@
 import { ComponentType, useEffect } from 'react';
 //STORE
 import { useAppDispatch } from '@shared/store';
-import { updateState } from '@entities/app';
+import { updateState } from '../store/actions/app.actions';
 //REPOSITORY
 import appRepository from '@entities/app/async-store/services/app-async-store.service';
 
