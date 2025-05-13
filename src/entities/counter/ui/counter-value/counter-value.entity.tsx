@@ -1,6 +1,6 @@
 //STORE
 import { useAppSelector } from '@shared/store';
-import { SelectorGetCounter } from '../../store/selectors/counter-selectors';
+import { SelectorGetCounter } from '../../store/selectors/counter.selectors';
 //MODEL
 import type { CounterValueProps } from './model/counter-value.model';
 //UI

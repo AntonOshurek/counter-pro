@@ -20,7 +20,7 @@ import {
 	SelectorGetIsPinned,
 	SelectorGetCountersArray,
 	SelectorGetVibrationOnClick
-} from './store/selectors/counter-selectors';
+} from './store/selectors/counter.selectors';
 import {
 	IncrementAction,
 	DecrementAction,
