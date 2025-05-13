@@ -3,11 +3,13 @@ import { ComponentType, useEffect } from 'react';
 import { useAppDispatch } from '@shared/store';
 //DB
 import { useSQLiteContext } from 'expo-sqlite';
+//ENTITIES
+import { UpdateStateAction } from '@entities/counter/store/actions/counter-actions';
 //REPOSITORY
 import counterRepository from '@entities/counter/store/repository/counter-repository';
 import counterSqliteService from '@entities/counter/store/repository/counter-sqlite-service';
-import { ICounterState } from '@entities/counter/store/model/counter-state.model';
-import { UpdateStateAction } from '@entities/counter/store/actions/counter-actions';
+//TYPES
+import type { ICounterState } from '@entities/counter/store/model/counter-state.model';
 
 const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => {
 	const dispatch = useAppDispatch();
@@ -36,7 +38,7 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 				console.error('Unexpected error in fetchState:', error);
 			}
 		})();
-	}, [dispatch, db]);
+	}, [dispatch]); //dispatch, db
 
 	return (props: P) => {
 		return <Component {...props} />;
