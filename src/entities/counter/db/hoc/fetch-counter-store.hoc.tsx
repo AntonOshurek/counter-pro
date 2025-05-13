@@ -5,8 +5,8 @@ import { useAppDispatch } from '@shared/store';
 import { useSQLiteContext } from 'expo-sqlite';
 //ENTITIES
 import { UpdateStateAction } from '@entities/counter/store/actions/counter.actions';
-//REPOSITORY
-import counterRepository from '@entities/counter/store/services/counter-async-store.service';
+//SERVICES
+import counterAsyncStoreService from '@entities/counter/async-store/services/counter-async-store.service';
 import counterSqliteService from '@entities/counter/store/services/counter-sqlite.service';
 //TYPES
 import type { ICounterState } from '@entities/counter/store/model/counter-state.model';
@@ -16,13 +16,11 @@ const FetchCounterStoreHoc = <P extends object>(Component: ComponentType<P>) => 
 	const db = useSQLiteContext();
 
 	useEffect(() => {
-    // console.log('try to fetch counter store');
+		// console.log('try to fetch counter store');
 		(() => async () => {
 			try {
-				const state = await counterRepository.getState();
+				const state = await counterAsyncStoreService.getState();
 				const countersFromDb = await counterSqliteService.getAll(db);
-
-
 
 				if (state instanceof Error) {
 					//dispatch this error

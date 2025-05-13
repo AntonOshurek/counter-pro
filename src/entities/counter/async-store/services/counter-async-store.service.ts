@@ -1,9 +1,9 @@
 //ABSTRACT
 import { AbstractRepository } from '@shared/services';
 //STATE
-import { counterInitialState } from '../state/counter-state';
+import { counterInitialState } from '../../store/state/counter-state';
 //TYPES
-import type { ICounterState } from '../model/counter-state.model';
+import type { ICounterState } from '../../store/model/counter-state.model';
 //LIBS
 import { omitKey } from '@shared/lib/object-lib';
 //CONSTANTS
@@ -17,6 +17,6 @@ class CounterAsyncStoreService extends AbstractRepository<
 	}
 }
 
-const counterRepository = new CounterAsyncStoreService();
+const counterAsyncStoreService = new CounterAsyncStoreService();
 
-export default counterRepository;
+export default counterAsyncStoreService;
