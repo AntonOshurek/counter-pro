@@ -1,7 +1,5 @@
 //STORE
 import groupSlice from '../group-slice';
-//REPOSITORY
-import groupRepository from '../../async-store/services/group-async-store.service';
 //MODEL
 import type {
 	ICreateGroupAction,
@@ -13,24 +11,9 @@ import type {
 	IAddConnectionToCounterAction
 } from '../model/action.model';
 //TYPES
-import type { AppThunk, RootState } from '@shared/store';
-//LIBS
-import { omitKey } from '@shared/lib/object-lib';
-
-const addToGroupRepo = (getState: () => RootState) => {
-	groupRepository
-		.setState(omitKey('groups', getState().group))
-		.then(res => {
-			if (res !== true) {
-				console.log(res);
-				// возможно: dispatch(appSlice.actions.setError(...))
-			}
-		})
-		.catch(error => {
-			console.log(error);
-			// возможно: dispatch(appSlice.actions.setError(...))
-		});
-};
+import type { AppThunk } from '@shared/store';
+//ASYNC STORE ACTIONS
+import { setStateToGroupAsyncStoreAction } from '@entities/group/async-store/actions/group-async-store.actions';
 
 const CreateGroupAction =
 	(action: ICreateGroupAction): AppThunk =>
@@ -49,7 +32,7 @@ const setListSortTypeAction =
 	(dispatch, getState) => {
 		dispatch(groupSlice.actions.setListSortType(action));
 
-		addToGroupRepo(getState);
+		setStateToGroupAsyncStoreAction(getState);
 	};
 
 const deleteGroupAction =
