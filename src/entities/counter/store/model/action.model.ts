@@ -1,5 +1,10 @@
 import { Counter } from '../../model/counter.model';
 import { SortOptions } from '@shared/constants/sort';
+import { ICounterState } from '@entities/counter/store/model/counter-state.model';
+
+interface IUpdateState {
+	newState: ICounterState;
+}
 
 interface IIncrementAction {
 	amount: number;
@@ -74,5 +79,6 @@ export {
 	ISetIsPinnedAction,
 	IDeleteConnectionWithGroupAction,
 	IAddConnectionToGroupAction,
-	ISetVibrationOnCounterClick
+	ISetVibrationOnCounterClick,
+	IUpdateState
 };

@@ -2,7 +2,7 @@
 import { counterInitialState } from './state/counter-state';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //MODEL
-import type {
+import {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
@@ -15,7 +15,8 @@ import type {
 	ISetIsPinnedAction,
 	IDeleteConnectionWithGroupAction,
 	IAddConnectionToGroupAction,
-	ISetVibrationOnCounterClick
+	ISetVibrationOnCounterClick,
+	IUpdateState
 } from './model/action.model';
 
 const counterSlice = createSlice({
@@ -23,6 +24,11 @@ const counterSlice = createSlice({
 	initialState: counterInitialState,
 
 	reducers: {
+		updateState: (state, action: PayloadAction<IUpdateState>) => {
+			const { newState } = action.payload;
+
+			state = newState;
+		},
 		createCounter: (state, action: PayloadAction<ICreateCounterAction>) => {
 			const { newCounter } = action.payload;
 

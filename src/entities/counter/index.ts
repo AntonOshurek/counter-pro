@@ -3,11 +3,12 @@ import CounterValue from './ui/counter-value/counter-value.entity';
 import CounterCard from './ui/counter-card/counter-card';
 import CreatedDate from './ui/created-date/created-date';
 import CounterStep from './ui/counter-step/counter-step';
+//HOCs
+import FetchCounterDataHoc from './providers/fetch-counter-data.hoc';
 //MODEL
 import { Counter } from './model/counter.model';
-//DB
-import { initCounterTable } from './db/init-counter-table';
-import { useCounterDbRepository } from './store/repository/counter-db-repository';
+//DB ACTIONS
+import { initCounterTableAction } from './db/actions/counter-db.actions';
 //STORE
 import counterSlice from './store/counter-slice';
 import {
@@ -20,7 +21,7 @@ import {
 	SelectorGetIsPinned,
 	SelectorGetCountersArray,
 	SelectorGetVibrationOnClick
-} from './store/selectors/counter-selectors';
+} from './store/selectors/counter.selectors';
 import {
 	IncrementAction,
 	DecrementAction,
@@ -35,7 +36,7 @@ import {
 	deleteConnectionWithGroupAction,
 	addConnectionWithGroupAction,
 	setVibrationOnCounterClickAction
-} from './store/actions/counter-actions';
+} from './store/actions/counter.actions';
 
 export {
 	CounterValue,
@@ -66,6 +67,6 @@ export {
 	counterSlice,
 	SelectorGetVibrationOnClick,
 	setVibrationOnCounterClickAction,
-	initCounterTable,
-	useCounterDbRepository
+	initCounterTableAction,
+	FetchCounterDataHoc
 };

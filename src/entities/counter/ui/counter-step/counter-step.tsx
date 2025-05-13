@@ -2,7 +2,7 @@
 import { View } from 'react-native';
 //STORE
 import { useAppSelector } from '@shared/store';
-import { SelectorGetCounterStep } from '../../store/selectors/counter-selectors';
+import { SelectorGetCounterStep } from '../../store/selectors/counter.selectors';
 //UI
 import { Paragraph } from '@shared/ui';
 //MODEL

@@ -1,34 +1,25 @@
 import { configureStore } from '@reduxjs/toolkit';
-// ...
+import { openDatabaseSync } from 'expo-sqlite';
+// SLICES
 import { appSlice } from '@entities/app';
 import { counterSlice } from '@entities/counter/';
 import { groupSlice } from '@entities/group/';
-import CounterDbRepository from '@entities/counter/store/repository/counter-db-repository';
+import { DATABASE_NAME } from '@shared/constants';
 
-// export const store = configureStore({
-// 	reducer: {
-// 		app: appSlice.reducer,
-// 		counter: counterSlice.reducer,
-// 		group: groupSlice.reducer
-// 	}
-// });
+const db = openDatabaseSync(DATABASE_NAME);
 
-export type ExtraThunkArg = {
-	counterDbRepository: CounterDbRepository;
-};
+const store = configureStore({
+	reducer: {
+		app: appSlice.reducer,
+		counter: counterSlice.reducer,
+		group: groupSlice.reducer
+	},
+	middleware: getDefaultMiddleware =>
+		getDefaultMiddleware({
+			thunk: {
+				extraArgument: { db }
+			}
+		})
+});
 
-export const createReduxStore = (extraArgument?: ExtraThunkArg) => {
-	return configureStore({
-		reducer: {
-			app: appSlice.reducer,
-			counter: counterSlice.reducer,
-			group: groupSlice.reducer
-		},
-		middleware: getDefaultMiddleware =>
-			getDefaultMiddleware({
-				thunk: {
-					extraArgument
-				}
-			})
-	});
-};
+export default store;

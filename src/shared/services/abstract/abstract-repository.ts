@@ -1,6 +1,6 @@
 import asyncStorageService from '../async-storage/async-store.service';
 
-abstract class AbstractRepository<T> {
+abstract class AbstractAsyncStoreService<T> {
 	#defaultState: T;
 	#storeName: string;
 
@@ -57,4 +57,4 @@ abstract class AbstractRepository<T> {
 	}
 }
 
-export default AbstractRepository;
+export default AbstractAsyncStoreService;

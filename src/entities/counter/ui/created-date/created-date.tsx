@@ -2,7 +2,7 @@
 import { View } from 'react-native';
 //STORE
 import { useAppSelector } from '@shared/store';
-import { SelectorGetCounterCreatedDate } from '../../store/selectors/counter-selectors';
+import { SelectorGetCounterCreatedDate } from '../../store/selectors/counter.selectors';
 //LIBS
 import { formatDate } from '@shared/lib/date-lib';
 //UI

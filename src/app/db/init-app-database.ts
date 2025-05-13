@@ -1,13 +1,14 @@
-//DB
+// DB
 import { SQLiteDatabase } from 'expo-sqlite';
-import { initCounterTable } from '@entities/counter';
-import { initGroupTable } from '@entities/group';
+//ENTITIES
+import { initCounterTableAction } from '@entities/counter';
+// import { initGroupTable } from '@entities/group';
 
 const initAppDatabase = async (db: SQLiteDatabase) => {
 	await db.execAsync(`PRAGMA journal_mode = WAL;`);
 
-	await initCounterTable(db);
-	await initGroupTable(db);
+	await initCounterTableAction(db);
+	// await initGroupTable(db);
 };
 
 export { initAppDatabase };

@@ -14,7 +14,7 @@ import {
 	SelectorGetListSortType,
 	SelectorGetGroupCreatedDate,
 	SelectorGetGroupName
-} from './store/selectors/group-selectors';
+} from './store/selectors/group.selectors';
 import {
 	setIsPinnedAction,
 	CreateGroupAction,
@@ -23,7 +23,7 @@ import {
 	setNameAction,
 	deleteConnectionWithCounterAction,
 	addConnectionWithCounterAction
-} from './store/actions/group-actions';
+} from './store/actions/group.actions';
 
 export {
 	Group,
