@@ -3,9 +3,9 @@ import { appInitialState } from '../../store/state/app-state';
 //TYPES
 import type { IAppState } from '../../store/model/app-state.model';
 //ABSTRACT
-import { AbstractRepository } from '@shared/services';
+import { AbstractAsyncStoreService } from '@shared/services';
 
-class AppAsyncStoreService extends AbstractRepository<IAppState> {
+class AppAsyncStoreService extends AbstractAsyncStoreService<IAppState> {
 	constructor() {
 		super(appInitialState, 'app-store');
 	}

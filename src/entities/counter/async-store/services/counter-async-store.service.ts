@@ -1,5 +1,5 @@
 //ABSTRACT
-import { AbstractRepository } from '@shared/services';
+import { AbstractAsyncStoreService } from '@shared/services';
 //STATE
 import { counterInitialState } from '../../store/state/counter-state';
 //TYPES
@@ -9,7 +9,7 @@ import { omitKey } from '@shared/lib/object-lib';
 //CONSTANTS
 import { COUNTER_STORE_NAME } from '@shared/constants';
 
-class CounterAsyncStoreService extends AbstractRepository<
+class CounterAsyncStoreService extends AbstractAsyncStoreService<
 	Omit<ICounterState, 'counters'>
 > {
 	constructor() {

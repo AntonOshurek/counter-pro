@@ -1,7 +1,7 @@
 //STORE
 import groupSlice from '../group-slice';
 //REPOSITORY
-import groupRepository from '../repository/group-repository';
+import groupRepository from '../../async-store/services/group-async-store.service';
 //MODEL
 import type {
 	ICreateGroupAction,

@@ -1,4 +1,4 @@
-import AbstractRepository from './abstract/abstract-repository';
+import AbstractAsyncStoreService from './abstract/abstract-repository';
 import asyncStorageService from './async-storage/async-store.service';
 
-export { AbstractRepository, asyncStorageService };
+export { AbstractAsyncStoreService, asyncStorageService };
