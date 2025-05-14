@@ -1,3 +1,4 @@
+import { useState } from 'react';
 //APP
 import App from './App';
 //STORE
@@ -8,11 +9,17 @@ import StoreProvider from './providers/store-provider.hoc';
 import { DATABASE_NAME } from '@shared/constants';
 
 const Root = () => {
+	const [isDbReady, setDbReady] = useState(false);
+
 	return (
-		<SQLiteProvider databaseName={DATABASE_NAME} onInit={initAppDatabase}>
-			<StoreProvider>
-				<App />
-			</StoreProvider>
+		<SQLiteProvider
+			databaseName={DATABASE_NAME}
+			onInit={async db => {
+				await initAppDatabase(db);
+				setDbReady(true);
+			}}
+		>
+			<StoreProvider>{isDbReady && <App />}</StoreProvider>
 		</SQLiteProvider>
 	);
 };

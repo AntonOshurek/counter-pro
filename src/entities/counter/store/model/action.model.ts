@@ -25,11 +25,6 @@ interface ISetStepAction {
 	counterId: string;
 }
 
-interface ISetToGroupAction {
-	newGroupId: string;
-	counterId: string;
-}
-
 interface ISetNameAction {
 	newName: string;
 	counterId: string;
@@ -70,7 +65,6 @@ export {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
-	ISetToGroupAction,
 	ISetNameAction,
 	ICreateCounterAction,
 	IDeleteCounterAction,

@@ -3,8 +3,8 @@ import CounterValue from './ui/counter-value/counter-value.entity';
 import CounterCard from './ui/counter-card/counter-card';
 import CreatedDate from './ui/created-date/created-date';
 import CounterStep from './ui/counter-step/counter-step';
-//HOCs
-import FetchCounterDataHoc from './providers/fetch-counter-data.hoc';
+//PROVIDERS
+import FetchCounterDataProvider from './providers/fetch-counter-data.provider';
 //MODEL
 import { Counter } from './model/counter.model';
 //DB ACTIONS
@@ -25,7 +25,6 @@ import {
 import {
 	IncrementAction,
 	DecrementAction,
-	setToGroupAction,
 	SetStepAction,
 	setNameAction,
 	CreateCounterAction,
@@ -45,7 +44,6 @@ export {
 	SelectorGetCounter,
 	IncrementAction,
 	DecrementAction,
-	setToGroupAction,
 	SetStepAction,
 	setNameAction,
 	CreateCounterAction,
@@ -68,5 +66,5 @@ export {
 	SelectorGetVibrationOnClick,
 	setVibrationOnCounterClickAction,
 	initCounterTableAction,
-	FetchCounterDataHoc
+	FetchCounterDataProvider
 };

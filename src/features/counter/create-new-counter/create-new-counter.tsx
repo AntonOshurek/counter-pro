@@ -5,6 +5,8 @@ import { NavigationStackParams } from '@shared/types/navigation';
 //STORE
 import { useAppDispatch } from '@shared/store';
 import { CreateCounterAction } from '@entities/counter';
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //CONSTANTS
 import { StackScreens } from '@shared/constants';
 //LIBS
@@ -14,6 +16,7 @@ import { createNewItemTitleDate } from '@shared/lib/date-lib';
 const useCreateNewCounter = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const dispatch = useAppDispatch();
+  const db = useSQLiteContext();
 
 	return () => {
 		const now = new Date();
@@ -29,7 +32,7 @@ const useCreateNewCounter = () => {
 			createdAtTimestamp: now.getTime()
 		};
 
-		dispatch(CreateCounterAction({ newCounter }));
+		dispatch(CreateCounterAction({ newCounter }, db));
 		navigation.navigate(StackScreens.CounterScreen, { counterId: newCounter.id });
 	};
 };

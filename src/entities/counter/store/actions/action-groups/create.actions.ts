@@ -1,3 +1,5 @@
+//DB
+import { SQLiteDatabase } from 'expo-sqlite';
 //STORE
 import counterSlice from '../../counter-slice';
 //MODEL
@@ -8,8 +10,8 @@ import { insertOne } from '@entities/counter/db/actions/counter-db.actions';
 import type { AppThunk } from '@shared/store';
 
 const CreateCounterAction =
-	(action: ICreateCounterAction): AppThunk =>
-	async (dispatch, getState, { db }) => {
+	(action: ICreateCounterAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.createCounter({ newCounter: action.newCounter }));
 
 		await insertOne(action.newCounter, db);

@@ -6,7 +6,6 @@ import {
 	IIncrementAction,
 	IDecrementAction,
 	ISetStepAction,
-	ISetToGroupAction,
 	ISetNameAction,
 	ICreateCounterAction,
 	IDeleteCounterAction,
@@ -50,11 +49,6 @@ const counterSlice = createSlice({
 			const { counterId } = action.payload;
 
 			state.counters[counterId].count = 0;
-		},
-		setToGroup: (state, action: PayloadAction<ISetToGroupAction>) => {
-			const { counterId, newGroupId } = action.payload;
-
-			state.counters[counterId].group = newGroupId;
 		},
 		setName: (state, action: PayloadAction<ISetNameAction>) => {
 			const { counterId, newName } = action.payload;
