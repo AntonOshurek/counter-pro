@@ -11,7 +11,7 @@ import {
 
 const useCounterToGroupConnection = () => {
 	const dispatch = useAppDispatch();
-	const db = useSQLiteContext();
+  const db = useSQLiteContext();
 
 	const addGroupToCounter = useCallback(
 		(counterId: string, groupId: string) => {

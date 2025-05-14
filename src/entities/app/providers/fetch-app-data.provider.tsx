@@ -3,7 +3,7 @@ import { ReactNode, useEffect } from 'react';
 import { useAppDispatch } from '@shared/store';
 import { updateState } from '../store/actions/app.actions';
 // REPOSITORY
-import appRepository from '@entities/app/async-store/services/app-async-store.service';
+import appRepository from '../async-store/services/app-async-store.service';
 
 interface Props {
 	children: ReactNode;
@@ -28,7 +28,7 @@ const FetchAppDataProvider = ({ children }: Props) => {
 			}
 		};
 
-    fetchAppState();
+		fetchAppState();
 	}, [dispatch]);
 
 	return <>{children}</>;
