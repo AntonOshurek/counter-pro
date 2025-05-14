@@ -17,7 +17,7 @@ import { COUNTER_TEXT } from '@shared/text-content/text-content';
 const CreatedDate = ({ counterId }: CreatedDateProps) => {
 	const createdDate = useAppSelector(SelectorGetCounterCreatedDate(counterId));
 
-	const formatedDate = formatDate(createdDate);
+	const formatedDate = createdDate ? formatDate(createdDate) : 'Missing date';
 
 	return (
 		<View style={style.createdDate}>

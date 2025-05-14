@@ -2,7 +2,6 @@ import { CreateCounterAction } from './action-groups/create.actions';
 import { deleteCounterAction } from './action-groups/delete.actions';
 import {
 	deleteConnectionWithGroupAction,
-	setToGroupAction,
 	addConnectionWithGroupAction
 } from './action-groups/group.actions';
 import {
@@ -22,7 +21,6 @@ import { UpdateStateAction } from './action-groups/meta.actions';
 export {
 	IncrementAction,
 	DecrementAction,
-	setToGroupAction,
 	SetStepAction,
 	setNameAction,
 	CreateCounterAction,

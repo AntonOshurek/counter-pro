@@ -3,6 +3,8 @@ import { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '@shared/types/navigation';
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //STORE
 import { useAppDispatch } from '@shared/store';
 import { deleteCounterAction } from '@entities/counter';
@@ -12,6 +14,7 @@ import type { UseDeleteCounterProps } from './model/delete-counter.model';
 const useDeleteCounter = ({ counterId }: UseDeleteCounterProps) => {
 	const dispatch = useAppDispatch();
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
+	const db = useSQLiteContext();
 
 	return useCallback(() => {
 		const parentNavigation = navigation.getParent();
@@ -22,8 +25,8 @@ const useDeleteCounter = ({ counterId }: UseDeleteCounterProps) => {
 			navigation.goBack();
 		}
 
-		dispatch(deleteCounterAction({ counterId }));
-	}, [dispatch, counterId, navigation]);
+		dispatch(deleteCounterAction({ counterId }, db));
+	}, [dispatch, counterId, navigation, db]);
 };
 
 export default useDeleteCounter;

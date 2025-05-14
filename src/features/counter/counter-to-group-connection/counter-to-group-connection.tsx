@@ -1,4 +1,6 @@
 import { useCallback } from 'react';
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //STORE
 import { useAppDispatch } from '@shared/store';
 //ENTITIES
@@ -9,19 +11,20 @@ import {
 
 const useCounterToGroupConnection = () => {
 	const dispatch = useAppDispatch();
+  const db = useSQLiteContext();
 
 	const addGroupToCounter = useCallback(
 		(counterId: string, groupId: string) => {
-			dispatch(addConnectionWithGroupAction({ counterId, groupId }));
+			dispatch(addConnectionWithGroupAction({ counterId, groupId }, db));
 		},
-		[dispatch]
+		[dispatch, db]
 	);
 
 	const deleteGroupFromCounter = useCallback(
 		(counterId: string, groupId: string) => {
-			dispatch(deleteConnectionWithGroupAction({ counterId, groupId }));
+			dispatch(deleteConnectionWithGroupAction({ counterId, groupId }, db));
 		},
-		[dispatch]
+		[dispatch, db]
 	);
 
 	return {
