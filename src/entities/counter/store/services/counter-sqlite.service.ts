@@ -19,9 +19,22 @@ export class CounterSqliteService extends SqliteService<Counter> {
 		super(COUNTER_SQL_TABLE_NAME);
 	}
 
+	private mapDbRowToCounter(row: any): Counter {
+		return {
+			id: row.id,
+			name: row.name,
+			step: row.step,
+			count: row.count,
+			group: row.group_name,
+			createdAt: row.created_at,
+			isPinned: Boolean(row.is_pinned),
+			createdAtTimestamp: row.created_at_timestamp
+		};
+	}
+
 	async getAll(db: SQLiteDatabase): Promise<Record<string, Counter>> {
 		const rows = await db.getAllAsync<Counter>(SELECT_ALL_COUNTERS_QUERY);
-		return Object.fromEntries(rows.map(item => [item.id, item]));
+		return Object.fromEntries(rows.map(item => [item.id, this.mapDbRowToCounter(item)]));
 	}
 
 	async insertOne(db: SQLiteDatabase, counter: Counter): Promise<void> {
