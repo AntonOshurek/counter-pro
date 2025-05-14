@@ -32,7 +32,7 @@ const SelectorGetCountersArray = createSelector(
 
 const SelectorGetCounterName: ISelectorGetCounterName =
 	(counterId: string) => (state: RootState) => {
-		return state.counter.counters[counterId]?.name;
+		return state.counter.counters[counterId].name;
 	};
 
 const SelectorGetCounterStep: ISelectorGetCounterStep =
@@ -42,7 +42,7 @@ const SelectorGetCounterStep: ISelectorGetCounterStep =
 
 const SelectorGetCounterCreatedDate: ISelectorGetCounterCreatedDate =
 	(counterId: string) => (state: RootState) => {
-		return state.counter.counters[counterId]?.createdAt;
+		return state.counter.counters[counterId].createdAt;
 	};
 
 const SelectorGetListSortType: ISelectorGetListSortType = () => (state: RootState) => {
