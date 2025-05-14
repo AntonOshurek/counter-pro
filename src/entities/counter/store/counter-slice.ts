@@ -27,7 +27,7 @@ const counterSlice = createSlice({
 		updateState: (state, action: PayloadAction<IUpdateState>) => {
 			const { newState } = action.payload;
 
-			state = newState;
+			return newState;
 		},
 		createCounter: (state, action: PayloadAction<ICreateCounterAction>) => {
 			const { newCounter } = action.payload;
