@@ -13,7 +13,7 @@ const FetchAppDataProvider = ({ children }: Props) => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		const fetchState = async () => {
+		const fetchAppState = async () => {
 			try {
 				const state = await appRepository.getState();
 
@@ -28,7 +28,7 @@ const FetchAppDataProvider = ({ children }: Props) => {
 			}
 		};
 
-		fetchState();
+    fetchAppState();
 	}, [dispatch]);
 
 	return <>{children}</>;

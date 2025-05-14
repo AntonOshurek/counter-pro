@@ -19,7 +19,7 @@ const FetchCounterDataProvider = ({ children }: Props) => {
 	const db = useSQLiteContext();
 
 	useEffect(() => {
-		const fetchState = async () => {
+		const fetchCounterState = async () => {
 			try {
 				const asyncState = await counterAsyncStoreService.getState();
 				const countersFromDb = await counterSqliteService.getAll(db);
@@ -36,11 +36,11 @@ const FetchCounterDataProvider = ({ children }: Props) => {
 
 				dispatch(UpdateStateAction({ newState: fullStore }));
 			} catch (error) {
-				console.error('Unexpected error in fetchState:', error);
+				console.error('Unexpected error in fetchCounterState:', error);
 			}
 		};
 
-		fetchState();
+		fetchCounterState();
 	}, [db, dispatch]);
 
 	return <>{children}</>;
