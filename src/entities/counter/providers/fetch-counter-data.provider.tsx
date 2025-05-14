@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 // STORE
 import { useAppDispatch } from '@shared/store';
 import { UpdateStateAction } from '@entities/counter/store/actions/counter.actions';
@@ -17,6 +17,7 @@ interface Props {
 const FetchCounterDataProvider = ({ children }: Props) => {
 	const dispatch = useAppDispatch();
 	const db = useSQLiteContext();
+	const [ready, setReady] = useState(false);
 
 	useEffect(() => {
 		const fetchCounterState = async () => {
@@ -35,13 +36,16 @@ const FetchCounterDataProvider = ({ children }: Props) => {
 				};
 
 				dispatch(UpdateStateAction({ newState: fullStore }));
+				setReady(true);
 			} catch (error) {
 				console.error('Unexpected error in fetchCounterState:', error);
 			}
 		};
 
-		fetchCounterState();
+		if (db) fetchCounterState();
 	}, [db, dispatch]);
+
+	if (!ready) return null;
 
 	return <>{children}</>;
 };
