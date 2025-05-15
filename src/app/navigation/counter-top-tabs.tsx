@@ -55,7 +55,7 @@ const CounterTopTabs = ({ navigation }: CounterTopTabsProps) => {
 						backgroundColor: colors[theme].mainSurfacePrimary
 					},
 					tabBarActiveTintColor: colors[theme].textPrimary,
-					tabBarInactiveTintColor: colors[theme].textSecondary
+					tabBarInactiveTintColor: colors[theme].textSecondary,
 				}}
 			>
 				<Tab.Screen

@@ -23,7 +23,8 @@ const Stack = () => {
 				headerStyle: {
 					backgroundColor: colors[theme].mainSurfaceTertiary
 				},
-				headerTintColor: colors[theme].textPrimary
+				contentStyle: { backgroundColor: 'transparent' },
+				headerTintColor: colors[theme].textPrimary,
 			}}
 		>
 			<Stack.Screen
