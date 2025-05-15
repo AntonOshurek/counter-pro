@@ -1,12 +1,19 @@
 //NAVIGATION
 import { NavigationContainer } from '@react-navigation/native';
 import Stack from './stack';
+import { colors } from '@shared/styles';
+import useThemeResolver from '@shared/hooks/useThemeResolver';
+import { View } from 'react-native';
 
 const Navigation = () => {
+	const theme = useThemeResolver();
+
 	return (
-		<NavigationContainer>
-			<Stack />
-		</NavigationContainer>
+		<View style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}>
+			<NavigationContainer>
+				<Stack />
+			</NavigationContainer>
+		</View>
 	);
 };
 

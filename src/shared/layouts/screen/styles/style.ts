@@ -11,7 +11,7 @@ const style = (theme: ColorThemes) =>
 			flex: 1,
 			paddingInline: paddings.standardSavePadding,
 			paddingBottom: paddings.standardSavePadding,
-			paddingBlockStart: 10,
+			paddingBlockStart: 20,
 			backgroundColor: colors[theme].mainSurfacePrimary
 		},
 		ScreenLayoutWithoutPadding: {

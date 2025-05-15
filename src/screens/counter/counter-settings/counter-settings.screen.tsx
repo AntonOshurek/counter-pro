@@ -24,7 +24,7 @@ const CounterSettingsScreen = () => {
 	const counter = useAppSelector(SelectorGetCounter(counterId));
 
 	return (
-		<ScreenLayout additionalClass={style.counterSettingsScreen} withScroll={true}>
+		<ScreenLayout withScroll={false} additionalClass={style.counterSettingsScreen}>
 			<View style={style.settingsGroup}>
 				<CounterCriticalOptionsWidget counter={counter} />
 			</View>
