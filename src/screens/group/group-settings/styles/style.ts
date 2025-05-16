@@ -5,7 +5,7 @@ import { itemsGaps, paddings } from '@shared/styles';
 
 const style = StyleSheet.create({
 	groupSettingsScreen: {
-		paddingTop: 40,
+		paddingTop: 10,
 		justifyContent: 'space-between',
 		gap: itemsGaps.gapBetweenSettingGroups,
 		paddingBottom: paddings.bottomPaddingToFirstElement

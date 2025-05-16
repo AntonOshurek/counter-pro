@@ -1,6 +1,6 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
-import { View } from 'react-native';
+import { View, KeyboardAvoidingView } from 'react-native';
 //NAVIGATION
 import type { CounterScreenRouteProp } from '@shared/types/navigation';
 //STORE
@@ -24,15 +24,22 @@ const CounterSettingsScreen = () => {
 	const counter = useAppSelector(SelectorGetCounter(counterId));
 
 	return (
-		<ScreenLayout withScroll={false} additionalClass={style.counterSettingsScreen}>
-			<View style={style.settingsGroup}>
-				<CounterCriticalOptionsWidget counter={counter} />
-			</View>
+		<ScreenLayout withScroll={true}>
+			<KeyboardAvoidingView
+				style={{ flex: 1, justifyContent: 'flex-end' }}
+				behavior={'position'}
+			>
+				<View style={style.counterSettingsScreen}>
+					<View style={style.settingsGroup}>
+						<CounterCriticalOptionsWidget counter={counter} />
+					</View>
 
-			<View style={style.settingsGroup}>
-				<CounterAdditionalInfoWidget counter={counter} />
-				<CounterSettingsWidget counter={counter} />
-			</View>
+					<View style={style.settingsGroup}>
+						<CounterAdditionalInfoWidget counter={counter} />
+						<CounterSettingsWidget counter={counter} />
+					</View>
+				</View>
+			</KeyboardAvoidingView>
 		</ScreenLayout>
 	);
 };
