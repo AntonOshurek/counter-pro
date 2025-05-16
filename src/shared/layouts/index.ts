@@ -1,4 +1,4 @@
 import ScreenLayout from './screen/screen.layout';
-import ThemeLayout from './theme-layout/theme.layout';
+import UiAppLayout from './ui-app-layout/ui-app.layout';
 
-export { ScreenLayout, ThemeLayout };
+export { ScreenLayout, UiAppLayout };

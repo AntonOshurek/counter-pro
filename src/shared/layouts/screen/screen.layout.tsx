@@ -1,15 +1,12 @@
 //NATIVE
-import { View, ScrollView } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, ScrollView, SafeAreaView } from 'react-native';
 //HOOKS
 import useThemeResolver from '@shared/hooks/useThemeResolver';
 //MODEL
 import type { ScreenLayoutProps } from './model/screen-layout.model';
-//CONSTANTS
-import { Themes } from '@shared/constants';
 //STYLES
 import style from './styles/style';
-// import { colors } from '@shared/styles';
+import { colors } from '@shared/styles';
 
 const ScreenLayout = ({
 	children,
@@ -25,29 +22,19 @@ const ScreenLayout = ({
 		additionalClass
 	];
 
-	const statusBarStyle = theme === Themes.dark ? Themes.light : Themes.dark;
-
-	return withScroll ? (
-		<ScrollView
-			contentContainerStyle={containerStyle}
-			showsVerticalScrollIndicator={false}
-		>
-			<StatusBar
-				style={statusBarStyle}
-				// backgroundColor={colors[theme].mainSurfacePrimary}
-				translucent={true}
-			/>
-			{children}
-		</ScrollView>
-	) : (
-		<View style={containerStyle}>
-			<StatusBar
-				style={statusBarStyle}
-				// backgroundColor={colors[theme].mainSurfacePrimary}
-				translucent={true}
-			/>
-			{children}
-		</View>
+	return (
+		<SafeAreaView style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}>
+			{withScroll ? (
+				<ScrollView
+					contentContainerStyle={containerStyle}
+					showsVerticalScrollIndicator={false}
+				>
+					{children}
+				</ScrollView>
+			) : (
+				<View style={containerStyle}>{children}</View>
+			)}
+		</SafeAreaView>
 	);
 };
 
