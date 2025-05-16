@@ -9,7 +9,7 @@ import type { ScreenLayoutProps } from './model/screen-layout.model';
 import { Themes } from '@shared/constants';
 //STYLES
 import style from './styles/style';
-import { colors } from '@shared/styles';
+// import { colors } from '@shared/styles';
 
 const ScreenLayout = ({
 	children,
@@ -34,7 +34,7 @@ const ScreenLayout = ({
 		>
 			<StatusBar
 				style={statusBarStyle}
-				backgroundColor={colors[theme].mainSurfaceTertiary}
+				// backgroundColor={colors[theme].mainSurfacePrimary}
 				translucent={true}
 			/>
 			{children}
@@ -43,7 +43,7 @@ const ScreenLayout = ({
 		<View style={containerStyle}>
 			<StatusBar
 				style={statusBarStyle}
-				backgroundColor={colors[theme].mainSurfaceTertiary}
+				// backgroundColor={colors[theme].mainSurfacePrimary}
 				translucent={true}
 			/>
 			{children}
