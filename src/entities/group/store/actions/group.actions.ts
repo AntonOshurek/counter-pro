@@ -18,6 +18,13 @@ import type { AppThunk } from '@shared/store';
 import { setStateToGroupAsyncStoreAction } from '@entities/group/async-store/actions/group-async-store.actions';
 //DB ACTIONS
 import { deleteOne, insertOne, updateOne } from '../../db/actions/group-db.actions';
+import { IUpdateState } from '../model/action.model';
+
+const UpdateStateAction =
+	(action: IUpdateState): AppThunk =>
+	async (dispatch, getState) => {
+		dispatch(groupSlice.actions.updateState({ newState: action.newState }));
+	};
 
 const CreateGroupAction =
 	(action: ICreateGroupAction, db: SQLiteDatabase): AppThunk =>
@@ -82,5 +89,6 @@ export {
 	deleteGroupAction,
 	setNameAction,
 	deleteConnectionWithCounterAction,
-	addConnectionWithCounterAction
+	addConnectionWithCounterAction,
+	UpdateStateAction
 };

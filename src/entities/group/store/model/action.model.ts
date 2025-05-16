@@ -2,6 +2,11 @@
 import { SortOptions } from '@shared/constants/sort';
 //MODEL
 import type { Group } from '../../model/group.model';
+import { IGroupState } from '../model/group-state.model';
+
+interface IUpdateState {
+	newState: IGroupState;
+}
 
 interface ICreateGroupAction {
 	newGroup: Group;
@@ -42,5 +47,6 @@ export {
 	IDeleteGroupAction,
 	ISetNameAction,
 	IDeleteConnectionWithCounterAction,
-	IAddConnectionToCounterAction
+	IAddConnectionToCounterAction,
+	IUpdateState
 };

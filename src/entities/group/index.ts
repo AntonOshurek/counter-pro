@@ -5,6 +5,8 @@ import GroupCard from './ui/group-card/group-card';
 import CreatedDate from './ui/created-date/created-date';
 //DB ACTIONS
 import { initGroupTable } from './db/actions/group-db.actions';
+//PROVIDERS
+import FetchGroupDataProvider from './providers/fetch-group-data.provider';
 //STORE
 import groupSlice from './store/group-slice';
 import {
@@ -22,7 +24,8 @@ import {
 	deleteGroupAction,
 	setNameAction,
 	deleteConnectionWithCounterAction,
-	addConnectionWithCounterAction
+	addConnectionWithCounterAction,
+	UpdateStateAction
 } from './store/actions/group.actions';
 
 export {
@@ -43,5 +46,7 @@ export {
 	deleteConnectionWithCounterAction,
 	addConnectionWithCounterAction,
 	groupSlice,
-	initGroupTable
+	initGroupTable,
+	UpdateStateAction,
+	FetchGroupDataProvider
 };

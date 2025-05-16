@@ -10,7 +10,7 @@ import {
   INSERT_GROUP_QUERY,
   DELETE_GROUP_BY_ID_QUERY,
   UPDATE_GROUP_QUERY
-} from '../../db/sql/group-commands.sql';
+} from '../sql/group-commands.sql';
 //CONSTANTS
 import { GROUP_SQL_TABLE_NAME } from '@shared/constants';
 

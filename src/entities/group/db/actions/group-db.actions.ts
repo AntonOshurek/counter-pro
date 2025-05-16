@@ -1,7 +1,7 @@
 //DB
 import { SQLiteDatabase } from 'expo-sqlite';
 //SERVICES
-import groupSqliteService from '../../store/services/group-sqlite.service';
+import groupSqliteService from '@entities/group/db/services/group-sqlite.service';
 //TYPES
 import type { RootState } from '@shared/store';
 //MODEL

@@ -11,12 +11,18 @@ import type {
 	IDeleteConnectionWithCounterAction,
 	IAddConnectionToCounterAction
 } from './model/action.model';
+import { IUpdateState } from './model/action.model';
 
 const groupSlice = createSlice({
 	name: 'group',
 	initialState: groupInitialState,
 
 	reducers: {
+		updateState: (state, action: PayloadAction<IUpdateState>) => {
+			const { newState } = action.payload;
+
+			return newState;
+		},
 		createGroup: (state, action: PayloadAction<ICreateGroupAction>) => {
 			const { newGroup } = action.payload;
 

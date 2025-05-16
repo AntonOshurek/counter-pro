@@ -7,6 +7,7 @@ import StoreProvider from './providers/store-provider.hoc';
 //ENTITIES
 import { FetchAppDataProvider } from '@entities/app';
 import { FetchCounterDataProvider } from '@entities/counter';
+import { FetchGroupDataProvider } from '@entities/group';
 //CONSTANTS
 import { DATABASE_NAME } from '@shared/constants';
 
@@ -21,7 +22,9 @@ const Root = () => {
 			<StoreProvider>
 				<FetchAppDataProvider>
 					<FetchCounterDataProvider>
-						<App />
+						<FetchGroupDataProvider>
+							<App />
+						</FetchGroupDataProvider>
 					</FetchCounterDataProvider>
 				</FetchAppDataProvider>
 			</StoreProvider>
