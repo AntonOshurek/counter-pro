@@ -4,8 +4,8 @@ import { SQLiteDatabase } from 'expo-sqlite';
 import counterSlice from '../../counter-slice';
 //MODEL
 import { IDeleteCounterAction } from '@entities/counter/store/model/action.model';
-//SERVICES
-import counterSqliteService from '@entities/counter/store/services/counter-sqlite.service';
+//DB ACTIONS
+import { deleteOne } from '@entities/counter/db/actions/counter-db.actions';
 //TYPES
 import type { AppThunk } from '@shared/store';
 
@@ -14,6 +14,6 @@ const deleteCounterAction =
 	async (dispatch, getState) => {
 		dispatch(counterSlice.actions.delete(action));
 
-		await counterSqliteService.deleteById(db, action.counterId);
+		await deleteOne(action.counterId, db);
 	};
 export { deleteCounterAction };

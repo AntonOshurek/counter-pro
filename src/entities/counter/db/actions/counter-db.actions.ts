@@ -30,4 +30,8 @@ const insertOne = async (counter: Counter, db: SQLiteDatabase) => {
 	await counterSqliteService.insertOne(db, counter);
 };
 
-export { insertOne, updateOne, initCounterTableAction };
+const deleteOne = async (counterId: string, db: SQLiteDatabase) => {
+	await counterSqliteService.deleteById(db, counterId);
+};
+
+export { insertOne, updateOne, deleteOne, initCounterTableAction };

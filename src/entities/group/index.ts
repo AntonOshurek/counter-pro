@@ -3,8 +3,8 @@ import { Group } from './model/group.model';
 //UI
 import GroupCard from './ui/group-card/group-card';
 import CreatedDate from './ui/created-date/created-date';
-//DB
-import { initGroupTable } from './db/init-group-table';
+//DB ACTIONS
+import { initGroupTable } from './db/actions/group-db.actions';
 //STORE
 import groupSlice from './store/group-slice';
 import {
