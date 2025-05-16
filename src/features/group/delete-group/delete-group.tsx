@@ -3,6 +3,8 @@ import { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '@shared/types/navigation';
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //STORE
 import { useAppDispatch } from '@shared/store';
 //ENTITIES
@@ -13,6 +15,7 @@ import type { UseDeleteGroupProps } from './model/delete-group.model';
 const useDeleteCounter = ({ groupId }: UseDeleteGroupProps) => {
 	const dispatch = useAppDispatch();
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
+	const db = useSQLiteContext();
 
 	return useCallback(() => {
 		const parentNavigation = navigation.getParent();
@@ -23,7 +26,7 @@ const useDeleteCounter = ({ groupId }: UseDeleteGroupProps) => {
 			navigation.goBack();
 		}
 
-		dispatch(deleteGroupAction({ groupId }));
+		dispatch(deleteGroupAction({ groupId }, db));
 	}, [dispatch, groupId, navigation]);
 };
 

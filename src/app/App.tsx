@@ -1,13 +1,13 @@
 //NAVIGATION
 import Navigation from './navigation/navigation';
 //LAYOUTS
-import { ThemeLayout } from '@shared/layouts';
+import { UiAppLayout } from '@shared/layouts';
 
 const App = () => {
 	return (
-		<ThemeLayout>
+		<UiAppLayout>
 			<Navigation />
-		</ThemeLayout>
+		</UiAppLayout>
 	);
 };
 

@@ -1,6 +1,6 @@
 //NATIVE
 import { useRoute } from '@react-navigation/native';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, View } from 'react-native';
 //NAVIGATION
 import { GroupScreenRouteProp } from '@shared/types/navigation';
 //LAYOUTS
@@ -25,15 +25,22 @@ const GroupSettingsScreen = () => {
 	const group = useAppSelector(SelectorGetGroup(groupId));
 
 	return (
-		<ScreenLayout additionalClass={style.groupSettingsScreen}>
-			<View style={style.settingsGroup}>
-				<GroupCriticalOptionsWidget group={group} />
-			</View>
+		<ScreenLayout withScroll={true}>
+			<KeyboardAvoidingView
+				style={{ flex: 1, justifyContent: 'flex-end' }}
+				behavior={'position'}
+			>
+				<View style={style.groupSettingsScreen}>
+					<View style={style.settingsGroup}>
+						<GroupCriticalOptionsWidget group={group} />
+					</View>
 
-			<View style={style.settingsGroup}>
-				<GroupAdditionalInfoWidget group={group} />
-				<GroupSettingsWidget group={group} />
-			</View>
+					<View style={style.settingsGroup}>
+						<GroupAdditionalInfoWidget group={group} />
+						<GroupSettingsWidget group={group} />
+					</View>
+				</View>
+			</KeyboardAvoidingView>
 		</ScreenLayout>
 	);
 };

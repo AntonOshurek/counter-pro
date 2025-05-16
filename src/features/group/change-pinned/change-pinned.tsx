@@ -1,3 +1,5 @@
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //STORE
 import { useAppDispatch } from '@shared/store';
 //ENTITIES
@@ -7,9 +9,10 @@ import { UseChangePinnedProps } from './model/change-pinned.model';
 
 const useChangePinned = ({ groupId }: UseChangePinnedProps) => {
 	const dispatch = useAppDispatch();
+	const db = useSQLiteContext();
 
 	return (isPinned: boolean) => {
-		dispatch(setIsPinnedAction({ isPinned, groupId: groupId }));
+		dispatch(setIsPinnedAction({ isPinned, groupId: groupId }, db));
 	};
 };
 
