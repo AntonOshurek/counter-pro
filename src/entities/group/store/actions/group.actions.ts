@@ -1,3 +1,5 @@
+//DB
+import { SQLiteDatabase } from 'expo-sqlite';
 //STORE
 import groupSlice from '../group-slice';
 //MODEL
@@ -14,17 +16,23 @@ import type {
 import type { AppThunk } from '@shared/store';
 //ASYNC STORE ACTIONS
 import { setStateToGroupAsyncStoreAction } from '@entities/group/async-store/actions/group-async-store.actions';
+//DB ACTIONS
+import { deleteOne, insertOne, updateOne } from '../../db/actions/group-db.actions';
 
 const CreateGroupAction =
-	(action: ICreateGroupAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: ICreateGroupAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.createGroup({ newGroup: action.newGroup }));
+
+		await insertOne(action.newGroup, db);
 	};
 
 const setIsPinnedAction =
-	(action: ISetIsPinnedAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: ISetIsPinnedAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.setIsPinnedGroup(action));
+
+		await updateOne(getState, action.groupId, db);
 	};
 
 const setListSortTypeAction =
@@ -36,27 +44,35 @@ const setListSortTypeAction =
 	};
 
 const deleteGroupAction =
-	(action: IDeleteGroupAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: IDeleteGroupAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.delete(action));
+
+		await deleteOne(action.groupId, db);
 	};
 
 const setNameAction =
-	(action: ISetNameAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: ISetNameAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.setName(action));
+
+		await updateOne(getState, action.groupId, db);
 	};
 
 const deleteConnectionWithCounterAction =
-	(action: IDeleteConnectionWithCounterAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: IDeleteConnectionWithCounterAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.deleteConnectionWithCounter(action));
+
+		await updateOne(getState, action.groupId, db);
 	};
 
 const addConnectionWithCounterAction =
-	(action: IAddConnectionToCounterAction): AppThunk =>
-	(dispatch, getState) => {
+	(action: IAddConnectionToCounterAction, db: SQLiteDatabase): AppThunk =>
+	async (dispatch, getState) => {
 		dispatch(groupSlice.actions.addConnectionToCounter(action));
+
+		await updateOne(getState, action.groupId, db);
 	};
 
 export {

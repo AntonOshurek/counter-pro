@@ -1,4 +1,4 @@
-const GROUP_SQL_TABLE_NAME = 'counters';
-const GROUP_ASYNC_STORE_NAME = 'counter-store';
+const GROUP_SQL_TABLE_NAME = 'group';
+const GROUP_ASYNC_STORE_NAME = 'group-store';
 
 export { GROUP_ASYNC_STORE_NAME, GROUP_SQL_TABLE_NAME };

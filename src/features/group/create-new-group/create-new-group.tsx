@@ -2,6 +2,8 @@
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { NavigationStackParams } from '@shared/types/navigation';
+//DB
+import { useSQLiteContext } from 'expo-sqlite';
 //STORE
 import { useAppDispatch } from '@shared/store';
 //ENTITIES
@@ -15,6 +17,7 @@ import { createNewItemTitleDate } from '@shared/lib/date-lib';
 const useCreateNewGroup = () => {
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const dispatch = useAppDispatch();
+	const db = useSQLiteContext();
 
 	return () => {
 		const now = new Date();
@@ -28,7 +31,7 @@ const useCreateNewGroup = () => {
 			createdAtTimestamp: now.getTime()
 		};
 
-		dispatch(CreateGroupAction({ newGroup }));
+		dispatch(CreateGroupAction({ newGroup }, db));
 		navigation.navigate(StackScreens.GroupScreen, { groupId: newGroup.id });
 	};
 };
