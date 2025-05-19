@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "counter-pro",
-    "slug": "counter-pro",
+    "name": "Counter Pro",
+    "slug": "Counter Pro",
     "jsEngine": "hermes",
     "version": "1.0.0",
     "orientation": "portrait",
