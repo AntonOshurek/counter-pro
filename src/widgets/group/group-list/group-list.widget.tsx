@@ -27,6 +27,7 @@ import { ExpandAnimatedView, Paragraph } from '@shared/ui/';
 import style from './styles/style';
 //CONSTANTS
 import { SortOptions } from '@shared/constants/sort';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 
 const GroupListWidget = () => {
 	const sortType = useAppSelector(SelectorGetListSortType());
@@ -76,7 +77,7 @@ const GroupListWidget = () => {
 					) : (
 						<View style={style.withoutCounters}>
 							<Paragraph contentType={'tertiary'} size={'xSmall'}>
-								Group doesnt have any counters yet. Open to add one
+								{GROUP_TEXT.groupIsEmptyOpenToAdd}
 							</Paragraph>
 						</View>
 					)}
