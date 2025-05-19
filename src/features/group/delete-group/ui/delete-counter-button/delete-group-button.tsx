@@ -1,7 +1,7 @@
 //NATIVE
 import { View } from 'react-native';
 //FEATURES
-import useDeleteCounter from '../../delete-group';
+import useDeleteGroup from '../../delete-group';
 //UI
 import { DeleteButtonWithConfirm, Paragraph } from '@shared/ui/';
 //PROPS
@@ -11,8 +11,11 @@ import { style } from './styles/style';
 //TEXT
 import { GROUP_TEXT } from '@shared/text-content/text-content';
 
-const DeleteGroupButton = ({ groupId }: DeleteGroupButtonProps) => {
-	const deleteGroup = useDeleteCounter({ groupId });
+const DeleteGroupButton = ({
+	groupId,
+	counterToGroupConnection
+}: DeleteGroupButtonProps) => {
+	const deleteGroup = useDeleteGroup({ groupId, counterToGroupConnection });
 
 	const onDeleteListener = () => {
 		deleteGroup();

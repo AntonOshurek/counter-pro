@@ -15,7 +15,7 @@ const COUNTER_TEXT = {
 	noAvailableGroups:
 		'No available groups. Please create new group to add this counter to this group.',
 	manageGroupsModalTitle: 'Manage Group',
-  vibrationSwitcher: 'Vibration on Inc or Dec'
+	vibrationSwitcher: 'Vibration on Inc or Dec'
 };
 
 const GROUP_TEXT = {
@@ -30,7 +30,10 @@ const GROUP_TEXT = {
 	changeGroupNameInputLabel: 'Name',
 	noAvailableCounter:
 		'No available counters. Please remove a counter from another group to add one to this group.',
-	manageCountersModalTitle: 'Manage Counters'
+	manageCountersModalTitle: 'Manage Counters',
+	groupIsEmptyOpenToAdd: 'The group is empty. Open it to add a counter.',
+	groupIsEmptyClickOnPlusBtnToAddOne:
+		'Add a counter by tapping the + button or in group settings.'
 };
 
 const APP_TEXT = {

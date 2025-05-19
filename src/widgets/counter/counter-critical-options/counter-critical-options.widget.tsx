@@ -1,5 +1,6 @@
 //FEATURES
 import { DeleteCounterButton } from '@features/counter';
+import { useGroupToCounterConnection } from '@features/group';
 //WRAPPERS
 import { SettingsGroupWrapper } from '@shared/wrappers';
 //MODEL
@@ -10,7 +11,10 @@ import style from './styles/style';
 const CounterCriticalOptionsWidget = ({ counter }: CounterCriticalOptionsProps) => {
 	return (
 		<SettingsGroupWrapper additionalClass={style.counterCrucialOptions}>
-			<DeleteCounterButton counterId={counter.id} />
+			<DeleteCounterButton
+				counterId={counter.id}
+				groupToCounterConnection={useGroupToCounterConnection}
+			/>
 		</SettingsGroupWrapper>
 	);
 };
