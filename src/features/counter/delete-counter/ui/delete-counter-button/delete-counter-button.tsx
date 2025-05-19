@@ -11,8 +11,11 @@ import { style } from './styles/style';
 //TEXT
 import { COUNTER_TEXT } from '@shared/text-content/text-content';
 
-const DeleteCounterButton = ({ counterId }: DeleteCounterButtonProps) => {
-	const deleteCounter = useDeleteCounter({ counterId });
+const DeleteCounterButton = ({
+	counterId,
+	groupToCounterConnection
+}: DeleteCounterButtonProps) => {
+	const deleteCounter = useDeleteCounter({ counterId, groupToCounterConnection });
 
 	const onDeleteListener = () => {
 		deleteCounter();
