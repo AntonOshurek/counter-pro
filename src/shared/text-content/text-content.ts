@@ -31,7 +31,9 @@ const GROUP_TEXT = {
 	noAvailableCounter:
 		'No available counters. Please remove a counter from another group to add one to this group.',
 	manageCountersModalTitle: 'Manage Counters',
-	groupIsEmptyOpenToAdd: 'The group is empty. Open it to add a counter.'
+	groupIsEmptyOpenToAdd: 'The group is empty. Open it to add a counter.',
+	groupIsEmptyClickOnPlusBtnToAddOne:
+		'Add a counter by tapping the + button or in group settings.'
 };
 
 const APP_TEXT = {

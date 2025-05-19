@@ -4,7 +4,7 @@ import { FlatList, View } from 'react-native';
 import { useAppSelector } from '@shared/store';
 //ENTITIES
 import { CounterCard, CounterValue, SelectorGetCounters } from '@entities/counter';
-import { Group, SelectorGetGroup } from '@entities/group';
+import { SelectorGetGroup } from '@entities/group';
 //FEATURES
 import {
 	MiniDecrementButton,
@@ -13,14 +13,15 @@ import {
 } from '@features/counter';
 //LIBS
 import { sortCounters } from '@shared/lib/sort-lib';
+//UI
+import { Paragraph } from '@shared/ui';
 //CONSTANTS
 import { SortOptions } from '@shared/constants/sort';
+import { GROUP_TEXT } from '@shared/text-content/text-content';
 //MODEL
 import type { GroupCounterListProps } from './model/group-counter-list.model';
 //STYLES
 import style from './styles/style';
-import { Paragraph } from '@shared/ui';
-import { GROUP_TEXT } from '@shared/text-content/text-content';
 
 const GroupCounterListWidget = ({ groupId }: GroupCounterListProps) => {
 	const group = useAppSelector(SelectorGetGroup(groupId));
@@ -54,7 +55,7 @@ const GroupCounterListWidget = ({ groupId }: GroupCounterListProps) => {
 	) : (
 		<View style={style.withoutCounters}>
 			<Paragraph contentType={'tertiary'} size={'xSmall'}>
-				{GROUP_TEXT.groupIsEmptyOpenToAdd}
+				{GROUP_TEXT.groupIsEmptyClickOnPlusBtnToAddOne}
 			</Paragraph>
 		</View>
 	);
