@@ -4,6 +4,11 @@ const style = StyleSheet.create({
 	groupList: {
 		flex: 1,
 		paddingTop: 20
+	},
+	withoutCounters: {
+		alignItems: 'center',
+		paddingInline: 5,
+		textAlign: 'center'
 	}
 });
 
