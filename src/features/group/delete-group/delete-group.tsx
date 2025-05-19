@@ -6,14 +6,16 @@ import { NavigationStackParams } from '@shared/types/navigation';
 //DB
 import { useSQLiteContext } from 'expo-sqlite';
 //STORE
-import { useAppDispatch } from '@shared/store';
+import { useAppDispatch, useAppSelector } from '@shared/store';
 //ENTITIES
-import { deleteGroupAction } from '@entities/group';
+import { deleteGroupAction, SelectorGetGroup } from '@entities/group';
 //MODEL
 import type { UseDeleteGroupProps } from './model/delete-group.model';
 
-const useDeleteCounter = ({ groupId }: UseDeleteGroupProps) => {
+const useDeleteGroup = ({ groupId, counterToGroupConnection }: UseDeleteGroupProps) => {
 	const dispatch = useAppDispatch();
+	const group = useAppSelector(SelectorGetGroup(groupId));
+	const { deleteGroupFromCounter } = counterToGroupConnection();
 	const navigation = useNavigation<NativeStackNavigationProp<NavigationStackParams>>();
 	const db = useSQLiteContext();
 
@@ -26,8 +28,14 @@ const useDeleteCounter = ({ groupId }: UseDeleteGroupProps) => {
 			navigation.goBack();
 		}
 
+		if (group.counters.length > 0) {
+			group.counters.forEach(counterId => {
+				deleteGroupFromCounter(counterId, groupId);
+			});
+		}
+
 		dispatch(deleteGroupAction({ groupId }, db));
 	}, [dispatch, groupId, navigation]);
 };
 
-export default useDeleteCounter;
+export default useDeleteGroup;
