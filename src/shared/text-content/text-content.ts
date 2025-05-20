@@ -29,7 +29,7 @@ const GROUP_TEXT = {
 	groupCreatedDateLabel: 'Created Date:',
 	changeGroupNameInputLabel: 'Name',
 	noAvailableCounter:
-		'No available counters. Please remove a counter from another group to add one to this group.',
+		'No available counters. Create new counter by tapping the + button or in group settings.',
 	manageCountersModalTitle: 'Manage Counters',
 	groupIsEmptyOpenToAdd: 'The group is empty. Open it to add a counter.',
 	groupIsEmptyClickOnPlusBtnToAddOne:
