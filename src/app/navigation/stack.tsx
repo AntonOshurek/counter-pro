@@ -35,14 +35,7 @@ const Stack = () => {
 					headerShown: false
 				}}
 			/>
-			<Stack.Screen
-				name={StackScreens.CounterScreen}
-				component={CounterTopTabs}
-				options={{
-					title: 'wertwe',
-					headerShown: true
-				}}
-			/>
+			<Stack.Screen name={StackScreens.CounterScreen} component={CounterTopTabs} />
 			<Stack.Screen name={StackScreens.GroupScreen} component={GroupTopTabs} />
 		</Stack.Navigator>
 	);

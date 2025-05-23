@@ -11,6 +11,8 @@ import keepIcon from './keep-icon';
 import keepOffIcon from './keep-off-icon';
 import ResetIcon from './reset-icon';
 import SortListIcon from './sort-list-icon';
+import GitHubIcon from './github-icon';
+import LinkedinIcon from './linkedin-icon';
 
 export {
 	PlusIcon,
@@ -25,5 +27,7 @@ export {
 	keepIcon,
 	keepOffIcon,
 	ResetIcon,
-	SortListIcon
+	SortListIcon,
+	GitHubIcon,
+	LinkedinIcon
 };
