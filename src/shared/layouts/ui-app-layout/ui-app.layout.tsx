@@ -1,5 +1,4 @@
 //NATIVE
-import { SafeAreaView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 //HOOKS
 import useThemeResolver from '@shared/hooks/useThemeResolver';
@@ -7,6 +6,7 @@ import useThemeResolver from '@shared/hooks/useThemeResolver';
 import { colors } from '@shared/styles';
 import { StatusBar } from 'expo-status-bar';
 import { Themes } from '@shared/constants';
+import { View } from 'react-native';
 
 const UiAppLayout = ({ children }: { children: React.ReactNode }) => {
 	const theme = useThemeResolver();
@@ -15,13 +15,11 @@ const UiAppLayout = ({ children }: { children: React.ReactNode }) => {
 
 	return (
 		<>
-			<StatusBar style={statusBarStyle} />
 			<SafeAreaProvider>
-				<SafeAreaView
-					style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}
-				>
+				<View style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}>
+					<StatusBar style={statusBarStyle} translucent={false} />
 					{children}
-				</SafeAreaView>
+				</View>
 			</SafeAreaProvider>
 		</>
 	);
