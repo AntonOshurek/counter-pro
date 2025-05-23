@@ -16,11 +16,9 @@
     "ios": {
       "supportsTablet": true,
       "jsEngine": "jsc",
-      "icon": "./assets/icon.png",
-      "image": "./assets/splash-icon.png"
+      "icon": "./assets/icon.png"
     },
     "android": {
-      "image": "./assets/splash-icon.png",
       "package": "com.oshurekdev.counterpro",
       "icon": "./assets/icon.png"
     },
