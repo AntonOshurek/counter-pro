@@ -7,9 +7,7 @@ const style = StyleSheet.create({
 	counterSettingsScreen: {
 		gap: itemsGaps.gapBetweenSettingGroups,
 		paddingBottom: paddings.bottomPaddingToFirstElement,
-    paddingTop: 10,
-    borderColor: 'tomato',
-    borderWidth: 1,
+		paddingTop: 10
 	},
 	settingsGroup: {
 		gap: itemsGaps.gapBetweenSettingGroups
