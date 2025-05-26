@@ -5,10 +5,11 @@ import { itemsGaps, paddings } from '@shared/styles';
 
 const style = StyleSheet.create({
 	counterSettingsScreen: {
-		paddingTop: 10,
-		// justifyContent: 'flex-end',
 		gap: itemsGaps.gapBetweenSettingGroups,
-		paddingBottom: paddings.bottomPaddingToFirstElement
+		paddingBottom: paddings.bottomPaddingToFirstElement,
+    paddingTop: 10,
+    borderColor: 'tomato',
+    borderWidth: 1,
 	},
 	settingsGroup: {
 		gap: itemsGaps.gapBetweenSettingGroups
