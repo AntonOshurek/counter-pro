@@ -17,7 +17,11 @@ const UiAppLayout = ({ children }: { children: React.ReactNode }) => {
 		<>
 			<SafeAreaProvider>
 				<View style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}>
-					<StatusBar style={statusBarStyle} translucent={false} />
+					<StatusBar
+						style={statusBarStyle}
+						translucent={false}
+						backgroundColor={colors[theme].mainSurfaceSecondary}
+					/>
 					{children}
 				</View>
 			</SafeAreaProvider>
