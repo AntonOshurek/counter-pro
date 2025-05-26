@@ -5,7 +5,7 @@ import type { ColorThemes } from '@shared/types';
 //STYLES
 import { colors } from '../../../styles';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const style = (theme: ColorThemes) =>
 	StyleSheet.create({
@@ -17,8 +17,6 @@ const style = (theme: ColorThemes) =>
 			alignItems: 'center'
 		},
 		container: {
-			borderWidth: 1,
-			borderColor: 'tomato',
 			position: 'absolute',
 			bottom: '0%',
 			left: '50%',
