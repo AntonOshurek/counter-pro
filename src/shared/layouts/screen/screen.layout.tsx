@@ -23,7 +23,7 @@ const ScreenLayout = ({
 	];
 
 	return (
-		<SafeAreaView style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }}>
+		<SafeAreaView style={{ flex: 1, backgroundColor: colors[theme].mainSurfacePrimary }} >
 			{withScroll ? (
 				<ScrollView
 					contentContainerStyle={containerStyle}

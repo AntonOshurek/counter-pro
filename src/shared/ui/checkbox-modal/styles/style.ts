@@ -17,13 +17,12 @@ const style = (theme: ColorThemes) =>
 			alignItems: 'center'
 		},
 		container: {
+			borderWidth: 1,
+			borderColor: 'tomato',
 			position: 'absolute',
-			top: '50%',
+			bottom: '0%',
 			left: '50%',
-			transform: [
-				{ translateX: -(width * 0.9) / 2 },
-				{ translateY: -(height * 0.3) / 2 }
-			],
+			transform: [{ translateX: -(width * 0.9) / 2 }],
 			zIndex: 1,
 			width: '90%',
 			maxHeight: '70%',
