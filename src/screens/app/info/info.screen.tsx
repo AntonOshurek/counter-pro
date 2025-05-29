@@ -6,6 +6,7 @@ import { ScreenLayout } from '@shared/layouts/';
 import { Paragraph } from '@shared/ui';
 //STYLES
 import style from './styles/style';
+//ICONS
 import { GitHubIcon, LinkedinIcon } from '@shared/icons';
 
 const InfoScreen = () => {
@@ -29,14 +30,19 @@ const InfoScreen = () => {
 						<LinkedinIcon width={40} height={40} />
 					</Pressable>
 				</View>
+				<Pressable onPress={() => Linking.openURL('mailto:app.contact@oshurek.com')}>
+					<Paragraph contentType={'primary'} size={'medium'}>
+						app.contact@oshurek.com
+					</Paragraph>
+				</Pressable>
 			</View>
 
 			<View style={style.releaseInfo}>
 				<Paragraph size={'small'} contentType={'secondary'}>
-					App version - 0.9.0
+					App version - 1.0.1
 				</Paragraph>
 				<Paragraph size={'small'} contentType={'secondary'}>
-					Release date - 22.05.2025
+					Release date - 29.05.2025
 				</Paragraph>
 			</View>
 		</ScreenLayout>
