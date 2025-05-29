@@ -9,6 +9,12 @@
         "buildType": "apk",
         "developmentClient": false
       }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle",
+        "developmentClient": false
+      }
     }
   }
 }
