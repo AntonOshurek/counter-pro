@@ -29,18 +29,18 @@ Counter Pro allows you to:
 
 ### Counters Screen
 
-![Main Screen](https://oshurek.com/counter-pro-counters.jpg)
+<img src="https://oshurek.com/counter-pro-counters.jpg" width="300" />
 
 ### Counter Screen
 
-![Counter Screen](https://oshurek.com/counter-pro-counter.jpg)
+<img src="https://oshurek.com/counter-pro-counter.jpg" width="300" />
 
 ### Groups Screen
 
-![Dark Mode](https://oshurek.com/counter-pro-groups.jpg)
+<img src="https://oshurek.com/counter-pro-groups.jpg" width="300" />
 
 ### Settings Screen
 
-![Settings Screen](https://oshurek.com/counter-pro-settings.jpg)
+<img src="https://oshurek.com/counter-pro-settings.jpg" width="300" />
 
 ---
