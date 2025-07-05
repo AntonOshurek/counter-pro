@@ -20,7 +20,8 @@
     },
     "android": {
       "package": "com.oshurekdev.counterpro",
-      "icon": "./assets/icon.png"
+      "icon": "./assets/icon.png",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
