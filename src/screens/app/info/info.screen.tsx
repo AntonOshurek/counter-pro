@@ -39,10 +39,10 @@ const InfoScreen = () => {
 
 			<View style={style.releaseInfo}>
 				<Paragraph size={'small'} contentType={'secondary'}>
-					App version - 1.0.1
+					App version - 1.0.2
 				</Paragraph>
 				<Paragraph size={'small'} contentType={'secondary'}>
-					Release date - 29.05.2025
+					Release date - 05.07.2025
 				</Paragraph>
 			</View>
 		</ScreenLayout>
